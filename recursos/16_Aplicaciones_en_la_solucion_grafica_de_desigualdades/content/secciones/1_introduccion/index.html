@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+
+  <!-- MathJax - para fórmulas matemáticas -->
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+  
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+
+<div class="course_content">
+
+<!-- INICIA EL CONTENIDO DE LA PÁGINA -->
+<!-- Título de la página -->
+<h1>Desigualdades lineales</h1>
+
+<!-- Subtítulo -->
+<!-- <h2></h2> -->
+
+<!-- Párrafo -->
+<p>
+Una <strong>desigualdad</strong> es una relación de orden entre un par de elementos distintos. Nos permite comparar intuitivamente cualesquiera dos elementos y conocer la relación que hay entre ellos. Dicho de otra manera, una desigualdad formaliza la manera en que se relacionan los elementos de un conjunto ordenado.
+</p>
+
+<p>
+Las desigualdades ocupan los operadores \(<\) (<em>menor que</em>), \(≤\) (<em>menor que o igual a</em>), \(>\) (<em>mayor que</em>) y \(≥\) (<em>mayor que o igual a</em>), para indicar la relación de orden existente.
+Una <strong>desigualdad lineal</strong> o <strong>inecuación lineal</strong> es una desigualdad compuesta por expresiones lineales con al menos una variable. Si la desigualdad utiliza los operadores \(<\) o \(>\), se le denomina <em>desigualdad lineal en sentido estricto</em>; si utiliza los operadores \(≤\) o \(≥\), se le denomina <em>desigualdad lineal en sentido amplio</em>.
+</p>
+
+<p>
+Ejemplos:
+</p>
+<p style="text-align:center">
+\(x > 17\), 
+</p>
+<p style="text-align:center">
+\(2x + 3 < 10\),
+</p>
+<p style="text-align:center">
+\(-1x + 13 ≤ 0\),
+</p>
+<p style="text-align:center">
+\(100 ≥ 20x + 15\),
+</p>
+<p style="text-align:center">
+\(3x + 3 < 5x + 5\), 
+</p>
+<p style="text-align:center">
+\(x - 9 > -5x + 10\)
+</p>
+
+<p>
+Resolver una desigualdad lineal consiste en despejar la incógnita para obtener todos los valores que satisfacen la desigualdad. A este conjunto de valores se le conoce como <strong><em>conjunto solución</em></strong>. El conjunto solución puede tener una solución, ninguna solución o una infinidad de soluciones.
+</p>
+
+<p>
+En esta lección se presenta el <strong>método gráfico para la resolución de desigualdades lineales</strong>.
+</p>
+
+
+<!-- TERMINA EL CONTENIDO DE LA PÁGINA -->
+
+   <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Joel Espinosa Longi</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+</div>
+
+</article>
+
+</body>
+
+</html>

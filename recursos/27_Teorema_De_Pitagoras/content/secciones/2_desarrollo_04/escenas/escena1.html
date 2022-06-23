@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>Plantilla Escena</title>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0;padding:0;overflow:hidden;">
+
+<p align="center">
+<ajs name="Plantilla_Escena" width=650 height=400 code="Descartes">
+   <param name="tamaño" value="650x400">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Plantilla_Escena">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo.png' despl_imagen='expand.' fondo='c6c6e7' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='E2' x='20' y='100' ancho='250' alto='250' escala='25' O.y='75' despl_imagen='arr-izq' red='b8c4c8' red10='no' ejes='no' texto='405860'">
+   <param name="C_01" value="id='sig' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Siguiente' expresión='(545,355,90,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' fuente puntos='18' imagen='images/btn90x30.png' acción='calcular' parámetro='paso=paso+1' dibujar-si='paso<4'">
+   <param name="C_02" value="id='atras' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Anterior' expresión='(290,355,90,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' fuente puntos='18' imagen='images/btn90x30.png' acción='calcular' parámetro='paso=paso-1' dibujar-si='paso>0'">
+   <param name="C_03" value="id='reint' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Reiniciar' expresión='(545,355,90,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' fuente puntos='18' imagen='images/btn90x30.png' acción='inicio' dibujar-si='paso=4'">
+   <param name="A_01" value="id='init()' algoritmo='sí' algoritmo='sí' hacer='tipoEjer=ent(rnd*2);a=2+(2*ent(rnd*4));b=2+ent(rnd*6);c=sqrt((a^2)+(b^2));c=(ent(c*10))/10;paso=0'">
+   <param name="A_02" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='init()'">
+   <param name="A_03" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='texto' expresión='[20,10]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs36 Si la distancia entre la antena y el usuario es \f2\fs40\i{\*\mjaformula{\expr b} km}\f1\fs36\i0  y la distancia entre la\par antena y la casa es de \f2\fs40\i{\*\mjaformula{\expr c} km} \f1\fs36\i0\u191 C\u243 mo se puede saber la distancia a la que\par est\u225  el usuario de su casa?}' fuente='SansSerif,PLAIN,18' decimales='1' fijo='sí'">
+   <param name="G_02" value="espacio='E2' tipo='polígono' dibujar-si='!tipoEjer&(paso>0)' expresión='(-a/2,0)(-a/2,b)(a/2,0)(-a/2,0)' ancho='2'">
+   <param name="G_03" value="espacio='E2' tipo='polígono' dibujar-si='tipoEjer&(paso>0)' expresión='(-a/2,0)(a/2,0)(a/2,b)(-a/2,0)' ancho='2'">
+   <param name="G_04" value="espacio='E2' tipo='punto' dibujar-si='paso>1' expresión='(-.4,-.8)' texto='a' fuente='Monospaced,BOLD,18' fijo='sí' tamaño='0'">
+   <param name="G_05" value="espacio='E2' tipo='punto' dibujar-si='paso>1' expresión='((-a/2)-1+(a+1.3)*(tipoEjer),b/2)' texto='b' fuente='Monospaced,BOLD,18' fijo='sí' tamaño='0'">
+   <param name="G_06" value="espacio='E2' tipo='punto' dibujar-si='paso>1' expresión='((a/4)-.5-((a/2)*(tipoEjer)),b/2)' texto='c' fuente='Monospaced,BOLD,18' fijo='sí' tamaño='0'">
+   <param name="G_07" value="espacio='E2' tipo='punto' color='rojo' expresión='((-a/2)+(a)*(tipoEjer),b)' texto='A' fuente='Monospaced,BOLD,18' fijo='sí' tamaño='4'">
+   <param name="G_08" value="espacio='E2' tipo='punto' color='azul' expresión='((-a/2)+(a)*(tipoEjer),0)' texto='C' fuente='Monospaced,BOLD,18' fijo='sí' tamaño='4'">
+   <param name="G_09" value="espacio='E2' tipo='punto' color='verde' expresión='((a/2)-(a)*(tipoEjer),0)' texto='B' fuente='Monospaced,BOLD,18' fijo='sí' tamaño='4'">
+   <param name="G_10" value="espacio='E1' tipo='texto' dibujar-si='paso=1' expresión='[280,100]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;}\f1\fs36 Lo primero que haremos ser\u225  trazar los\par segmentos que unen el punto \f2\fs36\i{\*\mjaformula A}\f1\fs36\i0  al punto\par \f3\fs40\i{\*\mjaformula B}\f1\fs36\i0 , el punto \f3\fs40\i{\*\mjaformula B}\f1\fs36\i0  al punto \f3\fs40\i{\*\mjaformula C}\f1\fs36\i0  y el punto \f3\fs40\i{\*\mjaformula C}\f1\fs36\i0\par al punto \f3\fs40\i{\*\mjaformula A.}\f1\fs36\i0\par \par Como podemos notar se forma un\par tri\u225 ngulo rect\u225 ngulo y lo que\par necesitamos saber es la medida del\par segmento que une el punto \f3\fs40\i{\*\mjaformula B}\f1\fs36\i0  con el\par punto \f3\fs40\i{\*\mjaformula C.}}' fuente='SansSerif,PLAIN,18' decimales='1' fijo='sí'">
+   <param name="G_11" value="espacio='E1' tipo='texto' dibujar-si='paso=2' expresión='[280,95]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs36 Ahora asignaremos una variable a cada\par uno de los lados del tri\u225 ngulo. Por\par convenci\u243 n, a cada lado se le asigna la\par misma variable que tiene el v\u233 rtice\par opuesto a \u233 l, pero con min\u250 sculas.\par \par El problema se reduce a encontrar el\par valor de la variable \f2\fs40\i{\*\mjaformula a}\f1\fs36\i0 .}' fuente='SansSerif,PLAIN,18' decimales='1' fijo='sí'">
+   <param name="G_12" value="espacio='E1' tipo='texto' dibujar-si='paso=3' expresión='[280,95]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs36 Como es un tri\u225 ngulo rect\u225 ngulo podemos\par utilizar el teorema de Pit\u225 goras:\par                  \f2\fs40\i{\*\mjaformula a{\supix 2}+b{\supix 2}=c{\supix 2}}\f1\fs36\i0\par Despejamos la variable \f2\fs40\i{\*\mjaformula a}\f1\fs36\i0 :\par                  \f2\fs40\i{\*\mjaformula a{\supix 2}=c{\supix 2}-b{\supix 2}}\f1\fs36\i0\par \f2\fs40\i                  {\*\mjaformula a={\radical{\index}{\radicand c{\supix 2}-b{\supix 2}}}}\f1\fs36\i0\par A continuaci\u243 n sustituimos los valores de\par \f2\fs40\i{\*\mjaformula c}\f1\fs36\i0  y \f2\fs40\i{\*\mjaformula b}\f1\fs36\i0 .}' fuente='SansSerif,PLAIN,18' decimales='1' fijo='sí'">
+   <param name="G_13" value="espacio='E1' tipo='texto' dibujar-si='paso=4' expresión='[280,95]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}\f1\fs40\i{\*\mjaformula b}\f2\fs36\i0  es la distancia que hay entre la antena y\par el usuario, \f1\fs40\i{\*\mjaformula c}\f2\fs36\i0  es la distancia entre la antena\par y la casa, sustituimos estos valores para\par la ecuaci\u243 n que ya hab\u237 amos despejado:\par \par \f1\fs40\i{\*\mjaformula a={\radical{\index}{\radicand c{\supix 2}-b{\supix 2}}}={\radical{\index}{\radicand ({\expr c\decimals 1\fixed1}){\supix 2}-({\expr b\decimals 1\fixed1}){\supix 2}}}}\f2\fs36\i0\par \f1\fs40\i{\*\mjaformula ={\radical{\index}{\radicand{\expr c*c\decimals 1\fixed1}-{\expr b*b\decimals 1\fixed1}}}={\radical{\index}{\radicand{\expr (c*c)-(b*b)\decimals 1\fixed1}}}={\expr a\decimals 1\fixed1}}\f2\fs36\i0\par \par Por lo tanto la distancia del usuario a su\par casa es de \f1\fs40\i{\*\mjaformula{\expr a\decimals 0\fixed1} km.}\f2\fs36\i0}' fuente='Serif,ITALIC,20' decimales='1' fijo='sí'">
+   <param name="G_14" value="espacio='E1' tipo='polígono' fondo='sí' color='grisObscuro' coord_abs='sí' expresión='(0,0)(E1._w-1,0)(E1._w-1,E1._h-1)(0,E1._h-1)(0,0)' ancho='3'">
+   <param name="G_15" value="espacio='E1' tipo='texto' dibujar-si='debug' expresión='[5,5]' texto='tipoEjer=[tipoEjer]\na=[a]\nb=[b]\nc=[c]' fijo='sí'">
+</ajs>
+
+<script id="macros/tituloTercero.txt" type="descartes/macro">
+tipo_de_macro=R2
+Idioma=español
+id='verFondo' constante='sí' expresión='1'
+id='nRenglones' constante='sí' expresión='5'
+id='instrucciones' vector='sí' evaluar='una-sola-vez' tamaño='nRenglones' expresión='instrucciones[0]=&squot;Instrucciones Renglon 1&squot;;instrucciones[1]=&squot;Instrucciones Renglon 2&squot;;instrucciones[2]=&squot;Instrucciones Renglon 3&squot;;instrucciones[3]=&squot;Instrucciones Renglon 3&squot;;instrucciones[4]=&squot;Instrucciones Renglon 3&squot;;instrucciones[5]=&squot;Instrucciones Renglon 3&squot;;instrucciones[6]=&squot;Instrucciones Renglon 3&squot;'
+id='unidad' constante='sí' expresión='&squot;1.6&squot;'
+id='titulo.txt' constante='sí' expresión='&squot;La razón de cambio&squot;'
+id='subtitulo' constante='sí' expresión='&squot;Problemas 01&squot;'
+id='INIT' algoritmo='sí' evaluar='siempre' hacer='quitar=1;espacio.w=790;espacio.h=530;;hRenglonTxt=20;totalHeightTxt=hRenglonTxt*nRenglones;;tituloImg.w=790;tituloImg.h=30;tituloImg.x=0;tituloImg.y=0;;dialogoInst.partUp.w=778;dialogoInst.partUp.h=24;dialogoInst.partC.w=776;dialogoInst.partC.h=1;dialogoInst.partDw.w=778;dialogoInst.partDw.h=24;;;hTxtPorCubrir=totalHeightTxt-dialogoInst.partDw.h-dialogoInst.partUp.h+20;hTxtPorCubrir=max(hTxtPorCubrir,2);;;;dialogoInst.x=(espacio.w-dialogoInst.partUp.w)/2;dialogoInst.y=tituloImg.y+tituloImg.h+1;;dialogoInst.partUp.x=dialogoInst.x;dialogoInst.partUp.y=dialogoInst.y;;dialogoInst.partC.x=dialogoInst.partUp.x+(dialogoInst.partUp.w-dialogoInst.partC.w)/2;dialogoInst.partC.y=dialogoInst.y+dialogoInst.partUp.h-1;;dialogoInst.partDw.x=dialogoInst.partUp.x;dialogoInst.partDw.y=dialogoInst.partC.y+hTxtPorCubrir;;;inst.x=10;inst.y=(nRenglones>1)?40:45;;verDialogInstruciones=(nRenglones>0)'
+id='CALC' algoritmo='sí' evaluar='siempre' hacer='_guionTmp=&squot;  -  &squot;;_pipe=&squot;      |       &squot;;txtTitulo=unidad+_guionTmp+titulo.txt+_pipe+subtitulo'
+tipo='imagen' dibujar-si='verFondo' coord_abs='sí' expresión='(0,30)' archivo='images/tercero/titulo/fondo.jpg' 
+tipo='imagen' coord_abs='sí' expresión='(titulo.x,titulo.y)' archivo='images/tercero/titulo/barra_superior.jpg' 
+tipo='imagen' dibujar-si='verDialogInstruciones' coord_abs='sí' expresión='(dialogoInst.partUp.x,dialogoInst.partUp.y)' archivo='images/tercero/titulo/texto_arriba.png' 
+tipo='imagen' dibujar-si='verDialogInstruciones' coord_abs='sí' expresión='(dialogoInst.partC.x,dialogoInst.partC.y+s)' familia='s' s.intervalo='[0,hTxtPorCubrir-quitar]' s.pasos='hTxtPorCubrir-quitar' archivo='images/tercero/titulo/texto_centro.png' 
+tipo='imagen' dibujar-si='verDialogInstruciones' coord_abs='sí' expresión='(dialogoInst.partDw.x,dialogoInst.partDw.y)' archivo='images/tercero/titulo/texto_abajo.png' 
+tipo='texto' color='00006f' dibujar-si='verDialogInstruciones' expresión='[inst.x,inst.y+s*hRenglonTxt]' familia='s' s.intervalo='[0,nRenglones-1]' s.pasos='nRenglones-1' texto='[instrucciones[s]]' fuente='Arial,BOLD,16' fijo='sí' 
+tipo='texto' color='000077' expresión='[titulo.x+2*sen(s),titulo.y+5+cos(s)]' familia='s' s.intervalo='[0,2*pi]' s.pasos='8' texto='[txtTitulo]' fuente='Arial,PLAIN,16' fijo='sí' 
+tipo='texto' color='blanco' expresión='[titulo.x,titulo.y+5]' texto='[txtTitulo]' fuente='Arial,PLAIN,16' fijo='sí' 
+tipo='imagen' coord_abs='sí' expresión='(s,espacio.h-3)' familia='s' s.intervalo='[0,espacio.w]' s.pasos='espacio.w' archivo='images/tercero/titulo/sombra.png' 
+</script>
+
+</p>
+</body>
+</html>

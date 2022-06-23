@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>
+
+      <style type="text/css" media="screen">
+	/*pulsador*/
+	#zm { }
+	#zm > canvas {
+	  display: none;
+	}
+    
+	#zm .up {
+	  background: white url("images/zoomIn.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zm > .up:hover {
+	  background-color: #efefef !important;
+	}
+	#zm > .up:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+    
+	#zm .down {
+	  background: white url("images/zoomOut.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zm .down:hover {
+	  background-color: #efefef !important;
+	}
+	#zm .down:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+      </style>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=750 height=480 code="Descartes">
+   <param name="tamaño" value="750x480">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo.png' despl_imagen='arr-izq' fondo='f3f0ec' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='PCar' x='51%' y='25%' ancho='350' alto='350' despl_imagen='arr-izq' red='b8c4c8' red10='889498' ejes='405860' texto='405860'">
+   <param name="C_01" value="id='alfa' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(650,5,27,50)' valor='45' incr='5' min='0' max='355' discreto='sí' decimales='0' fijo='sí' visible='no' acción='calcular' parámetro='alfarad=alfa*pi/180'">
+   <param name="C_02" value="id='radio' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(480,5,27,50)' valor='1' incr='0.25' min='0.5' max='3' discreto='sí' fijo='sí' visible='no' pos_mensajes='centro'">
+   <param name="C_03" value="id='zm' tipo='numérico' región='interior' espacio='PCar' nombre='_nada_' expresión='(PCar._w-34,PCar._h-64,30,60)' valor='PCar.escala' incr='5' min='70' max='300' discreto='sí' decimales='0' fijo='sí' visible='no' acción='calcular' parámetro='PCar.escala=zm' pos_mensajes='centro'">
+   <param name="A_01" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='PCar.escala=max(PCar._w,PCar._h)/(2*radio+0.5);alfarad=alfa*pi/180'">
+   <param name="A_02" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='texto' color='232323' expresión='[10,10]' texto='Observa cómo para el círculo unitario, la relación pitagórica antes mencionada se cumple directamente, por el teorema de Pitágoras.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='325'">
+   <param name="G_02" value="espacio='PCar' tipo='segmento' color='b90000' expresión='(radio*cos(alfarad),0)(radio*cos(alfarad),radio*sin(alfarad))' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_03" value="espacio='PCar' tipo='segmento' color='0000ac' expresión='(0,0)(radio*cos(alfarad),0)' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_04" value="espacio='PCar' tipo='segmento' color='8b8b8b' expresión='(0,0)(radio*cos(alfarad),radio*sin(alfarad))' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_05" value="espacio='PCar' tipo='arco' color='209b20' radio='radio' fin='360' fijo='sí' ancho='2'">
+   <param name="G_06" value="espacio='PCar' tipo='arco' color='turquesa' radio='0.2*radio' fin='alfa' fijo='sí'">
+   <param name="G_07" value="espacio='PCar' tipo='punto' color='b90000' expresión='(radio*cos(alfarad),radio*sin(alfarad)/2-0.1)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs38\i{\*\mjaformula{\expr (radio==1)?&squot;&squot;:radio\decimals 2\fixed0}sin(\u945 )}\f2\fs30\i0}' fuente='Serif,ITALIC,19' fijo='sí' tamaño='0'">
+   <param name="G_08" value="espacio='PCar' tipo='punto' color='0000ac' expresión='(radio*cos(alfarad)/2-0.25,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs38\i{\*\mjaformula{\expr (radio==1)?&squot;&squot;:radio\decimals 2\fixed0}cos(\u945 )}\f2\fs30\i0}' fuente='Serif,ITALIC,19' fijo='sí' tamaño='0'">
+   <param name="G_09" value="espacio='PCar' tipo='punto' color='8b8b8b' expresión='(radio*cos(alfarad)/2-0.25,radio*sin(alfarad)/2-0.1)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs38\i{\*\mjaformula{\expr radio\decimals 2\fixed0}}\f2\fs30\i0}' fuente='Serif,ITALIC,19' fijo='sí' tamaño='0'">
+   <param name="G_10" value="espacio='E1' tipo='texto' color='232323' expresión='[10,120]' texto='Cuando el radio es distinto a uno, los catetos e hipotenusa quedan escalados (sus coeficientes ya no valen uno). El coeficiente del cuadrado de los catetos por lo tanto ya no será uno, sino el cuadrado del radio.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='325'">
+   <param name="G_11" value="espacio='E1' tipo='texto' color='232323' expresión='[10,255]' texto='Nota que, cuando el radio es distinto a uno, es posible factorizar el cuadrado del radio de la suma, pasarlo dividiendo al otro lado de la igualdad y así cancelarlo, regresando a la relación pitagórica original:' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='325'">
+   <param name="G_12" value="espacio='E1' tipo='texto' color='232323' dibujar-si='radio!=1' expresión='[10,E1._h-90]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;\f3\fcharset0 Arial;\f4\fcharset0 Arial;}\f1\fs38\i{\*\mjaformula{\expr (radio==1)?&squot;&squot;:radio\decimals 2\fixed0}{\supix{\expr (radio==1)?&squot;&squot;:2\decimals 2\fixed0}}sin{\supix 2}(\u945 )+{\expr (radio==1)?&squot;&squot;:radio\decimals 2\fixed0}{\supix{\expr (radio==1)?&squot;&squot;:2\decimals 2\fixed0}}cos{\supix 2}(\u945 )={\expr radio\decimals 2\fixed0}{\supix 2}}\i0   \u8658 \i\par {\*\mjaformula{\expr (radio==1)?&squot;&squot;:radio\decimals 2\fixed0}{\supix{\expr (radio==1)?&squot;&squot;:2\decimals 2\fixed0}}(sin{\supix 2}\u945 +cos{\supix 2}\u945 )={\expr radio\decimals 4\fixed0}{\supix 2}}\f3\fs38\i0   \u8658 \fs34\par \f1\fs38\i{\*\mjaformula sin{\supix 2}(\u945 )+cos{\supix 2}(\u945 )=1}\f4\fs34\i0 .}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_13" value="espacio='E1' tipo='texto' color='232323' dibujar-si='radio==1' expresión='[10,E1._h-90]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}\f1\fs38\i{\*\mjaformula sin{\supix 2}(\u945 )+cos{\supix 2}(\u945 )=1}\f2\fs34\i0 .}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_14" value="espacio='PCar' tipo='polígono' color='negro' coord_abs='sí' expresión='(1,1)(PCar._w-1,1)(PCar._w-1,PCar._h-1)(1,PCar._h-1)(1,1)' ancho='2'">
+   <param name="G_15" value="espacio='E1' tipo='texto' color='232323' expresión='[E1._w/2+10,60]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}\f1\fs38\i{\*\mjaformula{\expr radio\decimals 2\fixed0}{\supix 2}sin{\supix 2}(\u945 )+{\expr radio\decimals 2\fixed0}{\supix 2}cos{\supix 2}(\u945 )=}\f2\fs34\i0\par \f1\fs38\i{\*\mjaformula\f1\fs38\i{\expr (radio*sin(alfarad))^2\decimals 4\fixed0}+{\expr (radio*cos(alfarad))^2\decimals 4\fixed0}={\expr radio^2\decimals 4\fixed0}}\f2\fs34\i0 .}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_16" value="espacio='E1' tipo='texto' color='232323' expresión='[E1._w-160,12]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}\f1\fs44\i{\*\mjaformula\u945  =       {\expr alfa\decimals 2\fixed0}{\supix o}}\f2\fs34\i0}' fuente='Serif,ITALIC,22' fijo='sí'">
+   <param name="G_17" value="espacio='E1' tipo='texto' color='232323' expresión='[E1._w/2+10,17]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}\f1\fs44\i{\*\mjaformula radio =       {\expr radio\decimals 2\fixed0}}\f2\fs34\i0}' fuente='Serif,ITALIC,22' fijo='sí'">
+</ajs></p>
+
+</body>
+</html>

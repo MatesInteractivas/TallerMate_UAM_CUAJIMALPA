@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+   <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Determinación de una recta paralela o perpendicular dadas algunas de sus condiciones</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Recordatorio sobre construcción de una recta</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    En la página pasada viste el hecho de que una recta sea paralela o perpendicular a otra depende sólo de sus pendientes. El papel de la ordenada al origen \(b\) es únicamente desplazar la recta hacia arriba o hacia abajo. Esto quiere decir que puede haber muchísimas (de hecho, infinitas) rectas que son paralelas o perpendiculares a una recta dada (solamente cambiando el desplazamiento vertical de las rectas). Sin embargo, algunas veces se requiere de una recta paralela o perpendicular específica. Es ahí donde entra el papel de la ordenada al origen.
+    </p>
+
+    <p>
+    Por ejemplo, se te podría pedir que encontraras una recta perpendicular a otra y que pase exactamente por un punto dado. En ese caso, de las infinitas rectas perpendiculares que existen, sólo una es la buena (la que pasa por el punto dicho).
+    </p>
+
+    <p>
+    Usemos un ejemplo concreto a manera de recordatorio de cómo construir una recta dadas ciertas condiciones. Imagina que tienes que encontrar una recta de pendiente \(m=3\) y que pasa por el punto con coordenadas \((2,10)\). Por un lado, sabemos que esas coordenadas (\(x=2\) y \(y=10\)) deben satisfacer la ecuación de la recta \(y=3x+b\). Sustituyendo dichas coordenadas, tenemos \(10=3(2)+b\). Despejando la ordenada al origen obtenemos que \(b=10-6\) y, por lo tanto, \(b=4\). Así pues, la ecuación de la recta que satisface dichas condiciones es \(y=3x+4\).
+    </p>
+
+    <h2>Construcción de rectas paralelas y perpendiculares bajo condiciones dadas</h2>
+
+    <p>
+    En el siguiente interactivo podrás ver paso a paso la construcción de una recta a partir de condiciones dadas.
+    </p>
+    
+    <!--- Instrucciones --->
+    <div class="instrucciones">Elige en el interactivo si deseas obtener la paralela o perpendicular a una recta dada, y que pasa por un punto dado. Los botones 'Siguiente' y 'Anterior' te permitirán avanzar o retroceder en la explicación. Las lupas dentro del plano cartesiano a la derecha se pueden usar para cambiar la escala del gráfico.</div>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="510" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    <p>
+    Ahora ya puedes construir ecuaciones de rectas que sean perpendiculares o paralelas a otra y que satisfacen una condición (pasan por un punto determinado).
+    </p>
+    
+    <h2>Tipos de problemas</h2>
+    
+    <p>
+    Una gran parte de los problemas relacionados con el tema de paralelismo y perpendicularidad son de la naturaleza del ejemplo anterior. Otra gran parte es el determinar si dos rectas son paralelas, perpendiculares, o no cumplen con ninguna de ambas condiciones. Pero eso ya lo sabes hacer: lo único que tienes que hacer es comparar sus pendientes y determinar la relación entre ellas. Algunas veces, sin embargo, no se te dará la recta directamente, pero de las unidades que has visitado previamente relacionadas a la recta, tú podrás construir tu ecuación a partir de los datos dados.
+    </p>
+
+    <p>
+    Más adelante, en las páginas de ejercicios, abordarás una buena cantidad de actividades como las mencionadas anteriormente.
+    </p>
+
+
+	
+   <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>  
+
+  <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	  <!-- Créditos UAM  (siempre deben ir en primer lugar) -->
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>    
+       
+	    <!-- Aviso licencias -->
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <!-- Descartes -->
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+	</div>
+      </div>
+    </div> 
+    
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

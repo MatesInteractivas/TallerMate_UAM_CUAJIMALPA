@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0;padding:0;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=750 height=450 code="Descartes">
+   <param name="tamaño" value="750x450">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' escala='70' O.x='-250' imagen='images/fondo.png' despl_imagen='expand.' fondo='blanco' red='no' red10='no' ejes='grisObscuro' texto='no'">
+   <param name="C_01" value="id='animar' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Animar' expresión='(200,10,120,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' fuente puntos='18' imagen='images//btn120x30.png' acción='animar' activo-si='RelacMn!=0'">
+   <param name="C_02" value="id='RelacMn' tipo='numérico' interfaz='menú' región='interior' espacio='E1' nombre='_nada_' expresión='(10,10,150,30)' fijo='sí' visible='no' opciones='Relación,sin,cos,tan' acción='calcular' parámetro='ianim=0\nx=1\ny=0' pos_mensajes='centro'">
+   <param name="A_01" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='x=1;y=0'">
+   <param name="A_02" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='arco' color='azul' fin='360' fijo='sí' ancho='2'">
+   <param name="G_02" value="espacio='E1' tipo='punto' color='rojo' expresión='(x,y)' fijo='sí' tamaño='4'">
+   <param name="G_03" value="espacio='E1' tipo='polígono' expresión='(0,0)(x,0)(x,y)(0,0)'">
+   <param name="G_04" value="espacio='E1' tipo='segmento' color='verde' dibujar-si='(RelacMn==1)|(RelacMn==3)' expresión='(x,0)(x,y)' fijo='sí' tamaño='0' ancho='3'">
+   <param name="G_05" value="espacio='E1' tipo='curva' dibujar-si='RelacMn==1' expresión='(t+1.5,sin(t))' t.intervalo='[0,ianim*pi/180]' t.pasos='ianim-1'">
+   <param name="G_06" value="espacio='E1' tipo='punto' color='verde' dibujar-si='(RelacMn==1)|(RelacMn==3)' expresión='(x,y/2)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs38\i{\*\mjaformula{\expr y\decimals 3\fixed0}}\f2\fs30\i0}' fuente='Serif,ITALIC,19' fijo='sí' tamaño='0'">
+   <param name="G_07" value="espacio='E1' tipo='segmento' color='rojo' dibujar-si='(RelacMn==2)|(RelacMn==3)' expresión='(0,0)(x,0)' fijo='sí' tamaño='0' ancho='3'">
+   <param name="G_08" value="espacio='E1' tipo='punto' color='rojo' dibujar-si='(RelacMn==2)|(RelacMn==3)' expresión='(x/2,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs38\i{\*\mjaformula{\expr x\decimals 3\fixed0}}\f2\fs30\i0}' fuente='Serif,ITALIC,19' fijo='sí' tamaño='0'">
+   <param name="G_09" value="espacio='E1' tipo='curva' dibujar-si='RelacMn==2' expresión='(t+1.5,cos(t))' t.intervalo='[0,ianim*pi/180]' t.pasos='ianim-1'">
+   <param name="G_10" value="espacio='E1' tipo='curva' dibujar-si='RelacMn==3' expresión='(t+1.5,tan(t))' t.intervalo='[0,ianim*pi/180]' t.pasos='ianim-1'">
+   <param name="G_11" value="espacio='E1' tipo='texto' expresión='[145,230]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs34\i{\*\mjaformula\u945 ={\expr ianim\decimals 2\fixed0}{\supix o}}\f2\fs30\i0}' fuente='Serif,ITALIC,17' fijo='sí'">
+   <param name="G_12" value="espacio='E1' tipo='texto' expresión='[250,E1._h-70]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs40\b\i{\*\mjaformula{\expr (RelacMn==1)?&squot;sin&squot;:((RelacMn==2)?&squot;cos&squot;:&squot;tan&squot;)\decimals 0\fixed1}(\u945 )={\fraction{\num{\expr (RelacMn==1)?&squot;co&squot;:((RelacMn==2)?&squot;ca&squot;:&squot;co&squot;)\decimals 0\fixed1}}{\den{\expr (RelacMn==1)?&squot;hip&squot;:((RelacMn==2)?&squot;hip&squot;:&squot;ca&squot;)\decimals 0\fixed1}}}={\fraction{\num{\expr (RelacMn==1)?y:((RelacMn==2)?x:y)\decimals 2\fixed1}}{\den{\expr (RelacMn==1)?1:((RelacMn==2)?1:x)\decimals 2\fixed0}}}={\expr (RelacMn==1)?sin(ianim*pi/180):((RelacMn==2)?cos(ianim*pi/180):tan(ianim*pi/180))\decimals 3\fixed0}}\f2\fs30\b0\i0}' fuente='Serif,BOLD+ITALIC,20' fijo='sí'">
+   <param name="G_13" value="espacio='E1' tipo='polígono' fondo='sí' color='grisObscuro' coord_abs='sí' expresión='(0,0)(E1._w-1,0)(E1._w-1,E1._h-1)(0,E1._h-1)(0,0)' ancho='3'">
+   <param name="Animación" value="pausa='0' controles='no' auto='no' inicio='alfa=0;ianim=0' hacer='x=cos(ianim*pi/180);y=sin(ianim*pi/180);ianim=ianim+1' mientras='ianim<361'">
+</ajs></p>
+
+</body>
+</html>

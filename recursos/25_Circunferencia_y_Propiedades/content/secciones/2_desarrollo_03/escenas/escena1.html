@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>
+<style type="text/css" media="screen">
+	/*pulsador*/
+	#zoom { }
+	#zoom > canvas {
+	  display: none;
+	}
+    
+	#zoom .up {
+	  background: white url("images/zoomIn.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zoom > .up:hover {
+	  background-color: #efefef !important;
+	}
+	#zoom > .up:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+    
+	#zoom .down {
+	  background: white url("images/zoomOut.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zoom .down:hover {
+	  background-color: #efefef !important;
+	}
+	#zoom .down:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+      </style>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=750 height=480 code="Descartes">
+   <param name="tamaño" value="750x480">
+   <param name="image_loader" value="">
+   <param name="expand" value="">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.336, 2015-02-13">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo.png' despl_imagen='arr-izq' fondo='f3f0ec' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='PanelDer' x='51%' y='17%' ancho='48%' alto='80%' despl_imagen='arr-izq' red='b8c4c8' red10='889498' ejes='405860' texto='405860'">
+   <param name="C_01" value="id='AntBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Anterior' expresión='(E1._w/6-45,E1._h-35,90,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrl=scrl-1' dibujar-si='scrl>0'">
+   <param name="C_02" value="id='SigBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Siguiente' expresión='(E1._w/3-45,E1._h-35,90,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrl=scrl+1' dibujar-si='scrl<scrlmax' pos_mensajes='centro'">
+   <param name="C_03" value="id='P1' tipo='gráfico' espacio='PanelDer' expresión='(3,3)' fijo='sí'">
+   <param name="C_04" value="id='P1.x' tipo='numérico' región='exterior' espacio='E1' nombre='P1.x' valor='3' incr='0.2' min='-4' max='4' discreto='sí' decimales='1' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_05" value="id='P1.y' tipo='numérico' región='exterior' espacio='E1' nombre='P1.y' valor='2' incr='0.2' min='-4' max='4' discreto='sí' decimales='1' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_06" value="id='P2' tipo='gráfico' espacio='PanelDer' expresión='(-3,4)' fijo='sí'">
+   <param name="C_07" value="id='P2.x' tipo='numérico' región='exterior' espacio='E1' nombre='P2.x' valor='-3' incr='0.2' min='-4' max='4' discreto='sí' decimales='1' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_08" value="id='P2.y' tipo='numérico' región='exterior' espacio='E1' nombre='P2.y' valor='3' incr='0.2' min='-4' max='4' discreto='sí' decimales='1' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_09" value="id='P3' tipo='gráfico' espacio='PanelDer' expresión='(0,-3)' fijo='sí'">
+   <param name="C_10" value="id='P3.x' tipo='numérico' región='exterior' espacio='E1' nombre='P3.x' incr='0.2' min='-4' max='4' discreto='sí' decimales='1' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_11" value="id='P3.y' tipo='numérico' región='exterior' espacio='E1' nombre='P3.y' valor='-3' incr='0.2' min='-4' max='4' discreto='sí' decimales='1' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_12" value="id='zoom' tipo='numérico' región='interior' espacio='PanelDer' nombre='_nada_' expresión='(PanelDer._w-34,PanelDer._h-64,30,60)' valor='20' incr='5' min='5' max='100' discreto='sí' decimales='0' fijo='sí' visible='sí' acción='calcular' parámetro='PanelDer.escala=zoom'">
+   <param name="A_01" value="id='ReInit()' algoritmo='sí' algoritmo='sí' inicio='scrlmax=11' hacer='CalcMediatrices()'">
+   <param name="A_02" value="id='CalcMediatrices()' algoritmo='sí' algoritmo='sí' hacer='S12mediox=(P1.x+P2.x)/2;S12medioy=(P1.y+P2.y)/2;S23mediox=(P2.x+P3.x)/2;S23medioy=(P2.y+P3.y)/2;S12m=(P1.x!=P2.x)?(P1.y-P2.y)/(P1.x-P2.x):1000000;S23m=(P2.x!=P3.x)?(P2.y-P3.y)/(P2.x-P3.x):1000000;S12mp=(S12m!=0)?-1/S12m:1000000;S23mp=(S23m!=0)?-1/S23m:1000000;bla=((!Vert)&(!Hor))?ChecCols():bla;bla=(!Cols)?ObtenIntersec():bla'">
+   <param name="A_03" value="id='ChecCols()' algoritmo='sí' algoritmo='sí' hacer='Cols=(abs(S12m-S23m)<0.1)?1:0'">
+   <param name="A_04" value="id='ObtenIntersec()' algoritmo='sí' algoritmo='sí' hacer='R1x=S12mediox;R1m=S12mp;R1y=S12medioy;R1b=R1y-R1m*R1x;R2x=S23mediox;R2m=S23mp;R2y=S23medioy;R2b=R2y-R2m*R2x;Intersecx=-Kramx(R1m,R1b,R2m,R2b);Intersecy=Kramy(R1m,R1b,R2m,R2b);Intersec1x=(Intersecx+S12mediox)/2;Intersec1y=(Intersecy+S12medioy)/2;Intersec2x=(Intersecx+S23mediox)/2;Intersec2y=(Intersecy+S23medioy)/2;Radio=sqrt((P1.x-Intersecx)^2+(P1.y-Intersecy)^2)'">
+   <param name="A_05" value="id='Kramx(m1,b1,m2,b2)' algoritmo='sí' expresión='Detx/DetGen' algoritmo='sí' hacer='DetGen=-m1+m2;Detx=b2-b1'">
+   <param name="A_06" value="id='Kramy(m1,b1,m2,b2)' algoritmo='sí' expresión='Dety/DetGen' algoritmo='sí' hacer='DetGen=-m1+m2;Dety=-m1*b2+m2*b1'">
+   <param name="A_07" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='PanelDer.escala=40;ReInit()'">
+   <param name="A_08" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' hacer='ReInit();zoom=PanelDer.escala'">
+   <param name="G_01" value="espacio='E1' tipo='texto' color='232323' dibujar-si='Cols==1' expresión='[E1._w/2,10]' texto='Tus puntos parecen ser casi colineales (caen casi sobre una misma recta). Intenta separarlos de tal forma que no sean colineales.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='350'">
+   <param name="G_02" value="espacio='PanelDer' tipo='segmento' color='00be00' expresión='(P1.x,P1.y)(P2.x,P2.y)' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_03" value="espacio='PanelDer' tipo='segmento' color='00be00' expresión='(P2.x,P2.y)(P3.x,P3.y)' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_04" value="espacio='PanelDer' tipo='ecuación' color='00d6d6' expresión='y=R1m*x+R1b'">
+   <param name="G_05" value="espacio='PanelDer' tipo='ecuación' color='00d6d6' dibujar-si='scrl>2' expresión='y=R2m*x+R2b'">
+   <param name="G_06" value="espacio='PanelDer' tipo='punto' color='magenta' dibujar-si='(scrl==2)' expresión='(Intersec1x,Intersec1y)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs38\i{\*\mjaformula P}\f2\fs30\i0}' fuente='Serif,ITALIC,19' fijo='sí' tamaño='3'">
+   <param name="G_07" value="espacio='PanelDer' tipo='segmento' color='magenta' dibujar-si='scrl==2' expresión='(P1.x,P1.y)(Intersec1x,Intersec1y)' fijo='sí' tamaño='0'">
+   <param name="G_08" value="espacio='PanelDer' tipo='segmento' color='magenta' dibujar-si='scrl==2' expresión='(P2.x,P2.y)(Intersec1x,Intersec1y)' fijo='sí' tamaño='0'">
+   <param name="G_09" value="espacio='PanelDer' tipo='punto' color='magenta' dibujar-si='(scrl==3)' expresión='(Intersec2x,Intersec2y)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs38\i{\*\mjaformula P}\f2\fs30\i0}' fuente='Serif,ITALIC,19' fijo='sí' tamaño='3'">
+   <param name="G_10" value="espacio='PanelDer' tipo='segmento' color='magenta' dibujar-si='scrl==3' expresión='(P2.x,P2.y)(Intersec2x,Intersec2y)' fijo='sí' tamaño='0'">
+   <param name="G_11" value="espacio='PanelDer' tipo='segmento' color='magenta' dibujar-si='scrl==3' expresión='(P3.x,P3.y)(Intersec2x,Intersec2y)' fijo='sí' tamaño='0'">
+   <param name="G_12" value="espacio='PanelDer' tipo='segmento' color='grisClaro' dibujar-si='scrl>4' expresión='(P1.x,P1.y)(Intersecx,Intersecy)' fijo='sí' tamaño='0'">
+   <param name="G_13" value="espacio='E1' tipo='texto' color='232323' dibujar-si='scrl<4' expresión='[10,10]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 La mediatriz del segmento \f2\fs38\i{\*\mjaformula S{\subix 12}}\f1\fs34\i0  flanqueado por\par \f2\fs38\i{\*\mjaformula P{\subix 1}}\f1\fs34\i0  y \f2\fs38\i{\*\mjaformula P{\subix 2}}\f1\fs34\i0  es la recta azul que pasa entre\par los puntos y que es perpendicular al segmento.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_14" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(scrl>0)&(scrl<4)' expresión='[10,100]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Por como es construida, cualquier punto\par en dicha recta dista lo mismo de \f2\fs38\i{\*\mjaformula P{\subix 1}}\f1\fs34\i0  que\par de \f2\fs38\i{\*\mjaformula P{\subix 2}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_15" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(scrl>1)&(scrl<4)' expresión='[10,190]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red255\green0\blue255;\red35\green35\blue35;}\f1\fs34 As\u237 , si se traza un tri\u225 ngulo \f2\fs38\i{\*\mjaformula P{\subix 1}}\f1\fs34\i0 , \f2\fs38\i{\*\mjaformula P{\subix 2}}\f1\fs34\i0  y\par \f2\fs38\i P\f1\fs34\i0 , tal que \f2\fs38\i P\f1\fs34\i0  est\u233  en la recta, el tri\u225 ngulo\par ser\u225  is\u243 sceles, con los lados \f2\fs38\i{\*\mjaformula\cf0 PP{\subix\cf0 1\cf1}}\f1\fs34\i0  y\par \f2\fs38\i{\*\mjaformula\cf0 PP{\subix\cf0 2\cf1}\cf1}\f1\fs34\i0  iguales.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_16" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(scrl>2)&(scrl<4)' expresión='[10,315]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red255\green0\blue255;\red35\green35\blue35;}\f1\fs34 Si tambi\u233 n se traza la mediatriz del\par segmento \f2\fs38\i{\*\mjaformula S{\subix 23}}\f1\fs34\i0 , tambi\u233 n se podr\u225 n\par formar tri\u225 ngulos is\u243 sceles donde\par \f2\fs38\i{\*\mjaformula\cf0 PP{\subix\cf0 2\cf1}\cf1}\f1\fs34\i0  medir\u225  igual que \f2\fs38\i{\*\mjaformula\cf0 PP{\subix\cf0 3\cf1}\cf1}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_17" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(scrl>3)&(scrl<8)' expresión='[10,10]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Llamemos \f2\fs38\i I\f1\fs34\i0  al punto de intersecci\u243 n\par de las mediatrices.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_18" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(scrl>4)&(scrl<8)' expresión='[10,75]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 En particular, si trazamos los tri\u225 ngulos\par \f2\fs38\i{\*\mjaformula P{\subix 1}P{\subix 2}I}\f1\fs34\i0  y \f2\fs38\i{\*\mjaformula P{\subix 2}P{\subix 3}I}\f1\fs34\i0  obtenemos que\par \f2\fs38\i{\*\mjaformula P{\subix 1}I=P{\subix 2}I}\f1\fs34\i0  y \f2\fs38\i{\*\mjaformula P{\subix 2}I=P{\subix 3}I}\f1\fs34\i0  pues los\par tri\u225 ngulos son is\u243 sceles.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_19" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(scrl>5)&(scrl<8)' expresión='[10,195]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 As\u237  pues, por transitividad tenemos\par que \f2\fs38\i I\f1\fs34\i0  dista lo mismo de \f2\fs38\i{\*\mjaformula P{\subix 1}}\f1\fs34\i0  que de\par \f2\fs38\i{\*\mjaformula P{\subix 2}}\f1\fs34\i0  que de \f2\fs38\i{\*\mjaformula P{\subix 3}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_20" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(scrl>6)&(scrl<8)' expresión='[10,285]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Por la definici\u243 n de la circunferencia,\par el circuncentro \f2\fs38\i I\f1\fs34\i0  es el centro de una\par circunferencia en la que est\u225 n \f2\fs38\i{\*\mjaformula P{\subix 1}}\f1\fs34\i0 ,\par \f2\fs38\i{\*\mjaformula P{\subix 2}}\f1\fs34\i0  y \f2\fs38\i{\*\mjaformula P{\subix 3}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_21" value="espacio='PanelDer' tipo='segmento' color='grisClaro' dibujar-si='scrl>4' expresión='(P2.x,P2.y)(Intersecx,Intersecy)' fijo='sí' tamaño='0'">
+   <param name="G_22" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(scrl>7)' expresión='[10,10]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Nota que los segmentos \f2\fs38\i{\*\mjaformula S{\subix 12}}\f1\fs34\i0  y \f2\fs38\i{\*\mjaformula S{\subix 23}}\f1\fs34\i0\par resultaron ser cuerdas de la circun-\par ferencia. Lo mismo pasa con \f2\fs38\i{\*\mjaformula S{\subix 13}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_23" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(scrl>8)' expresión='[10,100]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Mediante el mismo razonamiento,\par puedes llegar a la conclusi\u243 n de que\par la mediatriz del segmento \f2\fs38\i{\*\mjaformula S{\subix 13}}\f1\fs34\i0  debe\par tambi\u233 n pasar por el circuncentro.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_24" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(scrl>9)' expresión='[10,215]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Arial;}\f1\fs34 A la circunferencia que toca los puntos\par de un tri\u225 ngulo se le llama \b\i circunscrita\b0\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_25" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(scrl>10)' expresión='[10,275]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}\f1\fs34 As\u237  que si te topas con un problema en\par que puedes identificar 3 puntos que\par sabes pertenecen a una circunferencia,\par basta con encontrar d\u243 nde intersecan\par las mediatrices de 2 de los segmentos\par subtendidos por los puntos y obtendr\u225 s\par el centro de la circunferencia.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_26" value="espacio='PanelDer' tipo='segmento' color='grisClaro' dibujar-si='scrl>4' expresión='(P3.x,P3.y)(Intersecx,Intersecy)' fijo='sí' tamaño='0'">
+   <param name="G_27" value="espacio='PanelDer' tipo='punto' color='9f7100' expresión='(P1.x,P1.y)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs38\i{\*\mjaformula P{\subix 1}}\f2\fs30\i0}' fuente='Serif,ITALIC,19' fijo='sí' tamaño='3'">
+   <param name="G_28" value="espacio='PanelDer' tipo='punto' color='9f7100' expresión='(P2.x,P2.y)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs38\i{\*\mjaformula P{\subix 2}}\f2\fs30\i0}' fuente='Serif,ITALIC,19' fijo='sí' tamaño='3'">
+   <param name="G_29" value="espacio='PanelDer' tipo='punto' color='9f7100' expresión='(P3.x,P3.y)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs38\i{\*\mjaformula P{\subix 3}}\f2\fs30\i0}' fuente='Serif,ITALIC,19' fijo='sí' tamaño='3'">
+   <param name="G_30" value="espacio='PanelDer' tipo='punto' color='9f7100' dibujar-si='scrl>3' expresión='(Intersecx,Intersecy)' texto='I' fuente='Serif,ITALIC,19' fijo='sí' tamaño='3'">
+   <param name="G_31" value="espacio='PanelDer' tipo='ecuación' color='ff695e' dibujar-si='scrl>6' expresión='(x-Intersecx)^2+(y-Intersecy)^2=Radio^2' ancho='2'">
+   <param name="G_32" value="espacio='PanelDer' tipo='polígono' color='negro' coord_abs='sí' expresión='(1,1)(PanelDer._w-1,1)(PanelDer._w-1,PanelDer._h-1)(1,PanelDer._h-1)(1,1)' ancho='2'">
+</ajs></p>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+  
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>La circunferencia como lugar geométrico</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Parámetros básicos de la circunferencia</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    Como se mencionó en la introducción, la circunferencia es el conjunto de puntos que tienen igual distancia a un punto determinado. A este punto se le conoce como <em>centro</em>. Y a la distancia de cualquiera de los puntos a este centro se le conoce como <em>radio</em>.
+    </p>
+    
+    <!--- Párrafo --->
+    <p>
+    ¿Qué quiere decir matemáticamente que la distancia de cualquier punto en la curva al centro sea siempre la misma? Querría decir que, de todos los posibles puntos \((x,y)\) en el plano cartesiano, sólo algunos cumplen una propiedad particular. Esta propiedad es que <strong>el cuadrado de la distancia horizontal entre el punto \((x,y)\) y el centro más el cuadrado de la distancia vertical entre estos mismos puntos debe ser igual al cuadrado del radio</strong>. ¡Por supuesto, se trata del teorema de Pitágoras! Las coordenadas del centro normalmente se denotan como \((h,k)\) (es decir, \(h\) es el valor de las abscisas para el centro y \(k\) es el valor de las ordenadas para el mismo).
+    </p>
+
+	<p>
+    En el siguiente espacio interactivo observa un círculo en el plano cartesiano y nota cómo se puede deducir su ecuación.
+    </p>
+    
+    <!--- Instrucciones --->
+    <div class="instrucciones">Elige primero las coordenadas \((h,k)\) del centro de tu círculo, así como el radio, mediante los pulsadores correspondientes. Luego, avanza en la explicación con el botón 'Siguiente' o retrocede con 'Anterior'. Con el botón 'Otro' podrás generar un punto al azar que dista \(r\) unidades del centro que has elegido.</div>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="480" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+    
+    <p>
+    Como habrás notado, la <strong>ecuación ordinaria</strong> de la circunferencia con centro en \((h,k)\) y radio \(r\) se deduce del teorema de Pitágoras. Su forma es, como viste:
+	</p>
+
+\[(x-h)^2+(y-k)^2=r^2\]
+
+	<p>
+	Y su forma como <strong>ecuación general de segundo grado</strong> con 2 variables se obtiene de expandir dicha ecuación y reorganizar los términos por grado. Como vimos, es:
+    </p>
+
+\[x^2+y^2-2hx-2hy+h^2+k^2-r^2=0\]
+
+    <p>
+    Algunos puntos que es importante notar son:
+	<ul>
+		<li>La circunferencia centrada en el origen, al ser \(h\) y \(k\) ambos cero, se reduce, en su forma ordinaria, a \(x^2+y^2=r^2\). En su forma come ecuación de segundo grado en dos variables, es \(x^2+y^2-r^2=0\).</li>
+		<li>Cuando la circunferencia no está centrada en el origen, entonces ya sea \(h\), o \(k\), o ambas serán distintas de cero. Esto implica que, en forma de ecuación de segundo grado con dos variables, habrá un término lineal ya sea de \(x\) o de \(y\). Por <em>término lineal</em> se entiende que la variable (por ejemplo, \(x\)) se encuentra elevada a la unidad, y no al cuadrado o a cualquier otro número. Estos términos no aparecen si la circunferencia está centrada en el origen.</li>
+		<li>El pasar de la forma ordinaria a la ecuación general es sencillo. El proceso inverso requiere de un proceso más engorroso conocido como <em>completar el cuadrado</em>. No obstante, es útil, pues pasar la ecuación de una circunferencia a su forma ordinaria te permite de inmediato identificar las coordenadas del centro y el valor del radio.</li>
+	</ul>
+    </p>
+    
+    <br>
+    
+    <h2>De la ecuación general de la circunferencia a la ordinaria</h2>
+  
+    <p>
+    Hemos observado que la ecuación general es de la forma \(Ax^2+By^2+Cx+Dy+E=0\). En el caso particular de la circunferencia, la ecuación general toma la forma \(x^2+y^2+Cx+Dy+E=0\). Para pasar de la forma general a la ordinaria de la ecuación, se pueden seguir los siguientes pasos, que involucran completar el cuadrado para las \(x\) y para las \(y\) (como lo viste en la unidad sobre ecuaciones de segundo grado):
+	<ol>
+		<li>Para completar el cuadrado en \(x\): empezando con \(x^2+Cx\) en la fórmula, si se les añade el término para completar el trinomio cuadrado perfecto, puede acabarse expresando como algo de la forma \((x-h)^2\). Para ello, añadimos \((\frac{C}{2})^2\) obteniendo \(x^2+Cx+\frac{C^2}{2^2}\). De ahí que nuestro término factorizado (que involucra un binomio al cuadrado para \(x\)) es \((x-h)^2=(x+\frac{C}{2})^2\).</li>
+		<li>Nota que, para completar el cuadrado en \(x\), fue necesario sumar un término. Esto quiere decir que estamos alterando la igualdad. Para evitar alterarla, lo que sumemos, debemos restarlo. Como para completar el cuadrado en \(x\) acabamos sumando \(\frac{C^2}{4}\), debemos restarlo también.</li>
+		<li>Un abordaje similar para completar el cuadrado en la \(y\): empezando con \(y^2+Dy\) en la fórmula, si se les añade el término para completar el trinomio cuadrado perfecto, puede acabarse expresando como algo de la forma \((y-k)^2\). Para ello, añadimos dentro del paréntesis \((\frac{D}{2})^2\) obteniendo \(y^2+Dy+\frac{D^2}{2^2}\). De ahí que nuestro término factorizado (que involucra un binomio al cuadrado para \(y\)) es \((y-k)^2=(y+\frac{D}{2})^2\).</li>
+		<li>También debemos restar lo que agregamos para completar el cuadrado en \(y\), que fue \(\frac{D^2}{4}\).</li>
+		<li>De tal forma que nuestra ecuación general nos queda, en forma factorizada: \((x+\frac{C}{2})^2+(y+\frac{D}{2})^2+E-\frac{C^2}{4}-\frac{D^2}{4}=0\)</li>
+		<li>Pasamos los términos independientes restando al otro lado de la ecuación: \((x+\frac{C}{2})^2+(y+\frac{D}{2})^2=-E+\frac{C^2}{4}+\frac{D^2}{4}\).</li>
+		<li>Esta última ya es una ecuación de la circunferencia en forma ordinaria. De ella podemos notar que el valor de las abscisas para el centro es \(h=-\frac{C}{2}\) y que el valor de las ordenadas para el centro es \(k=-\frac{D}{2}\). Igualmente, podemos identificar que \(r^2=-E+\frac{C^2}{4}+\frac{D^2}{4}\), por lo que el radio es \(r=\sqrt{-E+\frac{C^2}{4}+\frac{D^2}{4}}\).</li>
+	</ol>
+    </p>
+
+	<p>
+	Ahora que ya has visto la relación entre la forma ordinaria y la ecuación general de segundo grado con dos variables de la circunferencia, puedes pasar de una a otra. Lo trabajoso es generalmente pasar de la general a la ordinaria, pero como has visto arriba, te servirá para obtener una forma en que puedes identificar fácilmente el centro y el radio de la circunferencia.
+	</p>
+
+	<p>
+	En la parte de ejercicios verás problemas tipo que involucran lo aprendido hasta ahora para su resolución.
+	</p>
+
+  
+    <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

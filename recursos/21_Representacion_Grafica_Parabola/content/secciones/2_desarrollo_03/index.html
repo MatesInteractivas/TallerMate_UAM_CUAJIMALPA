@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Una medida del grado de apertura de una parábola</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>El lado recto</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    Seguramente has visto que no todas las parábolas abren igual. Aunque dos parábolas abran hacia arriba (o ambas hacia abajo), algunas son más delgadas que otras.
+    </p>
+
+    <p>
+    Un parámetro que te puede ser útil para cuantificar el grado de apertura de una parábola es el <em><strong>lado recto</strong></em>. Aborda el siguiente recurso interactivo donde se te explica más a profundidad qué es el lado recto.
+    </p>
+
+    <div class="instrucciones">Avanza en la explicación del lado recto con el botón 'Siguiente' y retrocede con 'Anterior'. Observa qué coeficiente en la función de tu parábola es el que dicta el grado de apertura de tu parábola. Observa su relación con el lado recto. Finalmente, mueve los coeficientes y observa el efecto que tienen sobre la parábola y, en particular, sobre el lado recto de ésta.</div>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="480" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    <p>
+    Seguro observaste en el anterior espacio que, dada una función para tu parábola, cambios en el coeficiente \(c\) sólo resultan en subirla o bajarla. Los cambios en el coeficiente \(b\) mueven el vértice de la misma, pero tampoco alteran su forma y, por lo tanto, el lado recto se conserva. El único coeficiente que tiene efecto sobre el lado recto es, como indica el interactivo, \(a\).
+    </p>
+
+    <p>
+    Por otra parte, notaste que el signo de \(p\) (o bien, el de \(a\)) no tiene relevancia para el lado recto de tu parábola, sólo en la dirección en que abre. De estos parámetros, sólo su magnitud importa para saber qué tan abierta es tu parábola. Mientras menor sea \(|a|\) (o mayor sea \(|p|\)), más abierta será tu parábola.
+    </p>
+
+    <p>
+    Ahora que ya conoces varios parámetros adicionales sobre la parábola, avanza a los ejercicios para practicar lo aprendido.
+    </p>
+
+  
+    <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>  
+
+  <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	  <!-- Créditos UAM  (siempre deben ir en primer lugar) -->
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>    
+       
+	    <!-- Aviso licencias -->
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <!--arquimedes (optativo)-->
+		    <!-- Descartes -->
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+	</div>
+      </div>
+    </div> 
+    
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Expresiones trigonométricas para la suma y resta de ángulos, ángulo doble y mitad de ángulo</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Relaciones para el coseno</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    En la página pasada viste la expresión \(cos(a+b)=cos(a)cos(b)-sin(a)sin(b)\). Aunque ya sabes cómo se deduce, es útil que la tengas en tu memoria.
+    </p>
+
+    <p>
+    Para obtener la fórmula de la <strong>diferencia de ángulos</strong> para el coseno insertaremos en la fórmula ya conocida \(-b\) en lugar de \(b\). Así pues, \(cos(a+(-b))=cos(a)cos(-b)-sin(a)sin(-b)\). Pero, recordando que el coseno es una función par y el seno una función impar, podemos reescribir la fórmula como sigue: \(cos(a-b)=cos(a)cos(b)-sin(a)(-sin(b))\). Simplificando: \(cos(a-b)=cos(a)cos(b)+sin(a)sin(b)\). Nota que sólo cambió el signo del segundo término. Esto nos permite hacer una <strong>generalización de la fórmula</strong> originalmente encontrada de la siguiente manera:
+    </p>
+
+	\[cos(a\pm b)=cos(a)cos(b)\mp sin(a)sin(b)\]
+
+    <p>
+    En dicha fórmula, queda resumido el hecho de que cuando tomas el coseno de la suma de los ángulos te quedará un signo menos, mientras que si tomas la diferencia, te quedará un signo más.
+    </p>
+
+    <p>
+    Ahora abordaremos el <strong>ángulo doble</strong> para el coseno. Nota que tomar el coseno de un ángulo doble (digamos, \(2a\)) equivale a tomar el coseno de \(a+a\). ¡Pero para esta fórmula puedes usar la expresión que aprendiste anteriormente! En este caso, tendremos que \(cos(2a)=cos(a+a)=cos(a)cos(a)-sin(a)sin(a)\). De tal forma que el coseno de un ángulo doble, expresado en términos del ángulo solo, está dado por:
+    </p>
+
+	\[cos(2a)=cos^2(a)-sin^2(a)\]
+
+    <p>
+    Para el caso del coseno de la <strong>mitad del ángulo</strong>, usamos el siguiente abordaje: \(cos(2(\frac{a}{2}))=cos^2(\frac{a}{2})-sin^2(\frac{a}{2})\) (aprovechando que ya vimos la fórmula del ángulo doble). Reescribimos la expresión como \(cos(a)=cos^2(\frac{a}{2})-(1-cos^2(\frac{a}{2}))\) (echando mano de la relación pitagórica). Simplificando la expresión, obtenemos: \(cos(a)=2cos^2(\frac{a}{2})-1\). De aquí podemos ya despejar \(cos(\frac{a}{2})\). De tal forma que, el coseno de la mitad de un ángulo, expresado en términos del ángulo solo, queda:
+    </p>
+
+	\[cos(\frac{a}{2})=\pm\sqrt{\frac{1+cos(a)}{2}}\]
+
+	<h2>Relaciones para el seno</h2>
+
+    <p>
+    Antes de abordar las relaciones para el seno como tal, conviene notar una relación entre estas dos funciones. Ello para poder expresar el seno en términos del coseno y así usar la fórmula que encontramos de adición de ángulos del coseno. Seguro has notado que el seno y el coseno tienen un comportamiento (al menos gráficamente) similar. Ello nos orienta a pensar que tal vez es posible expresar uno en términos del otro. Aborda el siguiente recurso interactivo para ver dicha relación.
+    </p>
+    
+
+    <div class="instrucciones">Elige con el menú si deseas ver la relación del seno con el coseno o del coseno con el seno. Una vez hecha tu elección, haz caso a las observaciones del lado izquierdo del espacio. Cuando hayas visitado ambos ejemplos, podrás acceder a un breviario mediante el botón '?'.</div>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="480" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    <p>
+    Ahora que has visto esta otra relación entre el seno y coseno, podemos proceder hacia una expresión para calcular el seno de una suma de ángulos \(a+b\) en términos de los ángulos solos. Para el caso \(sin(a+b)\), podemos expresarlo como el \(cos(90-(a+b))\), y posteriormente, expresarlo como \(cos((90-a)-b)\). Usando la fórmula del coseno de una diferencia de ángulos, \(cos((90-a)-b)=cos(90-a)cos(b)+sin(90-a)sin(b)\). Pero, también de la relación entre seno y coseno sabemos que \(cos(90-a)=sin(a)\) y que \(sin(90-a)=cos(a)\). Haciendo dicha sustitución, obtenemos que \(sin(a+b)=sin(a)cos(b)+sin(b)cos(a)\).
+    </p>
+
+    <p>
+    ¿Qué pasará entonces para \(sin(a-b)\)? Para saberlo, introducimos \(-b\) en lugar de \(b\) en la fórmula anteriormente encontrada. \(sin(a+(-b))=sin(a)cos(-b)+sin(-b)cos(a)\). Podemos nuevamente echar mano de que \(cos(-b)=cos(b)\) y \(sin(-b)=-sin(b)\). Sustituyendo dichas igualdades, obtenemos \(sin(a-b)=sin(a)cos(b)-sin(b)cos(a)\). Notamos nuevamente que, para el caso de la diferencia de ángulos, sólo cambia el signo del segundo término respecto a la fórmula original de la adición de ángulos. Así pues, la <strong>fórmula general para adición o diferencia de ángulos</strong> se puede resumir en:
+    </p>
+
+	\[sin(a\pm b)=sin(a)cos(b)\pm sin(b)cos(a)\]
+
+    <p>
+    Veamos ahora la fórmula para el seno del ángulo doble. \(sin(2a)=sin(a+a)=sin(a)cos(a)+sin(a)cos(a)\). De ahí que el <strong>seno del doble de un ángulo</strong>, expresado en términos del ángulo solo, queda:
+    </p>
+
+	\[sin(2a)=2sin(a)cos(a)\]
+
+    <p>
+    Para el caso seno del ángulo mitad, usamos la fórmula del coseno del ángulo doble: \(cos(2(\frac{a}{2}))=cos^2(\frac{a}{2})-sin^2(\frac{a}{2})\). Ahora, expresamos \(cos^2(\frac{a}{2})=1-sin^2(\frac{a}{2})\) usando la relación pitagórica. Sustituyendo en la anterior, se obtiene que \(cos(a)=1-2sin^2(\frac{a}{2})\). Despejando el seno, se obtiene la fórmula para el <strong>seno de la mitad de un ángulo</strong> expresada en términos del ángulo solo:
+    </p>
+
+	\[sin(\frac{a}{2})=\pm\sqrt{\frac{1-cos(a)}{2}}\]
+  
+    <p>
+    Más adelante verás algunas otras fórmulas que pueden serte de utilidad.
+    </p>
+
+  
+    <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>  
+
+  <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	  <!-- Créditos UAM  (siempre deben ir en primer lugar) -->
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>    
+       
+	    <!-- Aviso licencias -->
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <!--arquimedes (optativo)-->
+		    <!-- Descartes -->
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+	</div>
+      </div>
+    </div> 
+    
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

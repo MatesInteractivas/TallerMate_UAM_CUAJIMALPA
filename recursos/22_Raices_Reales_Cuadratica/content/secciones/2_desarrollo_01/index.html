@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+  
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Análisis de la función cuadrática</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Los parámetros de la función cuadrática</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    La función cuadrática es de la forma \(y=ax^2+bx+c\). Abordemos brevemente el cambiar los parámetros (\(a\), \(b\) y \(c\)) de la misma y veamos qué sucede con la gráfica.
+    </p>
+    
+    <!--- instrucciones --->
+    <div class="instrucciones">Altera, mediante los pulsadores correspondientes, los valores de (\(a\), \(b\) y \(c\)) para tu función cuadrática. Observa qué sucede con la gráfica de la misma. Haz caso de las sugerencias presentes en el espacio interactivo. Las lupas dentro de tu plano cartesiano te servirán para ajustar su escala. Con el botón 'Reiniciar' podrás volver a centrar tu plano cartesiano como al inicio y volver a ajustar su escala.</div>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="480" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    <p>
+    A los valores de la coordenada \(x\) para los cuales la cuadrática cruza a las abscisas se les conoce como <strong><em>raíces de la cuadrática</em></strong>. Habrás notado que, cuando el vértice de la curva está por encima de las abscisas y abre hacia arriba, tu curva nunca cruza el eje \(X\). Lo mismo sucede cuando la curva abre hacia abajo y el vértice está por debajo de las abscisas. En estos casos, \(r_1\) y \(r_2\) (tus raíces) no existen. O, por lo menos, no existen en un eje real (compuesto de números reales) como lo es el eje \(X\).
+    </p>
+
+    <p>
+    De lo contrario, la parábola cruzará el eje \(X\) y se podrán determinar dichos valores. A continuación veremos cómo se determinan.
+    </p>
+    
+    <h2>La fórmula general de segundo grado</h2>
+    
+    <p>
+	Primero que nada, es necesario que entiendas qué quiere decir que las raíces son los valores de \(x\) para los que la curva cruza el eje \(X\) o abscisas. Cuando ello ocurre, implica que tu valor de \(y\) es cero (cualquier punto que cae en el eje \(X\) implica que tu coordenada en el eje \(Y\) es cero). De tal suerte que, para encontrar las raíces de una ecuación como \(y=x^2+4x+2\), primero es necesario igualar \(y=0\). Dicha ecuación quedaría como \(0=x^2+4x+2\).
+	</p>
+
+	<p>
+	Has visto previamente que la fórmula general te permite conocer las soluciones (el valor de \(x\)) que satisfacen una ecuación cuadrática como \(ax^2+bx+c=0\). Así pues, si quieres encontrar las raíces de una función de la forma \(y=ax^2+bx+c\), basta con igualarla a cero (obteniendo \(ax^2+bx+c=0\)) y obtener las soluciones de esta ecuación cuadrática, mismas que serán tus raíces de la función \(y=ax^2+bx+c\). La fórmula general, que expresa a \(x\) despejado para este tipo de ecuaciones, se abordó en la unidad sobre métodos de solución de ecuaciones cuadráticas, y es:
+    </p>
+
+\[x=\frac{-b\pm{\sqrt{b^2-4ac}}}{2a}\]
+
+    <p>
+    <div class="instrucciones">Escoge un ejemplo mediante el botón 'Otro ejercicio' y avanza en la explicación con el botón 'Siguiente' o retrocede con 'Anterior'. Observa, en el último paso, la gráfica y sus cruces con el eje \(X\).</div>
+    </p>
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="510" frameborder="0" src="escenas/escena2.html"> </iframe>
+    </div>
+  
+    <p>
+    Lo útil de esta fórmula es que, si conoces cuánto valen \(a\), \(b\) y \(c\), puedes obtener el valor de una de tus raíces tomando la fórmula con el signo más dentro de ella, y también puedes conocer el valor de la otra raíz tomando ahora el signo menos en la fórmula.
+    </p>
+
+    <p>
+    Observaste que la fórmula, por un lado, involucra el cálculo de una raíz cuadrada. Recordando lo que ya viste en la unidad sobre métodos de solución de ecuaciones cuadráticas, la expresión a la que se saca raíz cuadrada dentro de la fórmula (\(b^2-4ac\)) se le conoce con el nombre de  <em><strong>discriminante</strong></em>. Siendo un poco curiosos, y continuando las preguntas planteadas en esa unidad anterior, podríamos preguntarnos si es posible que dicho discriminante fuera negativo. ¡Entonces necesitaríamos extraer la raíz cuadrada de un número negativo! ¿Será posible encontrarnos con un problema así?
+    </p>
+
+    <p>
+    Por otro lado, notaste que obtienes 2 raíces con esa fórmula. Una considerando que la raíz cuadrada dentro de la fórmula se suma, y la otra considerando que se resta. ¿Será posible que el discriminante sea cero? De así ser, el valor de a raíz cuadrada dentro de la fórmula sería cero también, y si sumas o restas cero (para obtener las 2 distintas raíces de tu cuadrática), ¡ambas raíces de la cuadrática tendrían el mismo valor!
+    </p>
+
+    <p>
+    Estas dos situaciones se abordarán en la siguiente página. No obstante, trata antes de deducir bajo qué casos se darían dichos escenarios extraños.
+    </p>
+
+  
+    <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>  
+
+  <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	  <!-- Créditos UAM  (siempre deben ir en primer lugar) -->
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>    
+       
+	    <!-- Aviso licencias -->
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <!--arquimedes (optativo)-->
+		    <!-- Descartes -->
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+	</div>
+      </div>
+    </div> 
+    
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

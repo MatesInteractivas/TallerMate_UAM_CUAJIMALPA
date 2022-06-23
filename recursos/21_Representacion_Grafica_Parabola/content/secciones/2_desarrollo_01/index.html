@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+  
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>El vértice y la apertura de la parábola</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Recordatorio sobre la ubicación de las coordenadas de un punto</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    La parábola vertical, que es la que se usa para fines de esta unidad, consiste algebraicamente en una función de la forma \(y=ax^2+bx+c\). Al igual que para cualquier función, si se cuenta con un valor para \(x\), para encontrar la coordenada del punto de la función (la coordenada vertical) para ese valor de \(x\) basta con sustituirlo en la misma.
+    Por ejemplo, el punto cuya coordenada horizontal es \(2\) en la parábola \(y=2x^2+3x-1\) es el punto \((2,13)\). Notamos que el valor \(13\) se obtiene de introducir el valor \(2\) en lugar de \(x\) en la fórmula para así encontrar \(y\). Es decir, \(y=2(2^2)+3(2)-1=8+6-1=13\).
+    </p>
+
+    <p>
+    De tal forma que en la mayoría de las ocasiones, el encontrar las coordenadas de un punto en particular se puede lograr conociendo la coordenada horizontal para, mediante sustitución en la función, encontrar la coordenada vertical.
+    </p>
+
+    <h2>Ubicación de las coordenadas del vértice, e identificación de la apertura</h2>
+
+    <p>
+    Para una parábola vertical, como ya has visto en unidades anteriores, la forma general de su ecuación es \(y=ax^2+bx+c\). No obstante, siempre se puede pasar de esta forma a la ordinaria \(y-k=\frac{(x-h)^2}{4p}\) completando el cuadrado. Recuerda que \(p\) es conocido como la <em>distancia focal</em>. En esta forma, las coordenadas \((h,k)\) representan un punto crucial en la parábola llamado <em>vértice</em>. A continuación podrás entender qué representa este punto gráficamente.
+    </p>
+    
+    <div class="instrucciones">En el siguiente espacio interactivo, avanza en la explicación con el botón 'Siguiente' y retrocede con 'Anterior'. Observa la explicación en cada paso y la gráfica correspondiente. Observa en la ecuación ordinaria de la parábola cómo se manifiesta este punto. Una vez que hayas revisado la explicación, cambia el valor de los coeficientes \(a\), \(b\) y \(c\) y observa cómo se comporta este punto. Presta también especial atención a la explicación que se proporciona sobre el parámetro \(p\).</div>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="480" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    
+    <p>
+    Algunas cosas que probablemente hayas notado del interactivo anterior son:
+	<ul>
+		<li>La forma ordinaria de la ecuación ya contiene los valores de \(h\) y \(k\) (correspondientes al vértice). Solamente hay que prestar atención a que se encuentran con el signo opuesto. Es decir, para una parábola genérica \(y-k=\frac{(x-h)^2}{4p}\), \((h,k)\) es la coordenada del vértice de la misma.</li>
+		<li>En la misma forma de la ecuación, el parámetro \(p\) puede identificarse en el denominador del lado derecho de la igualdad. Sabemos que ese denominador siempre será igual a \(4p\), de donde se puede obtener \(p\) directamente. Como puedes notar, esto establece una relación entre el coeficiente \(a\) de la forma desarrollada de la función de una parábola con el parámetro \(p\) de la forma ordinaria, a saber: \(a=\frac{1}{4p}\), que reescrito para \(p\) queda \(p=\frac{1}{4a}\).</li>
+		<li>Adicionalmente, obtener \(p\) nos indica, por un lado, qué tan lejos está el foco del vértice y si está arriba o abajo del mismo. Cuando \(p>0\), el foco queda arriba del vértice \(p\) unidades y, por lo mismo, la parábola abrirá hacia arriba. En resumen, si \(p>0\), la parábola abrirá hacia arriba. Nota que el signo de \(p\) acaba por ser el signo del coeficiente que multiplica a \(x^2\) en la forma desarrollada o general. Así pues, si en una ecuación tienes que ese coeficiente es negativo, entonces tu parábola abrirá hacia abajo. De ser positivo, abrirá hacia arriba.</li>
+		<li>Por otro lado, \(p\) también sirve si queremos conocer el foco de la parábola. Sabemos que el foco tiene la misma coordenada horizontal que el vértice. Es decir, \(x_F=h\), con \(x_F\) la coordenada en \(X\) del foco. Para obtener la coordenada en \(Y\) del mismo, basta con sumarle \(p\) a la coordenada en \(Y\) del vértice. Es decir, \(y_F=k+p\). Así pues, la coordenada del foco se puede obtener como \((x_F,y_F)=(h,k+p)\). Nota que el signo de \(p\) ya viene implicito en esta fórmula. Si \(p\) es negativo, \(k+p\lt{k}\) y el foco estará debajo del vértice. Si \(p\) es positivo, \(k+p>k\) y el foco estará sobre el vértice.</li>
+	</ul>
+    </p>
+
+    <h2>Una manera alternativa de conocer el vértice</h2>
+  
+    <p>
+    Si contamos con la ecuación en su forma general \(y=ax^2+bx+c\) y queremos identificar el vértice de forma rápida, no es necesario siempre llevarla a la forma ordinaria.
+    </p>
+
+    <p>
+    De unidades pasadas, recordamos que las coordenadas de las raíces de la función se obtienen a partir de la fórmula general de ecuaciones cuadráticas \(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\). Como la parábola es simétrica respecto a su eje, y el vértice cae sobre el eje, la coordenada horizontal del vértice deberá estar justo entre las dos raíces encontradas para la misma.
+    </p>
+
+    <p>
+    Podemos usar el promedio de las raíces para encontrar la coordenada horizontal del vértice. Es decir, si \(x_1=\frac{-b+\sqrt{b^2-4ac}}{2a}\) y \(x_2=\frac{-b-\sqrt{b^2-4ac}}{2a}\), el promedio será \(x_{promedio}=\frac{x_1+x_2}{2}=(\frac{1}{2})(\frac{-b+\sqrt{b^2-4ac}-b-\sqrt{b^2-4ac}}{2a})\) y \(x_{promedio}=(\frac{1}{2})(\frac{-2b}{2a})=\frac{-b}{2a}\). Como ya sabemos que \(h\) es como bautizamos a la coordenada horizontal del vértice, tenemos que \(h=\frac{-b}{2a}\). A partir de esta \(h\) puedes calcular \(k\) simplemente sustituyendo el valor de \(h\) en la función de tu parábola, como se indicó en la primera sección de esta página. Es decir, \(k=ah^2+bh+c\).
+    </p>
+
+    <p>
+    Como ya viste, si conoces las coordenadas del vértice y conoces \(p\), puedes expresar la forma ordinaria de la ecuación a partir de su forma general sin necesidad de recurrir a completar el cuadrado.
+    </p>
+
+    <p>
+    Observa que la expresión \(h=\frac{-b}{2a}\) es aquella usada en la fórmula general de ecuaciones cuadráticas, pero sin la parte que involucra la raíz cuadrada.
+    </p>
+
+    <p>
+    Además, lo interesante es que siempre puedes usarla. Si las raíces existen, la fórmula se entiende por la explicación de arriba. No obstante, si no hay raíces debido a que tu discriminante \(b^2-4ac\) sea negativo, la fórmula \(h=\frac{-b}{2a}\) sigue siendo válida.
+    </p>
+
+    <p>
+    Nota que acabas de encontrar otra forma de obtener la ecuación ordinaria de una parábola vertical a partir de su ecuación general. Esto puede ayudarte si te es complicado completar el cuadrado. No obstante, siempre es útil que sepas hacerlo pues es una herramienta muy poderosa no sólo cuando tratas con parábolas.
+    </p>
+
+	<p>
+	Ahora ya puedes pasar a la siguiente página para abordar la intersección de una parábola con el eje \(Y\).
+	</p>
+
+  
+    <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>  
+
+  <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	  <!-- Créditos UAM  (siempre deben ir en primer lugar) -->
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>    
+       
+	    <!-- Aviso licencias -->
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <!--arquimedes (optativo)-->
+		    <!-- Descartes -->
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+	</div>
+      </div>
+    </div> 
+    
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

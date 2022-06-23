@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+   <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Ley de multiplicación y división de los exponentes, y exponentes fraccionarios</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>La ley multiplicativa de los exponentes</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    Ya has abordado la ley aditiva y de resta de los exponentes. Ellas corresponden al producto de potencias (en que los exponentes se suman) y a la división de potencias (en que los exponentes se restan). No obstante, ¿qué pasará cuando elevas una potencia a otro exponente? Por ejemplo, ¿a qué será igual \( (2^3)^2 \)?
+    </p>
+    
+    <!--- Instrucciones --->
+    <div class="instrucciones">Del siguiente interactivo podrás deducir qué pasa con los exponentes en este caso.</div>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="510" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    <p>
+    Como notaste en el interactivo arriba, cada renglón representa la potencia dentro del paréntesis. Esto es, la base multiplicada por sí misma el número de veces indicado por el primer exponente. Sin embargo, todo ese renglón está elevado al valor del exponente 2. Esto es, todo el primer renglón se multiplica por sí mismo ahora el número de veces dado por el segundo exponente. Ello es la razón de que aparece ese renglón multiplicado como nuevos renglones.
+    </p>
+
+    <p>
+    Lo anterior implica que tendrás algo así como una tabla con el número de filas correspondiente al segundo exponente y el número de columnas correspondiente al primer exponente. La tabla está compuesta de productos de la base en cuestión. Es por ello que, cuando tienes una potencia elevada a un exponente, el valor de la expresión equivale a elevar la base a un exponente final que es el resultado de multiplicar el exponente dentro del paréntesis por el de afuera.
+	</p>
+	
+	<p class='ley'>
+	En otras palabras, al elevar una base con su exponente a otra base, el resultado es la base elevada al producto de los exponentes: \( (x^n)^m=x^{(n)(m)} \).</p>
+
+    <p>
+    ¿Será este resultado válido para el caso en que el exponente dentro del paréntesis es negativo? ¿O para cuando el exponente fuera del paréntesis es negativo? Considera el ejemplo, \( (2^{-2})^3 \). Recuerda que \( 2^{-2}=\frac{1}{2^2}=(\frac{1}{2})(\frac{1}{2}) \). Si elevas dicho resultado a la 3, tendrás \( ((\frac{1}{2})(\frac{1}{2}))((\frac{1}{2})(\frac{1}{2}))((\frac{1}{2})(\frac{1}{2}))=(\frac{1}{2})(\frac{1}{2})(\frac{1}{2})(\frac{1}{2})(\frac{1}{2})(\frac{1}{2})=\frac{1}{2^6}=2^{-6} \) (recuerda que se puede mover la base de denominador a numerador cambiándole el signo). ¡Pero \( 2^{-6} \) no es más que \( 2^{(-2)(3)} \)! Así que sí es válido. Un argumento similar te llevará a la conclusión que también es válido cuando el exponente fuera del paréntesis es negativo. Y más aún, si ambos exponentes son negativos, su producto tal cual será positivo y tu base quedará elevada, así pues, a un número positivo.
+    </p>
+
+    
+    <h2>División de exponentes</h2>
+    
+    <p>
+    ¿Qué querrá decir que un número esté elevado a un exponente de la forma \( \frac{1}{n} \), donde \( n \) puede ser 1, 2, 3, ...? Para responder esto, conviene utilizar un ejemplo. Supón que se te proporciona el número \( 4^2 \). Tú sabes que ese número vale \( (4)(4)=16 \). Si ese número \( 4^2 \) lo eleváramos a una potencia \( \frac{1}{2} \), tendríamos lo siguiente: \( (4^2)^\frac{1}{2} \). Haciendo uso de lo aprendido (que el elevar una potencia a un exponente resulta en elevar la base de la potencia al producto de los exponentes), se tendría que \( (4^2)^\frac{1}{2}=4^{(2)(\frac{1}{2})}=4^1=4 \). ¡Lo que le hizo el exponente fuera del paréntesis al argumento dentro del paréntesis (que sabes vale 16) fue extraerle su raíz cuadrada!
+	</p>
+	
+	<p>
+	Si pones atención, lo que acabas de observar es válido también si tuvieras, por ejemplo, \( (4^3)^\frac{1}{3} \), o cualquier expresión con <em>n</em> de la misma forma. Así pues, elevar un número a un exponente \( \frac{1}{3} \) equivale a extraerle su raíz cúbica; elevarlo a la \(\frac{1}{4}\) equivale a extraerle su raíz cuarta y así sucesivamente.
+    </p>
+
+	<p class='ley'>
+	Elevar un número a un exponente de la forma \(\frac{1}{n}\) equivale a tomar su raíz enésima: \(x^\frac{1}{n} = \sqrt[\leftroot{-2}\uproot{2}n]{x}\)
+	</p>
+
+    <h2>Exponentes fraccionarios</h2>
+
+    <div class="instrucciones">Ahora ya comienzan a cobrar sentido los exponentes fraccionarios. Del siguiente interactivo verás el uso que se hace sobre los mismos, y con lo que has aprendido, irás ahora en reversa para poder calcular el valor de algunas expresiones cuyo exponente es fraccionario.</div>
+
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="510" frameborder="0" src="escenas/escena2.html"> </iframe>
+    </div>
+    
+    <p>
+    Ahora ya ves que no es tan difícil elevar un número a una fracción. De hecho, bien pudimos intercambiar el orden de los factores que componían el exponente fraccionario y primero poner el que lleva el denominador multiplicado luego por el que lleva el numerador (recuerda que el producto es conmutativo). Esto nos lleva a deducir que también puedes obtener el resultado primero tomando la raíz de la base (dada por el denominador) y ese resultado elevarlo al numerador. ¡Los resultados deberán ser los mismos!
+    </p>
+
+    <p>
+    Por otra parte, también puedes de esta forma elevar tu base a exponentes decimales (siempre y cuando se puedan convertir en fracciones). Por ejemplo, \( 4^{1.5} \) lo puedes ver como \( 4^\frac{3}{2} \). Echando mano de lo aprendido, evaluarlo simplemente sería elevar \( 4 \) al cubo, y al resultado sacarle la raíz cuadrada.
+    </p>
+
+    <p>
+    Algo que vale la pena notar aquí es cómo a veces es útil irse en reversa sobre un procedimiento. Muchos trucos que te permiten reducir expresiones, evaluarlas, etc. se basan precisamente en no limitarse a pensar en sólo una dirección. Moraleja: no siempre lo que está hasta la derecha de las igualdades es el resultado conveniente.
+    </p>
+
+  
+<!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>    
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="hideCredits()">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+        <!-- Créditos UAM  (siempre deben ir en primer lugar) -->
+          <div class="creditos">
+                  <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+                  <ul class="autores">
+                          <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+                          <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+                  </ul>
+                  <img class="logos" src="icns/logosUAM.png"></img>
+          </div>
+          
+          <!-- Aviso licencias -->
+          <div class="licencias">
+          
+                  <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+                  <!-- Descartes -->
+                  <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+          
+          </div>
+      </div>
+      </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

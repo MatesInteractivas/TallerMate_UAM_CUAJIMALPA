@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+ <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Un vistazo a un concepto de pendiente más general</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Pendiente entre rectas</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    Cuando hablamos de la pendiente de una recta, hablamos del grado de inclinación de la misma <strong>respecto al eje \(X\)</strong>. Pero resulta que también puedes hablar de qué tan inclinada es una recta respecto a otra que no sea horizontal como el eje \(X\). ¿Será posible conocer una pendiente entre rectas a partir de sus pendientes individuales (esto es, a partir de sus pendientes respecto al eje \(X\))?
+    </p>
+
+    <p>
+    Resulta ser que sí existe una fórmula para tal efecto. Si las rectas individuales tienen pendientes \(m_1\) y \(m_2\) respectivamente, la pendiente entre ambas estará dada por \(m_3\), donde \(m_3=\frac{m_2-m_1}{1+m_2m_1}\). La deducción de esta fórmula requiere de unas cuantas manipulaciones de identidades trigonométricas que están fuera del alcance de esta unidad, pero la usaremos para reafirmar nuestros conceptos de paralelismo y perpendicularidad.
+    </p>
+
+    <p>
+    Por ejemplo, en el siguiente interactivo cuentas con un par de rectas. Puedes hacer girar ambas alrededor del punto donde se intersecan cada una con el eje vertical y verás este concepto de pendiente entre rectas.
+    </p>
+    
+    <!--- Instrucciones --->
+    <div class="instrucciones">Escoge una inclinación para tus rectas arrastrando el punto \(P_1\) y \(P_2\). Avanza en la explicación con el botón 'Siguiente' o retrocede en la misma con 'Anterior'. Observa las pendientes de cada recta (\(m_1\) y \(m_2\)) y la pendiente entre ambas (\(m_3\)).</div>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="510" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    <p>
+    Nota en el interactivo de arriba que cuando mueves una recta tal que se aproxima a ser la perpendicular de la otra, el valor de \(m_3\) se va haciendo más y más grande en magnitud (independientemente de su signo) hasta llegar a ser más (o menos) infinito para el caso completamente perpendicular. Por otra parte, nota que cuando mueves una de las rectas de tal forma que sea cada vez más paralela a la otra, \(m_3\) se aproxima más a cero en magnitud (sin importar su signo).
+    </p>
+    
+    <h2>Análisis de paralelismo y perpendicularidad desde la fórmula de la pendiente entre rectas</h2>
+    
+    <p>
+    Analicemos ahora el comportamiento de \(m_3\) antes mencionado:
+	<ul>
+		<li>Cuando las rectas son <strong>perpendiculares</strong>, \(m_3\) se va a + o - infinito. Ello se debe a que el denominador de la fracción que representa a \(m_3\) se aproxima más y más a cero. Pero eso sólo pasa si \(1+m_2m_1=0\). Si despejamos de ahí a \(m_2\), obtenemos que \(m_2=-\frac{1}{m_1}\), ¡que es exactamente la condición inicial que obtuvimos para rectas perpendiculares!</li>
+		<li>Cuando las rectas se aproximan a ser <strong>paralelas</strong>, \(m_3\) se aproxima cada vez más a cero. Pero eso sólo pasa cuando el numerador de la fracción que representa a \(m_3\) se vuelve cero. Esto es, \(m_2-m_1=0\). Despejando de ahí a \(m_2\) obtenemos que \(m_2=m_1\), ¡que es justo la condición inicial que obtuvimos para rectas paralelas!</li>
+		<li>En algunos casos, como cuando una de las rectas es <strong>paralela al eje \(Y\)</strong>, el valor de \(m_3\) no está definido pues te queda infinito tanto en el numerador como en el denominador.</li>
+	</ul>
+    </p>
+
+	<p>
+	Observa que cuando una de las rectas es horizontal (digamos, \(m_1=0\)), entonces \(m_3=\frac{m_2-0}{1+(m_2)(0)}\), de donde \(m_3=m_2\). Recuperaste la expresión común para la <strong>pendiente de una recta respecto al eje \(X\)</strong>. Claro, con la pendiente \(m_1=0\), esa recta horizontal está actuando como el eje \(X\) para todo fin práctico. Igualmente, cuando la pendiente de una recta es infinita, implica que es vertical (o, visto de otra forma, perpendicular al eje \(X\)). Cuando usas la expresión para obtener la pendiente entre rectas, es lógico que también te dé infinito cuando una es perpendicular a la otra.
+	</p>
+    
+	<p>
+	Ahora que ya has visto suficiente sobre la relación entre pendientes de rectas paralelas y perpendiculares, avanza a la parte de ejercicios.
+	</p>
+
+  
+  <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>  
+
+  <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	  <!-- Créditos UAM  (siempre deben ir en primer lugar) -->
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>    
+       
+	    <!-- Aviso licencias -->
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <!-- Descartes -->
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+	</div>
+      </div>
+    </div> 
+    
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

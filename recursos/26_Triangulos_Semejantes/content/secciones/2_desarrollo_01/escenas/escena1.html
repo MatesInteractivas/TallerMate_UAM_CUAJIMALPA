@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=750 height=480 code="Descartes">
+   <param name="tamaño" value="750x480">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='Img1' x='50%' y='0%' ancho='45%' alto='100%' despl_imagen='arr-izq' red='b8c4c8' red10='889498' ejes='405860' texto='405860'">
+   <param name="E_02" value="tipo='R2' id='Img2' x='50%' y='0%' ancho='45%' alto='100%' despl_imagen='arr-izq' red='b8c4c8' red10='889498' ejes='405860' texto='405860'">
+   <param name="E_03" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo.png' despl_imagen='arr-izq' fondo='f3f0ec' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_04" value="tipo='R2' id='Retro' x='30%' y='75%' ancho='40%' alto='15%' dibujar-si='coinciden!=0' fijo='sí' despl_imagen='arr-izq' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='OtroEjBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Otro ejemplo' expresión='(E1._w/4-60,E1._h-35,120,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn120x30.png' acción='calcular' parámetro='g4.activo=0\nReInit()' activo-si='Tipo!=0'">
+   <param name="C_02" value="id='VerificarBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='¿Coinciden?' expresión='(E1._w*3/4-60,E1._h-35,120,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn120x30.png' acción='calcular' parámetro='g4.activo=0\nChecCoincid()' activo-si='Tipo!=0' pos_mensajes='centro'">
+   <param name="C_03" value="id='InvertirBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Invertir' expresión='(E1._w/4-45,5,90,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='g4.activo=0\ncoinciden=0\nInvertir=-Invertir' activo-si='Tipo!=0' pos_mensajes='centro'">
+   <param name="C_04" value="id='Tipo' tipo='numérico' interfaz='menú' región='interior' espacio='E1' expresión='(E1._w/2-60,5,120,34)' decimales='0' fijo='sí' visible='no' opciones=' ,congruentes,semejantes,ninguno' acción='calcular' parámetro='g4.activo=0\nReInit()' pos_mensajes='centro'">
+   <param name="C_05" value="id='angulo1' tipo='numérico' región='interior' espacio='E1' nombre='angulo1' expresión='(E1._w-30,E1._h-53,27,50)' incr='1' min='0' max='180' decimales='0' fijo='sí' visible='no' dibujar-si='0' pos_mensajes='centro'">
+   <param name="C_06" value="id='angulo2' tipo='numérico' región='interior' espacio='E1' nombre='angulo2' expresión='(E1._w-30,E1._h-53,27,50)' valor='20+ent(68.9999*rnd)*5' incr='5' discreto='sí' decimales='0' fijo='sí' visible='no' acción='calcular' parámetro='coinciden=0' activo-si='Tipo!=0' pos_mensajes='centro'">
+   <param name="C_07" value="id='g3' tipo='gráfico' espacio='E1' expresión='(-4,0)' fijo='sí' dibujar-si='0'">
+   <param name="C_08" value="id='g4' tipo='gráfico' espacio='E1' expresión='(4,0)' fijo='sí' dibujar-si='Tipo!=0'">
+   <param name="A_01" value="id='ReInit()' algoritmo='sí' algoritmo='sí' hacer='coinciden=0;bla=(Tipo==1)?GenIzq1():bla;bla=(Tipo==2)?GenIzq2():bla;bla=(Tipo==3)?GenIzq3():bla;g4.x=4'">
+   <param name="A_02" value="id='GenIzq1()' algoritmo='sí' algoritmo='sí' hacer='T1Ax=-7+ent(3.9999*rnd);T1Ay=-4+ent(7.9999*rnd);T1Bx=-7+ent(3.9999*rnd);T1By=-4+ent(7.9999*rnd);T1Cx=-7+ent(3.9999*rnd);T1Cy=-4+ent(7.9999*rnd);;T2Ax=4+T1Ax;T2Ay=T1Ay;T2Bx=4+T1Bx;T2By=T1By;T2Cx=4+T1Cx;T2Cy=T1Cy;;Invertir=sgn(0.5-rnd);;Centroide1X=(T1Ax+T1Bx+T1Cx)/3;Centroide1Y=(T1Ay+T1By+T1Cy)/3;;Centroide2X=T2Ax;Centroide2Y=T2Ay;;Delta1X=T1Ax-Centroide1X;Delta1Y=T1Ay-Centroide1Y;;Img1.escala=48;Img2EscX=1;Img1.Ox=-Img1.escala*Centroide1X;Img1.Oy=Img1.escala*Centroide1Y;;Img2.escala=48;Img2.Ox=-Img2.escala*Centroide2X;Img2.Oy=Img2.escala*Centroide2Y;angulo2=20+ent(68.9999*rnd)*5;;T1AB=((T1Ax==T1Bx)&(T1Ay==T1By))?1:0;T1AC=((T1Ax==T1Cx)&(T1Ay==T1Cy))?1:0;T1BC=((T1Bx==T1Cx)&(T1By==T1Cy))?1:0;T1mAB=(T1Bx!=T1Ax)?(T1By-T1Ay)/(T1Bx-T1Ax):1000000;T1mAC=(T1Cx!=T1Ax)?(T1Cy-T1Ay)/(T1Cx-T1Ax):1000000;T1mBC=(T1Cx!=T1Bx)?(T1Cy-T1By)/(T1Cx-T1Bx):1000000;Tp1Colin=((abs(T1mAB-T1mAC)<0.5)|(abs(T1mAB-T1mBC)<0.5)|(abs(T1mBC-T1mAC)<0.5))?1:0;;T1Cond=(Tp1Colin|T1AB|T1AC|T1BC)?1:0' mientras='T1Cond'">
+   <param name="A_03" value="id='GenIzq2()' algoritmo='sí' algoritmo='sí' hacer='Img2EscX=1;T1Ax=-7+ent(3.9999*rnd);T1Ay=-4+ent(7.9999*rnd);T1Bx=-7+ent(3.9999*rnd);T1By=-4+ent(7.9999*rnd);T1Cx=-7+ent(3.9999*rnd);T1Cy=-4+ent(7.9999*rnd);;T2Ax=4+T1Ax;T2Ay=T1Ay;T2Bx=4+T1Bx;T2By=T1By;T2Cx=4+T1Cx;T2Cy=T1Cy;;Invertir=sgn(0.5-rnd);;Centroide1X=(T1Ax+T1Bx+T1Cx)/3;Centroide1Y=(T1Ay+T1By+T1Cy)/3;;Delta1X=T1Ax-Centroide1X;Delta1Y=T1Ay-Centroide1Y;;Centroide2X=T2Ax;Centroide2Y=T2Ay;;Img1.escala=48;Img1.Ox=-Img1.escala*Centroide1X;Img1.Oy=Img1.escala*Centroide1Y;;Img2.escala=48-(7+ent(29.9999*rnd));Img2.Ox=-Img2.escala*Centroide2X;Img2.Oy=Img2.escala*Centroide2Y;angulo2=20+ent(68.9999*rnd)*5;;T1AB=((T1Ax==T1Bx)&(T1Ay==T1By))?1:0;T1AC=((T1Ax==T1Cx)&(T1Ay==T1Cy))?1:0;T1BC=((T1Bx==T1Cx)&(T1By==T1Cy))?1:0;T1mAB=(T1Bx!=T1Ax)?(T1By-T1Ay)/(T1Bx-T1Ax):1000000;T1mAC=(T1Cx!=T1Ax)?(T1Cy-T1Ay)/(T1Cx-T1Ax):1000000;T1mBC=(T1Cx!=T1Bx)?(T1Cy-T1By)/(T1Cx-T1Bx):1000000;;Tp2Colin=((abs(T1mAB-T1mAC)<0.5)|(abs(T1mAB-T1mBC)<0.5)|(abs(T1mBC-T1mAC)<0.5))?1:0;;T2Cond=(Tp2Colin|T1AB|T1AC|T1BC)?1:0' mientras='T2Cond'">
+   <param name="A_04" value="id='GenIzq3()' algoritmo='sí' algoritmo='sí' hacer='T1Ax=-7+ent(3.9999*rnd);T1Ay=-4+ent(7.9999*rnd);T1Bx=-7+ent(3.9999*rnd);T1By=-4+ent(7.9999*rnd);T1Cx=-7+ent(3.9999*rnd);T1Cy=-4+ent(7.9999*rnd);;T2Ax=4+T1Ax;T2Ay=T1Ay;T2Bx=4+T1Bx;T2By=T1By;T2Cx=4+T1Cx;T2Cy=T1Cy;;Invertir=sgn(0.5-rnd);;Centroide1X=(T1Ax+T1Bx+T1Cx)/3;Centroide1Y=(T1Ay+T1By+T1Cy)/3;;Delta1X=T1Ax-Centroide1X;Delta1Y=T1Ay-Centroide1Y;;Centroide2X=T2Ax;Centroide2Y=T2Ay;;Img1.escala=48;Img1.Ox=-Img1.escala*Centroide1X;Img1.Oy=Img1.escala*Centroide1Y;;Img2.escala=48-(7+ent(29.9999*rnd));Img2.Ox=-Img2.escala*Centroide2X;Img2.Oy=Img2.escala*Centroide2Y;Img2EscX=1+sgn(0.5-rnd)*(0.1+0.15*rnd);angulo2=20+ent(68.9999*rnd)*5;;T1AB=((T1Ax==T1Bx)&(T1Ay==T1By))?1:0;T1AC=((T1Ax==T1Cx)&(T1Ay==T1Cy))?1:0;T1BC=((T1Bx==T1Cx)&(T1By==T1Cy))?1:0;T1mAB=(T1Bx!=T1Ax)?(T1By-T1Ay)/(T1Bx-T1Ax):1000000;T1mAC=(T1Cx!=T1Ax)?(T1Cy-T1Ay)/(T1Cx-T1Ax):1000000;T1mBC=(T1Cx!=T1Bx)?(T1Cy-T1By)/(T1Cx-T1Bx):1000000;;Tp2Colin=((abs(T1mAB-T1mAC)<0.5)|(abs(T1mAB-T1mBC)<0.5)|(abs(T1mBC-T1mAC)<0.5))?1:0;;T2Cond=(Tp2Colin|T1AB|T1AC|T1BC)?1:0' mientras='T2Cond'">
+   <param name="A_05" value="id='ChecCoincid()' algoritmo='sí' algoritmo='sí' inicio='coinciden=0' hacer='coinciden=((angulo2%360==0)&(abs(g3.x-g4.x+Delta1X)<0.1)&(abs(g3.y-g4.y+Delta1Y)<0.1)&(Invertir==1))?1:2;coinciden=(Tipo==3)?2:coinciden'">
+   <param name="A_06" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='Img1.escala=48;Img2.escala=48;ReInit()'">
+   <param name="A_07" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="A_08" value="id='e3' evento='sí' condición='g4.activo==1' acción='calcular' parámetro='coinciden=0' ejecución='siempre' pos_mensajes='centro'">
+   <param name="G_01" value="espacio='Retro' tipo='texto' dibujar-si='((Tipo==1)&(coinciden==1))' expresión='[45,20]' texto='¡Los triángulos coinciden!' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_02" value="espacio='Img1' tipo='punto' color='(75/100,00,00,00)' dibujar-si='Tipo!=0' expresión='(T1Ax,T1Ay)' fuente='Serif,ITALIC,17' fijo='sí' tamaño='4'">
+   <param name="G_03" value="espacio='Img1' tipo='punto' color='(00,75/100,00,00)' dibujar-si='Tipo!=0' expresión='(T1Bx,T1By)' fuente='Serif,ITALIC,17' fijo='sí' tamaño='4'">
+   <param name="G_04" value="espacio='Img1' tipo='punto' color='(00,00,75/100,00)' dibujar-si='Tipo!=0' expresión='(T1Cx,T1Cy)' fuente='Serif,ITALIC,17' fijo='sí' tamaño='4'">
+   <param name="G_05" value="espacio='Img1' tipo='segmento' expresión='(T1Ax,T1Ay)(T1Bx,T1By)' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_06" value="espacio='Img1' tipo='segmento' expresión='(T1Ax,T1Ay)(T1Cx,T1Cy)' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_07" value="espacio='Img1' tipo='segmento' expresión='(T1Bx,T1By)(T1Cx,T1Cy)' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_08" value="espacio='Img2' tipo='punto' color='negro' dibujar-si='Tipo!=0' expresión='(T2Ax,T2Ay)' fuente='Serif,ITALIC,17' fijo='sí' tamaño='4'">
+   <param name="G_09" value="espacio='Img2' tipo='punto' color='negro' dibujar-si='Tipo!=0' expresión='(T2Bx,T2By)' fuente='Serif,ITALIC,17' fijo='sí' tamaño='4'">
+   <param name="G_10" value="espacio='Img2' tipo='punto' color='negro' dibujar-si='Tipo!=0' expresión='(T2Cx,T2Cy)' fuente='Serif,ITALIC,17' fijo='sí' tamaño='4'">
+   <param name="G_11" value="espacio='Img2' tipo='segmento' expresión='(T2Ax,T2Ay)(T2Bx,T2By)' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_12" value="espacio='Img2' tipo='segmento' expresión='(T2Ax,T2Ay)(T2Cx,T2Cy)' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_13" value="espacio='Img2' tipo='segmento' expresión='(T2Bx,T2By)(T2Cx,T2Cy)' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_14" value="espacio='Retro' tipo='texto' dibujar-si='((Tipo==2)&(coinciden==1))' expresión='[45,17]' texto='Dos lados se sobrelapan, pero\nhay un tercero que no.' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_15" value="espacio='E1' tipo='segmento' color='turquesa' dibujar-si='Tipo!=0' expresión='(-4,-3)(-4,3)' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_16" value="espacio='E1' tipo='imagen' expresión='(g3.x,g3.y,Invertir,1)' archivo='Img1.image'">
+   <param name="G_17" value="espacio='E1' tipo='imagen' expresión='(g4.x,g4.y,Img2EscX,1)' archivo='Img2.image' rotini='angulo2'">
+   <param name="G_18" value="espacio='E1' tipo='texto' dibujar-si='0' expresión='[20,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Courier New;\f2\fcharset0 Times New Roman;}\f1\fs30 angulo2={\*\mjaformula{\expr angulo2\decimals 2\fixed0}}\par \f2\fs34\i Coinciden={\*\mjaformula{\expr coinciden\decimals 2\fixed0}}\f1\fs30\i0\par \f2\fs34\i Invertir={\*\mjaformula{\expr Invertir\decimals 2\fixed0}}\f1\fs30\i0}' fijo='sí'">
+   <param name="G_19" value="espacio='Retro' tipo='texto' dibujar-si='(coinciden==2)|(Tipo==3)' expresión='[45,25]' texto='Los triángulos no coinciden.' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_20" value="espacio='Retro' tipo='polígono' coord_abs='sí' expresión='(1,1)(Retro._w-1,1)(Retro._w-1,Retro._h-1)(1,Retro._h-1)(1,1)' ancho='2'">
+   <param name="G_21" value="espacio='E1' tipo='texto' dibujar-si='0' expresión='[E1._w-150,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Courier New;\f2\fcharset0 Times New Roman;}\f1\fs30 g3.x=\f2\fs34\i{\*\mjaformula{\expr g3.x\decimals 2\fixed0}}\f1\fs30\i0\par g3.y=\f2\fs34\i{\*\mjaformula{\expr g3.y\decimals 2\fixed0}}\f1\fs30\i0\par g3.x=\f2\fs34\i{\*\mjaformula{\expr g4.x\decimals 2\fixed0}}\f1\fs30\i0\par g3.y=\f2\fs34\i{\*\mjaformula{\expr g4.y\decimals 2\fixed0}}\f1\fs30\i0\par T1Ax=\f2\fs34\i{\*\mjaformula{\expr T1Ax\decimals 2\fixed0}}\f1\fs30\i0\par T1Ay=\f2\fs34\i{\*\mjaformula{\expr T1Ay\decimals 2\fixed0}}\f1\fs30\i0}' fijo='sí'">
+</ajs></p>
+
+</body>
+</html>

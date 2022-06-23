@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=400 height=350 code="Descartes">
+   <param name="tamaño" value="400x350">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' imagen='images/fondo.png' despl_imagen='arr-izq' fondo='f3f0ec' red='b8c4c8' red10='no' ejes='405860' texto='no'">
+   <param name="C_01" value="id='a' tipo='gráfico' espacio='E1' expresión='(a.x,a.y)'">
+   <param name="C_02" value="id='a.x' tipo='numérico' región='escenario' espacio='E1' nombre='a.x' expresión='(0,0,0,0)' valor='-2' max='b.x-.5' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_03" value="id='a.y' tipo='numérico' región='escenario' espacio='E1' nombre='a.x' expresión='(0,0,0,0)' min='-2' max='-2' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_04" value="id='b' tipo='gráfico' espacio='E1' expresión='(b.x,b.y)' fijo='sí'">
+   <param name="C_05" value="id='b.x' tipo='numérico' región='escenario' espacio='E1' nombre='b.x' expresión='(0,0,0,0)' valor='2' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_06" value="id='b.y' tipo='numérico' región='escenario' espacio='E1' nombre='b.y' expresión='(0,0,0,0)' min='-2' max='-2' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_07" value="id='c' tipo='gráfico' espacio='E1' expresión='(c.x,c.y)' fijo='sí'">
+   <param name="C_08" value="id='c.x' tipo='numérico' región='escenario' espacio='E1' nombre='c.x' expresión='(0,0,0,0)' valor='2' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_09" value="id='c.y' tipo='numérico' región='escenario' espacio='E1' nombre='c.y' expresión='(0,0,0,0)' valor='2' min='b.y+.5' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="A_01" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez'">
+   <param name="A_02" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' hacer='b.x=c.x;a=atan((c.y-b.y)/(b.x-a.x))*55;c=90-a'">
+   <param name="G_01" value="espacio='E1' tipo='polígono' expresión='(a.x,a.y)(b.x,b.y)(c.x,c.y)(a.x,a.y)' relleno='cdffff80' ancho='2'">
+   <param name="G_02" value="espacio='E1' tipo='arco' centro='(a.x,a.y)' radio='.3' fin='a' fijo='sí'">
+   <param name="G_03" value="espacio='E1' tipo='arco' centro='(c.x,c.y)' radio='.3' inicio='270' fin='275-c' fijo='sí'">
+   <param name="G_04" value="espacio='E1' tipo='punto' expresión='(a.x,a.y-.3)' texto='a=[a]°' fuente='SansSerif,ITALIC,18' decimales='0' fijo='sí' tamaño='0'">
+   <param name="G_05" value="espacio='E1' tipo='punto' expresión='(b.x,b.y-.3)' texto='b=90°' fuente='SansSerif,ITALIC,18' decimales='0' fijo='sí' tamaño='0'">
+   <param name="G_06" value="espacio='E1' tipo='punto' expresión='(c.x+.1,c.y)' texto='c=[c]°' fuente='SansSerif,ITALIC,18' decimales='0' fijo='sí' tamaño='0'">
+   <param name="G_07" value="espacio='E1' tipo='punto' expresión='(a.x+(b.x-a.x)/2-1.5,b.y+(c.y-b.y)/2)' texto='hipotenusa' fuente='SansSerif,ITALIC,18' fijo='sí' tamaño='0'">
+   <param name="G_08" value="espacio='E1' tipo='polígono' fondo='sí' color='grisObscuro' dibujar-si='0' coord_abs='sí' expresión='(0,0)(E1._w-1,0)(E1._w-1,E1._h-1)(0,E1._h-1)(0,0)' ancho='3'">
+</ajs></p>
+
+</body>
+</html>

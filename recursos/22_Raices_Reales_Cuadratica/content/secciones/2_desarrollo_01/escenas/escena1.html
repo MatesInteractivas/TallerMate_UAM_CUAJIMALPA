@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>	
+      <style type="text/css" media="screen">
+	/*pulsador*/
+	#zm { }
+	#zm > canvas {
+	  display: none;
+	}
+    
+	#zm .up {
+	  background: white url("images/zoomIn.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zm > .up:hover {
+	  background-color: #efefef !important;
+	}
+	#zm > .up:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+    
+	#zm .down {
+	  background: white url("images/zoomOut.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zm .down:hover {
+	  background-color: #efefef !important;
+	}
+	#zm .down:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+      </style>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=750 height=480 code="Descartes">
+   <param name="tamaño" value="750x480">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo.png' despl_imagen='arr-izq' fondo='f3f0ec' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='PCar' x='51%' y='17%' ancho='48%' alto='82%' fijo='sí' despl_imagen='arr-izq' red='b8c4c8' red10='889498' ejes='405860' texto='405860'">
+   <param name="E_03" value="tipo='R2' id='Sugg' x='10%' y='10%' ancho='80%' alto='80%' dibujar-si='shwSugg' fijo='sí' despl_imagen='arr-izq' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='ReiniciarBt' tipo='numérico' interfaz='botón' región='interior' espacio='PCar' nombre='Reiniciar' expresión='(PCar._w/2-45,PCar._h-35,90,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='PCar.escala=50\nzm=50\nPCar.Ox=0\nPCar.Oy=0' activo-si='!shwSugg'">
+   <param name="C_02" value="id='SugerenciasBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Sugerencias' expresión='(E1._w/4-60,E1._h-35,120,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn120x30.png' acción='calcular' parámetro='shwSugg=1' activo-si='!shwSugg' pos_mensajes='centro'">
+   <param name="C_03" value="id='a' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(50,125,27,50)' valor='-0.025' incr='0.05' min='-5' max='5' decimales='3' fijo='sí' visible='no' acción='calcular' parámetro='Raices()' activo-si='!shwSugg'">
+   <param name="C_04" value="id='b' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(50,180,27,50)' valor='0.05' incr='0.05' min='-5' max='5' discreto='sí' fijo='sí' visible='no' acción='calcular' parámetro='Raices()' activo-si='!shwSugg'">
+   <param name="C_05" value="id='c' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(50,235,27,50)' valor='2' incr='0.05' min='-5' max='5' discreto='sí' fijo='sí' visible='no' acción='calcular' parámetro='Raices()' activo-si='!shwSugg'">
+   <param name="C_06" value="id='zm' tipo='numérico' región='interior' espacio='PCar' nombre='_nada_' expresión='(PCar._w-33,PCar._h-63,30,60)' valor='50' incr='5' min='5' max='100' discreto='sí' decimales='0' fijo='sí' visible='no' acción='calcular' parámetro='PCar.escala=zm' activo-si='!shwSugg'">
+   <param name="C_07" value="id='clsSuggBt' tipo='numérico' interfaz='botón' región='interior' espacio='Sugg' nombre='_nada_' expresión='(Sugg._w-25,5,20,20)' fijo='sí' visible='sí' imagen='images/cerrar.png' acción='calcular' parámetro='shwSugg=0' pos_mensajes='centro'">
+   <param name="A_01" value="id='ExtraeRaiz1(a2,b2,c2)' expresión='(-b+sqrt(b^2-4*a*c))/(2*a)'">
+   <param name="A_02" value="id='ExtraeRaiz2(a2,b2,c2)' expresión='(-b-sqrt(b^2-4*a*c))/(2*a)'">
+   <param name="A_03" value="id='Raices()' algoritmo='sí' algoritmo='sí' hacer='SolReal=(b^2-4*a*c>=0)?1:0;r1=(SolReal)?ExtraeRaiz1(a,b,c):&squot;No hay raíz&squot;;r2=(SolReal)?ExtraeRaiz2(a,b,c):&squot;No hay raíz&squot;'">
+   <param name="A_04" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='PCar.escala=50;Raices()'">
+   <param name="A_05" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='texto' expresión='[10,10]' texto='Cambia el valor de los pulsadores, siguiendo las sugerencias que se muestran cuando oprimes el botón del mismo nombre.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='625'">
+   <param name="G_02" value="espacio='E1' tipo='texto' expresión='[10,70]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}\f1\fs38\i{\*\mjaformula y=ax{\supix 2}+bx+c}\f2\fs34\i0\par \f1\fs38\i{\*\mjaformula y={\expr a\decimals 2\fixed0}x{\expr (b>=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(b)\decimals 2\fixed0}x{\expr (c>=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(c)\decimals 2\fixed0}}\f2\fs34\i0}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_03" value="espacio='E1' tipo='texto' expresión='[10,140]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;}\f1\fs38\i a =       {\*\mjaformula{\expr a\decimals 2\fixed0}}}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_04" value="espacio='E1' tipo='texto' expresión='[10,195]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;}\f1\fs38\i b =       {\*\mjaformula{\expr b\decimals 2\fixed0}}}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_05" value="espacio='E1' tipo='texto' expresión='[10,250]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;}\f1\fs38\i c =       {\*\mjaformula{\expr c\decimals 2\fixed0}}}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_06" value="espacio='E1' tipo='texto' expresión='[10,305]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;}\f1\fs38\i{\*\mjaformula r{\subix 1}={\expr r1\decimals 3\fixed0}}}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_07" value="espacio='E1' tipo='texto' expresión='[10,360]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;}\f1\fs38\i{\*\mjaformula r{\subix 2}={\expr r2\decimals 3\fixed0}}}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_08" value="espacio='PCar' tipo='ecuación' color='00b780' expresión='y=a*x^2+b*x+c' ancho='2'">
+   <param name="G_09" value="espacio='PCar' tipo='punto' dibujar-si='SolReal' expresión='(r1,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}\f1\fs38\i{\*\mjaformula ({\expr r1\decimals 2\fixed0},0)}\f2\fs34\i0}' fuente='Serif,ITALIC,19' fijo='sí' tamaño='4'">
+   <param name="G_10" value="espacio='PCar' tipo='punto' dibujar-si='SolReal' expresión='(r2,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}\f1\fs38\i\par {\*\mjaformula ({\expr r2\decimals 2\fixed0},0)}\f2\fs34\i0}' fuente='Serif,ITALIC,19' fijo='sí' tamaño='4'">
+   <param name="G_11" value="espacio='PCar' tipo='polígono' coord_abs='sí' expresión='(1,1)(PCar._w-1,1)(PCar._w-1,PCar._h-1)(1,PCar._h-1)(1,1)' ancho='2'">
+   <param name="G_12" value="espacio='Sugg' tipo='polígono' fondo='sí' coord_abs='sí' expresión='(1,1)(Sugg._w-1,1)(Sugg._w-1,Sugg._h-1)(1,Sugg._h-1)(1,1)' ancho='2'">
+   <param name="G_13" value="espacio='Sugg' tipo='texto' color='232323' expresión='[10,10]' texto='Intenta hacer que la parábola abra para arriba y depués que abra para abajo. Ello lo podrás lograr cuando uses diferente signo para el parámetro &squot;a&squot;.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='500'">
+   <param name="G_14" value="espacio='Sugg' tipo='texto' color='232323' expresión='[10,100]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Como ejemplo, haz que la par\u225 bola abra hacia abajo y que su v\u233 rtice\par se encuentre arriba del eje \f2\fs38\i X\f1\fs34\i0 . Por ejemplo, con los valores: \f2\fs38\i a=-0.27\f1\fs34\i0 ,\par \f2\fs38\i b=0.05\f1\fs34\i0  y \f2\fs38\i c=2\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_15" value="espacio='Sugg' tipo='texto' color='232323' expresión='[10,190]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Luego volt\u233 ala para que abra para arriba y su v\u233 rtice est\u233  tambi\u233 n\par sobre el eje \f2\fs38\i X\f1\fs34\i0 . Ello lo logras invirtiendo el signo de \f2\fs38\i a\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_16" value="espacio='Sugg' tipo='texto' color='232323' expresión='[10,255]' texto='Intenta ambos escenarios pero ahora con el vértice por debajo de las abscisas.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='500'">
+   <param name="G_17" value="espacio='Sugg' tipo='texto' color='232323' expresión='[10,320]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Ubica en la gr\u225 fica los puntos donde cruza tu curva con las abscisas\par para cada caso. Tambi\u233 n atiende al valor de tus ra\u237 ces \f2\fs38\i{\*\mjaformula r{\subix 1}}\f1\fs34\i0  y \f2\fs38\i{\*\mjaformula r{\subix 2}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+</ajs></p>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<head>
+   <title></title>
+        <link href="css/descartes.css" rel="stylesheet" type="text/css" />
+        <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+	
+	<script>
+  
+	 if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+	   document.addEventListener('touchend', function(e) {  
+	     if(window.parent.document.getElementById("main")!=null){
+	       parent.manageZoom();
+	     }
+	   },false);
+	 }
+       
+	 function showCredits(){
+	   
+	   if(window.parent.document.getElementById("main")!=null){
+	     showCreditsContainer();
+	   } else {
+	     document.getElementById('popup_creditos').className='visible';
+	   }
+	 }
+	 
+	 function showCreditsContainer(){
+	   
+	   window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+	   window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+	   var newDiv = document.createElement("div");
+	   newDiv.setAttribute("style","margin:0px; padding: 0px;")
+	   newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+	   window.parent.document.getElementById('popup_content').appendChild(newDiv);
+	 }
+     
+       </script>
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+
+<body>
+<article class="course_content_container">
+
+<div class="course_content">
+   
+   <!--- Título de la página --->
+   <h1>Potencias de algunos binomios</h1>
+
+<div>
+<ajs name="Arquimedes" width=820 height=600 code="Arquimedes">
+   <param name="tamaño" value="820x600">
+   <param name="pleca" value="title='' subtitle='' subtitlines='0' bgcolor='' fgcolor='' align='' titleimage='' titlefont='' subtitlefont='' ">
+   <param name="rtf" value="{\rtf1\uc0{\fonttbl\f0\fcharset0 Arial;\f1\fcharset0 Arial;\f2\fcharset0 Arial;\f3\fcharset0 Arial;\f4\fcharset0 Times New Roman;}{\colortbl\red208\green112\blue32;\red35\green35\blue35;}\cf0\f1\fs36    \cf1\fs34 Al calcular la potencia de un binomio se obtienen varios \i productos notables\i0  ampliamente utilizados \par \cf0\fs36    \cf1\fs34 en el estudio del \u225 lgebra, por ejemplo:\par \par \cf0\fs36    \cf1\f4\fs38\i{\*\mjaformula\f3\fs34\i (x+y){\supix 2}\f4\fs38} {\*\mjaformula =(x+y)(x+y)}\par                    {\*\mjaformula = xx + xy + xy + yy}\par                    {\*\mjaformula = x{\supix 2} + 2xy + y{\supix 2}}\f2\fs34\i0\par \par \cf0\fs36    \cf1\f4\fs38\i{\*\mjaformula\f3\fs34\i (x - y){\supix 2}\f4\fs38} {\*\mjaformula =(x - y)(x - y)}\par                     {\*\mjaformula = xx  - xy - xy + yy}\par                     {\*\mjaformula = x{\supix 2} - 2xy + y{\supix 2}}\f2\fs34\i0\par \par \cf0\fs36    \cf1\f4\fs38\i{\*\mjaformula\f3\fs34\i (x+y){\supix 3}\f4\fs38} {\*\mjaformula =(x+y)(x+y)(x+y)}\par                    {\*\mjaformula =(x+y)(x{\supix 2} + 2xy + y{\supix 2})}\par                    {\*\mjaformula = xx{\supix 2} + x2xy + xy{\supix 2} + yx{\supix 2}+ y2xy + yy{\supix 2} }\par                    {\*\mjaformula = x{\supix 3} + 2x{\supix 2}y + xy{\supix 2} + x{\supix 2}y+ 2xy{\supix 2} + y{\supix 3} }\par                    {\*\mjaformula = x{\supix 3} + 3x{\supix 2}y + 3xy{\supix 2} + y{\supix 3}}\f2\fs34\i0\par \par \cf0\fs36    \cf1\f4\fs38\i{\*\mjaformula\f3\fs34\i (x\f4\fs38  - y){\supix 3}} {\*\mjaformula =(x - y)(x - y)(x - y)}\par                     {\*\mjaformula =(x - y)(x{\supix 2} - 2xy + y{\supix 2})}\par                     {\*\mjaformula = xx{\supix 2} - x2xy + xy{\supix 2} - yx{\supix 2}+ y2xy - yy{\supix 2} }\par                     {\*\mjaformula = x{\supix 3} - 2x{\supix 2}y + xy{\supix 2} - x{\supix 2}y+ 2xy{\supix 2} - y{\supix 3} }\par                     {\*\mjaformula = x{\supix 3} - 3x{\supix 2}y + 3xy{\supix 2} - y{\supix 3}}\f2\fs34\i0\par \par \cf0\fs36    \cf1\f4\fs38\i{\*\mjaformula\f3\fs34\i (x+y){\supix 4}\f4\fs38} {\*\mjaformula =(x+y)(x+y)(x+y)(x+y)}\par                    {\*\mjaformula =(x+y)(x{\supix 3} + 3x{\supix 2}y + 3xy{\supix 2} + y{\supix 3})}\par                    {\*\mjaformula = xx{\supix 3} + x3x{\supix 2}y + x3xy{\supix 2} + xy{\supix 3} + yx{\supix 3} + y3x{\supix 2}y + y3xy{\supix 2} + yy{\supix 3} }\par                    {\*\mjaformula = x{\supix 4} + 3x{\supix 3}y + 3x{\supix 2}y{\supix 2} + xy{\supix 3} + x{\supix 3}y + 3x{\supix 2}y{\supix 2} + 3xy{\supix 3} + y{\supix 4} }\par                    {\*\mjaformula = x{\supix 4} + 4x{\supix 3}y + 6x{\supix 2}y{\supix 2} + 4xy{\supix 3} +  y{\supix 4}}\f2\fs34\i0\par \cf0\fs36\par    \cf1\f4\fs38\i{\*\mjaformula\f3\fs34\i (x - y){\supix 4}\f4\fs38} {\*\mjaformula =(x - y)(x - y)(x - y)(x - y)}\par                     {\*\mjaformula =(x - y)(x{\supix 3} - 3x{\supix 2}y + 3xy{\supix 2} - y{\supix 3})}\par                     {\*\mjaformula = xx{\supix 3} - x3x{\supix 2}y + x3xy{\supix 2} - xy{\supix 3} - yx{\supix 3} + y3x{\supix 2}y - y3xy{\supix 2} + yy{\supix 3} }\par                     {\*\mjaformula = x{\supix 4} - 3x{\supix 3}y + 3x{\supix 2}y{\supix 2} - xy{\supix 3} - x{\supix 3}y + 3x{\supix 2}y{\supix 2} - 3xy{\supix 3} + y{\supix 4} }\par                     {\*\mjaformula = x{\supix 4} - 4x{\supix 3}y + 6x{\supix 2}y{\supix 2} - 4xy{\supix 3} +  y{\supix 4}}\f2\fs34\i0\par \par \cf0\fs36    \cf1\f4\fs38\i{\*\mjaformula\f3\fs34\i (x+y){\supix 5}\f4\fs38} {\*\mjaformula =(x+y)(x+y)(x+y)(x+y)(x+y)}\par                    {\*\mjaformula =(x+y)(x{\supix 4} + 4x{\supix 3}y + 6x{\supix 2}y{\supix 2} + 4xy{\supix 3} + y{\supix 4})}\par                    {\*\mjaformula = xx{\supix 4} + x4x{\supix 3}y + x6x{\supix 2}y{\supix 2} + x4xy{\supix 3} + xy{\supix 4} + yx{\supix 4} + y4x{\supix 3}y + y6x{\supix 2}y{\supix 2} + y4xy{\supix 3} + yy{\supix 4} }\par                    {\*\mjaformula = x{\supix 5} + 4x{\supix 4}y + 6x{\supix 3}y{\supix 2} + 4x{\supix 2}y{\supix 3} + xy{\supix 4} + x{\supix 4}y + 4x{\supix 3}y{\supix 2} + 6x{\supix 2}y{\supix 3} + 4xy{\supix 4} + y{\supix 5} }\par                    {\*\mjaformula = x{\supix 5} + 5x{\supix 4}y + 10x{\supix 3}y{\supix 2} + 10x{\supix 2}y{\supix 3} + 5xy{\supix 4} +  y{\supix 5}}\f2\fs34\i0\par \par \cf0\fs36    \cf1\f4\fs38\i{\*\mjaformula\f3\fs34\i (x\f4\fs38  - y){\supix 5}} {\*\mjaformula =(x - y)(x - y)(x - y)(x - y)(x - y)}\par                     {\*\mjaformula =(x - y)(x{\supix 4} - 4x{\supix 3}y + 6x{\supix 2}y{\supix 2} - 4xy{\supix 3} + y{\supix 4})}\par                     {\*\mjaformula = xx{\supix 4} - x4x{\supix 3}y + x6x{\supix 2}y{\supix 2} - x4xy{\supix 3} + xy{\supix 4} - yx{\supix 4} + y4x{\supix 3}y - y6x{\supix 2}y{\supix 2} + y4xy{\supix 3} - yy{\supix 4} }\par                     {\*\mjaformula = x{\supix 5} - 4x{\supix 4}y + 6x{\supix 3}y{\supix 2} - 4x{\supix 2}y{\supix 3} + xy{\supix 4} - x{\supix 4}y + 4x{\supix 3}y{\supix 2} - 6x{\supix 2}y{\supix 3} + 4xy{\supix 4} - y{\supix 5} }\par                     {\*\mjaformula = x{\supix 5} - 5x{\supix 4}y + 10x{\supix 3}y{\supix 2} - 10x{\supix 2}y{\supix 3} + 5xy{\supix 4} -  y{\supix 5}}\f2\fs34\i0\par \cf0\fs36\par \cf1\fs34\par \fs24}">
+   <param name="rtf_height" value="1236">
+   <param name="image_loader" value="">
+   <param name="expand" value="">
+   <param name="editable" value="no">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="nombre" value="Arquimedes">
+   <param name="Versión" value="5.336, 2015-02-13">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no">
+</ajs>
+</div>
+
+<!-- TERMINA EL CONTENIDO DE LA PÁGINA -->
+
+<!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Joel Espinosa Longi</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica fue creada con <a href="http://arquimedes.matem.unam.mx/Descartes5/creditos/conCCL.html" target="_blank">Arquímedes</a>, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  <!--- Parche para que no se dupliquen los créditos Arquímedes -->
+  <img src='imgs/plastaBlanca.jpg' style="position:absolute; bottom: 100px; left: 10px;"></img>
+  <!-- Final parche -->
+
+
+</div>
+
+</article>
+
+</body>
+</html>

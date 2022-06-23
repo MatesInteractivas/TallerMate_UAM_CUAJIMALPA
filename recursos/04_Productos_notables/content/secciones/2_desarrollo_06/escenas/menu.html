@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>Menú de Plantillas</title>
+
+<script type="text/javascript" src="lib/descartes-min.js"></script>
+
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body BGCOLOR="00000">
+<ajs name="menu" width=790 height=35 code="Descartes">
+   <param name="tamaño" value="790x35">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="menu">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no">
+   <param name="E_01" value="tipo='R2' id='E2' imagen='images/tercero/menu/fondo.jpg' despl_imagen='arr-izq' fondo='grisClaro' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='Bot_0' tipo='numérico' interfaz='botón' región='interior' espacio='E2' nombre='Exploración' expresión='(btnX[0],btnY[0],btnW[0]-wcb,btnH[0])' fijo='sí' visible='sí' imagen='images/btnsMenu/btn_1.png ffffff_N_20' acción='abrir Escena' parámetro='productos_notables_1.html target=principal' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='nBotones>0'">
+   <param name="C_02" value="id='Bot_1' tipo='numérico' interfaz='botón' región='interior' espacio='E2' nombre='Productos notables' expresión='(btnX[1]-wcb,btnY[1],btnW[1]+2*wcb-6,btnH[1])' fijo='sí' visible='sí' imagen='images/btnsMenu/btn_1.png ffffff_N_20' acción='abrir Escena' parámetro='productos_notables_2.html target=principal' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='nBotones>1' pos_mensajes='centro'">
+   <param name="C_03" value="id='Bot_2' tipo='numérico' interfaz='botón' región='interior' espacio='E2' nombre='Factorización' expresión='(btnX[2]+wcb-7,btnY[2],btnW[2]-wcb+7,btnH[2])' fijo='sí' visible='sí' imagen='images/btnsMenu/btn_1.png ffffff_N_20' acción='abrir Escena' parámetro='factorizacion_1.html target=principal' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='nBotones>2' pos_mensajes='centro'">
+   <param name="C_04" value="id='A' tipo='numérico' interfaz='botón' región='interior' espacio='E2' expresión='(677,5,38,30)' fijo='sí' visible='sí' imagen='images/tercero/menu/info/info.jpg' acción='abrir URL' parámetro='javascript:window.open(&squot;doc/info.html&squot;,&squot;Ayuda&squot;,&squot;top=120,left=200,width=790,height=545,toolbar=0,menubar=1,scrollbars=1,resizable=0,location=0,status=0&squot;);void(0);' parámetro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro'">
+   <param name="C_05" value="id='X' tipo='numérico' interfaz='botón' región='interior' espacio='E2' expresión='(734,5,38,30)' fijo='sí' visible='sí' imagen='images/tercero/menu/cerrar/cerrar.jpg' acción='abrir URL' parámetro='javascript:parent.parent.cerrar();' parámetro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro'">
+   <param name="C_06" value="id='infoMenu' tipo='numérico' interfaz='botón' región='exterior' espacio='E2' nombre='infoMenu' fijo='sí' visible='sí' acción='mensaje' parámetro='El ancho de los botones = [tmpWidthBtn] ' parámetro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro'">
+   <param name="A_01" value="id='btnX' vector='sí' evaluar='una-sola-vez'">
+   <param name="A_02" value="id='btnY' vector='sí' evaluar='una-sola-vez'">
+   <param name="A_03" value="id='btnW' vector='sí' evaluar='una-sola-vez'">
+   <param name="A_04" value="id='btnH' vector='sí' evaluar='una-sola-vez'">
+   <param name="A_05" value="id='nBotones' constante='sí' expresión='3' evaluar='una-sola-vez'">
+   <param name="A_06" value="id='__ALGO_INI__' algoritmo='sí' evaluar='una-sola-vez'">
+   <param name="A_07" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' inicio='wcb=20' hacer='nBotones=min(7,nBotones);espacio.w=790;espacio.h=35;;vRule.w=3;vRule.h=35;wUtilizable=espacio.w-132;;tmpTotalWRules=vRule.w*nBotones;tmpTotalW=wUtilizable-tmpTotalWRules;tmpWidthBtn=ent(tmpTotalW/nBotones)'">
+   <param name="A_08" value="id='INICIO_BTNS' algoritmo='sí' evaluar='una-sola-vez' inicio='_index=0' hacer='btnX[_index]=(tmpWidthBtn+vRule.w)*_index;btnY[_index]=0;btnW[_index]=tmpWidthBtn;btnH[_index]=espacio.h;_index=_index+1' mientras='_index<nBotones'">
+   <param name="G_01" value="espacio='E2' tipo='imagen' coord_abs='sí' expresión='(btnW[1]-wcb,btnY[1])' familia='s' s.intervalo='[0,nBotones-1]' s.pasos='nBotones-1' archivo='images/tercero/menu/vRule.jpg'">
+   <param name="G_02" value="espacio='E2' tipo='imagen' coord_abs='sí' expresión='(btnX[2]+wcb-10,btnY[2])' familia='s' s.intervalo='[0,nBotones-1]' s.pasos='nBotones-1' archivo='images/tercero/menu/vRule.jpg'">
+   <param name="G_03" value="espacio='E2' tipo='imagen' coord_abs='sí' expresión='(btnX[s]+btnW[s],btnY[s])' familia='s' s.intervalo='[0,nBotones-1]' s.pasos='nBotones-1' archivo='images/tercero/menu/vRule.jpg'">
+</ajs>
+</body>
+</html>

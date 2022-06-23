@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>
+
+  <style type="text/css" media="screen">
+	/*pulsador*/
+	#E2\.escala { }
+	#E2\.escala > canvas {
+	  display: none;
+	}
+    
+	#E2\.escala .up {
+	  background: #efefef url("images/zoomIn.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#E2\.escala > .up:hover {
+	  background-color: #ffffff !important;
+	}
+	#E2\.escala > .up:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+    
+	#E2\.escala .down {
+	  background: #efefef url("images/zoomOut.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#E2\.escala .down:hover {
+	  background-color: #ffffff !important;
+	}
+	#E2\.escala .down:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+      </style>	
+
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=760 height=480 code="Descartes">
+   <param name="tamaño" value="760x480">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo.png' despl_imagen='arr-izq' fondo='f5f5f5' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='E2' x='19' y='52' ancho='410' alto='410' escala='10' despl_imagen='arr-izq' fondo='blanco' red='d6e2e6' red10='b0bcc0' ejes='gris' texto='no' números='sí'">
+   <param name="C_01" value="id='otroEjemplo' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Otro ejercicio' expresión='(E1._w-265-15,E1._h-30-15,120,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' fuente puntos='18' imagen='images/btn120x30.png' acción='calcular' parámetro='ejemplo()'">
+   <param name="C_02" value="id='verificar' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Verificar' expresión='(E1._w-120-15,E1._h-30-15,120,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' fuente puntos='18' imagen='images/btn120x30.png' acción='calcular' parámetro='verificar()' activo-si='(intentos<=1)'">
+   <param name="C_03" value="id='E2.escala' tipo='numérico' región='interior' espacio='E1' nombre='E2.escala' expresión='(430,E1._h-78,30,60)' valor='12' incr='1' fijo='sí' visible='no'">
+   <param name="C_04" value="id='res1' tipo='numérico' interfaz='menú' región='interior' espacio='E1' nombre='_._' expresión='(505,273,50,25)' fijo='sí' visible='no' opciones=' ,<,>' activo-si='(!_bien_ope)&&(intentos<=1)'">
+   <param name="C_05" value="id='res2' tipo='numérico' interfaz='campo de texto' región='interior' espacio='E1' nombre='_._' expresión='(565,273,100,25)' valor='&squot;&squot;' fijo='sí' visible='sí' activo-si='(!_bien_num)&&(intentos<=1)'">
+   <param name="A_01" value="id='ejemplo()' algoritmo='sí' expresión='x' algoritmo='sí' inicio='maxVal=4' hacer='a1=1+ent(rnd*maxVal);signo_a1=(rnd<0.5)?&squot;+&squot;:&squot;-&squot;;b1=1+ent(rnd*maxVal*4);signo_b1=(rnd<0.5)?&squot;+&squot;:&squot;-&squot;;;a2=(rnd<.6)?0:1+ent(rnd*maxVal);a2=(a2==a1)?a2+1:a2;signo_a2=(rnd<0.5)?&squot;+&squot;:&squot;-&squot;;b2=1+ent(rnd*maxVal*4);b2=(b2==b1)?b2+1:b2;signo_b2=(rnd<0.5)?&squot;+&squot;:&squot;-&squot;;;operadorDesigualdad=(rnd<0.5)?&squot;<&squot;:&squot;>&squot;;;f1=&squot;&squot;+signo_a1+&squot;&squot;+a1+&squot;x&squot;+signo_b1+&squot;&squot;+b1;f2=&squot;&squot;+signo_a2+&squot;&squot;+a2+&squot;x&squot;+signo_b2+&squot;&squot;+b2;;_tmpb1=(signo_b1==&squot;-&squot;)?-b1:b1;_tmpb2=(signo_b2==&squot;-&squot;)?-b2:b2;b2_b1=_tmpb2-_tmpb1;signo_b2_b1=(b2_b1>0)?&squot;+&squot;:&squot;-&squot;;b2_b1=(b2_b1>0)?b2_b1:-b2_b1;;_tmpa1=(signo_a1==&squot;-&squot;)?-a1:a1;_tmpa2=(signo_a2==&squot;-&squot;)?-a2:a2;a2_a1=_tmpa1-_tmpa2;signo_a2_a1=(a2_a1>0)?&squot;+&squot;:&squot;-&squot;;a2_a1=(a2_a1>0)?a2_a1:-a2_a1;;_tmpb2_b1=(signo_b2_b1==&squot;-&squot;)?-b2_b1:b2_b1;_tmpa2_a1=(signo_a2_a1==&squot;-&squot;)?-a2_a1:a2_a1;b2_b1_a2_a1=_tmpb2_b1/_tmpa2_a1;signo_b2_b1_a2_a1=(b2_b1_a2_a1>0)?&squot;+&squot;:&squot;-&squot;;b2_b1_a2_a1=(b2_b1_a2_a1>0)?b2_b1_a2_a1:-b2_b1_a2_a1;;px=(signo_b2_b1_a2_a1==&squot;-&squot;)?-b2_b1_a2_a1:b2_b1_a2_a1;py=_tmpa1*px+_tmpb1;;operadorDesigualdad2=(signo_a2_a1==&squot;-&squot;)?((operadorDesigualdad==&squot;<&squot;)?&squot;>&squot;:&squot;<&squot;):operadorDesigualdad;;E2.escala=12;E2.Ox=-px*E2.escala;E2.Oy=py*E2.escala;;verificado=0;intentos=0;res1=0;res2=&squot;&squot;;_bien_ope=0;_bien_num=0'">
+   <param name="A_02" value="id='verificar()' algoritmo='sí' expresión='_bien' algoritmo='sí' inicio='verificado=1' hacer='intentos=intentos+1;;_bien_ope=((operadorDesigualdad2==&squot;<&squot;)&&(res1==1)) || ((operadorDesigualdad2==&squot;>&squot;)&&(res1==2));_bien_num=igual(res2,px);;_bien=(_bien_ope)&&(_bien_num);;res1=(intentos>1)?((operadorDesigualdad2==&squot;<&squot;)?1:2):res1;res2=(intentos>1)?px:res2;'">
+   <param name="A_03" value="id='igual(n,m)' expresión='abs(n-m)<0.1'">
+   <param name="A_04" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='ejemplo()'">
+   <param name="A_05" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='texto' expresión='[15,15]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;}\f1\fs36\u191 Cu\u225 l es el conjunto soluci\u243 n de la desigualdad\f2\fs40\i{\*\mjaformula{\expr (signo_a1==&squot;+&squot;)?&squot;&squot;:signo_a1}{\expr (a1==1)?&squot;&squot;:a1\decimals 0\fixed1}x{\expr signo_b1\decimals 0\fixed1}{\expr b1\decimals 0\fixed1}}{\*\mjaformula\f2\fs40\i{\expr operadorDesigualdad\decimals 0\fixed1}\fs44}{\*\mjaformula\f2\fs40\i{\expr ((a2==0)||(signo_a2==&squot;+&squot;))?&squot;&squot;:signo_a2}{\expr ((a2==0)||(a2==1))?&squot;&squot;:a2\decimals 0\fixed1}{\expr (a2==0)?&squot;&squot;:&squot;x&squot;\decimals 0\fixed1}{\expr ((a2==0)&&(signo_b2==&squot;+&squot;))?&squot;&squot;:signo_b2\decimals 0\fixed1}{\expr b2\decimals 0\fixed1}\fs44}\f1\fs36\i0 ?}' fuente='SansSerif,PLAIN,18' fijo='sí'">
+   <param name="G_02" value="espacio='E1' tipo='texto' expresión='[510,65]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;\f3\fcharset0 Arial;}{\colortbl\red255\green0\blue0;\red32\green48\blue58;\red0\green0\blue255;}\f1\fs40\i{\*\mjaformula\cf0 y{\subix 1}={\expr (signo_a1==&squot;+&squot;)?&squot;&squot;:signo_a1}{\expr (a1==1)?&squot;&squot;:a1\decimals 0\fixed1}x{\expr signo_b1\decimals 0\fixed1}{\expr b1\decimals 0\fixed1}\cf1}\par {\*\mjaformula\f1\fs40\i\cf2 y{\subix 2}={\expr ((a2==0)||(signo_a2==&squot;+&squot;))?&squot;&squot;:signo_a2}{\expr ((a2==0)||(a2==1))?&squot;&squot;:a2\decimals 0\fixed1}{\expr (a2==0)?&squot;&squot;:&squot;x&squot;\decimals 0\fixed1}{\expr ((a2==0)&&(signo_b2==&squot;+&squot;))?&squot;&squot;:signo_b2\decimals 0\fixed1}{\expr b2\decimals 0\fixed1}\cf1\fs44}\f3\fs36\i0}' fuente='Serif,ITALIC,20' fijo='sí'">
+   <param name="G_03" value="espacio='E1' tipo='texto' expresión='[450,130]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs36 La desigualdad dice que la gr\u225 fica\f2\fs40\i{\*\mjaformula y{\subix 1}}\f1\fs36\i0  \par debe tomar valores{\*\mjaformula{\expr (operadorDesigualdad==&squot;>&squot;)?&squot;mayores&squot;:&squot;menores&squot;\decimals 0\fixed1}}que\f2\fs40\i{\*\mjaformula y{\subix 2}}\f1\fs36\i0 , \par es decir: \f2\fs40\i{\*\mjaformula y{\subix 1}{\expr operadorDesigualdad\decimals 0\fixed1}y{\subix 2}}\f1\fs36\i0}' fuente='SansSerif,PLAIN,18' fijo='sí'">
+   <param name="G_04" value="espacio='E1' tipo='texto' expresión='[450,250]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs36 Por lo que el conjunto soluci\u243 n es:\par \{\f2\fs40\i{\*\mjaformula x | x                                  }\f1\fs36\i0\}\par }' fuente='SansSerif,PLAIN,18' fijo='sí'">
+   <param name="G_05" value="espacio='E2' tipo='polígono' fondo='sí' color='grisClaro' coord_abs='sí' expresión='(0,0)(E2._w-1,0)(E2._w-1,E2._h-1)(0,E2._h-1)(0,0)' ancho='3'">
+   <param name="G_06" value="espacio='E2' tipo='ecuación' color='365468' dibujar-si='((intentos>=1)||(_bien))&&(_Eval_(f1+operadorDesigualdad+f2))' expresión='y=0' ancho='5'">
+   <param name="G_07" value="espacio='E2' tipo='ecuación' color='rojo' expresión='y=_Eval_(f1)' ancho='2'">
+   <param name="G_08" value="espacio='E2' tipo='ecuación' color='azul' expresión='y=_Eval_(f2)' ancho='2'">
+   <param name="G_09" value="espacio='E2' tipo='segmento' dibujar-si='((intentos>=1)||(_bien))' expresión='(px,s*sgn(py))(px,0.45*sgn(py)+s*sgn(py))' familia='s' s.intervalo='[0,ent(abs(py))-1]' s.pasos='ent(abs(py)-1)' fijo='sí' tamaño='0'">
+   <param name="G_10" value="espacio='E2' tipo='punto' expresión='(px,py)' fijo='sí' tamaño='5'">
+   <param name="G_11" value="espacio='E2' tipo='punto' color='blanco' expresión='(px,py)' fijo='sí' tamaño='3'">
+   <param name="G_12" value="espacio='E1' tipo='texto' color='14d714' dibujar-si='(_bien)&&(verificado)' expresión='[500,350]' texto='          ¡Muy bien!\nIntenta con otro ejercicio.' fuente='SansSerif,PLAIN,18' fijo='sí'">
+   <param name="G_13" value="espacio='E1' tipo='texto' color='rojo' dibujar-si='(!_bien)&&(verificado)&&(intentos<=1)' expresión='[510,350]' texto='¡Revisa tus respuestas \n   e intenta de nuevo!' fuente='SansSerif,PLAIN,18' fijo='sí'">
+   <param name="G_14" value="espacio='E1' tipo='texto' color='rojo' dibujar-si='(!_bien)&&(verificado)&&(intentos>1)' expresión='[510,350]' texto=' ¡Revisa la respuesta e \nintenta con otro ejercicio!' fuente='SansSerif,PLAIN,18' fijo='sí'">
+   <param name="G_15" value="espacio='E1' tipo='texto' color='((_bien_ope)?0:1,(_bien_ope)?1:0,3a,00)' dibujar-si='(verificado)' expresión='[523,303]' texto='[(_bien_ope)?&squot;✓&squot;:&squot;✗&squot;]' fuente='SansSerif,PLAIN,20' fijo='sí'">
+   <param name="G_16" value="espacio='E1' tipo='texto' color='((_bien_num)?0:1,(_bien_num)?1:0,3a,00)' dibujar-si='(verificado)' expresión='[606,303]' texto='[(_bien_num)?&squot;✓&squot;:&squot;✗&squot;]' fuente='SansSerif,PLAIN,20' fijo='sí'">
+</ajs></p>
+
+</body>
+</html>

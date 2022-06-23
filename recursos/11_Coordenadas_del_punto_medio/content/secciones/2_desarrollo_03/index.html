@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+
+  <!-- MathJax - para fórmulas matemáticas -->
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+  
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+
+<div class="course_content">
+
+<!-- INICIA EL CONTENIDO DE LA PÁGINA -->
+<!-- Título de la página -->
+<h1>Coordenadas del punto medio en el plano cartesiano</h1>
+
+<p>
+Dados dos puntos \(p_1=(x_1 , y_1)\) y \(p_2=(x_2 , y_2)\) en el plano cartesiano, encontrar el punto medio significa encontrar las coordenadas de un punto \(p_m\) en el segmento que une a \(p_1\) con \(p_2\), tal que la distancia entre \(p_1\) y \(p_m\) es igual a la distancia entre \(p_2\) y \(p_m\), es decir, \(p_m\) es un punto equidistante a \(p_1\) y \(p_2\) que se encuentra sobre el segmento que une \(p_1\) con \(p_2\).
+</p>
+
+<div class="course_extern_content">
+<img src="imgs/escena1.png"></img>
+</div>
+
+<p>
+Si nos concentramos solo en las coordenadas en \(x\) de los puntos \(p_1\) y \(p_2\), es decir en \(x_1\) y \(x_2\), podemos pensar el caso de dos puntos sobre la recta numérica, por lo que podemos encontrar un punto medio entre las coordenadas en \(x\) de los puntos.
+
+Al punto medio entre \(x_1\) y \(x_2\) le llamaremos \(x_m\) y su valor lo calculamos como:
+
+$$x_m = \frac{x_1+x_2}{2}$$
+</p>
+
+<div class="course_extern_content">
+<img src="imgs/escena2.png"></img>
+</div>
+
+<p>
+Ya tenemos la <strong>coordenada en \(x\) del punto medio</strong>, ahora solo falta encontrar la <strong>coordenada en \(y\)</strong>. Esto se realiza de manera similar, considerando solo las coordenadas en \(y\) de los puntos \(p_1\) y \(p_2\), es decir \(y_1\) y \(y_2\).
+
+Al punto medio entre \(y_1\) y \(y_2\) le llamaremos \(y_m\) y su valor lo calculamos como:
+
+$$y_m = \frac{y_1+y_2}{2}$$
+</p>
+
+<div class="course_extern_content">
+<img src="imgs/escena3.png"></img>
+</div>
+
+<p>
+Al calcular el punto medio de cada par de coordenadas (en \(x\) y en \(y\)), hemos obtenido las coordenadas de un punto que se encuentra a la misma distancia en \(x\) y en \(y\), de los puntos \(p_1\) y \(p_2\), por lo que la fórmula para calcular las coordenadas del punto medio \(p_m\) es:
+
+$$p_m=\left(\frac{x_1+x_2}{2} , \frac{y_1+y_2}{2}\right)$$
+</p>
+
+<div class="course_extern_content">
+<img src="imgs/escena4.png"></img>
+</div>
+
+
+<!-- TERMINA EL CONTENIDO DE LA PÁGINA -->
+
+  <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Joel Espinosa Longi</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+</div>
+
+</article>
+
+</body>
+
+</html>

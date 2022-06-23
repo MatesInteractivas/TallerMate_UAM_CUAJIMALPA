@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>
+
+      <style type="text/css" media="screen">
+	/*pulsador*/
+	#zoomPls { }
+	#zoomPls > canvas {
+	  display: none;
+	}
+    
+	#zoomPls .up {
+	  background: white url("images/zoomIn.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zoomPls > .up:hover {
+	  background-color: #efefef !important;
+	}
+	#zoomPls > .up:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+    
+	#zoomPls .down {
+	  background: white url("images/zoomOut.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zoomPls .down:hover {
+	  background-color: #efefef !important;
+	}
+	#zoomPls .down:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+      </style>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=750 height=480 code="Descartes">
+   <param name="tamaño" value="750x480">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo_760x510.png' despl_imagen='arr-izq' fondo='f3f0ec' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='PanelIzq' x='1%' y='2%' ancho='48%' alto='96%' fijo='sí' despl_imagen='arr-izq' fondo='d8d8d3' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_03" value="tipo='R2' id='PanelDer' x='51%' y='2%' ancho='48%' alto='96%' despl_imagen='arr-izq' red='b8c4c8' red10='889498' ejes='405860' texto='405860' números='sí'">
+   <param name="E_04" value="tipo='R2' id='Ayuda' x='10%' y='20%' ancho='80%' alto='65%' dibujar-si='shwAyuda' fijo='sí' despl_imagen='arr-izq' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='m' tipo='numérico' región='interior' espacio='PanelIzq' nombre='_nada_' expresión='(60,335,27,50)' valor='1' incr='0.5' min='-50' max='50' discreto='sí' decimales='1' fijo='sí' visible='no' activo-si='!shwAyuda'">
+   <param name="C_02" value="id='b' tipo='numérico' región='interior' espacio='PanelIzq' nombre='_nada_' expresión='(60,395,27,50)' valor='2' min='-15' max='15' discreto='sí' decimales='1' fijo='sí' visible='no' activo-si='!shwAyuda' pos_mensajes='centro'">
+   <param name="C_03" value="id='zoomPls' tipo='numérico' región='interior' espacio='PanelDer' nombre='_nada_' expresión='(PanelDer._w-34,PanelDer._h-64,30,60)' valor='48' incr='1' min='1' max='500' discreto='sí' decimales='1' fijo='sí' visible='no' acción='calcular' parámetro='PanelDer.escala=zoomPls' activo-si='!shwAyuda'">
+   <param name="C_04" value="id='AyudaMBt' tipo='numérico' interfaz='botón' región='interior' espacio='PanelIzq' nombre='Ayuda m' expresión='(PanelIzq._w*2/3-45,345,90,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='shwAyuda=1\nshwAyudaM=1' activo-si='!shwAyuda' pos_mensajes='centro'">
+   <param name="C_05" value="id='AyudaBBt' tipo='numérico' interfaz='botón' región='interior' espacio='PanelIzq' nombre='Ayuda b' expresión='(PanelIzq._w*2/3-45,395,90,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='shwAyuda=1\nshwAyudaB=1' activo-si='!shwAyuda' pos_mensajes='centro'">
+   <param name="C_06" value="id='clsAyuda' tipo='numérico' interfaz='botón' región='interior' espacio='Ayuda' nombre='_nada_' expresión='(Ayuda._w-23,5,20,20)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/cerrar.png' acción='calcular' parámetro='shwAyuda=0\nshwAyudaM=0\nshwAyudaB=0' pos_mensajes='centro'">
+   <param name="A_01" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='PanelDer.escala=48;'">
+   <param name="A_02" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' hacer='zoomPls=PanelDer.escala'">
+   <param name="G_01" value="espacio='PanelIzq' tipo='texto' color='232323' expresión='[10,10]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Para una misma pendiente (mismo\par valor de \f2\fs38\i m\f1\fs34\i0 ), controla el valor de tu\par ordenada al origen (\f2\fs38\i b\f1\fs34\i0 ). Nota qu\u233  es\par lo que cambia y qu\u233  es lo que se\par mantiene igual.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_02" value="espacio='PanelIzq' tipo='texto' color='232323' expresión='[10,140]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}\f1\fs34 Posteriormente, mant\u233 n constante el\par valor de tu ordenada al origen y ahora\par cambia la pendiente. Nuevamente,\par observa qu\u233  no cambia y qu\u233  s\u237 .\par Adicionalmente, prueba valores nulos,\par medianos y muy grandes para la\par pendiente, as\u237  como valores negativos.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_03" value="espacio='PanelIzq' tipo='texto' color='232323' expresión='[10,305]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}\f1\fs38\i{\*\mjaformula y=mx+b={\expr m\decimals 1\fixed0}x{\expr (b>=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(b)\decimals 1\fixed0}}\f2\fs34\i0}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_04" value="espacio='PanelIzq' tipo='texto' color='232323' expresión='[10,350]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;}\f1\fs38\i m =        {\*\mjaformula{\expr m\decimals 1\fixed1}}}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_05" value="espacio='PanelDer' tipo='ecuación' color='00c05c' expresión='y=m*x+b'">
+   <param name="G_06" value="espacio='PanelDer' tipo='segmento' color='azul' expresión='(1,b)(1,b+m)' fijo='sí' tamaño='1' ancho='2'">
+   <param name="G_07" value="espacio='PanelIzq' tipo='texto' color='232323' expresión='[10,410]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;}\f1\fs38\i b =         {\*\mjaformula{\expr b\decimals 1\fixed1}}}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_08" value="espacio='PanelIzq' tipo='polígono' fondo='sí' coord_abs='sí' expresión='(1,1)(PanelIzq._w-1,1)(PanelIzq._w-1,PanelIzq._h-1)(1,PanelIzq._h-1)(1,1)' ancho='2'">
+   <param name="G_09" value="espacio='Ayuda' tipo='texto' dibujar-si='shwAyudaM==1' expresión='[10,10]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}{\colortbl\red0\green0\blue255;\red32\green48\blue58;\red255\green0\blue0;}\f1\fs34 Nota que la pendiente se obtiene de tomar dos puntos de la recta,\par y luego dividir la distancia entre ambos puntos en sentido vertical\par entre la distancia entre ambos en sentido horizontal. En otras\par palabras, puedes obtener la pendiente dividiendo el tama\u241 o del\par segmento \cf0 azul\cf1  entre el del \cf2 rojo\cf1 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_10" value="espacio='Ayuda' tipo='texto' dibujar-si='shwAyudaM==1' expresión='[10,155]' texto='La pendiente equivale a la inclinación de la recta. A mayor pendiente, mayor inclinación. Y una pendiente negativa implica una recta inclinada a la izquierda.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='500'">
+   <param name="G_11" value="espacio='PanelDer' tipo='punto' color='azul' expresión='(1,(2*b+m)/2)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs38\i{\*\mjaformula{\expr m\decimals 1\fixed0}}\f2\fs30\i0}' fuente='Serif,ITALIC,19' fijo='sí' tamaño='0'">
+   <param name="G_12" value="espacio='PanelDer' tipo='segmento' color='rojo' expresión='(0,b)(1,b)' fijo='sí' tamaño='1' ancho='2'">
+   <param name="G_13" value="espacio='PanelDer' tipo='punto' color='rojo' expresión='(0.3,b-0.5)' texto='1' fuente='Serif,ITALIC,19' fijo='sí' tamaño='0'">
+   <param name="G_14" value="espacio='PanelDer' tipo='segmento' color='magenta' expresión='(0,0)(0,b)' fijo='sí' tamaño='1' ancho='2'">
+   <param name="G_15" value="espacio='Ayuda' tipo='texto' dibujar-si='shwAyudaM==1' expresión='[10,250]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 En el ejemplo actual, \f2\fs38\i{\*\mjaformula m={\fraction{\num{\expr m\decimals 1\fixed0}}{\den 1}}={\expr m\decimals 1\fixed0}}\f1\fs34\i0}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_16" value="espacio='Ayuda' tipo='punto' fondo='sí' dibujar-si='0' expresión='(0,0)' fijo='sí'">
+   <param name="G_17" value="espacio='Ayuda' tipo='punto' fondo='sí' dibujar-si='0' expresión='(0,0)' fijo='sí'">
+   <param name="G_18" value="espacio='Ayuda' tipo='texto' dibujar-si='(shwAyudaB==1)' expresión='[10,10]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 La ordenada al origen te da el valor de \f2\fs38\i y\f1\fs34\i0  cuando \f2\fs38\i x\f1\fs34\i0  vale cero. Otra\par forma de verlo es que es la distancia vertical entre el origen y el\par punto donde la recta cruza el eje vertical (la ordenada).}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_19" value="espacio='Ayuda' tipo='texto' dibujar-si='(shwAyudaB==1)' expresión='[10,120]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 En el ejemplo actual, \f2\fs38\i{\*\mjaformula b={\expr b\decimals 1\fixed0}}\f1\fs34\i0}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_20" value="espacio='Ayuda' tipo='texto' dibujar-si='(shwAyudaB==1)' expresión='[10,160]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}{\colortbl\red255\green0\blue255;\red32\green48\blue58;}\f1\fs34 Puedes reconocerla por la l\u237 nea \cf0 magenta\cf1 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_21" value="espacio='Ayuda' tipo='texto' dibujar-si='(shwAyudaB==1)' expresión='[10,200]' texto='La ordenada al origen te da una idea, entonces, de qué tan arriba o abajo está tu recta.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='500'">
+   <param name="G_22" value="espacio='Ayuda' tipo='polígono' fondo='sí' coord_abs='sí' expresión='(1,1)(Ayuda._w-1,1)(Ayuda._w-1,Ayuda._h-1)(1,Ayuda._h-1)(1,1)' ancho='2'">
+   <param name="G_23" value="espacio='PanelDer' tipo='punto' color='magenta' expresión='(0,b/2-0.2)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;}\f1\fs38\i{\*\mjaformula{\expr b\decimals 1\fixed0}}}' fuente='Serif,ITALIC,19' fijo='sí' tamaño='0'">
+   <param name="G_24" value="espacio='PanelDer' tipo='polígono' coord_abs='sí' expresión='(1,1)(PanelDer._w-1,1)(PanelDer._w-1,PanelDer._h-1)(1,PanelDer._h-1)(1,1)' ancho='2'">
+</ajs></p>
+
+</body>
+</html>

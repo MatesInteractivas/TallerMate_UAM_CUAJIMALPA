@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+<script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+  
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Orientación general para resolver problemas con ecuaciones</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Algunas sugerencias útiles</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    El álgebra es una herramienta muy útil para representar problemas en lenguaje matemático. Esto a su vez te permite lidiar con el problema de forma directa para encontrar la solución al mismo. El problema principal generalmente yace en hacer la transición entre el problema escrito en forma no matemática hacia la forma matemática (algebraica, o en forma de ecuación).
+    </p>
+
+    <p>
+    Como se mencionó en la introducción, no hay necesariamente un solo camino para formular el problema. Suele haber múltiples maneras de lograrlo. Sin embargo, algo que habrás notado en la unidad sobre 'Ecuaciones de primer grado con una incógnita' es que la <em>solución</em> de la incógnita debe ser la misma. Matemáticamente, ello significa que la ecuación que obtengas para un problema dado debe ser equivalente a las demás ecuaciones del mismo problema. Si bien puede estar escrita de una forma aparentemente distinta, ha de poder traducirse siempre a la misma ecuación.
+    </p>
+    
+    <p>
+	Algunas sugerencias generales que te pueden servir para construir la ecuación a partir de un problema son:
+    </p>
+
+    <p>
+	<ol>
+		<li>Estudiar y <em>digerir</em> el problema hasta que quede entendida la situación planteada.</li>
+		<li>Hacer una separación entre las cantidades: aquellas conocidas y aquellas desconocidas.</li>
+		<li>Elegir una letra para representar la incógnita (típicamente es \( x \), pero puede ser cualquier letra).</li>
+		<li>Identificar la igualdad. Esto es, notar qué cantidades han de ser comparadas con qué otras para identificar cuáles van de qué lado de la igualdad.</li>
+		<li>Formulación de la ecuación. A partir de lo obtenido en el paso anterior, y de una apropiada identificación de las operaciones que sufren las cantidades, la ecuación puede ser construida.</li>
+		<li>Resolución de la ecuación. Es decir, obtención del valor de la incógnita que satisface la ecuación. Es en este paso que la unidad 'Ecuaciones de primer grado con una incógnita' toma el papel principal.</li>
+	</ol>
+    </p>
+    
+    <!--- Párrafo --->
+    <p>
+    Es importante saber que, aunque las ecuaciones que se abordarán aquí son de primer grado con una incógnita, los pasos anteriores son útiles para construir ecuaciones de otro tipo. La metodología para obtener la solución al final del proceso es la que cambia.
+    </p>
+    
+    <div class="instrucciones">Observa el recurso interactivo a continuación y nota la aplicación de los pasos del proceso. Trata de ubicar qué harías tú antes de ver la explicación, para ir probando y mejorando tu traducción del problema hacia la expresión matemática. Usa los botones 'Siguiente' y 'Anterior' para avanzar o retroceder en la explicación. Procura visitar todos los ejemplos para que ejercites tus habilidades. Incluso puedes darles una segunda vuelta para repetirlos con otros valores.</div>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="510" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    <p>
+    Algunas observaciones interesantes:
+	<ul>
+		<li>Si se te diera un problema de una carrera de dos corredores (Jaime y Alma), donde Jaime empieza con una distancia de ventaja y Alma con otra, y ambos corren a una velocidad distinta, podría hacerse la pregunta ¿cuál es el tiempo en que Jaime lleva ciertos metros de ventaja sobre Alma? Nota que la ecuación de este problema sería exactamente la misma que aquella obtenida para resolver el problema del mes en que Jaime tiene tantos pesos más que Alma.</li>
+		<li>En el problema de los pares consecutivos, observa que hay dos formas de resolverlo. La primera considerando como incógnita al primero de los dos pares y la segunda considerando como incógnita al segundo de los dos pares. Sin embargo, nota que obtendrías el mismo resultado con cualquiera de ambas opciones.</li>
+		<li>Es importante entender los resultados que obtienes. En el problema del tiempo que pasa para que la edad del padre sea tantas veces la edad del hijo, habrás notado que tu resultado puede ser negativo. Tal vez no esperabas este tipo de resultado, pero debes estar listo para ubicar su significado. Si lo que está midiendo tu \( x \) en ese caso es <em>el tiempo hacia el futuro</em>, entonces un número negativo implica ir al revés del futuro, es decir: ir <em>hacia atrás en el tiempo</em>, al pasado. En este particular ejemplo, quiere decir que la condición (que la edad del padre fuera tantas veces la del hijo) no se dará en el futuro, sino que ya ocurrió cierto tiempo atrás.</li>
+		<li>Probablemente habrás notado que a veces las <em>sugerencias generales</em> arriba mencionadas involucran pasos que se pueden llegar a traslapar. Es decir, hay acciones que a veces se pueden realizar en un paso y a veces en otro. Estas sugerencias generales sirven de guía, pero poco a poco te darás cuenta de que, conforme las domines, no necesitarás seguir los pasos al pie de la letra, o a veces harás algunas de las acciones automáticamente sin pensar demasiado en qué estas haciendo. Es parte de la práctica.</li>
+	</ul>
+    </p>
+
+    <p>
+    Lo anterior muestra, para el primer caso, que la ecuación como tal no tiene un significado hasta que tú se lo das. Varias situaciones o comportamientos se pueden modelar de una misma forma (o, mejor dicho, resultan tener el mismo modelo). Muchas veces uno no se da cuenta sino hasta que observa la similitud entre ecuaciones, que dos fenómenos se están comportando de acuerdo con una misma regla.
+    </p>
+
+    <p>
+    La segunda observación muestra lo que se mencionó en la Introducción, sobre que hay múltiples formas de abordar y modelar un problema (diversas ecuaciones). Hay muchos caminos que llevan a Roma. Pero lo importante es llegar a Roma. Lo importante es que, con cualquier camino, obtengas el mismo resultado correcto.
+    </p>
+    
+    <h2>Yendo fuera de los modelos conocidos</h2>
+    
+    <p>
+    Es importante enfatizar que aquí se están presentando problemas genéricos. Aunque los valores dentro de los problemas cambien, la estrategia para cada uno se mantiene igual. Sin embargo, siempre te enfrentarás a problemas cuya naturaleza no puede ser modelada con los genéricos observados arriba. Es entonces cuando debes echar mano de tu ingenio y de una correcta representación del problema en términos matemáticos. Digámoslo de otra manera: es importante que no dependas de unos cuantos ejemplos, y que trates de extraer siempre similitudes entre problemas. A veces requerirás pensar en una forma nueva de plantear tu ecuación.
+    </p>
+
+    <p>
+    Más adelante abordarás un poco más la interpretación de resultados a tus ecuaciones que pueden parecerte no tener interpretación. No obstante, verás que sí la tienen, y que las matemáticas te permiten llegar a conclusiones a dichos problemas que tu intuición no necesariamente te permite ver.
+    </p>
+
+  
+  <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>  
+
+  <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	  <!-- Créditos UAM  (siempre deben ir en primer lugar) -->
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>    
+       
+	    <!-- Aviso licencias -->
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <!-- Descartes -->
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+	</div>
+      </div>
+    </div> 
+    
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

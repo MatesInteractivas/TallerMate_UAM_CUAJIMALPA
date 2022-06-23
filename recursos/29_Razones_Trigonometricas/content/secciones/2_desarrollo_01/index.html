@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title></title>
+        <link href="css/descartes.css" rel="stylesheet" type="text/css" />
+        <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+	
+	<script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+
+<body>
+    
+<article class="course_content_container">
+
+<div class="course_content">
+   
+<!--- Título de la página --->
+<h1>Relación entre lados y ángulos en un triángulo rectángulo</h1>
+    
+<div>
+<ajs name="Arquimedes" width=820 height=600 code="Arquimedes">
+   <param name="tamaño" value="820x600">
+   <param name="pleca" value="title='' subtitle='' subtitlines='0' bgcolor='' fgcolor='' align='' titleimage='' titlefont='' subtitlefont='' ">
+   <param name="rtf" value="{\rtf1\uc0{\fonttbl\f0\fcharset0 Arial;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;\f4\fcharset0 Arial;\f5\fcharset0 Arial;\f6\fcharset0 Times New Roman;\f7\fcharset0 Arial;}{\colortbl\red32\green80\blue96;\red0\green0\blue0;}\f0\fs34    Las razones trigonom\u233 tricas \b seno\b0 ,\b  coseno \b0 y\b  tangente\b0  permiten relacionar las magnitudes de\par    \u225 ngulos y lados en los tri\u225 ngulos rect\u225 ngulos. En un tri\u225 ngulo rect\u225 ngulo cualquiera, la raz\u243 n o\par    relaci\u243 n entre sus lados se mantendr\u225  constante siempre y cuando uno de sus \u225 ngulos agudos\par    se conserva, aun cuando cambian las dimensiones de sus lados. Esto se debe a que, al mantenerse\par    id\u233 nticos los \u225 ngulos de un tri\u225 ngulo con respecto a otro tri\u225 ngulo, estamos ante tri\u225 ngulos seme-\par    jantes, y como ya viste en la unidad dedicada a este tema, una de las propiedades de los tri\u225 ngulos\par    semejantes es la proporci\u243 n fija de sus lados. As\u237  pues, al fijar uno de los \u225 ngulos agudos (por \par    ejemplo el \u225 ngulo \f2\fs38\i\u945 \i0 )\f0\fs34  en un tri\u225 ngulo rect\u225 ngulo, los lados de dicho tri\u225 ngulo siempre se relacionar\u225 n\par    en proporci\u243 n fija.\par \par    Los lados de un tri\u225 ngulo rect\u225 ngulo reciben nombres espec\u237 ficos que es importante que aprendas\par    antes de que prosigamos. El lado opuesto al \u225 ngulo recto se denomina \b\i hipotenusa\b0\i0 . El lado opuesto\par    a un \u225 ngulo agudo \f2\fs38\i{\*\mjaformula\u945 }\f0\fs34\i0  es llamado\b\i  cateto opuesto a\b0  \f6\fs38\b\u945 \f0\fs34\b0\i0 , y el lado que forma dicho \u225 ngulo \f2\fs38\i\u945 \f0\fs34\i0  junto con\par    la hipotenusa se conoce como\b\i  cateto adyacente\b0\i0  \b\i a \f6\fs38\u945 \f0\fs34\b0\i0 . Estos lados cambian de nombre dependiendo\par    del \u225 ngulo agudo que se est\u233  considerando, como se muestra en el siguiente recuadro interactivo.\par \par \par                    {\*\component\Space 121b0e096d2}\cf0\fs36\par \par \par \par \par \par \par \par \par \par \par \cf1\fs34\par  \par    Ahora que has aprendido los nombres de los lados de un tri\u225 ngulo rect\u225 ngulo asociados a un cierto\par    \u225 ngulo agudo y sabes identificarlos, ya es hora de entrar en materia y conocer las definiciones de las\par    razones trigonom\u233 tricas.}">
+   <param name="rtf_height" value="732">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Arquimedes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no alto=32">
+   <param name="E_01" value="tipo='R2' id='E2' x='111' y='347' ancho='560' alto='240' fijo='sí' imagen='images/fondo.png' despl_imagen='arr-izq' fondo='blanco' red='no' red10='no' ejes='no' texto='no' cID='121b0e096d2'">
+   <param name="C_01" value="id='alfa' tipo='numérico' interfaz='botón' región='interior' espacio='E2' nombre='alfa' expresión='(10,47,60,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' fuente puntos='18' imagen='images/btn60x30.png' acción='calcular' parámetro='alfa=1\nbeta=2' parámetro.fuente='Monospaced,PLAIN,12'">
+   <param name="C_02" value="id='beta' tipo='numérico' interfaz='botón' región='interior' espacio='E2' nombre='beta' expresión='(10,85,60,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' fuente puntos='18' imagen='images/btn60x30.png' acción='calcular' parámetro='beta=1\nalfa=2' parámetro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro'">
+   <param name="A_01" value="id='inicia1()' algoritmo='sí' algoritmo='sí' hacer='bien2=0;aleat=ent(rnd*5.99);;'">
+   <param name="A_02" value="id='inicia2()' algoritmo='sí' algoritmo='sí' hacer='bien3=0;aleato=ent(rnd*5.99);;'">
+   <param name="A_03" value="id='Inicio' algoritmo='sí' evaluar='una-sola-vez' hacer='inicia1();inicia2()'">
+   <param name="G_01" value="espacio='E2' tipo='polígono' color='ffffffff' expresión='(-3,-1.5)(2,1)(2,-1.5)' relleno='b6c5cc'">
+   <param name="G_02" value="espacio='E2' tipo='polígono' color='blanco' expresión='(2,-1.5)(2,-1.2)(1.7,-1.2)(1.7,-1.5)'">
+   <param name="G_03" value="espacio='E2' tipo='arco' color='negro' dibujar-si='beta=1' centro='(2,1)' radio='0.5' inicio='206.56' fin='270' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_04" value="espacio='E2' tipo='arco' color='blanco' dibujar-si='alfa*beta=0' centro='(2,1)' radio='0.5' inicio='206.56' fin='270' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_05" value="espacio='E2' tipo='arco' color='negro' dibujar-si='alfa=1' centro='(-3,-1.5)' fin='26.56' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_06" value="espacio='E2' tipo='arco' color='blanco' dibujar-si='alfa*beta=0' centro='(-3,-1.5)' fin='26.56' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_07" value="espacio='E2' tipo='texto' expresión='[70,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs34\u191 En cu\u225 l de los \u225 ngulos agudos quieres fijar tu atenci\u243 n?\f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_08" value="espacio='E2' tipo='texto' expresión='[75,50]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs34\u945 \f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_09" value="espacio='E2' tipo='texto' expresión='[75,90]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs34\u946 \f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_10" value="espacio='E2' tipo='segmento' color='e80022' expresión='(-3,-1.5)(2,1)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_11" value="espacio='E2' tipo='segmento' color='00aa22' expresión='(-3,-1.5)(2,-1.5)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_12" value="espacio='E2' tipo='segmento' color='3366dd' expresión='(2,-1.5)(2,1)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_13" value="espacio='E2' tipo='punto' expresión='(-3,-1.5)' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_14" value="espacio='E2' tipo='punto' expresión='(2,-1.5)' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_15" value="espacio='E2' tipo='punto' expresión='(2,1)' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_16" value="espacio='E2' tipo='texto' dibujar-si='alfa*beta!=0' expresión='[190,100]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}{\colortbl\red232\green0\blue34;\red32\green48\blue58;}\f1\fs34\cf0 Hipotenusa\cf1\f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_17" value="espacio='E2' tipo='texto' dibujar-si='alfa=1' expresión='[390,110]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}{\colortbl\red51\green102\blue221;\red32\green48\blue58;}\f1\fs34\cf0 Cateto opuesto\par al \u225 ngulo \u945 \cf1\f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_18" value="espacio='E2' tipo='texto' dibujar-si='beta=1' expresión='[390,110]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}{\colortbl\red51\green102\blue221;\red32\green48\blue58;}\f1\fs34\cf0 Cateto adyacente\par al \u225 ngulo \u946 \cf1\f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_19" value="espacio='E2' tipo='texto' dibujar-si='alfa=1' expresión='[150,200]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}{\colortbl\red0\green170\blue34;\red32\green48\blue58;}\f1\fs34\cf0 Cateto adyacente al \u225 ngulo \u945 \cf1\f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_20" value="espacio='E2' tipo='texto' dibujar-si='beta=1' expresión='[150,200]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}{\colortbl\red0\green170\blue34;\red32\green48\blue58;}\f1\fs34\cf0 Cateto opuesto al \u225 ngulo \u946 \cf1\f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_21" value="espacio='E2' tipo='texto' color='blanco' dibujar-si='alfa*beta=0' expresión='[190,170]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs34\u945 \f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_22" value="espacio='E2' tipo='texto' color='negro' dibujar-si='alfa=1' expresión='[190,170]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs34\u945 \f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_23" value="espacio='E2' tipo='texto' color='negro' dibujar-si='beta=1' expresión='[350,100]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs34\i\u946 \f2\fs24\i0\par }' fuente='Serif,ITALIC,17' fijo='sí'">
+   <param name="G_24" value="espacio='E2' tipo='texto' color='negro' dibujar-si='alfa*beta=0' expresión='[350,100]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}{\colortbl\red255\green255\blue255;\red0\green0\blue0;}\f1\fs34\cf0\u946 \cf1\f2\fs24\par }' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_25" value="espacio='E2' tipo='polígono' fondo='sí' color='grisObscuro' dibujar-si='0' coord_abs='sí' expresión='(0,0)(E2._w-1,0)(E2._w-1,E2._h-1)(0,E2._h-1)(0,0)' ancho='3'">
+   <param name="S_01" value="nombre='jarrón' tipo='superficie' fondo='sí' expresión='aa=2*pi*u  \nhh=2*v-1  \nff=0.5+hh-hh^3  \nx=ff*cos(aa)  \ny=ff*sen(aa)  \nz=hh  \n' rotini='(0,180,-30)' Nu='32' Nv='24'">
+</ajs>
+</div>
+
+  
+  
+  <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Víctor Hugo García Jarillo</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+    
+	    <!-- Créditos recursos DGEE -->
+	     <div class="creditos">
+		     <p class="proyecto">Inclusión de material didáctico de las unidades interactivas para bachillerato desarrolladas para la Dirección General de Evaluación Educativa (DGEE) de la UNAM en colaboración con el Instituto de Matematicas de la UNAM y el Proyecto Arquímedes.</p>
+		     <ul class="autores">
+			     <li>Dirección: <span class="nombre">Rosamaría Valle Gómez-Tagle</span></li>
+			     <li>Subdirección: <span class="nombre">Patricia Murillo Villegas</span></li>
+			     <li>Autor: <span class="nombre">Fernaro René Martínez Ortiz</span></li>
+			     <li>Edición académica: <span class="nombre">José Luis Abreu León</span></li>
+			     <li>Edición técnica: <span class="nombre">Norma Patricia Apodaca Álvarez</span></li>
+		     </ul>
+		     <img class="logos" src="icns/logosDGEE.png"></img>
+	     </div>
+          
+       
+	    <div class="licencias">
+		  <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		  <p>La unidad didáctica fue creada con <a href="http://arquimedes.matem.unam.mx/Descartes5/creditos/conCCL.html" target="_blank">Arquímedes</a>, una herramienta de código abierto.</p>	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  <!--- Parche para esconder créditos Arquímedes -->
+  <img src='images/plastaBlanca.jpg' style="position:absolute; bottom: 100px; left: 10px;"></img>
+  <!-- Final parche -->
+
+</div>
+
+</article>
+
+</body>
+</html>

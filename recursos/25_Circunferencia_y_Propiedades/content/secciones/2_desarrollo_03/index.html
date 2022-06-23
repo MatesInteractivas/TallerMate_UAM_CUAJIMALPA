@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Algunas propiedades interesantes sobre circunferencias</h1>
+
+	<p>
+	En esta página podrás ver algunas propiedades que tienen las circunferencia que son bastante interesantes. Éstas pueden ayudarte, además, a resolver problemas si las sabes identificar.
+	</p>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Mediatrices de segmentos y circuncentro</h2>
+    
+    <p>
+    La mediatriz de un segmento es la recta que pasa por su punto medio y que es perpendicular al segmento. ¿Qué relación hay entre las mediatrices de dos segmentos que comparten un punto como extremo? Ello lo podrás averiguar en el siguiente espacio interactivo.
+    </p>
+    
+    <!--- Instrucciones --->
+    <div class="instrucciones">En el espacio de abajo podrás construir un triángulo moviendo los puntos \(P_1\), \(P_2\) y \(P_3\). Para un triángulo elegido, avanza en la explicación con el botón 'Siguiente' y retrocede en la misma con 'Anterior'. Procura tener triángulos donde los vértices tienen una separación considerable.</div>
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="480" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    <p>
+	Ya has visto que el centro de una circunferencia que contiene 3 puntos puede calcularse como la intersección de las mediatrices de dos de los segmentos subtendidos por los puntos. Para ello, primero deberás calcular el punto medio de cada segmento con la fórmula que ya conoces para el punto medio de segmentos. Puedes calcular también la pendiente del segmento por la fórmula que ya conoces para pendientes de segmentos. Finalmente, la pendiente de una recta perpendicular a \(m\) (si \(m\) es la pendiente de un segmento) estará dada, como ya has visto en unidades anteriores, por \(-\frac{1}{m}\). A partir de la pendiente de la recta perpendicular, y conociendo el punto por el que pasa, puedes calcular la ecuación de la recta mediatriz. Finalmente contarás con 2 mediatrices. Ello compone un sistema de dos ecuaciones con dos variables, el cual ya sabes resolver. La solución a dicho sistema será, así pues, el centro de la circunferencia.
+	</p>
+
+    <h2>Ángulos en un triángulo con vértices en una circunferencia y con un lado en un diámetro.</h2>
+    
+    <p>
+    Cuentas con un triángulo, y sabes que uno de los lados coincide con un diámetro de una circunferencia, y el vértice opuesto cae en la circunferencia. El ángulo en este vértice tiene una propiedad interesante. Aborda el siguiente recurso interactivo para ver cuál es.
+    </p>
+
+    <div class="instrucciones">En el siguiente espacio tienes una circunferencia de 3.6 de radio. Los puntos \(P_1\) y \(P_2\) están fijos en \((-3.6,0)\) y \((3.6,0)\), respectivamente. Mueve el punto \(P_3\) y observa qué angulo hacen los segmentos adyacentes a él. Avanza en la explicación con el botón 'Siguiente' y retrocede en la misma con 'Anterior'.</div>
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="480" frameborder="0" src="escenas/escena2.html"> </iframe>
+    </div>
+
+	<p>
+	Si un triángulo tiene un lado que corresponde a un diámetro de su circunferencia circunscrita, el ángulo opuesto a dicho lado siempre será recto.
+	</p>
+	
+	<p>
+	Otra forma de llegar a este resultado es primero notar que el triángulo \(P_1OP_3\) (esto es, el triángulo formado por los vértices \(P_1\), el origen \(O\), que también es centro de la circunferencia, y \(P_3\)) es isósceles (dos de sus lados son iguales por ser radios de la circunferencia circunscrita). Por lo mismo, el triángulo \(P_2OP_3\) también es isósceles. Llamemos \(\alpha\) al ángulo \(OP_1P_3\) (es decir, al ángulo interno formado por los segmentos \(OP_1\) y \(P_1P_3\)). Como los lados \(OP_1\) y \(OP_3\) son iguales al ser radios, el triángulo \(OP_1P_3\) es isósceles y el ángulo interno \(OP_3P_1\) también deberá ser \(\alpha\). Llamemos \(\beta\) al ángulo \(OP_2P_3\) (y, por estar en otro triángulo isósceles, también el ángulo \(OP_3P_2\) deberá ser \(\beta\)). Recordemos que la suma interna de ángulos de un triángulo es siempre \(180^o\). La suma interna de ángulos del triángulo \(P_1P_2P_3\) deberá ser, así pues, \(2\alpha+2\beta=180^o\), de donde \(2(\alpha+\beta)=180^o\) y finalmente \(\alpha+\beta=90^o\). Pero \(\alpha+\beta\) es precisamente el ángulo en \(P_3\). De donde concluimos que siempre será un ángulo recto.
+	</p>
+
+	<h2>El cuadrilátero cíclico</h2>
+
+	<p>
+	¿Que pasará si extendemos este último análisis no a un triángulo inscrito en una circunferencia, sino a un cuadrilátero inscrito en una? A estos cuadriláteros se les conoce como <em>cuadriláteros cíclicos</em>. Verás que algo interesante también pasa con los ángulos de dicho cuadrilátero. 
+	</p>
+	
+	<div class='instrucciones'>Aborda el siguiente recurso exploratorio. Primero arrastra los puntos \(P_1\), \(P_2\), \(P_3\) y \(P_4\) para cambiar la forma del cuadrilátero. Luego pulsa los botones de siempre para avanzar y retroceder en la explicación.</div>
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="480" frameborder="0" src="escenas/escena3.html"> </iframe>
+    </div>
+  
+    <p>
+    Como ves, el círculo tiene muchas propiedades muy interesantes que tal vez no conocías. Muchas de las propiedades que viste en esta página fueron encontradas en la antigua Grecia sólo mediante construcciones por regla y compás (sin geometría analítica). Y hay muchas propiedades más que, por estar fuera del alcance de esta lección, no se abordaron, pero que son también muy interesantes. Por ejemplo, el punto potencia de la circunferencia, la circunferencia de Euler, la recta de Euler, y otros.
+    </p>
+
+    <p>
+    Pasa a la siguiente página para comenzar con los ejercicios.
+    </p>
+
+  
+    <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

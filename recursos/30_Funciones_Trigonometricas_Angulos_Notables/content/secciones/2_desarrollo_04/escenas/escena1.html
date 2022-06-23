@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=560 height=370 code="Descartes">
+   <param name="tamaño" value="560x370">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no">
+   <param name="E_01" value="tipo='R2' id='E0' fijo='sí' escala='150' imagen='images/fondo.png' despl_imagen='arr-izq' red='9fb8c4c8' red10='no' ejes='405860' texto='no'">
+   <param name="C_01" value="id='punto' tipo='gráfico' espacio='E0' tamaño='6' expresión='(.71,.71)' constricción='x^2+y^2=1'">
+   <param name="A_01" value="id='INIT' algoritmo='sí' evaluar='siempre' hacer='teta=acos(punto.x/((punto.x^2+punto.y^2)^.5));teta=(punto.y<0)?2*pi-teta:teta;ang=teta*180/pi;'">
+   <param name="G_01" value="espacio='E0' tipo='polígono' fondo='sí' color='grisObscuro' dibujar-si='0' coord_abs='sí' expresión='(0,0)(E0._w-1,0)(E0._w-1,E0._h-1)(0,E0._h-1)(0,0)' ancho='3'">
+   <param name="G_02" value="espacio='E0' tipo='segmento' color='ae0000' expresión='(punto.x,0)(punto.x,punto.y)' fijo='sí' tamaño='0'">
+   <param name="G_03" value="espacio='E0' tipo='segmento' color='0000ae' expresión='(0,punto.y)(punto.x,punto.y)' fijo='sí' tamaño='0'">
+   <param name="G_04" value="espacio='E0' tipo='segmento' color='negro' expresión='(0,0)(punto.x,punto.y)' fijo='sí' tamaño='0'">
+   <param name="G_05" value="espacio='E0' tipo='arco' fijo='sí'">
+   <param name="G_06" value="espacio='E0' tipo='ecuación' expresión='y^2+x^2=1'">
+   <param name="G_07" value="espacio='E0' tipo='arco' radio='.2' fin='ang' texto=' a' fijo='sí' relleno='a1ffff80'">
+   <param name="G_08" value="espacio='E0' tipo='punto' expresión='(punto.x,punto.y)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Courier New;}{\colortbl\red255\green0\blue0;\red32\green48\blue58;\red0\green0\blue255;}\f1\fs30 (\cf0 sin(a)\cf1 ,\cf2 cos(a)\cf1 )}' fijo='sí'">
+   <param name="G_09" value="espacio='E0' tipo='punto' expresión='(0+s,1-s)' familia='s' s.intervalo='[0,1]' s.pasos='1' texto='1' fijo='sí'">
+   <param name="G_10" value="espacio='E0' tipo='punto' expresión='(-1+s,-s)' familia='s' s.intervalo='[0,1]' s.pasos='1' texto='-1' fijo='sí'">
+   <param name="G_11" value="espacio='E0' tipo='texto' expresión='[2,345]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}{\colortbl\red255\green0\blue0;\red0\green0\blue0;}\cf0\f1\fs30\i{\*\mjaformula sin(a)=y} \u8658  {\*\mjaformula sin({\expr ang\decimals 2\fixed1}\u176 )={\expr punto.y\decimals 2\fixed1}}  \cf1\f2\fs30\i0}' fuente='Serif,ITALIC,15' fijo='sí'">
+   <param name="G_12" value="espacio='E0' tipo='texto' expresión='[280,345]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}{\colortbl\red255\green0\blue0;\red0\green0\blue255;\red0\green0\blue0;}\cf0\f1\fs30\i  \cf1{\*\mjaformula cos(a)=x} \u8658  {\*\mjaformula cos({\expr ang\decimals 2\fixed1}\u176 )={\expr punto.x\decimals 2\fixed1}}\cf2\f2\fs30\i0}' fuente='Serif,ITALIC,15' fijo='sí'">
+   <param name="G_13" value="espacio='E0' tipo='punto' expresión='(punto.x,0)' texto='x' fuente='Serif,ITALIC,15' fijo='sí' tamaño='0'">
+   <param name="G_14" value="espacio='E0' tipo='punto' expresión='(0,punto.y)' texto='y' fuente='Serif,ITALIC,15' fijo='sí' tamaño='0'">
+   <param name="G_15" value="espacio='E0' tipo='texto' expresión='[20,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;}\f1\fs30\i a={\*\mjaformula{\expr ang}\u176 }}' fuente='Serif,ITALIC,15' fijo='sí'">
+   <param name="G_16" value="espacio='E0' tipo='texto' dibujar-si='0' expresión='[20,20]' texto='teta=[teta]\nang=[ang]\npuntoX=[punto.x]\npuntoY=[punto.y]' fijo='sí'">
+</ajs></p>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Ley de los cosenos</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Información para la cual es útil la ley de los cosenos</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    La ley de cosenos relaciona un ángulo con el tamaño de los 2 lados que forman dicho ángulo.
+    </p>
+
+    <p>
+    A continuación se te presenta la deducción de la ley de cosenos.
+    </p>
+    
+
+    <div class="instrucciones">En el siguiente espacio interactivo puedes controlar los vértices: los vértices \(B\) y \(A\) se encuentran fijos sobre una recta horizontal; el vértice \(C\) puede ser movido más libremente sobre la recta en que caen \(B\) y \(A\). Los segmentos azul y rojo siempre son perpendiculares, por lo que puedes, por un lado, usar las razones trigonométricas para el ángulo \(180-\alpha\) y, por otro lado, usar el teorema de Pitágoras. Presiona el botón '?' para leer la explicación . Podrás avanzar en ésta con el botón 'Siguiente' o retroceder con 'Anterior'.</div>
+
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="510" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    <p>
+    La ley de cosenos se resume, así pues, como:
+    </p>
+
+\[a^2=b^2+c^2-2bc(cos\alpha)\]
+
+    <p>
+    Nota que, por la manera en que fue construida, el ángulo \(\alpha\) en dicha ley tiene que ser el opuesto al lado \(a\). Otra forma de verlo es que \(b\) y \(c\) son los lados que forman dicho ángulo. Esto es importante recordar al sustituir valores en dicha ley para no equivocarse.
+    </p>
+
+    
+    <h2>Usos de la ley de cosenos</h2>
+    
+    <p>
+    Como habrás intuido arriba, la ley de cosenos es una especie de teorema de Pitágoras para el caso general en que los triángulos no necesariamente son rectángulos. Las diferencias principales que presenta con el teorema de Pitágoras son:
+	<ul>
+		<li>Involucra un término adicional que es el doble producto del tamaño de los lados que subtienden el ángulo por el coseno del mismo ángulo.</li>
+		<li>No es necesario identificar una hipotenusa como en el teorema de Pitágoras. Cualquier lado puede fungir como tal. Sólo es preciso asociar el lado que tomamos como la hipotenusa con el ángulo opuesto al mismo, que es el que aparecerá en esa particular ley de cosenos.</li>
+	</ul>
+    </p>
+  
+    <p>
+    Al igual que en la ley de los senos, la ley de cosenos te sirve para hacer una relación entre un ángulo y los lados de un triángulo cualquiera. Como sugerencia general, observa que la <strong>ley de senos</strong> relaciona <strong>ángulos con los lados opuestos</strong>, mientras que la <strong>ley de cosenos</strong> relaciona <strong>un ángulo particular con sus lados adyacentes</strong>. Tener esto en mente te puede ayudar a elegir con qué ley abordar cada problema.
+    </p>
+
+    <p>
+    Avanza a la siguiente página para ejercitar lo aprendido.
+    </p>
+
+
+  
+    <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+	 if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+	   document.addEventListener('touchend', function(e) {  
+	     if(window.parent.document.getElementById("main")!=null){
+	       parent.manageZoom();
+	     }
+	   },false);
+	 }
+       
+	 function showCredits(){
+	   
+	   if(window.parent.document.getElementById("main")!=null){
+	     showCreditsContainer();
+	   } else {
+	     document.getElementById('popup_creditos').className='visible';
+	   }
+	 }
+	 
+	 function showCreditsContainer(){
+	   
+	   window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+	   window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+	   var newDiv = document.createElement("div");
+	   newDiv.setAttribute("style","margin:0px; padding: 0px;")
+	   newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+	   window.parent.document.getElementById('popup_content').appendChild(newDiv);
+	 }
+     
+       </script>
+
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Seno, coseno y tangente</h1>
+    
+    
+    
+    <!--- Párrafo --->
+   <p>Las definiciones de las razones trigonométricas se pueden extraer de un triángulo rectángulo, el cual consta de un ángulo de \(90°\) y dos ángulos agudos. Cada uno de estos ángulos agudos tiene las funciones de seno, coseno y tangente. En otras palabras, el seno, el coseno y la tangente de un ángulo agudo son razones de los lados del triángulo.</p>
+    
+    <p><ul><li>El <strong>seno</strong> (\(sin\)) de un ángulo \(\alpha\) está dado por la razón entre el largo del cateto opuesto a \(\alpha\) (\(co\)), dividido por el largo de la hipotenusa \(hip\): \(sin(\alpha)=\frac{co}{hip}\).
+    <li>El <strong>coseno</strong> (\(cos\)) de un ángulo \(\alpha\) está dado por la razón entre el largo del cateto adyacente a \(\alpha\) (\(ca\)), dividido por el largo de la hipotenusa \(hip\): \(cos(\alpha)=\frac{ca}{hip}\).
+    <li>La <strong>tangente</strong> (\(tan\)) de un ángulo \(\alpha\) está dado por la razón entre el largo del cateto opuesto a \(\alpha\), dividido por el largo del lado adyacente a \(\alpha\): \(tan(\alpha)=\frac{co}{ca}\).</ul></p>
+    
+    <p>Como ya vimos en la página anterior, una vez que se haya fijado uno de los ángulos agudos en un triángulo rectángulo, la <strong>razón</strong> entre sus lados siempre será la misma, sin importar las dimensiones específicas de los lados de dicho triángulo. En otras palabras, los valores de las razones trigonométricas seno, coseno y tangente serán constantes en triángulos rectángulos que comparten los mismos ángulos. A continuación veremos cómo se obtienen estos valores en un triángulo rectángulo inscrito en una circunferencia de radio \(1\), es decir: un triángulo rectángulo cuya hipotenusa equivale a \(1\).</p>
+
+
+    <div class="instrucciones">En el siguiente espacio interactivo podrás explorar los valores de las razones trigonométricas en un triángulo con una hipotenusa cuya longitud es \(1\). Elige una relación trigonométrica en el menú de la izquierda y haz clic en el botón 'Animar'. Puedes detener la animación haciendo clic nuevamente en el mismo botón. Fíjate bien en el valor inicial de cada razón trigonométrica y en los valores que adquiere en los distintos cuadrantes del plano cartesiano. Observa y analiza también la gráfica correspondiente.</div>
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="450" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+    
+    <p>Si observaste con atención, habrás notado lo siguiente:</p>
+    
+    <ul>
+      <li>En las razones del <strong>seno y coseno</strong> vemos que la hipotenusa está como divisor. También sabemos que la hipotenusa es el lado más largo del triángulo, por lo que el resultado del cociente nunca pasará de la unidad. </li>
+      <li>El valor de la <strong>tangente</strong> inicia en cero dado que en ese momento, el valor del numerador (el cateto opuesto) equivale a cero. Tenderá al infinito conforme el valor del numerador aumente y el del divisor (el cateto adyacente) se acerque a cero. 
+    </ul>
+
+   
+ <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Víctor Hugo García Jarillo</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+    
+            <!-- Créditos escenas PI -->
+            <div class="creditos">
+                    <p class="proyecto">Inclusión de escena(s) interactiva(s) desarrollada(s) para el proyecto Pizarra Digital Interactiva 2.0 del Ministerio de Educación de España.</p>
+                    <ul class="autores">
+                            <li>Coordinación: <span class="nombre">José Luis Abreu León</span></li>
+                            <li>Propuesta y diseño de plantillas: <span class="nombre">Óscar Escamilla González, Deyanira Monroy Zariñán y Natàlia Roca Castellà</span></li>
+                            <li>Programación: <span class="nombre">Óscar Escamilla González</span></li>
+                    </ul>
+            </div>
+                  
+            <!-- Créditos adaptación HTML5 (en caso de haberse incluido material de DGEE, Telesecundaria o PI) -->
+            <div class="creditos">
+                    <p class="proyecto">Adaptación a DescartesJS realizada en el marco del proyecto <a href="http://arquimedes.matem.unam.mx/lite/2013/" target="_blank">LITE 2013</a> y financiada por CONACyT.</p>
+                    <ul class="autores">
+                            <li>Adaptación: <span class="nombre">Víctor Hugo García Jarillo, Deyanira Monroy Zariñán</span></li>
+                            <li>Asesoría técnica: <span class="nombre">José Luis Abreu León, Óscar Escamilla González, Joel Espinosa Longi</span></li>
+                    </ul>
+                    <img class="logos" src="icns/logosDescartesJS.png"></img>
+            </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>
+
+        <link rel="stylesheet" type="text/css" href="css/descartes.css">
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=750 height=480 code="Descartes">
+   <param name="tamaño" value="750x480">
+   <param name="image_loader" value="">
+   <param name="expand" value="">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.336, 2015-02-13">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo_760x510.png' despl_imagen='arr-izq' fondo='f3f0ec' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='boton' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Intercambiar' expresión='(E1._w/2-60,E1._h-40,120,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='16' imagen='images/btn120x30.png' acción='calcular' parámetro='Caso=((PosicionPotencia==1)&(SignoExp>0))?1:Caso\nCaso=((PosicionPotencia==1)&(SignoExp<0))?2:Caso\nCaso=((PosicionPotencia==2)&(SignoExp>0))?3:Caso\nCaso=((PosicionPotencia==2)&(SignoExp<0))?4:Caso\nSignoExponenteActivo=0' activo-si='PosicionPotencia!=0'">
+   <param name="C_02" value="id='PosicionPotencia' tipo='numérico' interfaz='menú' región='interior' espacio='E1' nombre='_nada_' expresión='(20,185,150,34)' decimales='0' fijo='sí' visible='no' opciones='Potencia en el...,numerador,denominador' acción='calcular' parámetro='Caso=0\nSignoExponenteActivo=1'">
+   <param name="C_03" value="id='Base' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(265,175,25,50)' valor='-2.5' incr='1' min='-5.5' max='5.5' decimales='1' fijo='no' visible='no'">
+   <param name="C_04" value="id='Exponente' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(510,175,25,50)' valor='1' incr='1' min='1' max='7' discreto='sí' decimales='0' fijo='sí' visible='no' pos_mensajes='centro'">
+   <param name="C_05" value="id='SignoExponente' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='+/-' expresión='(600,190,30,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='16' imagen='images/btn30x30.png' acción='calcular' parámetro='SignoExp=SignoExp*(-1)' activo-si='SignoExponenteActivo==1' pos_mensajes='centro'">
+   <param name="A_01" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='SignoExp=1;SignoExponenteActivo=1'">
+   <param name="A_02" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='texto' expresión='[20,20]' texto='Elige con el menú si tu base comienza en el numerador o en el denominador. Dale un valor con el pulsador. Dale un valor también al exponente con su pulsador correspondiente y otórgale un signo con el botón &squot;+/-&squot;.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='600'">
+   <param name="G_02" value="espacio='E1' tipo='texto' expresión='[20,120]' texto='Pulsa el botón &squot;Intercambiar&squot; para que notes cómo y por qué tu potencia se mueve entre numerador y denominador. Observa el comportamiento del exponente.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='600'">
+   <param name="G_03" value="espacio='E1' tipo='texto' color='00aa00' expresión='[200,190]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}{\colortbl\red32\green48\blue58;\red0\green170\blue0;}\f1\fs40\i Base\f2\fs34\i0\cf0  =\f1\fs40\i   \cf1     {\*\mjaformula{\expr Base\decimals 1\fixed1}}}' fuente='Serif,ITALIC,20' fijo='sí'">
+   <param name="G_04" value="espacio='E1' tipo='texto' color='00aa00' expresión='[400,190]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}{\colortbl\red0\green0\blue170;\red32\green48\blue58;\red0\green170\blue0;}\f1\fs40\i\cf0 Exponente\f2\fs34\i0\cf1  =\f1\fs40\i   \cf2      {\*\mjaformula\cf0{\expr SignoExp*Exponente\decimals 0\fixed1}}}' fuente='Serif,ITALIC,20' fijo='sí'">
+   <param name="G_05" value="espacio='E1' tipo='texto' dibujar-si='Caso==1' expresión='[20,260]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Elegiste una potencia en el numerador y cuyo exponente es positivo. Esto es, es\par como est\u225 s acostumbrado a ver tus potencias. El valor de tu expresi\u243 n es, as\u237  pues,\par \f2\fs38\i{\*\mjaformula{\expr Base\decimals 1\fixed1}{\supix{\expr SignoExp*Exponente\decimals 0\fixed1}}={\expr Base^(SignoExp*Exponente)\decimals 10\fixed0}}\f1\fs34\i0 . Intenta otro tipo de potencia.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_06" value="espacio='E1' tipo='texto' dibujar-si='Caso==2' expresión='[20,260]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Elegiste una potencia en el numerador y cuyo exponente es negativo. Expresada\par en forma de fracci\u243 n, ella ser\u237 a \f2\fs40\i{\*\mjaformula{\fraction{\num{\expr Base\decimals 1\fixed1}{\supix{\expr SignoExp*Exponente\decimals 0\fixed1}}}{\den 1}}}\f1\fs34\i0 . Es como lo que viste en el interactivo\par pasado cuando sobraban factores en el denominador. As\u237  pues, tu cociente es\par \f2\fs40\i{\*\mjaformula{\fraction{\num 1}{\den{\expr Base\decimals 2\fixed1}{\supix{\expr -SignoExp*Exponente\decimals 0\fixed1}}}}}\f1\fs34\i0 , y ya lo tienes expresado en el denominador.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_07" value="espacio='E1' tipo='texto' dibujar-si='Caso==3' expresión='[20,260]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Elegiste una potencia en el denominador y cuyo exponente es positivo. Esto es,\par \f2\fs38\i{\*\mjaformula{\fraction{\num 1}{\den{\expr Base\decimals 1\fixed1}{\supix{\expr SignoExp*Exponente\decimals 0\fixed1}}}}}\f1\fs34\i0 . Ello implica que hay {\*\mjaformula{\expr Exponente\decimals 0\fixed1}} {\*\mjaformula{\expr (Exponente==1)?&squot;factor&squot;:&squot;factores&squot;\decimals 2\fixed1}} (cada uno con valor de \f2\fs38\i{\*\mjaformula{\expr Base\decimals 1\fixed1}}\f1\fs34\i0 )\par no {\*\mjaformula{\expr (Exponente==1)?&squot;cancelado&squot;:&squot;cancelados&squot;\decimals 2\fixed1}} en el denominador. De acuerdo con el interactivo anterior, la\par expresi\u243 n se puede entonces simplificar a \f2\fs38\i{\*\mjaformula{\expr Base\decimals 1\fixed1}{\supix{\expr -SignoExp*Exponente\decimals 0\fixed1}}={\expr Base^(-SignoExp*Exponente)\decimals 10\fixed0}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_08" value="espacio='E1' tipo='texto' dibujar-si='Caso==4' expresión='[20,260]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 La potencia est\u225  en el denominador y cuyo exponente es negativo. Expres\u233 mosla\par como \f2\fs38\i{\*\mjaformula{\fraction{\num 1}{\den{\expr Base\decimals 1\fixed1}{\supix{\expr SignoExp*Exponente\decimals 0\fixed1}}}}={\fraction{\num{\fraction{\num 1}{\den 1}}}{\den{\expr Base\decimals 1\fixed1}{\supix{\expr SignoExp*Exponente\decimals 0\fixed1}}}}={\fraction{\num{\fraction{\num 1}{\den 1}}}{\den{\fraction{\num 1}{\den{\expr Base\decimals 1\fixed1}{\supix{\expr -SignoExp*Exponente\decimals 0\fixed1}}}}}}}\f1\fs34\i0  a partir de lo que viste en el interactivo\par anterior. Reduciendo la fracci\u243 n, obtenemos\par \f2\fs38\i{\*\mjaformula{\fraction{\num{\expr Base\decimals 1\fixed1}{\supix{\expr -SignoExp*Exponente\decimals 0\fixed1}}}{\den 1}}={\expr Base\decimals 1\fixed1}{\supix{\expr -SignoExp*Exponente\decimals 0\fixed1}}={\expr Base^(-SignoExp*Exponente)\decimals 10\fixed0}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+</ajs></p>
+
+</body>
+</html>

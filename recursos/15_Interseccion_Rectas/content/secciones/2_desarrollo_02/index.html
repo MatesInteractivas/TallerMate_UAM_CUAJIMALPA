@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+  
+
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Ubicando inconsistencias</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Análisis de los problemas</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    Como habrás revisado en las otras unidades sugeridas, algunas veces no encontrarás una respuesta para tus problemas. Otras veces, podrás encontrar una respuesta numérica al problema pero cuya interpretación en el contexto del problema no tiene sentido.
+    </p>
+
+    <p>
+    Es importante tratar de encontrarle el sentido a los datos del problema. Ello se debe a que te puedes ahorrar los cálculos muchas veces si detectas la inconsistencia desde el planteamiento del problema.
+    </p>
+
+    <p>
+    Abordemos nuevamente los problemas de la página pasada, pero ahora analizando las posibles inconsistencias que éstos puedan presentar.
+    </p>
+    
+    <!--- Instrucciones --->
+    <div class="instrucciones">Lee detenidamente los problemas que se muestran a continuación. Trata de ubicar si hay información inconsistente o ilógica en el problema. Posteriormente, avanza en la explicación de su solución con el boton 'Siguiente', o retrocede en la misma con el botón 'Anterior'. Procura hacer más de un ejemplo de cada tipo, pues algunos pueden tener diferentes tipos de respuesta.</div>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="510" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    
+    <h2>Análisis de las inconsistencias</h2>
+    
+    <p>
+    Como notaste en estos ejemplos, la resolución del sistema de ecuaciones generará valores determinados para tus incógnitas, siempre y cuando tus rectas no sean paralelas (como lo observaste también en la unidad sobre solución de ecuaciones de primer grado con una incógnita). No obstante, hay que tener la habilidad para notar si hay o no sentido en la respuesta que encuentres.
+    </p>
+
+    <p>
+    Muchas veces, el mismo resultado te parecerá ilógico cuando te enfrentes a estos casos. Pero siempre es buena idea volver a trazar tus pasos para confirmar que no cometiste un error. De haberlo hecho correctamente, quiere decir que hay algún error en el planteamiento del problema.
+    </p>
+
+    <p>
+    Para ahorrarte estos pasos, a veces también puedes detectar el error en el planteamiento (como viste en el interactivo) desde la lectura del mismo. Cabe decir que no siempre es tan trivial, y en algunos problemas tendrás que llegar a la inconsistencia de tu solución para notar el error en el planteamiento.
+    </p>
+  
+    <p>
+    Aborda ahora la parte de los ejercicios.
+    </p>
+
+
+
+
+  
+  <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>  
+
+  <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	  <!-- Créditos UAM  (siempre deben ir en primer lugar) -->
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>    
+       
+	    <!-- Aviso licencias -->
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <!--arquimedes (optativo)-->
+		    <!-- Descartes -->
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+	</div>
+      </div>
+    </div> 
+    
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>Movimiento Rectilineo 1</title>
+
+      <style type="text/css" media="screen">
+	/*pulsador*/
+	#E1\.escala { }
+	#E1\.escala > canvas {
+	  display: none;
+	}
+    
+	#E1\.escala .up {
+	  background: #efefef url("images/zoomIn.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#E1\.escala > .up:hover {
+	  background-color: white !important;
+	}
+	#E1\.escala > .up:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+    
+	#E1\.escala .down {
+	  background: #efefef url("images/zoomOut.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#E1\.escala .down:hover {
+	  background-color: white !important;
+	}
+	#E1\.escala .down:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+      </style>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0;padding:0;overflow:hidden;">
+<p align="center">
+
+<ajs name="Movimiento_Rectilineo_1" width=600 height=400 code="Descartes">
+   <param name="tamaño" value="600x400">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Movimiento_Rectilineo_1">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no">
+   <param name="E_01" value="tipo='R2' id='E1' imagen='images/fondo.png' despl_imagen='expand.' fondo='d8d8e5' red='no' red10='no' ejes='405860' texto='no'">
+   <param name="C_01" value="id='a' tipo='numérico' región='interior' espacio='E1' nombre='a' expresión='(20,330,110,50)' valor='1' min='-5' max='5' decimales='1' fijo='sí' visible='sí' acción='calcular' parámetro='calc()'">
+   <param name="C_02" value="id='b' tipo='numérico' región='interior' espacio='E1' nombre='b' expresión='(140,330,110,50)' valor='2' min='-5' max='5' decimales='1' fijo='sí' visible='sí' acción='calcular' parámetro='calc()' pos_mensajes='centro'">
+   <param name="C_03" value="id='c' tipo='numérico' región='interior' espacio='E1' nombre='c' expresión='(260,330,110,50)' valor='-2' min='-5' max='5' decimales='1' fijo='sí' visible='sí' acción='calcular' parámetro='calc()' pos_mensajes='centro'">
+   <param name="C_04" value="id='E1.escala' tipo='numérico' región='interior' espacio='E1' nombre='E1.escala' expresión='(E1._w-33,E1._h-63,30,60)' valor='50' incr='5' min='5' max='150' discreto='sí' decimales='1' fijo='sí' visible='no' acción='calcular'">
+   <param name="A_01" value="id='init()' algoritmo='sí' algoritmo='sí' hacer='calc();E1.escala=50;'">
+   <param name="A_02" value="id='f2(x)' expresión='x' dominio='(x<3)&(x>0)'">
+   <param name="A_03" value="id='calc()' algoritmo='sí' algoritmo='sí' hacer='x1=(-b+sqrt(b^2-4*a*c))/(2*a);x2=(-b-sqrt(b^2-4*a*c))/(2*a)'">
+   <param name="A_04" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='init();'">
+   <param name="A_05" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='punto' dibujar-si='b^2-4*a*c>=0' expresión='(x1,0)' fijo='sí' tamaño='4'">
+   <param name="G_02" value="espacio='E1' tipo='punto' dibujar-si='b^2-4*a*c>=0' expresión='(x2,0)' fijo='sí' tamaño='4'">
+   <param name="G_03" value="espacio='E1' tipo='punto' coord_abs='sí' expresión='(305,20)' texto='Y' fuente='Monospaced,BOLD,24' fijo='sí' tamaño='0'">
+   <param name="G_04" value="espacio='E1' tipo='punto' coord_abs='sí' expresión='(570,220)' texto='X' fuente='Monospaced,BOLD,24' fijo='sí' tamaño='0'">
+   <param name="G_05" value="espacio='E1' tipo='ecuación' color='ae0000' expresión='y=a*x^2+b*x+c'">
+   <param name="G_06" value="espacio='E1' tipo='texto' expresión='[20,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}\f1\fs44\i{\*\mjaformula{\expr a\decimals 1\fixed1}x{\supix 2}{\expr (b>=0)?&squot;+&squot;+b:b\decimals 1\fixed1}x{\expr (c>=0)?&squot;+&squot;+c:c\decimals 1\fixed1}<0}\f2\fs36\i0}' fuente='Serif,ITALIC,22' fijo='sí'">
+   <param name="G_07" value="espacio='E1' tipo='texto' expresión='[20,60]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}{\colortbl\red174\green0\blue0;\red32\green48\blue58;}\f1\fs44\i\cf0{\*\mjaformula y={\expr a\decimals 1\fixed1}x{\supix 2}{\expr (b>=0)?&squot;+&squot;+b:b\decimals 1\fixed1}x{\expr (c>=0)?&squot;+&squot;+c:c\decimals 1\fixed1}}\cf1\f2\fs36\i0}' fuente='Serif,ITALIC,22' fijo='sí'">
+   <param name="G_08" value="espacio='E1' tipo='polígono' fondo='sí' color='grisObscuro' dibujar-si='0' coord_abs='sí' expresión='(0,0)(E1._w-1,0)(E1._w-1,E1._h-1)(0,E1._h-1)(0,0)' ancho='3'">
+   <param name="G_09" value="espacio='E1' tipo='texto' dibujar-si='(a>0)&(b^2-4*a*c>=0)' expresión='[20,110]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs36 Soluci\u243 n: \f2\fs40\i{\*\mjaformula\{ x \u8739  {\expr (x1<x2)?x1:x2\decimals 1\fixed1}<x<{\expr (x1<x2)?x2:x1\decimals 1\fixed1} \}}\f1\fs36\i0}' fuente='SansSerif,PLAIN,18' fijo='sí'">
+   <param name="G_10" value="espacio='E1' tipo='texto' dibujar-si='(a<0)&(b^2-4*a*c>=0)' expresión='[20,110]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs36 Soluci\u243 n: \f2\fs40\i{\*\mjaformula\{ x \u8739  {\expr (x1<x2)?x1:x2\decimals 1\fixed1}>x>{\expr (x1<x2)?x2:x1\decimals 1\fixed1} \}}\f1\fs36\i0}' fuente='SansSerif,PLAIN,18' fijo='sí'">
+   <param name="G_11" value="espacio='E1' tipo='texto' dibujar-si='(a=0)&(b^2-4*a*c>=0)' expresión='[20,110]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs36 Soluci\u243 n: La ecuaci\u243 n no es cuadr\u225 tica pues \f2\fs40\i{\*\mjaformula a=0}\f1\fs36\i0}' fuente='SansSerif,PLAIN,18' fijo='sí'">
+   <param name="G_12" value="espacio='E1' tipo='texto' dibujar-si='(b^2-4*a*c<0)&(a>0)' expresión='[20,110]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs36 Toda la gr\u225 fica est\u225  por encima del\par eje \f2\fs40\i{\*\mjaformula X}\f1\fs36\i0 , por lo que no hay valores para\par \f2\fs40\i{\*\mjaformula x}\f1\fs36\i0  que satisfagan la desigualdad.}' fuente='SansSerif,PLAIN,18' fijo='sí'">
+   <param name="G_13" value="espacio='E1' tipo='texto' dibujar-si='(b^2-4*a*c<0)&(a<0)' expresión='[20,110]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs36 Toda la gr\u225 fica est\u225  por debajo del\par eje \f2\fs40\i{\*\mjaformula X}\f1\fs36\i0 , por lo que cualquier valor de\par \f2\fs40\i{\*\mjaformula x}\f1\fs36\i0  satisface la desigualdad.}' fuente='SansSerif,PLAIN,18' fijo='sí'">
+   <param name="G_14" value="espacio='E1' tipo='flecha' dibujar-si='(a<0)&(b^2-4*a*c>=0)' expresión='((x1<x2)?x1:x2,0)((x1<x2)?x1-3:x2-3,0)' fijo='sí' ancho='2' ancho='2' punta='4' flecha='negro'">
+   <param name="G_15" value="espacio='E1' tipo='flecha' dibujar-si='(a<0)&(b^2-4*a*c>=0)' expresión='((x1<x2)?x2:x1,0)((x1<x2)?x2+3:x1+3,0)' fijo='sí' ancho='2' ancho='2' punta='4' flecha='negro'">
+   <param name="G_16" value="espacio='E1' tipo='segmento' dibujar-si='(a>0)&(b^2-4*a*c>=0)' expresión='(x1,0)(x2,0)' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_17" value="espacio='E1' tipo='punto' expresión='((x1<x2)?x1:x2,-.5)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs34\i{\*\mjaformula x{\subix 1}}\f2\fs30\i0}' fuente='Serif,ITALIC,17' fijo='sí' tamaño='0'">
+   <param name="G_18" value="espacio='E1' tipo='punto' expresión='((x1<x2)?x2:x1,-.5)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs34\i{\*\mjaformula x{\subix 2}}\f2\fs30\i0}' fuente='Serif,ITALIC,17' fijo='sí' tamaño='0'">
+   <param name="S_01" value="nombre='R3' tipo='macro' dibujar-si='repr=3' expresión='vaso'">
+</ajs>
+</p>
+
+
+
+
+</body>
+</html>

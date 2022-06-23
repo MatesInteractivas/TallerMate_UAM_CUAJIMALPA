@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=560 height=370 code="Descartes">
+   <param name="tamaño" value="560x370">
+   <param name="image_loader" value="">
+   <param name="expand" value="">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.4, 2016-05-18">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no">
+   <param name="E_01" value="tipo='R2' id='E2' fijo='sí' O.x='30' O.y='80' imagen='images/fondo.png' despl_imagen='arr-izq' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='punto' tipo='gráfico' espacio='E2' constricción='((sqr(x)+sqr(y))=25)'">
+   <param name="C_02" value="id='punto.x' tipo='numérico' región='exterior' espacio='E2' nombre='punto.x' valor='5*cos(8*pi/10)' incr='0.01' min='-5' max='2' fijo='sí' visible='sí' parámetro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro'">
+   <param name="C_03" value="id='punto.y' tipo='numérico' región='exterior' espacio='E2' nombre='punto.y' valor='5*sen(8*pi/10)' incr='0.01' min='2.5' max='5' fijo='sí' visible='sí' parámetro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro'">
+   <param name="A_01" value="id='angulo2' constante='sí' expresión='(punto.x=0)?pi/2:atan(abs(punto.y/punto.x)) ' evaluar='siempre'">
+   <param name="G_01" value="espacio='E2' tipo='polígono' color='ffffffff' expresión='(-5,0)(punto.x,punto.y)(0,0)' relleno='b6c5cc'">
+   <param name="G_02" value="espacio='E2' tipo='polígono' color='00aa22' dibujar-si='(ent(angulo2*180/pi+0.6))=90' expresión='(-5,0)(punto.x,punto.y)(0,0)' relleno='00aa22'">
+   <param name="G_03" value="espacio='E2' tipo='texto' color='00aa22' dibujar-si='(ent(angulo2*180/pi+0.6))=90' expresión='[150,300]' texto='Triángulo isósceles rectángulo' fuente='SansSerif,PLAIN,20' fijo='sí' info='Info isosceles rectángulo'">
+   <param name="G_04" value="espacio='E2' tipo='polígono' color='blanco' dibujar-si='(ent(angulo2*180/pi+0.6))=90' expresión='(0,0)(0,0.5)(-0.5,0.5)(-0.5,0)'">
+   <param name="G_05" value="espacio='E2' tipo='polígono' color='blanco' dibujar-si='(((180-ent(angulo2*180/pi+1))/2)=60)&(punto.x<0)' expresión='(-5,0)(punto.x,punto.y)(0,0)' relleno='e80022'">
+   <param name="G_06" value="espacio='E2' tipo='texto' color='e80022' dibujar-si='(((180-ent(angulo2*180/pi+1))/2)=60)&(punto.x<0)' expresión='[200,300]' texto='Triángulo equilátero' fuente='SansSerif,PLAIN,20' fijo='sí' info='Info isosceles rectángulo'">
+   <param name="G_07" value="espacio='E2' tipo='arco' color='negro' dibujar-si='punto.x*punto.y<0' centro='(punto.x,punto.y)' radio='0.5' inicio='180+(180-ent(angulo2*180/pi))/2' fin='360-ent(angulo2*180/pi)' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_08" value="espacio='E2' tipo='arco' color='negro' dibujar-si='punto.x*punto.y<0' centro='(-5,0)' radio='0.5' fin='(180-ent(angulo2*180/pi))/2' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_09" value="espacio='E2' tipo='segmento' color='negro' expresión='(-5,0)(punto.x,punto.y)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_10" value="espacio='E2' tipo='segmento' color='3366dd' expresión='(-5,0)(0,0)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0' ancho='3'">
+   <param name="G_11" value="espacio='E2' tipo='segmento' color='3366dd' expresión='(0,0)(punto.x,punto.y)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0' ancho='3'">
+   <param name="G_12" value="espacio='E2' tipo='punto' expresión='(-5,0)' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_13" value="espacio='E2' tipo='punto' expresión='(0,0)' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_14" value="espacio='E2' tipo='texto' color='negro' expresión='[245,240]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}\f1\fs34{\*\mjaformula{\expr (punto.x*punto.y>0)?180-ent(angulo2*180/pi+1):ent(angulo2*180/pi+1)}}{\*\mjaformula{\supix o}}\par}' fuente='Arial,PLAIN,17' decimales='0' fijo='no'">
+   <param name="G_15" value="espacio='E2' tipo='arco' color='negro' dibujar-si='punto.x*punto.y<-0.2' radio='0.5' inicio='180-ent(angulo2*180/pi)' fin='180' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_16" value="espacio='E2' tipo='arco' color='negro' dibujar-si='punto.x*punto.y>0.2' radio='0.5' inicio='ent(angulo2*180/pi)' fin='180' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_17" value="espacio='E2' tipo='arco' color='negro' dibujar-si='punto.x*punto.y>0' centro='(-5,0)' radio='0.5' fin='(ent(angulo2*180/pi))/2' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_18" value="espacio='E2' tipo='arco' color='negro' dibujar-si='punto.x*punto.y>0' centro='(punto.x,punto.y)' radio='0.5' inicio='180+(ent(angulo2*180/pi))/2' fin='180+ent(angulo2*180/pi)' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_19" value="espacio='E2' tipo='texto' color='negro' expresión='[95,240]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}\f1\fs34{\*\mjaformula{\expr (punto.x*punto.y>0)?ent(angulo2*180/pi+1)/2:(180-ent(angulo2*180/pi+1))/2\decimals 1\fixed0}}{\*\mjaformula{\supix o}}\par}' fuente='Arial,PLAIN,17' decimales='0' fijo='no'">
+   <param name="G_20" value="espacio='E2' tipo='texto' color='negro' expresión='[30+ent(48*(5.7+punto.x))-7*ent(punto.x+4.3),ent(48*(5.5-punto.y)+25)]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}\f1\fs34{\*\mjaformula{\expr (punto.x*punto.y>0)?ent(angulo2*180/pi+1)/2:(180-ent(angulo2*180/pi+1))/2\decimals 1\fixed0}}{\*\mjaformula{\supix o}}\par}' fuente='Arial,PLAIN,17' decimales='0' fijo='no'">
+   <param name="G_21" value="espacio='E2' tipo='segmento' color='3366dd' dibujar-si='((180-ent(angulo2*180/pi+1))/2)=60' expresión='(-5,0)(punto.x,punto.y)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0' ancho='3'">
+   <param name="G_22" value="espacio='E2' tipo='texto' dibujar-si='0' expresión='[10,300]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs34 Modifica el tri\u225 ngulo arrastrando el v\u233 rtice superior hasta que puedas\par formar un tri\u225 ngulo equil\u225 tero. Luego arr\u225 stralo nuevamente hasta\par formar un tri\u225 ngulo is\u243 sceles rect\u225 ngulo.\f2\fs24\par }' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_23" value="espacio='E2' tipo='polígono' fondo='sí' color='grisObscuro' dibujar-si='0' coord_abs='sí' expresión='(0,0)(E2._w-1,0)(E2._w-1,E2._h-1)(0,E2._h-1)(0,0)' ancho='3'">
+</ajs></p>
+
+</body>
+</html>

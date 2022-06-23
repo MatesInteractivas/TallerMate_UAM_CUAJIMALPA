@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+	<title>El plano cartesiano &nbsp;-&nbsp; Introducción.</title>
+   <style>
+	*{
+		border:0;
+		margin:0;
+		padding:0;
+	}
+	body{
+		/*background-color:#7db9f2;*/
+      background-color:#f8a56a;
+      margin-top: 5px;
+	}
+	</style>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+
+<body>
+
+<p align="center">
+<ajs name="Descartes" width=790 height=520 code="Descartes">
+   <param name="tamaño" value="790x520">
+   <param name="sonido" value="sí">
+   <param name="álgebra" value="sí">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no">
+   <param name="E_01" value="tipo='R2' id='E0' y='65' fijo='sí' imagen='images/fondoCiudad.jpg' despl_imagen='arr-izq' fondo='blanco' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='pleca' ancho='790' alto='65' fijo='sí' imagen='images/instrucciones.png' despl_imagen='arr-izq' fondo='ffffffff' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_03" value="tipo='R2' id='ciudad' y='65' ancho='790' alto='455' fijo='sí' escala='96' O.x='-2' despl_imagen='arr-izq' fondo='(ff,ff,ff,1-(tr*0.5))' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_04" value="tipo='R2' id='Texmapas' x='395' y='86' ancho='390' alto='130' dibujar-si='(tr<0.35)&(tr>0.2)' fijo='sí' imagen='images/postit_500.png' despl_imagen='expand.' fondo='ffffffff' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_05" value="tipo='R2' id='Texplano' x='395' y='80' ancho='380' alto='130' dibujar-si='(tr<0.75)&(tr>0.42)' fijo='sí' imagen='images/postit_500.png' despl_imagen='expand.' fondo='ffffffff' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_06" value="tipo='R2' id='Texplano2' x='400' y='80' ancho='380' alto='250' dibujar-si='(tr<0.95)&(tr>0.9)' fijo='sí' imagen='images/postit_500.png' despl_imagen='expand.' fondo='ffffffff' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='tr' tipo='numérico' interfaz='barra' región='interior' espacio='ciudad' expresión='(ciudad._w-305,ciudad._h-30,300,25)' min='0' max='1' fijo='sí' visible='no' acción='calcular' parámetro.fuente='Monospaced,PLAIN,12'">
+   <param name="C_02" value="id='coordenada' tipo='gráfico' espacio='ciudad' color='verde' color-int='verde' tamaño='8' fijo='sí' dibujar-si='tr>0.86'">
+   <param name="C_03" value="id='g' tipo='gráfico' espacio='ciudad' color='azul' color-int='rojo' tamaño='8' expresión='(4,2)' fijo='sí' dibujar-si='0'">
+   <param name="A_01" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' hacer='Px=ciudad._w/2+g.x*ciudad.escala;Py=ciudad._h/2-g.y*ciudad.escala;;coordenada.x=(ent(coordenada.x+0.5));coordenada.y=(ent(coordenada.y+0.5));;RA.x=415;RA.y=50;RA.w=340;RA.h=150;;;'">
+   <param name="G_01" value="espacio='pleca' tipo='texto' fondo='sí' color='blanco' expresión='[28,8]' texto='Los planos y mapas son utilizados como ayuda para orientarnos y  localizar\nlugares. Desplaza la barra para estudiar cómo funciona el plano cartesiano.' fuente='SansSerif,BOLD,20' fijo='sí'">
+   <param name="G_02" value="espacio='ciudad' tipo='segmento' color='(00,00,00,1-((1/0.5)*tr))' expresión='(-200,s)(200,s)' familia='s' s.intervalo='[-100,100]' s.pasos='200' fuente='Monospaced,PLAIN,12' fijo='sí' ancho='2'">
+   <param name="G_03" value="espacio='ciudad' tipo='segmento' color='(00,00,00,1-((1/0.5)*tr))' expresión='(s,-200)(s,200)' familia='s' s.intervalo='[-100,100]' s.pasos='200' fuente='Monospaced,PLAIN,12' fijo='sí' ancho='2'">
+   <param name="G_04" value="espacio='ciudad' tipo='flecha' color='grisObscuro' dibujar-si='tr>0.38' expresión='(0,0)(0,-4.6/2)' fuente='Monospaced,PLAIN,12' fijo='sí' ancho='4' ancho='4' flecha='grisObscuro'">
+   <param name="G_05" value="espacio='ciudad' tipo='flecha' color='grisObscuro' dibujar-si='tr>0.38' expresión='(0,0)(0,4.6/2)' fuente='Monospaced,PLAIN,12' fijo='sí' ancho='4' ancho='4' flecha='grisObscuro'">
+   <param name="G_06" value="espacio='ciudad' tipo='flecha' color='grisObscuro' dibujar-si='tr>0.38' expresión='(0,0)(-8/2,0)' fuente='Monospaced,PLAIN,12' fijo='no' ancho='4' ancho='4' flecha='grisObscuro'">
+   <param name="G_07" value="espacio='ciudad' tipo='flecha' color='grisObscuro' dibujar-si='tr>0.38' expresión='(0,0)(8/2,0)' fuente='Monospaced,PLAIN,12' fijo='sí' ancho='4' ancho='4' flecha='grisObscuro'">
+   <param name="G_08" value="espacio='ciudad' tipo='imagen' coord_abs='sí' expresión='(0,0)' archivo='images/marquito.png'">
+   <param name="G_09" value="espacio='Texmapas' tipo='texto' fondo='sí' color='negro' dibujar-si='(tr<0.5)&(tr>0.2)' expresión='[10,10]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs42 Los planos de grandes extensiones\par se dibujan sobre una cuadr\u237 cula y los\par objetos se localizan nombrando la\par columna y la fila en que se encuentran.\f2\fs24}' fuente='Arial,PLAIN,21' fijo='sí'">
+   <param name="G_10" value="espacio='Texplano' tipo='texto' fondo='sí' color='negro' dibujar-si='(tr<0.75)&(tr>0.42)' expresión='(10,25)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Arial;\f3\fcharset0 Courier New;}\f1\fs44 Un \b plano  cartesiano\b0  est\u225  formado\par por dos rectas perpendiculares \par llamadas \b ejes de coordenadas\b0 .\f3\fs24\par \par }' fuente='Arial,PLAIN,22' fijo='sí'">
+   <param name="G_11" value="espacio='Texplano2' tipo='texto' fondo='sí' color='negro' dibujar-si='(tr<0.95)&(tr>0.9)' expresión='(10,40)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs40 Cada punto del plano est\u225  determinado\par por un par ordenado de coordenadas:\par la primera corresponde al eje horizontal\par y la segunda al eje vertical.\par \par               Mueve el punto para \par               ver sus coordenadas.\par \f2\fs24\par \par }' fuente='Arial,PLAIN,20' fijo='sí'">
+   <param name="G_12" value="espacio='E0' tipo='texto' dibujar-si='0' expresión='[100,E0._h-30]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;\f3\fcharset0 Courier New;}{\colortbl\red0\green0\blue0;\red0\green255\blue0;\red0\green0\blue255;}\f1\fs48\i\cf0\cb1{\*\mjaformula{\expr tr}}\f2\fs44  {\*\mjaformula{\expr Px\decimals 0\fixed1}} , {\*\mjaformula{\expr Py\decimals 0\fixed1}}\f3\fs24\i0  \cf2}' fuente='Times New Roman Cursiva,ITALIC,24' fijo='sí'">
+   <param name="G_13" value="espacio='ciudad' tipo='texto' color='blanco' dibujar-si='tr>0.86' expresión='[ciudad._w/2+coordenada.x*ciudad.escala,ciudad._h/2-coordenada.y*ciudad.escala-30]' texto=' ([ent(coordenada.x)], [ent(coordenada.y)])  ' fuente='SansSerif,PLAIN,30' decimales='0' fijo='no' color_borde_texto='negro'">
+</ajs>
+</p>
+
+<script id="macros/redondangulo.txt" type="descartes/macro">
+tipo_de_macro=R2
+Idioma=español
+id='transp' constante='sí' expresión='0' evaluar='una-sola-vez'
+id='rojo' constante='sí' expresión='1' evaluar='una-sola-vez'
+id='verde' constante='sí' expresión='0.93' evaluar='una-sola-vez'
+id='azul' constante='sí' expresión='0.32' evaluar='una-sola-vez'
+id='x' constante='sí' expresión='30' evaluar='una-sola-vez'
+id='y' constante='sí' expresión='20' evaluar='una-sola-vez'
+id='w' constante='sí' expresión='300' evaluar='una-sola-vez'
+id='h' constante='sí' expresión='200' evaluar='una-sola-vez'
+tipo='polígono' color='(rojo,verde,azul,transp)' coord_abs='sí' expresión='(x+10,y)(x+w-10,y)(x+w-3,y+3)(x+w,y+10)(x+w,y+h-10)(x+w-3,y+h-3)(x+w-10,y+h)(x+10,y+h)(x+3,y+h-3)(x,y+h-10)(x,y+10)(x+3,y+3)(x+10,y)' relleno='(rojo,verde,azul,transp)' ancho='0' 
+</script>
+
+</body>
+
+</html>

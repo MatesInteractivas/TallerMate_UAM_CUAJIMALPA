@@ -1,0 +1,87 @@
+body{
+	font-family:Arial, Helvetica, sans-serif;
+	background-color:#FFFFFF;
+	margin:5;
+}
+
+
+.title{
+	color:#000000;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	font-weight:bold;
+}
+
+h1{
+	color:#278BEB;
+	font-size:24px;
+	font-weight:bold;
+	text-align:center;
+
+}
+
+h2{
+	color:#E08C01;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:18px;
+	font-weight:bold;
+}
+
+.apartado{
+	color:#278BEB;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:18px;
+	font-weight:bold;
+}
+
+.titulo{
+	color:#000000;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+}
+
+.txt{
+	color:#000000;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+}
+
+.legal{
+	color:#000000;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+}
+
+.legal_link{
+	color:#278BEB;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+}
+
+.separador{
+ color:#278BEB;
+
+}
+
+.cargo{
+	color:#278BEB;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	text-align:center;
+	padding-bottom:8px;
+	display:block;
+	clear:both;
+}
+
+.persona{
+	color:#000000;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	text-align:center;
+	display:block;
+	clear:both;
+}
+
+

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+	Los tipos de ODA son :
+		interactivo
+		video
+		chat
+		audio
+-->
+<recurso id="3m_b01_t01_s01" tipo="interactivo">
+	<!--
+		La ruta debe de ser con respecto al HTML de arriba.
+		En este caso, se indica que entre a este mismo directorio
+		y busque la imagen en el directorio imgs.
+	-->
+	<img src="imgs/3m_b01_t01_s01.png"/>
+	
+	
+	
+	<!--
+	Este es el título corto de la ODA
+	-->
+	<titulo>
+		Productos notables y factorización 
+	</titulo>
+
+
+
+
+	<!-- 
+		La descripción del interactivo soporta html.
+	-->
+	<descripcion>
+		<![CDATA[
+			<p align="justify">
+				Explorar las representaciones gráfica y algebraica simultáneamente para descubrir y comprender las reglas de los Productos notables y  la factorización.
+			</p>
+		]]>
+	</descripcion>
+	
+	
+
+
+	<!-- 
+	Nivel  de avance del interactivo
+	@nivel = pocentaje de avance. De 0  a 100
+	
+	Dentro del tag debe de ir una descripción
+	del avance alcanzado hasta el momento
+	-->
+	
+<avance>
+		<Multimedia nivel="90">
+			<![CDATA[Falta revisión de diseño
+				
+			]]>	
+		</Multimedia>
+		<Programacion  nivel="95">
+			<![CDATA[Falta VoBo, Actualizada 18/06/09 documentación 24/06/09
+			  
+		]]>
+		</Programacion>
+		<Contenido  nivel="100">
+			<![CDATA[
+				
+			]]>
+		</Contenido>
+	</avance>
+
+
+
+	<!--
+		Por si en algún momento se implementa una versón de 
+		busqueda. El siguiente elemento es una lista de los 
+		temas con los que se relaciona este ODA.
+	-->
+	<temasRelacionados>
+		<tema keyword="productos notables"/>
+		<tema keyword="factorización"/>
+	
+	</temasRelacionados>
+</recurso>

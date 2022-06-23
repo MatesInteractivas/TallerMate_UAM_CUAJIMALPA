@@ -1,0 +1,8 @@
+tipo_de_macro=R2
+Idioma=espa&ntilde;ol
+id='A' constante='si' expresi&oacute;n='0' evaluar='una-sola-vez'
+id='B' constante='si' expresi&oacute;n='0' evaluar='una-sola-vez'
+id='C' constante='si' expresi&oacute;n='0' evaluar='una-sola-vez'
+id='calculos' algoritmo='si' evaluar='siempre' inicio='cuadrado=|x&sup2;|;nada=| |;equis=|x|;mas=| + |;cuadradoSolo=|  x&sup2;|;equisSolo=|  x|' hacer='miExpA=(A=1)?cuadradoSolo:A+cuadrado;miExpA=(A=0)?nada:miExpA;miExpB=(B=1)?equisSolo:B+equis;miExpB=(B=0)?nada:miExpB;miExpresion=(A&gt;0)?miExpA:nada;miExpresion=((A&gt;0)&amp;(B&gt;0))?miExpresion+mas:miExpresion;miExpresion=(B&gt;0)?miExpresion+miExpB:miExpresion;miExpresion=(C&gt;0)?miExpresion+mas+C:miExpresion'
+tipo='texto' color='azul' expresi&oacute;n='[20,20]' texto='[miExpresion]' fuente='Monospaced,PLAIN,12' 
+

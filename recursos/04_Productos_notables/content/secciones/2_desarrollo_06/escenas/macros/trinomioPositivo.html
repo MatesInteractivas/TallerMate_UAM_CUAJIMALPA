@@ -1,0 +1,20 @@
+<applet code="Descartes.class"
+        codebase="../../../"
+        archive="Descartes4.jar"
+        MAYSCRIPT
+        width=300 height=200>
+   <param name="decimal_symbol" value=".">
+   <param name="Versi&oacute;n" value="3.92, 2008-06-16">
+   <param name="Idioma" value="espa&ntilde;ol">
+   <param name="Botones" value="cr&eacute;ditos=no config=no inicio=no limpiar=no">
+   <param name="E_00" value="tipo='R2' despl_imagen='arr-izq' fondo='blanco' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_00" value="id='A' tipo='num&eacute;rico' valor='2' nombre='A' incr='1' visible='si' par&aacute;metro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro' tooltip.fuente='Monospaced,PLAIN,12' Explicaci&oacute;n.fuente='Monospaced,PLAIN,12'">
+   <param name="C_01" value="id='B' tipo='num&eacute;rico' valor='2' nombre='B' incr='1' visible='si' par&aacute;metro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro' tooltip.fuente='Monospaced,PLAIN,12' Explicaci&oacute;n.fuente='Monospaced,PLAIN,12'">
+   <param name="C_02" value="id='C' tipo='num&eacute;rico' valor='1' nombre='C' incr='1' visible='si' par&aacute;metro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro' tooltip.fuente='Monospaced,PLAIN,12' Explicaci&oacute;n.fuente='Monospaced,PLAIN,12'">
+   <param name="A_00" value="id='A' constante='si' expresi&oacute;n='0' evaluar='una-sola-vez'">
+   <param name="A_01" value="id='B' constante='si' expresi&oacute;n='0' evaluar='una-sola-vez'">
+   <param name="A_02" value="id='C' constante='si' expresi&oacute;n='0' evaluar='una-sola-vez'">
+   <param name="A_03" value="id='calculos' algoritmo='si' evaluar='siempre' inicio='cuadrado=|x&sup2;|;nada=| |;equis=|x|;mas=| + |;cuadradoSolo=| x&sup2;|;equisSolo=| x|' hacer='miExpA=(A=1)?cuadradoSolo:A+cuadrado;miExpA=(A=0)?nada:miExpA;miExpB=(B=1)?equisSolo:B+equis;miExpB=(B=0)?nada:miExpB;miExpresion=(A&gt;0)?miExpA:nada;miExpresion=((A&gt;0)&amp;(B&gt;0))?miExpresion+mas:miExpresion;miExpresion=(B&gt;0)?miExpresion+miExpB:miExpresion;miExpresion=(C&gt;0)?miExpresion+mas+C:miExpresion'">
+   <param name="G_00" value="tipo='texto' color='azul' expresi&oacute;n='[20,20]' texto='[miExpresion]' fuente='Monospaced,PLAIN,12'">
+</applet>
+

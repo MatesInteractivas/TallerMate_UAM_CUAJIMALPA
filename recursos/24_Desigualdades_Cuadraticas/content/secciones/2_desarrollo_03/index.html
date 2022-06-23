@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Solución de desigualdades cuadráticas</h1>
+    
+    <!--- Subtítulo (no necesario en introducción)--->
+    <h2>Comparación de gráficas</h2> 
+    
+    
+    
+    <p>Este método es el mismo que se utiliza para desigualdades de primer grado. Consiste en tomar a cada miembro de la desigualdad como una ecuación independiente; tales ecuaciones determinan diferentes gráficas en el plano cartesiano, a partir de las cuales se hace una comparación de los valores que corresponden a las coordenadas verticales, también conocidas como <em>ordenadas</em>.</p>
+    
+    <p>Como ejemplo de este análisis veamos la inecuación \( x^2 < a \). De los dos miembros podemos obtener las ecuaciones \( y_1=x^2 \) y \( y_2=a\). Como la desigualdad pide que \(x^2\) sea menor que \(a\), el conjunto solución a la desigualdad son todos los valores de \(x\) para los que la ordenada \(y_1\) sea menor que la \(y_2\). Como puedes ver en la gráfica que se muestra abajo, se trata de los valores de \(x\) para los que la parábola se encuentre por debajo de la recta, y esto ocurre si \(x_1\) < \(x\) < \(x_2 \).</p>
+    
+    <div class='instrucciones'> A continuación se muestran las gráficas de las ecuaciones \( y_1=x^2 \) y \( y_2=a\). Utiliza el pulsador para cambiar los valores de \(a\) y fíjate cuál es la solución a la desigualdad \( x^2 < a \).</div>
+    
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="500" height="300" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    <p>En las matemáticas, es muy probable que haya más de una forma de darle solución a un problema. Las desigualdades cuadráticas no son la excepción, pero evidentemente tenemos que desarrollar una intuición que nos permita determinar qué camino tomar para ahorrar tiempo y esfuerzo. En el ejemplo anterior teníamos la desigualdad \( x^2 < a \); ésta también se puede expresar como \( x^2 - a < 0 \). De esta nueva desigualdad también podemos obtener una ecuación por cada miembro, en este caso \( y_1 = x^2 - a  \)  y \( y_2 = 0 \), lo que nos permite analizar la ecuación del primer miembro con respecto al eje \( X \) (que corresponde a la recta \(y = 0\)). Esto nos sirve para entender inecuaciones del estilo \( ax^2 + bx + c < 0 \), pues basta con graficar la ecuación correspondiente a \( y = x^2 + bx + c \) y compararla con el eje \( X \).</p>
+    
+    <div class='instrucciones'> A continuación se muestra la gráfica de la ecuación cuadrática de la forma \( y = x^2 + bx + c \). Utiliza los pulsadores para cambiar los valores de \(a\), \(b\) y \(c\) en la gráfica. Nota que la solución a la inecuación cuadrática \( x^2 + bx + c < 0\) depende de cómo la gráfica de la ecuación cuadrática corta el eje \(X\).</div>
+    
+      <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="600" height="400" frameborder="0" src="escenas/escena2.html"> </iframe>
+    </div>
+    
+      
+
+
+<!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Introducción elaborada para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Víctor Hugo García Jarillo</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+   
+   
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

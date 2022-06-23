@@ -1,0 +1,30 @@
+/* botones en general */
+.DescartesButtonContainer {
+	border-radius: 5px;
+	background: #ee7f30; /* Old browsers */
+	background: -moz-linear-gradient(top,  #b76024 0%, #773f18 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b76024), color-stop(100%,#773f18)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #b76024 0%, #773f18 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #b76024 0%, #773f18 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #b76024 0%, #773f18 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #b76024 0%, #773f18 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b76024', endColorstr='#773f18',GradientType=0 ); /* IE6-9 */
+}
+
+.DescartesButtonContainer[data-active=true]:hover {
+	background: #ee7f30; /* Old browsers */
+	background: -moz-linear-gradient(top,  #b76024 0%, #cc773d 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b76024), color-stop(100%,#cc773d)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #b76024 0%, #cc773d 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #b76024 0%, #cc773d 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #b76024 0%, #cc773d 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #b76024 0%, #cc773d 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b76024', endColorstr='#cc773d',GradientType=0 ); /* IE6-9 */
+}
+
+.DescartesButtonContainer[data-active=true]:active {
+  -moz-box-shadow:    inset 0 0 7px #444;
+  -webkit-box-shadow: inset 0 0 7px #444;
+  box-shadow:         inset 0 0 7px #444;
+	background-color: #ee7f30;
+}

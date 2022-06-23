@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>	
+      <style type="text/css" media="screen">
+	/*pulsador*/
+	#zm { }
+	#zm > canvas {
+	  display: none;
+	}
+    
+	#zm .up {
+	  background: white url("images/zoomIn.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zm > .up:hover {
+	  background-color: #efefef !important;
+	}
+	#zm > .up:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+    
+	#zm .down {
+	  background: white url("images/zoomOut.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zm .down:hover {
+	  background-color: #efefef !important;
+	}
+	#zm .down:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+      </style>
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=760 height=510 code="Descartes">
+   <param name="tamaño" value="760x510">
+   <param name="image_loader" value="">
+   <param name="expand" value="">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.4, 2016-05-18">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo_760x510.png' despl_imagen='arr-izq' fondo='f3f0ec' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='Ans' x='10%' y='17%' ancho='80%' alto='80%' dibujar-si='shwAns' fijo='sí' despl_imagen='arr-izq' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_03" value="tipo='R2' id='PCar' x='(E1._w-350)/2' y='19%' ancho='350' alto='350' dibujar-si='(shwAns&(scrlAns=scrlAnsmax))' fijo='sí' despl_imagen='arr-izq' red='no' red10='no' ejes='405860' texto='405860'">
+   <param name="C_01" value="id='Resp1altura' tipo='numérico' interfaz='campo de texto' región='interior' espacio='E1' expresión='(90,105,60,34)' fijo='no' visible='sí' dibujar-si='Tipo==1' activo-si='!shwAns'">
+   <param name="C_02" value="id='Resp2altura' tipo='numérico' interfaz='campo de texto' región='interior' espacio='E1' expresión='(85,115,60,34)' fijo='no' visible='sí' dibujar-si='Tipo==2' activo-si='!shwAns' pos_mensajes='centro'">
+   <param name="C_03" value="id='VerifBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Verificar' expresión='(E1._w/4-45,E1._h-35,90,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='Verif()' activo-si='!shwAns'">
+   <param name="C_04" value="id='VerRespBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Respuesta' expresión='(E1._w/2-60,E1._h-35,120,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn120x30.png' acción='calcular' parámetro='shwAns=1' dibujar-si='shwResp' activo-si='!shwAns' pos_mensajes='centro'">
+   <param name="C_05" value="id='OtroEjBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Otro ejercicio' expresión='(E1._w*3/4-60,E1._h-35,120,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn120x30.png' acción='calcular' parámetro='ReInit()' activo-si='!shwAns'">
+   <param name="C_06" value="id='clsAnsBt' tipo='numérico' interfaz='botón' región='interior' espacio='Ans' nombre='_nada_' expresión='(Ans._w-25,5,20,20)' fijo='sí' visible='sí' imagen='images/cerrar.png' acción='calcular' parámetro='shwAns=0\nshwResp=0' pos_mensajes='centro'">
+   <param name="C_07" value="id='AntAnsBt' tipo='numérico' interfaz='botón' región='interior' espacio='Ans' nombre='Anterior' expresión='(Ans._w/3-45,Ans._h-35,90,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrlAns=scrlAns-1' dibujar-si='scrlAns>0' pos_mensajes='centro'">
+   <param name="C_08" value="id='SigAnsBt' tipo='numérico' interfaz='botón' región='interior' espacio='Ans' nombre='Siguiente' expresión='(Ans._w*2/3-45,Ans._h-35,90,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrlAns=scrlAns+1' dibujar-si='scrlAns<scrlAnsmax'">
+   <param name="C_09" value="id='zm' tipo='numérico' región='interior' espacio='PCar' nombre='_nada_' expresión='(PCar._w-30,PCar._h-53,27,50)' valor='zm' incr='zmincr' min='0.1' fijo='no' visible='sí' acción='calcular' parámetro='PCar.escala=zm\nPCar.Ox=-centrox*PCar.escala\nPCar.Oy=centroy*PCar.escala' pos_mensajes='centro'">
+   <param name="A_01" value="id='ReInit()' algoritmo='sí' algoritmo='sí' hacer='ReiniciaCampos();correcto=0;scrlAns=0;nTry=0;shwAns=0;AnsVisit=0;shwResp=0;Tipo=(Tipo<2)?Tipo+1:1;bla=(Tipo==1)?GeneraTipo1():bla;bla=(Tipo==2)?GeneraTipo2():bla'">
+   <param name="A_02" value="id='ReiniciaCampos()' algoritmo='sí' algoritmo='sí' hacer='Resp1altura=0;Resp2altura=0'">
+   <param name="A_03" value="id='GeneraTipo1()' algoritmo='sí' algoritmo='sí' inicio='scrlAnsmax=5;imagenx=220;imageny=110' hacer='Tp1h=sgn(0.5-rnd)*(0.25+ent(39.9999*rnd)/4);Tp1k=1+ent(36.9999*rnd)/4;Tp1p=-(0.25+ent(11.9999*rnd)/4);;Tp1a=1/(4*Tp1p);Tp1b=-2*Tp1h/(4*Tp1p);Tp1c=(Tp1h^2)/(4*Tp1p)+Tp1k;Tp1Focox=Tp1h;Tp1Focoy=Tp1k+Tp1p;Tp1Directriz=Tp1k-Tp1p;Tp1LR=abs(1/Tp1a);Tp1Raiz=(-Tp1b-sqrt(Tp1b^2-4*Tp1a*Tp1c))/(2*Tp1a);centrox=Tp1Raiz/2;centroy=Tp1k/2;;PCar.escala=280/max(Tp1k,Tp1Raiz);PCar.Ox=-centrox*PCar.escala;PCar.Oy=centroy*PCar.escala;zm=PCar.escala;zmincr=zm*0.05' mientras='Tp1c<=5'">
+   <param name="A_04" value="id='GeneraTipo2()' algoritmo='sí' algoritmo='sí' inicio='scrlAnsmax=7;imagenx=200;imageny=120' hacer='Tp2h=0;Tp2p=-(0.25+ent(11.9999*rnd)/4);Tp2k=abs(Tp2p);;Tp2a=1/(4*Tp2p);Tp2b=-2*Tp2h/(4*Tp2p);Tp2c=(Tp2h^2)/(4*Tp2p)+Tp2k;Tp2Focox=Tp2h;Tp2Focoy=Tp2k+Tp2p;Tp2Directriz=Tp2k-Tp2p;Tp2LR=abs(1/Tp2a);centrox=Tp2h;centroy=Tp2k/2;;PCar.escala=280/max(Tp12k,Tp2LR);PCar.Ox=-centrox*PCar.escala;PCar.Oy=centroy*PCar.escala;zm=PCar.escala;zmincr=zm*0.05'">
+   <param name="A_05" value="id='Verif()' algoritmo='sí' algoritmo='sí' hacer='bla=(Tipo==1)?Verif1():bla;bla=(Tipo==2)?Verif2():bla;;nTry=(correcto==2)?nTry+1:0;shwResp=((nTry>2)|((nTry>0)&(AnsVisit)))?1:0;AnsVisit=(shwResp)?1:AnsVisit'">
+   <param name="A_06" value="id='Verif1()' algoritmo='sí' algoritmo='sí' hacer='correcto=(abs(Resp1altura-Tp1c)<0.03)?1:2'">
+   <param name="A_07" value="id='Verif2()' algoritmo='sí' algoritmo='sí' hacer='correcto=(abs(Resp2altura-Tp2k)<0.03)?1:2'">
+   <param name="A_08" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='ReInit()'">
+   <param name="A_09" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='imagen' dibujar-si='correcto==1' coord_abs='sí' expresión='(imagenx,imageny)' archivo='images/bien.png'">
+   <param name="G_02" value="espacio='E1' tipo='imagen' dibujar-si='correcto==2' coord_abs='sí' expresión='(imagenx,imageny)' archivo='images/mal.png'">
+   <param name="G_03" value="espacio='E1' tipo='punto' fondo='sí' dibujar-si='0' expresión='(0000,0)' fijo='sí'">
+   <param name="G_04" value="espacio='E1' tipo='texto' color='232323' dibujar-si='Tipo==1' expresión='[10,10]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Se lanza un proyectil desde la azotea de un edificio. Si la base del edificio se coloca en\par el origen, la trayectoria del proyectil est\u225  dada por \f2\fs38\i{\*\mjaformula y{\expr (-Tp1k&gt;=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(Tp1k)\decimals 4\fixed0}={\expr (Tp1p&gt;=0)?&squot;&squot;:&squot;-&squot;\decimals 0\fixed1}{\fraction{\num (x{\expr (-Tp1h&gt;=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(Tp1h)\decimals 4\fixed0}){\supix 2}}{\den{\expr abs(4*Tp1p)\decimals 4\fixed0}}}}\f1\fs34\i0 .\par \u191 Cu\u225 l es la altura del edificio?}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_05" value="espacio='E1' tipo='texto' color='232323' dibujar-si='Tipo==1' expresión='[10,110]' texto='altura=' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_06" value="espacio='Ans' tipo='texto' color='232323' dibujar-si='(Tipo==1)&(scrlAns<4)' expresión='[10,10]' texto='Como el edificio yace sobre las ordenadas y su base está en el origen, su azotea estará también sobre las ordenadas. Es decir, la coordenada horizontal de la azotea será cero.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='525'">
+   <param name="G_07" value="espacio='Ans' tipo='texto' color='232323' dibujar-si='(Tipo==1)&(scrlAns>0)&(scrlAns<4)' expresión='[10,95]' texto='Al ser el punto parte de la parábola y de las ordenadas, es el punto de intersección entre la curva y las ordenadas.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='525'">
+   <param name="G_08" value="espacio='Ans' tipo='texto' color='232323' dibujar-si='(Tipo==1)&(scrlAns>1)&(scrlAns<4)' expresión='[10,155]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Podemos echar mano de la f\u243 rmula vista anteriormente \f2\fs38\i{\*\mjaformula c={\fraction{\num h{\supix 2}}{\den 4p}}+k}\f1\fs34\i0 .\par Y sabemos que el t\u233 rmino independiente \f2\fs38\i c\f1\fs34\i0  en la forma general de la\par funci\u243 n de la par\u225 bola es justo la coordenada vertical (la altura del\par edificio) del punto de intersecci\u243 n (la azotea).}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_09" value="espacio='Ans' tipo='texto' color='232323' dibujar-si='(Tipo==1)&(scrlAns>2)&(scrlAns<4)' expresión='[10,280]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}\f1\fs38\i{\*\mjaformula c={\fraction{\num h{\supix 2}}{\den 4p}}+k={\expr (Tp1p&gt;=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\fraction{\num{\expr Tp1h\decimals 4\fixed0}{\supix 2}}{\den{\expr abs(4*Tp1p)\decimals 4\fixed0}}}{\expr (Tp1k&gt;=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(Tp1k)\decimals 4\fixed0}={\expr (Tp1p&gt;=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\fraction{\num{\expr Tp1h^2\decimals 4\fixed0}}{\den{\expr abs(4*Tp1p)\decimals 4\fixed0}}}{\expr (Tp1k&gt;=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(Tp1k)\decimals 4\fixed0}}\f2\fs34\i0 . De donde\par \f1\fs38\i{\*\mjaformula\f1\fs38\i c={\expr Tp1h^2/(4*Tp1p)\decimals 4\fixed0}{\expr (Tp1k&gt;=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(Tp1k)\decimals 4\fixed0}={\expr Tp1c\decimals 4\fixed0}}\f2\fs34\i0 .}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_10" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(Tipo==1)&(correcto==2)' expresión='[10,165]' texto='Observa que el edificio yace sobre las ordenadas.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='625'">
+   <param name="G_11" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(Tipo==1)&(correcto==2)' expresión='[10,205]' texto='Por lo mismo, la azotea del edificio también yace sobre las ordenadas.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='625'">
+   <param name="G_12" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(Tipo==1)&(correcto==2)' expresión='[10,245]' texto='Recuerda la propiedad que tiene un punto que cae sobre las ordenadas. Otra forma de ver el problema es que estás tratando de encontrar el punto de tu parábola que interseca con el eje de las ordenadas.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='625'">
+   <param name="G_13" value="espacio='E1' tipo='punto' fondo='sí' dibujar-si='0' expresión='(0000,0)' fijo='sí'">
+   <param name="G_14" value="espacio='E1' tipo='texto' color='232323' dibujar-si='Tipo==2' expresión='[10,10]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Se desea construir un arco parab\u243 lico de concreto tal que el foco est\u233  a nivel del suelo\par y los extremos del arco que tocan el suelo est\u233 n en las coordenadas \f2\fs38\i{\*\mjaformula ({\expr -Tp2LR/2\decimals 4\fixed0}m,0m)}\f1\fs34\i0\par y \f2\fs38\i{\*\mjaformula ({\expr Tp2LR/2\decimals 4\fixed0}m,0m)}\f1\fs34\i0 . \u191 Cu\u225 l ser\u225  la altura del punto m\u225 s alto del arco?}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_15" value="espacio='Ans' tipo='texto' color='232323' dibujar-si='(Tipo==1)&(scrlAns>3)&(scrlAns<5)' expresión='[10,10]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Observa que \f2\fs38\i{\*\mjaformula{\fraction{\num h{\supix 2}}{\den 4p}}}\f1\fs34\i0  debe conlleva el signo de la expresi\u243 n ordinaria\par al lado derecho de la igualdad.\par \par Finalmente, la altura del edificio sea \f2\fs38\i{\*\mjaformula altura={\expr Tp1c\decimals 4\fixed0}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_16" value="espacio='Ans' tipo='punto' fondo='sí' dibujar-si='0' expresión='(0000,0)' fijo='sí'">
+   <param name="G_17" value="espacio='Ans' tipo='texto' color='232323' dibujar-si='(Tipo==2)&(scrlAns<4)' expresión='[10,10]' texto='Como se menciona, el foco queda sobre el suelo. El vértice de la parábola estará una distancia focal sobre el foco.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='525'">
+   <param name="G_18" value="espacio='Ans' tipo='texto' color='232323' dibujar-si='(Tipo==2)&(scrlAns>0)&(scrlAns<4)' expresión='[10,80]' texto='Por otra parte, recordamos que el vértice es el punto más alto de una parábola que abre hacia abajo. Por lo tanto, lo que buscamos es justo la coordenada vertical del vértice, que es la altura máxima del arco parabólico.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='525'">
+   <param name="G_19" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(Tipo==2)' expresión='[10,120]' texto='altura=' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_20" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(Tipo==2)&(correcto==2)' expresión='[10,180]' texto='Te conviene recordar cuál es el punto más alto de una parábola cuando ésta abre hacia abajo, como es el caso de un arco parabólico construido sobre el suelo.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='625'">
+   <param name="G_21" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(Tipo==2)&(correcto==2)' expresión='[10,250]' texto='Por otro lado, se te proporciona la distancia horizontal entre puntos de tu parábola que están a la misma altura que el foco. ¿Qué parámetro es este?' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='625'">
+   <param name="G_22" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(Tipo==2)&(correcto==2)' expresión='[10,320]' texto='Si planteas correctamente la relación que hay entre este parámetro y la distancia del foco al punto más alto, podrás resolver el problema.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='625'">
+   <param name="G_23" value="espacio='PCar' tipo='ecuación' color='00ff80' dibujar-si='(Tipo==1)&0' expresión='(y-Tp1Directriz)^2=(x-Tp1Focox)^2+(y-Tp1Focoy)^2' ancho='2'">
+   <param name="G_24" value="espacio='PCar' tipo='curva' color='00ff80' dibujar-si='Tipo==1' expresión='(t,Tp1a*t^2+Tp1b*t+Tp1c)' t.intervalo='[0,Tp1Raiz]' t.pasos='40' ancho='2'">
+   <param name="G_25" value="espacio='PCar' tipo='punto' color='azul' dibujar-si='Tipo==1' expresión='(0,Tp1c)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs36\i{\*\mjaformula (0,{\expr Tp1c\decimals 4\fixed0})}\f2\fs30\i0}' fuente='Serif,ITALIC,18' fijo='sí' tamaño='3'">
+   <param name="G_26" value="espacio='PCar' tipo='punto' fondo='sí' dibujar-si='0' expresión='(0000,0)' fijo='sí'">
+   <param name="G_27" value="espacio='PCar' tipo='ecuación' color='00ff80' dibujar-si='(Tipo==2)&0' expresión='(y-Tp2Directriz)^2=(x-Tp2Focox)^2+(y-Tp2Focoy)^2' ancho='2'">
+   <param name="G_28" value="espacio='PCar' tipo='curva' color='00ff80' dibujar-si='Tipo==2' expresión='(t,Tp2a*t^2+Tp2b*t+Tp2c)' t.intervalo='[-Tp2LR/2,Tp2LR/2]' t.pasos='40' ancho='2'">
+   <param name="G_29" value="espacio='Ans' tipo='texto' color='232323' dibujar-si='(Tipo==2)&(scrlAns>1)&(scrlAns<4)' expresión='[10,195]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Sin perder generalidad y para simplificar, podemos colocar a la\par par\u225 bola con su eje coincidente con las ordenadas. Es decir, \f2\fs38\i h=0\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_30" value="espacio='PCar' tipo='punto' color='azul' dibujar-si='Tipo==2' expresión='(0,Tp2c)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs36\i{\*\mjaformula (0 m,{\expr Tp2k\decimals 4\fixed0} m)}\f2\fs30\i0}' fuente='Serif,ITALIC,18' fijo='sí' tamaño='3'">
+   <param name="G_31" value="espacio='Ans' tipo='texto' color='232323' dibujar-si='(Tipo==2)&(scrlAns>2)&(scrlAns<4)' expresión='[10,260]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Como nuestra par\u225 bola es vertical, y el segmento flanqueado por la\par par\u225 bola a la altura del suelo (donde est\u225  el foco) es horizontal, este\par segmento es precisamente el lado recto de la par\u225 bola. Su longitud es,\par as\u237  pues, \f2\fs38\i{\*\mjaformula{\expr Tp2LR/2\decimals 4\fixed0}-({\expr -Tp2LR/2\decimals 4\fixed0})={\expr Tp2LR\decimals 4\fixed0}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_32" value="espacio='PCar' tipo='segmento' color='rojo' dibujar-si='Tipo==2' expresión='(-Tp2LR/2,0)(Tp2LR/2,0)' fijo='sí' tamaño='0' ancho='3'">
+   <param name="G_33" value="espacio='Ans' tipo='texto' color='232323' dibujar-si='(Tipo==2)&(scrlAns>3)&(scrlAns<7)' expresión='[10,10]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Pero sabemos que la longitud del lado recto es 4 veces la distancia\par focal. Por lo mismo nuestra distancia focal ser\u225  \f2\fs38\i{\*\mjaformula |p|={\fraction{\num{\expr Tp2LR\decimals 4\fixed0}}{\den 4}}={\expr abs(Tp2p)\decimals 4\fixed0}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_34" value="espacio='Ans' tipo='texto' color='232323' dibujar-si='(Tipo==2)&(scrlAns>4)&(scrlAns<7)' expresión='[10,85]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Y como la par\u225 bola abre hacia abajo, el v\u233 rtice debe estar \f2\fs38\i |p|\f1\fs34\i0  unidades\par sobre el foco (que est\u225  a nivel del suelo, o a una altura de 0). Es decir,\par \f2\fs38\i{\*\mjaformula k={\expr Tp2k\decimals 4\fixed0}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_35" value="espacio='Ans' tipo='texto' color='232323' dibujar-si='(Tipo==2)&(scrlAns>5)&(scrlAns<7)' expresión='[10,175]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 De ah\u237  que la altura m\u225 xima del arco, que es la coordenada vertical del\par vertice, sea \f2\fs38\i{\*\mjaformula altura={\expr Tp2k\decimals 4\fixed0} m}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_36" value="espacio='Ans' tipo='polígono' fondo='sí' coord_abs='sí' expresión='(1,1)(Ans._w-1,1)(Ans._w-1,Ans._h-1)(1,Ans._h-1)(1,1)'">
+   <param name="G_37" value="espacio='PCar' tipo='punto' color='rojo' dibujar-si='Tipo==2' expresión='(0,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs38\i\par {\*\mjaformula{\expr Tp2LR\decimals 4\fixed0}}\f2\fs30\i0}' fuente='Serif,ITALIC,19' fijo='sí' tamaño='0'">
+   <param name="G_38" value="espacio='PCar' tipo='polígono' coord_abs='sí' expresión='(1,1)(PCar._w-1,1)(PCar._w-1,PCar._h-1)(1,PCar._h-1)(1,1)' ancho='2'">
+</ajs></p>
+
+</body>
+</html>

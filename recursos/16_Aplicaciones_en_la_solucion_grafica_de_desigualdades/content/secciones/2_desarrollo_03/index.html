@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+
+  <!-- MathJax - para fórmulas matemáticas -->
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+  
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+
+<div class="course_content">
+
+<!-- INICIA EL CONTENIDO DE LA PÁGINA -->
+<!-- Título de la página -->
+<h1>Método gráfico para la resolución de desigualdades lineales</h1>
+
+<!-- Subtítulo -->
+<!-- <h2></h2> -->
+
+<!-- Párrafo -->
+<p>
+Geométricamente podemos representar cualquier expresión o ecuación lineal de la forma \(y = mx +b\) como una recta sobre el plano cartesiano. Por lo mismo, para encontrar la solución de una desigualdad lineal, basta con analizar las rectas que cada lado de la desigualdad representan.
+</p>
+
+<p>
+El método gráfico permite simplificar un poco la complejidad de los cálculos para obtener la solución de una desigualdad lineal, debido a que la interpretación geométrica suele ser más simple: basta con comparar el valor de las ordenadas de las rectas y sus pendientes para decidir cuál es el conjunto solución.
+</p>
+
+<p>
+Encontrar el conjunto solución con el método gráfico, consiste en gráficar las rectas que definen las expresiones lineales de la desigualdad, encontrar la intersección entre ellas (si es que existe) y decidir, por medio del análisis de los valores de las abscisas, cuál es el conjunto solución de la desigualdad.
+</p>
+
+<p>
+Para lograr esto, es necesario saber cómo encontrar el punto de intersección entre dos rectas, lo cual se realiza resolviendo el sistema de ecuaciones lineales generado por la desigualdad.
+</p>
+
+<div class='instrucciones'>
+  Observa el procedimiento para la obtención del conjunto solución para desigualdades lineales. Puedes usar las lupas en la parte inferior para cambiar la escala de la gráfica y puedes arrastrar la gráfica con el ratón para cambiar su ubicación dentro del recuadro.
+</div>
+
+<div class="course_extern_content"> 
+<iframe class="course_iframe" width="760" height="480" frameborder="0" src="escenas/escena1.html"> </iframe>
+</div>
+
+
+
+<!-- TERMINA EL CONTENIDO DE LA PÁGINA -->
+
+  <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Joel Espinosa Longi</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+</div>
+
+</article>
+
+</body>
+
+</html>

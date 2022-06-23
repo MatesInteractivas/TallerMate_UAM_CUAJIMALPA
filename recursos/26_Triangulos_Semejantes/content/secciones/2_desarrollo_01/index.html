@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+  
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Los conceptos de congruencia y semejanza de triángulos</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Determinación visual de congruencia o semejanza</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    Los términos 'congruente' y 'semejante', al ser aplicados a triángulos, nos hacen pensar que dichos triángulos comparten algo. Tal vez la forma, tal vez el tamaño. Es, así pues, un tipo de propiedad que se podría pensar se puede determinar con sólo <em>ver</em> los triángulos. No obstante, lo visual es a veces engañoso y conviene contar con las reglas que permitan determinar estas propiedades a ciencia cierta.
+    </p>
+    
+    <p>
+    En el siguiente espacio interactivo puedes empezar a explorar los conceptos de congruencia y semejanza de triángulos. El propósito es que, a partir de las manipulaciones que ahí puedes realizar, infieras la o las propiedades que hacen que dos triángulos sean congruentes o semejantes.
+    </p>
+
+    
+    <!--- Instrucciones --->
+    <div class="instrucciones">Con el objeto de explorar las propiedades de congruencia y semejanza de triángulos, generarás dos triángulos e intentarás que coincidan, es decir, los reacomodarás de manera que uno quede sobre el otro de la forma en que mejor se parezcan. Para lograr lo anterior, sigue estos pasos:<br>
+      <ul>
+        <li>En el menú elige si quieres trabajar con triángulos congruentes o semejantes, o triángulos que no presentan ninguna de estas dos relaciones. Aparecerán dos triángulos. </li>
+        <li>Con el <strong>triángulo de la derecha</strong> puedes hacer las siguientes manipulaciones: (1) Puedes <strong>moverlo</strong> arrastrándolo por el punto rojo en uno de sus vértices y (2) puedes <strong>rotarlo</strong> respecto a su vértice rojo con el pulsador que se encuentra en la esquina derecha inferior.</li>
+        <li>Lo único que podrás hacer con el <strong>triángulo de la izquierda</strong> es <strong>invertirlo</strong> alrededor del segmento cian trazado sobre él. Usa esta función (presionando el botón 'Invertir') cuando un triángulo es la "visión en espejo" del otro. </li>
+        <li>Una vez que hayas hecho las manipulaciones necesarias para que ambos triángulos coincidan, oprime el botón '¿Coinciden?'.</li>
+      </ul>
+   </div>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="480" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    
+    <h2>La congruencia</h2>
+    
+    <p>
+    Habrás notado que, para el caso de dos triángulos congruentes, existe la manera de hacerlos coincidir perfectamente. Esto es, mediante rotaciones, translaciones y, de ser necesario, inversiones (o reflexiones), un triángulo se puede colocar exactamente sobre el otro. ¿Qué te dice esto sobre los ángulos y lados correspondientes de cada triángulo? Por un lado, los <strong>ángulos</strong> deben ser <strong>iguales</strong>. Por otro lado, los <strong>lados</strong> también deben ser <strong>iguales</strong>. Si los lados no fueran iguales, se parecerían pero serían de diferente tamaño.
+    </p>
+
+    <h2>La semejanza</h2>
+    
+    <p>
+    Cuando los triángulos son semejantes habrás notado que puedes hacer coincidir un vértice con su correspondiente en el otro triángulo y los lados que salen de dicho vértice quedan sobre los lados del otro triángulo. No obstante, los otros dos vértices no corresponden y, por ende, el lado opuesto al vértice que coincide no queda sobre el lado opuesto al vértice del otro triángulo. Sin embargo, puedes notar que el lado opuesto de ambos triángulos, a pesar de no coincidir, comparte una característica: es <strong>paralelo</strong> al del otro triángulo.
+    </p>
+
+    <p>
+    Los lados que salen del vértice que coincide quedan sobre los lados del otro triángulo. Ello implica que son paralelos con los lados del otro triángulo (aunque, evidentemente, no del mismo tamaño). Y además tenemos que el lado opuesto (el que no coincide entre triángulos) también es paralelo a su contraparte en el otro triángulo. Esto tiene una interpretación muy sencilla: los <strong>ángulos</strong> entre los lados de un triángulo semejante son <strong>iguales</strong> a sus correspondientes en el triángulo original. Lo único <strong>distinto</strong> es el <strong>tamaño de los lados</strong>. Es decir, un triángulo semejante a otro comparte la forma, mas no el tamaño del otro. Otra forma de decirlo es que un triángulo es la versión <strong>a escala</strong> del otro.
+    </p>
+
+    <p>
+    ¿Qué pasa cuando el factor escala entre uno y otro es la unidad? En este caso, ¡los dos triángulos semejantes tendrán, además de igual forma, igual tamaño! Pero eso es precisamente un triángulo congruente. Así que vemos que la congruencia de triángulos es un caso particular de la semejanza de triángulos: cuando ambos tienen la misma escala. Es por eso que en esta unidad nos abocaremos más a la semejanza de triángulos, pues es el caso general.
+    </p>
+
+    <h2>Ni semejanza ni congruencia</h2>
+
+    <p>
+    Si los triángulos tienen una forma que de plano no coincide tras hacer rotaciones, traslaciones y posibles inversiones, se dice que los triángulos no son ni semejantes ni congruentes. Para estos triángulos, habrás notado que se pueden hacer coincidir el vértice y un lado, pero que al hacer esto, los otro dos vértices y los otros dos lados no coinciden. Además, los otros lados no quedan paralelos.
+    </p>
+
+    <p>
+    A pesar de que ya tienes una idea de qué es lo que hace que dos triángulos sean semejantes, muchas veces no es necesario medir muchas cosas para determinar si cumplen dicha propiedad o no. Hay un mínimo de requisitos que debes checar para determinarlo. Avanza a la siguiente página, donde se abordarán dichos requisitos, además de otra propiedad sobre los tamaños de los lados de los triángulos semejantes.
+    </p>
+
+  
+    <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

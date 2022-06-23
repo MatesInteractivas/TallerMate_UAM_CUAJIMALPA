@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Definición y características de la desigualdad cuadrática</h1>
+    
+
+    
+    <p>Cualquier inecuación que se pueda escribir como:</p>
+    
+    <p><div align="center" style="font-size:17px"> \( ax^2+bx+c < 0,\)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\(a \neq 0\) </div></p>
+    
+    <p>donde \(a\), \(b\) y \(c\) son números reales, se llama <strong><em>inecuación cuadrática en \(x\)</em></strong>, o bien <strong><em>desigualdad cuadrática en \(x\)</em></strong>. Si se remplaza el signo \(< \) por \( \leq \), \(>\) o \( \geq \), el resultado también es una inecuación cuadrática.</p>
+    
+    <p>Las siguientes expresiones también son inecuaciones cuadráticas:</p>
+    
+    <p><div align="center" style="font-size:17px">\( 2x^2 - 3x \leq 5\)&nbsp;&nbsp;&nbsp;&nbsp; y&nbsp;&nbsp;&nbsp;&nbsp; \( (x+3)(x-1) \geq 0\)</div></p>
+    
+    <p>Esto se debe a que ambas expresiones se pueden escribir, respectivamente, como:</p>
+    
+    <p><div align="center" style="font-size:17px">\( 2x^2 - 3x - 5 \leq 0\)&nbsp;&nbsp;&nbsp;&nbsp; y&nbsp;&nbsp;&nbsp;&nbsp; \( x^2 + 2x - 3 \geq 0 \)</div></p>
+    
+    <p>Existen dos formas para resolver las inecuaciones cuadráticas. En una de ellas, se utilizan las propiedades de los <strong>signos de los productos</strong> y en la otra se comparan las <strong>gráficas</strong> de las ecuaciones, al igual que para las inecuaciones lineales.</p>
+
+
+
+<!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Introducción elaborada para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Víctor Hugo García Jarillo</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+    
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+  
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Identidades trigonométricas y la relación pitagórica</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>La relación pitagórica</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    Como observaste en unidades pasadas, para una hipotenusa dada, el seno de uno de los ángulos no rectos de un triángulo rectángulo corresponde al cociente del cateto opuesto entre la hipotenusa. Si este ángulo es \(\alpha\), la relación está dada por \(sin(\alpha)=\frac{co}{hip}\), con \(co\) el cateto opuesto e \(hip\) la hipotenusa. De forma análoga, para el coseno tenemos que \(cos(\alpha)=\frac{ca}{hip}\), con \(ca\) el cateto adyacente. El tamaño del triángulo rectángulo es irrelevante para estas relaciones, dado que si el ángulo \(\alpha\) es igual, se tendrán triángulos semejantes, y la semejanza de triángulos garantiza que las proporciones se mantienen.
+    </p>
+
+    <p>
+    Así, pues, sin perder generalidad, hagamos ahora que el valor de la hipotenusa sea la unidad. Como se trata de un triángulo rectángulo, los lados del mismo que no son la hipotenusa serán los catetos. Por el teorema de Pitágoras, tenemos que la suma del cuadrado de los catetos es el cuadrado de la hipotenusa (en este caso, 1). En forma de ecuación, \((sin(\alpha))^2+(cos(\alpha))^2=1\). Con el propósito de economizar en la notación, muchas veces esta notación se reduce a:
+    </p>
+
+	\[sin^2(\alpha)+cos^2(\alpha)=1\]
+
+    <p>
+      La anterior ecuación se conoce como la <strong>relación pitagórica</strong>. A continuación podrás comprobarla al mover un punto que traza un triángulo y que gira sobre un círculo de radio 1 (que hace que la hipotenusa sea siempre 1).
+    </p>
+    
+    <div class="instrucciones">En el siguiente espacio interactivo contarás inicialmente con un círculo unitario (es decir: de radio 1). En él podrás cambiar el valor del ángulo \(\alpha\), formado por un radio particular de tu círculo con el eje de las abscisas. Adicionalmente, verás la descomposición de dicho radio en sus componentes vertical (que corresponde al radio multiplicado por el seno del ángulo en cuestión) y horizontal (que corresponde al radio multiplicado por el coseno del ángulo en cuestión). Podrás, asimismo, cambiar el valor del radio. Observa la relación pitagórica cuando se manifiesta directamente al aplicar el teorema de Pitágoras al círculo unitario. Observa cómo también es posible recuperar dicha relación cuando el círculo no es unitario.</div>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="480" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    
+    <p>
+    La relación pitagórica es, así pues, no más que el teorema de Pitágoras aplicado a los catetos de un triángulo rectángulo que están expresados como razones trigonométricas del mismo.
+    </p>
+
+	<h2>Extensiones de la relación pitagórica</h2>
+
+    <p>
+    Nota que esta relación te permite expresar, mediante despejes, el seno de un ángulo en términos del coseno del mismo y viceversa. De forma general, permite hacer relaciones entre razones trigonométricas de los ángulos. Veamos algunas:
+	<ul>
+		<li>\(sin^2(\alpha)+cos^2(\alpha)=1\Longrightarrow\)\(sin^2(\alpha)=1-cos^2(\alpha)\). De ahí, \(sin(\alpha)=\pm\sqrt{1-cos^2(\alpha)}\).</li>
+		<li>\(sin^2(\alpha)+cos^2(\alpha)=1\Longrightarrow\)\(cos^2(\alpha)=1-sin^2(\alpha)\). De ahí, \(cos(\alpha)=\pm\sqrt{1-sin^2(\alpha)}\).</li>
+		<li>Por otra parte, sabemos que la secante de \(\alpha\) es \(sec(\alpha)=\frac{1}{cos(\alpha)}\) y la tangente de \(\alpha\) es \(\frac{sin(\alpha)}{cos(\alpha)}\). Si tomamos la relación pitagórica \(sin^2(\alpha)+cos^2(\alpha)=1\) y dividimos ambos lados de la igualdad por \(cos^2(\alpha)\), obtendríamos \(\frac{sin^2(\alpha)}{cos^2(\alpha)}+1=\frac{1}{cos^2(\alpha)}\Longrightarrow\) \(tan^2(\alpha)+1=sec^2(\alpha)\). De ahí que \(sec(\alpha)=\pm\sqrt{1+tan^2(\alpha)}\).</li>
+		<li>También, sabemos que la cotangente de un ángulo \(\alpha\) está dada por \(\frac{cos(\alpha)}{sin(\alpha)}\) y también que la cosecante de un ángulo \(\alpha\) está dada por \(csc(\alpha)=\frac{1}{sin(\alpha)}\). Si tomamos la relación pitagórica \(sin^2(\alpha)+cos^2(\alpha)=1\) y dividimos ambos lados de la ecuación por \(sin^2(\alpha)\), obtendríamos \(1+\frac{cos^2(\alpha)}{sin^2(\alpha)}=\frac{1}{sin^2(\alpha)}\Longrightarrow\) \(1+cot^2(\alpha)=csc^2(\alpha)\). De ahí que \(csc(\alpha)=\pm\sqrt{1+cot^2(\alpha)}\).</li>
+	</ul>
+    </p>
+  
+    <p>
+    Estas 3 expresiones se derivan de la relación pitagórica. Pero observa que te permiten relacionar diversas razones trigonométricas siempre y cuando el ángulo que involucran sea el mismo.
+    </p>
+
+    <p>
+    En las siguientes páginas abordarás la deducción y expresión de las fórmulas usadas para razones trigonométricas de suma y resta de ángulos, así como las razones trigonométricas para el doble y la mitad de un ángulo.
+    </p>
+
+  
+    <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>  
+
+  <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	  <!-- Créditos UAM  (siempre deben ir en primer lugar) -->
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>    
+       
+	    <!-- Aviso licencias -->
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <!--arquimedes (optativo)-->
+		    <!-- Descartes -->
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+	</div>
+      </div>
+    </div> 
+    
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

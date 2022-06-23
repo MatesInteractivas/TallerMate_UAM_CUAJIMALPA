@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=760 height=480 code="Descartes">
+   <param name="tamaño" value="760x480">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo.png' despl_imagen='arr-izq' fondo='f5f5f5' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='E2' x='19' y='52' ancho='410' alto='410' fijo='sí' escala='15' despl_imagen='arr-izq' fondo='blanco' red='b8c4c8' red10='889498' ejes='405860' texto='no'">
+   <param name="C_01" value="id='p1' tipo='gráfico' espacio='E2' color='1e1e87' color-int='1e1e87' tamaño='5' expresión='(p1.x,p1.y)' activo-si='0'">
+   <param name="C_02" value="id='p2' tipo='gráfico' espacio='E2' color='a51e1e' color-int='a51e1e' tamaño='5' expresión='(p2.x,p2.y)' fijo='sí' activo-si='0'">
+   <param name="C_03" value="id='x1_x2_ct' tipo='numérico' interfaz='campo de texto' región='interior' espacio='E1' expresión='(533,128,100,28)' fijo='sí' visible='sí' activo-si='!_bien_1' pos_mensajes='centro'">
+   <param name="C_04" value="id='y1_y2_ct' tipo='numérico' interfaz='campo de texto' región='interior' espacio='E1' expresión='(533,156,100,28)' fijo='sí' visible='sí' activo-si='!_bien_2' pos_mensajes='centro'">
+   <param name="C_05" value="id='x1_x2_al_cuad_ct' tipo='numérico' interfaz='campo de texto' región='interior' espacio='E1' expresión='(563,208,100,28)' fijo='sí' visible='sí' activo-si='!_bien_3' pos_mensajes='centro'">
+   <param name="C_06" value="id='y1_y2_al_cuad_ct' tipo='numérico' interfaz='campo de texto' región='interior' espacio='E1' expresión='(563,240,100,28)' fijo='sí' visible='sí' activo-si='!_bien_4' pos_mensajes='centro'">
+   <param name="C_07" value="id='x1_x2_al_cuad_mas_y1_y2_al_cuad_ct' tipo='numérico' interfaz='campo de texto' región='interior' espacio='E1' expresión='(627,296,100,28)' fijo='sí' visible='sí' activo-si='!_bien_5' pos_mensajes='centro'">
+   <param name="C_08" value="id='d_p1_p2_ct' tipo='numérico' interfaz='campo de texto' región='interior' espacio='E1' expresión='(558,345,100,28)' fijo='sí' visible='sí' activo-si='!_bien_6' pos_mensajes='centro'">
+   <param name="C_09" value="id='verificar' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Verificar' expresión='(445,E1._h-48,120,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' fuente puntos='17' imagen='images/btn120x30.png' acción='calcular' parámetro='verificar()' pos_mensajes='centro'">
+   <param name="C_10" value="id='otroEjercicio' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Otro ejercicio' expresión='(E1._w-135,E1._h-48,120,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' fuente puntos='17' imagen='images/btn120x30.png' acción='calcular' parámetro='generaEjercicio()' pos_mensajes='centro'">
+   <param name="A_01" value="id='igual(a,b)' expresión='abs(a-b)<=0.02'">
+   <param name="A_02" value="id='generaEjercicio()' algoritmo='sí' expresión='x' algoritmo='sí' inicio='_min=-12;_max=25;' hacer='p1.x=ent( _min+ent(rnd*_max*100)/100 );p1.y=ent( _min+ent(rnd*_max*100)/100 );p2.x=ent( _min+ent(rnd*_max*100)/100 );p2.y=ent( _min+ent(rnd*_max*100)/100 );;_cond=(p1.x==p2.x)&&(p1.y==p2.y);p2.x=(_cond)?p2.x+1:p2.x;p2.y=(_cond)?p2.y-1:p2.y;;x1_x2=p1.x-p2.x;y1_y2=p1.y-p2.y;;x1_x2_al_cuad=x1_x2*x1_x2;y1_y2_al_cuad=y1_y2*y1_y2;;x1_x2_al_cuad_mas_y1_y2_al_cuad=x1_x2_al_cuad+y1_y2_al_cuad;;d_p1_p2=sqrt(x1_x2_al_cuad_mas_y1_y2_al_cuad);;verificado=0;_bien_1=0;_bien_2=0;_bien_3=0;_bien_4=0;_bien_5=0;_bien_6=0;_bien=0;x1_x2_ct=0;y1_y2_ct=0;x1_x2_al_cuad_ct=0;y1_y2_al_cuad_ct=0;x1_x2_al_cuad_mas_y1_y2_al_cuad_ct=0;d_p1_p2_ct=0;'">
+   <param name="A_03" value="id='verificar()' algoritmo='sí' expresión='x' algoritmo='sí' inicio='verificado=1' hacer='_bien_1=igual(x1_x2_ct, x1_x2);_bien_2=igual(y1_y2_ct, y1_y2);_bien_3=igual(x1_x2_al_cuad_ct, x1_x2_al_cuad);_bien_4=igual(y1_y2_al_cuad_ct, y1_y2_al_cuad);_bien_5=igual(x1_x2_al_cuad_mas_y1_y2_al_cuad_ct, x1_x2_al_cuad_mas_y1_y2_al_cuad);_bien_6=igual(d_p1_p2_ct, d_p1_p2);;_bien=(_bien_1)&&(_bien_2)&&(_bien_3)&&(_bien_4)&&(_bien_5)&&(_bien_6)'">
+   <param name="A_04" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='generaEjercicio()'">
+   <param name="A_05" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='texto' expresión='[15,15]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs36 Calcula la distancia entre los puntos \f2\fs40\i{\*\mjaformula p{\subix 1}}\f1\fs36\i0  y \f2\fs40\i{\*\mjaformula p{\subix 2}}\f1\fs36\i0 . }' fuente='SansSerif,PLAIN,18' fijo='sí'">
+   <param name="G_02" value="espacio='E1' tipo='texto' expresión='[440,55]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;}{\colortbl\red30\green30\blue135;\red32\green48\blue58;\red165\green30\blue30;}\cf0\f1\fs40\i{\*\mjaformula p{\subix 1}=({\expr p1.x\decimals 2\fixed0} , {\expr p1.y\decimals 2\fixed0})}\cf1\par \cf2{\*\mjaformula p{\subix 2}=({\expr p2.x\decimals 2\fixed0} , {\expr p2.y\decimals 2\fixed0})}\cf1\fs38}' fuente='Serif,ITALIC,20' fijo='no'">
+   <param name="G_03" value="espacio='E1' tipo='texto' expresión='[440,130]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;}\f1\fs40\i{\*\mjaformula x{\subix 1} \u8722  x{\subix 2} =}\par {\*\mjaformula y{\subix 1} \u8722  y{\subix 2} =}\fs38}' fuente='Serif,ITALIC,20' fijo='no'">
+   <param name="G_04" value="espacio='E1' tipo='texto' expresión='[440,210]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;}\f1\fs40\i{\*\mjaformula (x{\subix 1} \f1\fs40\i\u8722  x{\subix 2}){\supix 2}=}\par {\*\mjaformula\f1\fs40\i (y{\subix 1} \u8722  y{\subix 2}){\supix 2}\fs44 =}\fs38}' fuente='Serif,ITALIC,20' fijo='no'">
+   <param name="G_05" value="espacio='E1' tipo='texto' expresión='[440,295]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;}\f1\fs34\i{\*\mjaformula (x{\subix 1} \f2\fs40\i\u8722  x{\subix 2}){\supix 2}+(y{\subix 1} \u8722  y{\subix 2}){\supix 2}=}\fs38}' fuente='Serif,ITALIC,17' fijo='no'">
+   <param name="G_06" value="espacio='E1' tipo='texto' expresión='[440,348]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;}\f1\fs40\i{\*\mjaformula d(p{\subix 1} , p{\subix 2})=}\fs38}' fuente='Serif,ITALIC,20' fijo='no'">
+   <param name="G_07" value="espacio='E2' tipo='polígono' fondo='sí' color='grisClaro' coord_abs='sí' expresión='(0,0)(E2._w-1,0)(E2._w-1,E2._h-1)(0,E2._h-1)(0,0)' ancho='3'">
+   <param name="G_08" value="espacio='E2' tipo='segmento' color='negro' expresión='(p1.x,p1.y)(p2.x,p2.y)' fijo='sí' tamaño='0'">
+   <param name="G_09" value="espacio='E2' tipo='punto' expresión='(p1.x+0.25,p1.y+0.25)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs34\i{\*\mjaformula p{\subix 1}}\f2\fs30\i0}' fijo='sí' tamaño='0'">
+   <param name="G_10" value="espacio='E2' tipo='punto' expresión='(p2.x+0.25,p2.y+0.25)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs34\i{\*\mjaformula p{\subix 2}}\f2\fs30\i0}' fijo='sí' tamaño='0'">
+   <param name="G_11" value="espacio='E1' tipo='texto' color='((_bien_1)?0:1,0,(_bien_1)?1:0,00)' dibujar-si='(verificado)' expresión='[633,128]' texto='[(_bien_1)?&squot;✓&squot;:&squot;✗&squot;]' fuente='SansSerif,BOLD,24' fijo='sí'">
+   <param name="G_12" value="espacio='E1' tipo='texto' color='((_bien_2)?0:1,0,(_bien_2)?1:0,00)' dibujar-si='(verificado)' expresión='[633,156]' texto='[(_bien_2)?&squot;✓&squot;:&squot;✗&squot;]' fuente='SansSerif,BOLD,24' fijo='sí'">
+   <param name="G_13" value="espacio='E1' tipo='texto' color='((_bien_3)?0:1,0,(_bien_3)?1:0,00)' dibujar-si='(verificado)' expresión='[663,208]' texto='[(_bien_3)?&squot;✓&squot;:&squot;✗&squot;]' fuente='SansSerif,BOLD,24' fijo='sí'">
+   <param name="G_14" value="espacio='E1' tipo='texto' color='((_bien_4)?0:1,0,(_bien_4)?1:0,00)' dibujar-si='(verificado)' expresión='[663,240]' texto='[(_bien_4)?&squot;✓&squot;:&squot;✗&squot;]' fuente='SansSerif,BOLD,24' fijo='sí'">
+   <param name="G_15" value="espacio='E1' tipo='texto' color='((_bien_5)?0:1,0,(_bien_5)?1:0,00)' dibujar-si='(verificado)' expresión='[727,296]' texto='[(_bien_5)?&squot;✓&squot;:&squot;✗&squot;]' fuente='SansSerif,BOLD,24' fijo='sí'">
+   <param name="G_16" value="espacio='E1' tipo='texto' color='((_bien_6)?0:1,0,(_bien_6)?1:0,00)' dibujar-si='(verificado)' expresión='[655,345]' texto='[(_bien_6)?&squot;✓&squot;:&squot;✗&squot;]' fuente='SansSerif,BOLD,24' fijo='sí'">
+   <param name="G_17" value="espacio='E1' tipo='texto' color='28af28' dibujar-si='(verificado)&&(_bien)' expresión='[540,390]' texto='¡Muy bien!' fuente='SansSerif,BOLD,20' fijo='sí'">
+   <param name="G_18" value="espacio='E1' tipo='texto' color='c31414' dibujar-si='(verificado)&&(!_bien)' expresión='[500,390]' texto='Revisa tus cálculos.' fuente='SansSerif,BOLD,20' fijo='sí'">
+   <param name="G_19" value="espacio='E1' tipo='texto' dibujar-si='0' expresión='[0,8]' texto='[x1_x2] [y1_y2] [x1_x2_al_cuad] [y1_y2_al_cuad] [x1_x2_al_cuad_mas_y1_y2_al_cuad] [d_p1_p2]\n[_bien_1] [_bien_2] [_bien_3] [_bien_4] [_bien_5] [_bien_6] [_bien]' decimales='20' fijo='no'">
+</ajs></p>
+
+</body>
+</html>

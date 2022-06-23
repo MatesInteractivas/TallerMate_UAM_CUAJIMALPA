@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="150"
+   height="150"
+   id="svg2"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="pitagoras.svg"
+   inkscape:export-filename="pitagoras.png"
+   inkscape:export-xdpi="210"
+   inkscape:export-ydpi="210">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="715"
+     id="namedview29"
+     showgrid="false"
+     inkscape:zoom="2.140625"
+     inkscape:cx="6.173278"
+     inkscape:cy="83.07778"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs5">
+    <marker
+       refX="0"
+       refY="0"
+       orient="auto"
+       id="Arrow1Mstart"
+       style="overflow:visible">
+      <path
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         transform="scale(0.4,0.4)"
+         id="path3288"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none" />
+    </marker>
+    <marker
+       refX="0"
+       refY="0"
+       orient="auto"
+       id="Arrow1Mend"
+       style="overflow:visible">
+      <path
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         transform="scale(-0.4,-0.4)"
+         id="path3285"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none" />
+    </marker>
+  </defs>
+  <text
+     x="-157.2"
+     y="217.8"
+     id="text1502"
+     xml:space="preserve"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial"><tspan
+       x="-157.2"
+       y="217.8"
+       id="tspan1504" /></text>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Layer">
+    <rect
+       width="150"
+       height="150"
+       x="0"
+       y="0"
+       id="rect3886"
+       style="color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.50000000000000000;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;opacity:0"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180" />
+    <text
+       x="50"
+       y="140"
+       id="text5028-1"
+       xml:space="preserve"
+       style="font-size:12px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial"
+       sodipodi:linespacing="100%"><tspan
+         x="50"
+         y="140"
+         id="tspan5030-7"
+         style="font-family:Times New Roman;-inkscape-font-specification:Times New Roman">a<tspan
+   id="tspan3925"
+   style="font-size:65.00091553%;baseline-shift:super">2</tspan>=b<tspan
+   id="tspan3923"
+   style="font-size:65.00091553%;baseline-shift:super">2</tspan>+c<tspan
+   id="tspan3921"
+   style="font-size:65.00091553%;baseline-shift:super">2</tspan></tspan></text>
+    <g
+       transform="translate(0,-5)"
+       id="g3888">
+      <rect
+         width="51.5"
+         height="51.5"
+         x="-124.34445"
+         y="-23.327555"
+         transform="matrix(-0.87419164,-0.48558108,-0.48558108,0.87419164,0,0)"
+         id="rect1403"
+         style="fill:#8098ec;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         d="M 95,85 50,85 50,60 z"
+         id="path3222"
+         style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         inkscape:connector-curvature="0" />
+      <text
+         x="75"
+         y="65"
+         id="text5036"
+         xml:space="preserve"
+         style="font-size:12px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial"
+         sodipodi:linespacing="100%"><tspan
+           x="75"
+           y="65"
+           id="tspan5038"
+           style="font-family:Times New Roman;-inkscape-font-specification:Times New Roman">a</tspan></text>
+      <rect
+         width="25"
+         height="25"
+         x="25"
+         y="60"
+         id="rect3882"
+         style="color:#000000;fill:#fbc020;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-opacity:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <rect
+         width="45"
+         height="45"
+         x="50"
+         y="85"
+         id="rect3884"
+         style="color:#000000;fill:#e33f58;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         x="40"
+         y="75"
+         id="text5028"
+         xml:space="preserve"
+         style="font-size:12px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial"
+         sodipodi:linespacing="100%"><tspan
+           x="40"
+           y="75"
+           id="tspan5030"
+           style="font-family:Times New Roman;-inkscape-font-specification:Times New Roman">c</tspan></text>
+      <text
+         x="70"
+         y="100"
+         id="text5032"
+         xml:space="preserve"
+         style="font-size:12px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial"
+         sodipodi:linespacing="100%"><tspan
+           x="70"
+           y="100"
+           id="tspan5034"
+           style="font-family:Times New Roman;-inkscape-font-specification:Times New Roman">b</tspan></text>
+    </g>
+  </g>
+</svg>

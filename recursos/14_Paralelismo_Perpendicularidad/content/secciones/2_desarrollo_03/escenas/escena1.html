@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>
+
+	 <style type="text/css" media="screen">
+	/*pulsador*/
+	#zoom { }
+	#zoom > canvas {
+	  display: none;
+	}
+    
+	#zoom .up {
+	  background: white url("images/zoomIn.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zoom > .up:hover {
+	  background-color: #efefef !important;
+	}
+	#zoom > .up:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+    
+	#zoom .down {
+	  background: white url("images/zoomOut.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zoom .down:hover {
+	  background-color: #efefef !important;
+	}
+	#zoom .down:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+      </style>
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=750 height=510 code="Descartes">
+   <param name="tamaño" value="750x510">
+   <param name="image_loader" value="">
+   <param name="expand" value="">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.336, 2015-02-13">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo_760x510.png' despl_imagen='arr-izq' fondo='f3f0ec' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='Grafica' x='51%' y='15%' ancho='48%' alto='84%' escala='20' despl_imagen='arr-izq' red='b8c4c8' red10='889498' ejes='405860' texto='405860'">
+   <param name="E_03" value="tipo='R2' id='Sugerencias' x='10%' y='15%' ancho='80%' alto='70%' dibujar-si='shwSugg==1' fijo='sí' despl_imagen='arr-izq' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='SugerBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Sugerencias' expresión='(E1._w/4-60,E1._h-35,120,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn120x30.png' acción='calcular' parámetro='shwSugg=1' dibujar-si='scrl==3' activo-si='!shwSugg'">
+   <param name="C_02" value="id='P1' tipo='gráfico' espacio='Grafica' expresión='(2,0.01)' constricción='x^2+y^2=4' fijo='sí' activo-si='!shwSugg'">
+   <param name="C_03" value="id='P1.x' tipo='numérico' región='exterior' espacio='E1' nombre='P1.y' valor='2' incr='0.001' decimales='3' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_04" value="id='P1.y' tipo='numérico' región='exterior' espacio='E1' nombre='P1.y' valor='0.01' incr='0.001' min='0.01' decimales='3' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_05" value="id='P2' tipo='gráfico' espacio='Grafica' expresión='(2.83,2.83)' constricción='x^2+(y-1)^2=16' fijo='sí' activo-si='!shwSugg'">
+   <param name="C_06" value="id='P2.x' tipo='numérico' región='exterior' espacio='E1' nombre='P1.y' valor='4' incr='0.001' decimales='3' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_07" value="id='P2.y' tipo='numérico' región='exterior' espacio='E1' nombre='P1.y' valor='2.83' incr='0.001' min='1.01' decimales='3' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_08" value="id='zoom' tipo='numérico' región='interior' espacio='Grafica' nombre='_nada_' expresión='(Grafica._w-34,Grafica._h-64,30,60)' valor='20' incr='5' min='5' max='100' discreto='sí' decimales='0' fijo='sí' visible='no' acción='calcular' parámetro='Grafica.escala=zoom' activo-si='!shwSugg' pos_mensajes='centro'">
+   <param name="C_09" value="id='clsSuggBt' tipo='numérico' interfaz='botón' región='interior' espacio='Sugerencias' nombre='_nada_' expresión='(Sugerencias._w-25,5,20,20)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/cerrar.png' acción='calcular' parámetro='shwSugg=0' pos_mensajes='centro'">
+   <param name="C_10" value="id='AntBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Anterior' expresión='(E1._w/6-45,E1._h-70,90,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrl=scrl-1' dibujar-si='scrl>0' pos_mensajes='centro'">
+   <param name="C_11" value="id='SigBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Siguiente' expresión='(E1._w*2/6-45,E1._h-70,90,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrl=scrl+1' dibujar-si='scrl<scrlmax' pos_mensajes='centro'">
+   <param name="A_01" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='Grafica.escala=20;scrlmax=3'">
+   <param name="A_02" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' hacer='zoom=Grafica.escala;m1=(P1.x!=0)?P1.y/P1.x:&squot;Infinito&squot;;m2=(P2.x!=0)?(P2.y-1)/P2.x:&squot;Infinito&squot;;m3=(m2*m1!=-1)?(m2-m1)/(1+m2*m1):&squot;Infinito&squot;;m3=((m2=&squot;Infinito&squot;)&(m1==&squot;Infinito&squot;))?0:m3;m3=((m2==&squot;Infinito&squot;)|(m1==&squot;Infinito&squot;))?&squot;Indefinido&squot;:m3'">
+   <param name="G_01" value="espacio='E1' tipo='texto' color='232323' expresión='[10,10]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Utiliza el punto \f2\fs38\i{\*\mjaformula P{\subix 1}}\f1\fs34\i0  sobre la recta azul para hacerla girar alrededor del origen. Con el punto \f2\fs38\i{\*\mjaformula P{\subix 2}}\f1\fs34\i0\par girar\u225 s la recta roja alrededor del punto (0,1). Observa la f\u243 rmula de la pendiente entre rectas.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_02" value="espacio='Grafica' tipo='ecuación' color='azul' expresión='y=m1*x' ancho='2'">
+   <param name="G_03" value="espacio='Grafica' tipo='punto' expresión='(P1.x,P1.y)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}{\colortbl\red0\green0\blue255;}\f1\fs38\i{\*\mjaformula\cf0 P{\subix 1}({\expr P1.x\decimals 2\fixed0},{\expr P1.y\decimals 2\fixed0})}\f2\fs30\i0}' fuente='Serif,ITALIC,19' fijo='sí' tamaño='0'">
+   <param name="G_04" value="espacio='E1' tipo='texto' color='232323' dibujar-si='scrl>0' expresión='[10,75]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 La pendiente de la recta \f2\fs38\i{\*\mjaformula P{\subix 1}}\f1\fs34\i0  es:\par \f2\fs38\i{\*\mjaformula m{\subix 1}={\fraction{\num{\expr P1.y\decimals 2\fixed0}}{\den{\expr P1.x\decimals 2\fixed0}}}={\expr m1\decimals 5\fixed0}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_05" value="espacio='Grafica' tipo='punto' fondo='sí' dibujar-si='0' expresión='(0,0)' fijo='sí'">
+   <param name="G_06" value="espacio='Grafica' tipo='ecuación' color='rojo' expresión='y=m2*x+1' ancho='2'">
+   <param name="G_07" value="espacio='Grafica' tipo='punto' expresión='(P2.x,P2.y)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}{\colortbl\red255\green0\blue0;\red0\green0\blue255;}\f1\fs38\i{\*\mjaformula\cf0 P{\subix 2}({\expr P2.x\decimals 2\fixed0},{\expr P2.y\decimals 2\fixed0})\cf1}\f2\fs30\i0}' fuente='Serif,ITALIC,19' fijo='sí' tamaño='0'">
+   <param name="G_08" value="espacio='Grafica' tipo='polígono' coord_abs='sí' expresión='(1,1)(Grafica._w-1,1)(Grafica._w-1,Grafica._h-1)(1,Grafica._h-1)(1,1)' ancho='2'">
+   <param name="G_09" value="espacio='E1' tipo='texto' color='232323' dibujar-si='scrl>1' expresión='[10,155]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 La pendiente de la recta \f2\fs38\i{\*\mjaformula P{\subix 2}}\f1\fs34\i0  es:\par \f2\fs38\i{\*\mjaformula m{\subix 2}={\fraction{\num{\expr P2.y\decimals 2\fixed0}}{\den{\expr P2.x\decimals 2\fixed0}}}={\expr m2\decimals 5\fixed0}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_10" value="espacio='E1' tipo='texto' color='232323' dibujar-si='scrl>2' expresión='[10,240]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;}\f1\fs34 Usamos la f\u243 rmula para la pendiente\par entre rectas: \f2\fs38\i{\*\mjaformula m{\subix 3}={\fraction{\num m{\subix 2}-m{\subix 1}}{\den 1+m{\subix 2}m{\subix 1}}}}\i0   \u8658 \f1\fs34\par \f2\fs38\i{\*\mjaformula m{\subix 3}={\fraction{\num{\expr m2\decimals 5\fixed0}-{\expr m1\decimals 5\fixed0}}{\den 1+({\expr m2\decimals 5\fixed0})({\expr m1\decimals 5\fixed0})}}}\f1\fs34\i0   \f3\fs38\u8658 \f1\fs34\par \f2\fs38\i{\*\mjaformula m{\subix 3}={\expr m3\decimals 5\fixed0}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_11" value="espacio='Sugerencias' tipo='texto' color='232323' expresión='[10,10]' texto='Nota que la recta azul pivotea alrededor del origen. La recta roja pivotea alrededor del punto (0,1).' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='485'">
+   <param name="G_12" value="espacio='E1' tipo='texto' color='grisObscuro' dibujar-si='m3==&squot;Infinito&squot;' expresión='[100,400]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Arial;}\f1\fs38\u161 Perpendiculares!\fs34}' fuente='SansSerif,PLAIN,19' fijo='sí'">
+   <param name="G_13" value="espacio='Sugerencias' tipo='texto' color='232323' expresión='[10,70]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 S\u243 lo puedes desplazar tu control \f2\fs38\i{\*\mjaformula P{\subix 1}}\f1\fs34\i0  arriba del eje \f2\fs38\i X\f1\fs34\i0 , y \f2\fs38\i{\*\mjaformula P{\subix 2}}\f1\fs34\i0\par arriba de la recta \f2\fs38\i{\*\mjaformula y=1}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_14" value="espacio='Sugerencias' tipo='texto' color='232323' expresión='[10,140]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Trata diversas pendientes para la recta azul, y mueve la roja para\par que queden lo m\u225 s paralelas o perpendiculares posible. Nota el\par comportamiento de \f2\fs38\i{\*\mjaformula m{\subix 3}}\f1\fs34\i0  para estos casos.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_15" value="espacio='Sugerencias' tipo='polígono' fondo='sí' coord_abs='sí' expresión='(1,1)(Sugerencias._w-1,1)(Sugerencias._w-1,Sugerencias._h-1)(1,Sugerencias._h-1)(1,1)' ancho='2'">
+   <param name="G_16" value="espacio='E1' tipo='texto' color='grisObscuro' dibujar-si='((abs(m3)<0.05)|(abs(m3)>100))&(m3!=&squot;Infinito&squot;)' expresión='[100,400]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Arial;}\f1\fs38\u161 Casi {\*\mjaformula{\expr (abs(m3)<0.05)?&squot;paralelas&squot;:((abs(m3)>100)?&squot;perpendiculares&squot;:&squot;&squot;)\decimals 0\fixed1}}!\fs34}' fuente='SansSerif,PLAIN,19' fijo='sí'">
+</ajs></p>
+
+</body>
+</html>

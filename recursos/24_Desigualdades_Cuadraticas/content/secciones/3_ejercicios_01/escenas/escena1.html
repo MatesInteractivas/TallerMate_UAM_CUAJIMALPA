@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>Movimiento Rectilineo 1</title>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0;padding:0;overflow:hidden;">
+<p align="center">
+
+<ajs name="Movimiento_Rectilineo_1" width=650 height=400 code="Descartes">
+   <param name="tamaño" value="650x400">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Movimiento_Rectilineo_1">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo.png' despl_imagen='expand.' fondo='d8d8e5' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='sig' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Verificar' expresión='(520,360,120,30)' valor='sig' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' fuente puntos='18' imagen='images/btn120x30.png' acción='calcular' parámetro='verificar=1\nintentos=intentos+1' dibujar-si='verificar=0'">
+   <param name="C_02" value="id='reint' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Reintentar' expresión='(520,360,120,30)' valor='sig' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' fuente puntos='18' imagen='images/btn120x30.png' acción='calcular' parámetro='verificar=0' dibujar-si='(verificar=1)&((resp1#b)|(resp2#a))&(intentos<3)' pos_mensajes='centro'">
+   <param name="C_03" value="id='moSol' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Solución' expresión='(520,360,120,30)' valor='sig' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' fuente puntos='18' imagen='images/btn120x30.png' acción='calcular' parámetro='mosSol=1\nresp1=b\nresp2=a' dibujar-si='(verificar=1)&((resp1#b)|(resp2#a))&(intentos=3)&(mosSol=0)' pos_mensajes='centro'">
+   <param name="C_04" value="id='reinit' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Reiniciar' expresión='(520,360,120,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' fuente puntos='18' imagen='images/btn120x30.png' acción='inicio' dibujar-si='((verificar=1)&(resp1=b)&(resp2=a))|(mosSol=1)' pos_mensajes='centro'">
+   <param name="C_05" value="id='resp1' tipo='numérico' interfaz='campo de texto' región='interior' espacio='E1' expresión='(195,267,50,35)' fijo='sí' visible='sí' activo-si='verificar=0' pos_mensajes='centro'">
+   <param name="C_06" value="id='resp2' tipo='numérico' interfaz='campo de texto' región='interior' espacio='E1' expresión='(320,267,50,35)' fijo='sí' visible='sí' activo-si='verificar=0' pos_mensajes='centro'">
+   <param name="A_01" value="id='init()' algoritmo='sí' algoritmo='sí' hacer='sig=4;a=-5+ent(rnd*5);aa=1+ent(rnd*3);b=1+ent(rnd*5);bb=1+ent(rnd*3);verificar=0;intentos=0;mosSol=0'">
+   <param name="A_02" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='init();'">
+   <param name="A_03" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='texto' expresión='[25,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Arial;}\f1\fs38\u191 Para qu\u233  valores de \f2\fs42\i{\*\mjaformula x}\f1\fs38\i0  se cumple que (\f2\fs42\i{\*\mjaformula x+{\expr abs(a)}})({\*\mjaformula x-{\expr b}})&gt;0\f1\fs38\i0  ?\fs36}' fuente='SansSerif,PLAIN,19' decimales='0' fijo='sí'">
+   <param name="G_02" value="espacio='E1' tipo='texto' expresión='[20,195]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Arial;}\f1\fs36 Escribe en los campos de texto los valores sobre los que se encuentra la\par variable \f2\fs40\i{\*\mjaformula x}.\f1\fs36\i0\par \par                   \fs60  \{ {\*\mjaformula x \u8739          &lt;x&lt;       } \}\f2\fs40\i}' fuente='SansSerif,PLAIN,18' decimales='0' fijo='sí'">
+   <param name="G_03" value="espacio='E1' tipo='segmento' expresión='(-6,1)(6,1)' fijo='sí' tamaño='0'">
+   <param name="G_04" value="espacio='E1' tipo='punto' color='negro' expresión='(a,1)' fuente='Serif,PLAIN,15' fijo='sí' tamaño='4'">
+   <param name="G_05" value="espacio='E1' tipo='punto' color='negro' dibujar-si='(verificar=1)&(resp1=b)' expresión='(a,.5)' texto='x=[a]' fuente='Serif,PLAIN,15' decimales='0' fijo='sí' tamaño='0'">
+   <param name="G_06" value="espacio='E1' tipo='punto' color='negro' expresión='(b,1)' fuente='Serif,PLAIN,15' fijo='sí' tamaño='4'">
+   <param name="G_07" value="espacio='E1' tipo='punto' color='negro' dibujar-si='(verificar=1)&(resp1=b)' expresión='(b,.5)' texto='x=[b]' fuente='Serif,PLAIN,15' decimales='0' fijo='sí' tamaño='0'">
+   <param name="G_08" value="espacio='E1' tipo='punto' color='negro' expresión='(-6,.5)' texto='-∞' fuente='Serif,PLAIN,17' decimales='0' fijo='sí' tamaño='0'">
+   <param name="G_09" value="espacio='E1' tipo='punto' color='negro' expresión='(6,.5)' texto='∞' fuente='Serif,PLAIN,17' decimales='0' fijo='sí' tamaño='0'">
+   <param name="G_10" value="espacio='E1' tipo='punto' color='azul' expresión='(a-s-1,2)' familia='s' s.intervalo='[0,a+5]' s.pasos='a+5' texto='-' fuente='SansSerif,PLAIN,38' fijo='sí' tamaño='0'">
+   <param name="G_11" value="espacio='E1' tipo='punto' color='rojo' expresión='(a-s-1,1.5)' familia='s' s.intervalo='[0,a+5]' s.pasos='a+5' texto='-' fuente='SansSerif,PLAIN,38' fijo='sí' tamaño='0'">
+   <param name="G_12" value="espacio='E1' tipo='punto' color='azul' expresión='(a+1+s,2)' familia='s' s.intervalo='[0,b-a-2]' s.pasos='b-a-2' texto='+' fuente='SansSerif,PLAIN,38' fijo='sí' tamaño='0'">
+   <param name="G_13" value="espacio='E1' tipo='punto' color='rojo' expresión='(a+1+s,1.5)' familia='s' s.intervalo='[0,b-a-2]' s.pasos='b-a-2' texto='-' fuente='SansSerif,PLAIN,38' fijo='sí' tamaño='0'">
+   <param name="G_14" value="espacio='E1' tipo='punto' color='azul' expresión='(b+s+1,2)' familia='s' s.intervalo='[0,5-b]' s.pasos='5-b' texto='+' fuente='SansSerif,PLAIN,38' fijo='sí' tamaño='0'">
+   <param name="G_15" value="espacio='E1' tipo='punto' color='rojo' expresión='(b+s+1,1.5)' familia='s' s.intervalo='[0,5-b]' s.pasos='5-b' texto='+' fuente='SansSerif,PLAIN,38' fijo='sí' tamaño='0'">
+   <param name="G_16" value="espacio='E1' tipo='flecha' dibujar-si='(verificar=1)&(resp1=b)' expresión='(a,1)(-6,1)' fijo='sí' ancho='3' ancho='3' punta='5' flecha='negro'">
+   <param name="G_17" value="espacio='E1' tipo='flecha' dibujar-si='(verificar=1)&(resp1=b)' expresión='(b,1)(6,1)' fijo='sí' ancho='3' ancho='3' punta='5' flecha='negro'">
+   <param name="G_18" value="espacio='E1' tipo='punto' dibujar-si='(verificar=1)&(resp1=b)' expresión='(a-.2,.8)' texto=')' fuente='SansSerif,PLAIN,40' fijo='sí' tamaño='0'">
+   <param name="G_19" value="espacio='E1' tipo='punto' dibujar-si='(verificar=1)&(resp1=b)' expresión='(b-.15,.8)' texto='(' fuente='SansSerif,PLAIN,40' fijo='sí' tamaño='0'">
+   <param name="G_20" value="espacio='E1' tipo='polígono' fondo='sí' color='grisObscuro' dibujar-si='0' coord_abs='sí' expresión='(0,0)(E1._w-1,0)(E1._w-1,E1._h-1)(0,E1._h-1)(0,0)' ancho='3'">
+   <param name="G_21" value="espacio='E1' tipo='imagen' dibujar-si='(verificar=1)&(resp1=b)' coord_abs='sí' expresión='(250,250)' archivo='images/bien.png'">
+   <param name="G_22" value="espacio='E1' tipo='imagen' dibujar-si='(verificar=1)&(resp1#b)' coord_abs='sí' expresión='(250,250)' archivo='images/mal.png'">
+   <param name="G_23" value="espacio='E1' tipo='imagen' dibujar-si='(verificar=1)&(resp2=a)' coord_abs='sí' expresión='(375,250)' archivo='images/bien.png'">
+   <param name="G_24" value="espacio='E1' tipo='imagen' dibujar-si='(verificar=1)&(resp2#a)' coord_abs='sí' expresión='(375,250)' archivo='images/mal.png'">
+   <param name="G_25" value="espacio='E1' tipo='texto' dibujar-si='(verificar=1)&(resp1=b)' expresión='[20,310]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;}\f1\fs36 Los l\u237 mites de \f2\fs40\i{\*\mjaformula x}\f1\fs36\i0  est\u225 n dados por las ra\u237 ces del polinomio \f2\fs40\i{\*\mjaformula x{\subix 1}={\expr b\decimals 0\fixed1}}\f1\fs36\i0  y\par  \f2\fs40\i{\*\mjaformula x{\subix 2}={\expr a\decimals 0\fixed1}}\f1\fs36\i0 . Haciendo el diagrama de signos tenemos que:\par                           \f3\fs42\i   \{ {\*\mjaformula x \u8739  {\expr b\decimals 0\fixed1}&lt;x&lt;{\expr a\decimals 0\fixed1}} \}\fs40}' fuente='SansSerif,PLAIN,18' decimales='0' fijo='sí'">
+   <param name="S_01" value="nombre='R3' tipo='macro' dibujar-si='repr=3' expresión='vaso'">
+</ajs>
+</p>
+
+
+
+
+</body>
+</html>

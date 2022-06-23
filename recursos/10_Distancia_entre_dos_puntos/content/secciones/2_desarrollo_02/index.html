@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+
+  <!-- MathJax - para fórmulas matemáticas -->
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+<script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+  
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+
+<div class="course_content">
+
+<!-- INICIA EL CONTENIDO DE LA PÁGINA -->
+<!-- Título de la página -->
+<h1>La distancia entre dos puntos en el plano cartesiano</h1>
+
+<!-- Subtítulo -->
+<!-- <h2></h2> -->
+
+<!-- Párrafo -->
+<p>
+Para obtener la fórmula de la distancia entre dos puntos sobre el plano cartesiano, vamos a requerir uno de los teoremas más socorridos de las matemáticas: el <strong>teorema de Pitágoras</strong>.
+</p>
+
+<p>
+Recordando un poco, el teorema de Pitágoras nos permite establecer una relación entre los lados de un triángulo rectángulo. Esta relación dice que <em>para todo triángulo rectángulo, el lado mayor (<strong>hipotenusa</strong>) al cuadrado es igual a la suma de los cuadrados de los lados que conforman el ángulo recto (<strong>catetos</strong>)</em>.
+</p>
+
+<div class="course_extern_content"> 
+<img src="imgs/pitagoras.png"></img>
+</div>
+
+<br>
+
+<p>
+Consideremos dos puntos cualesquiera en el plano: \(p_1\) y \(p_2\).
+</p>
+
+<div class="course_extern_content"> 
+<img src="imgs/escena1.png"></img>
+</div>
+
+<p>
+La distancia entre estos dos puntos corresponde a la longitud del segmento \(\overline{p_1 p_2}\).
+</p>
+
+<div class="course_extern_content"> 
+<img src="imgs/escena2.png"></img>
+</div>
+
+<p>
+Para determinar esta longitud, construiremos una recta paralela al eje Y que pase por el punto \(p_1\) y una recta paralela al eje X que pase por el punto \(p_2\); al punto de intersección de ambas rectas le llamaremos \(p_3\).
+</p>
+
+<div class="course_extern_content"> 
+<img src="imgs/escena3.png"></img>
+</div>
+
+<p>
+Al segmento \(\overline{p_1 p_2}\) le llamaremos \(a\), al segmento \(\overline{p_2 p_3}\) le llamaremos \(b\) y al segmento \(\overline{p_1 p_3}\) le llamaremos \(c\). Estos segmentos forman un triángulo rectángulo, que es lo que necesitamos para aplicar el teorema de Pitágoras.
+</p>
+
+<div class="course_extern_content"> 
+<img src="imgs/escena4.png"></img>
+</div>
+
+<p>
+Ahora digamos que las coordenadas del punto \(p1\) son \((x_1 , y_1)\), las coordenadas del punto \(p2\) son \((x_2 , y_2)\), y por la forma en que construimos el punto \(p3\) sus coordenadas son \((x_1 , y_2)\). 
+</p>
+
+<div class="course_extern_content"> 
+<img src="imgs/escena5.png"></img>
+</div>
+
+<p>
+Con estos valores, utilizando el teorema de Pitágoras y conociendo la fórmula para calcular la distancia entre dos puntos sobre la recta numérica, podemos deducir la fórmula para la distancia entre dos puntos en el plano cartesiano.
+</p>
+
+<p>
+Sabemos que la distancia entre el punto \(p_2\) y el punto \(p_3\) corresponde al tamaño del segmento \(b\) y como ambos puntos poseen la misma coordenada en \(y\), podemos suponer que se encuentran sobre una recta numérica. Entonces recordando la fórmula para calcular la distancia entre dos puntos sobre la recta numérica, tenemos que \(d(p_2, p_3)=b=|x_1 - x_2|\). De la misma forma, sabemos que la distancia entre el punto \(p_1\) y el punto \(p_3\) corresponde al tamaño del segmento \(c\) y utilizando un razonamiento similar al anterior, podemos deducir que \(d(p_1, p_3)=c=|y_1 - y_2|\).
+</p>
+
+<div class="course_extern_content"> 
+<img src="imgs/escena6.png"></img>
+</div>
+
+<p>
+Con estos datos, podemos utilizar el teorema de Pitágoras, \(a^2=b^2+c^2\). Sustituyendo los valores adecuadamente, tenemos que: $$a^2=(|x_1-x_2|)^2+(|y_1-y_2|)^2$$
+</p>
+
+<p>
+Recordando las leyes de los signos para multiplicaciones, sabemos que cuando multiplicamos dos números con el mismo signo, el resultado siempre es positivo. Gracias a esto, podemos quitar el valor absoluto de la fórmula anterior (ya que el cuadrado de cualquier número siempre es positivo), obteniendo: $$a^2=(x_1-x_2)^2+(y_1-y_2)^2$$
+</p>
+
+<p>
+Ahora para despejar por completo la variable \(a\), que corresponde a la distancia entre los puntos \(p_1\) y \(p_2\), se debe eliminar el cuadrado; esto se logra realizando simplemente la raíz cuadrada en ambos lados de la fórmula, obteniendo: $$a=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$$
+</p>
+
+<p>
+Por ultimo, sabemos que \(a\) corresponde a \(d(p_1, p_2)\), por lo que la fórmula final que obtenemos es: <strong>$$d(p_1, p_2)=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$$</strong>
+</p>
+
+<p>
+Como los puntos \(p_1\) y \(p_2\) son puntos cualesquiera, y no se realizó ninguna consideración especial, entonces la fórmula encontrada es una fórmula general para calcular la distancia entre dos puntos sobre el plano cartesiano.
+</p>
+
+
+<!-- TERMINA EL CONTENIDO DE LA PÁGINA -->
+
+   <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Joel Espinosa Longi</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+</div>
+
+</article>
+
+</body>
+
+</html>

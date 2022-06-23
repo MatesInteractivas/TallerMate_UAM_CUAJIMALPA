@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<head>
+   <title></title>
+        <link href="css/descartes.css" rel="stylesheet" type="text/css" />
+        <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+	
+	<script>
+  
+	 if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+	   document.addEventListener('touchend', function(e) {  
+	     if(window.parent.document.getElementById("main")!=null){
+	       parent.manageZoom();
+	     }
+	   },false);
+	 }
+       
+	 function showCredits(){
+	   
+	   if(window.parent.document.getElementById("main")!=null){
+	     showCreditsContainer();
+	   } else {
+	     document.getElementById('popup_creditos').className='visible';
+	   }
+	 }
+	 
+	 function showCreditsContainer(){
+	   
+	   window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+	   window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+	   var newDiv = document.createElement("div");
+	   newDiv.setAttribute("style","margin:0px; padding: 0px;")
+	   newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+	   window.parent.document.getElementById('popup_content').appendChild(newDiv);
+	 }
+     
+       </script>
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+
+<body>
+<article class="course_content_container">
+
+<div class="course_content">
+
+<!--- Título de la página --->
+<h1>Binomio con un término común</h1>
+
+<div>
+<ajs name="Arquimedes" width=820 height=600 code="Arquimedes">
+   <param name="tamaño" value="820x600">
+   <param name="pleca" value="title='' subtitle='' subtitlines='0' bgcolor='' fgcolor='' align='' titleimage='' titlefont='' subtitlefont='' ">
+   <param name="rtf" value="{\rtf1\uc0{\fonttbl\f0\fcharset0 Arial;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Arial;\f4\fcharset0 Times New Roman;\f5\fcharset0 Arial;\f6\fcharset0 Arial;\f7\fcharset0 Arial;}{\colortbl\red208\green112\blue32;\red35\green35\blue35;}\cf0\f1\fs36    Producto de dos binomios con el mismo t\u233 rmino en \f2\fs40\i{\*\mjaformula x}\f1\fs36\i0    \cf1\fs34\par \par    Observemos qu\u233  sucede si multiplicamos los binomios \f4\fs38\i{\*\mjaformula\f5\fs34\i cx+a\f4\fs38}\f3\fs34\i0  y \f4\fs38\i{\*\mjaformula cx+b}\f3\fs34\i0 , es decir, dos binomios cuyo \par    t\u233 rmino en \f4\fs38\i{\*\mjaformula x}\f3\fs34\i0  es el mismo (la constante \f4\fs38\i{\*\mjaformula c}\f3\fs34\i0 ). Entonces tenemos:\par \par \cf0\fs36                                              \cf1\f4\fs38\i{\*\mjaformula\f5\fs34\i (cx+a)(cx+b)=cx cx+cxb+acx+ab\f4\fs38}\f3\fs34\i0\par \par \cf0\fs36    \cf1\fs34 Si agrupamos los t\u233 rminos semejantes obtenemos:\par \par \cf0\fs36                                             \cf1\f4\fs38\i{\*\mjaformula\f5\fs34\i (cx+a)(cx+b)=(cx){\supix 2}+\f4\fs38 (a+b)cx+ab}\f3\fs34\i0\par \par \par \cf0\fs36    Producto de dos binomios con el mismo t\u233 rmino independiente\fs34\cf1\par \par    Ahora veamos qu\u233  sucede si multiplicamos los binomios \f4\fs38\i{\*\mjaformula\f5\fs34\i ax+\f4\fs38 c}\f3\fs34\i0  y \f4\fs38\i{\*\mjaformula bx+c}\f3\fs34\i0 , es decir, dos binomios \par    cuyos t\u233 rminos independientes son el mismo (la constante \f4\fs38\i{\*\mjaformula c}\f3\fs34\i0 ). Entonces tenemos:\par \par \cf0\fs36                                             \cf1\f4\fs38\i{\*\mjaformula\f5\fs34\i (ax+\f4\fs38 c)(bx+c)=ax bx+ax c+c bx+c c}\f3\fs34\i0\par \par \cf0\fs36    \cf1\fs34 Si agrupamos los t\u233 rminos semejantes obtenemos:\par \par \cf0\fs36                                               \cf1\f4\fs38\i{\*\mjaformula\f5\fs34\i (ax+\f4\fs38 c)(bx+c)=abx{\supix 2}+(a+b)cx+c{\supix 2}}\f3\fs34\i0\par \par \par    Cambiando el orden de acomodo de la expresi\u243 n anterior para que aparezcan primero los t\u233 rminos\par    comunes, podemos obtener la siguiente expresi\u243 n:\par \par                                              \f4\fs38\i{\*\mjaformula (c+ax)(c+bx)=c{\supix 2}+(ax+bx)c+abx{\supix 2}}\f3\fs34\i0\par \par    \par    \fs36\cf0 An\u225 lisis de ambas expresiones\fs34\cf1\par \par    Analizando con cuidado ambas expresiones podemos observar que presentan una estructura\par    similar. Entonces podemos decir que \b\i el producto de dos binomios con un t\u233 rmino com\u250 n es\par    la suma del cuadrado del t\u233 rmino com\u250 n con la adici\u243 n de los t\u233 rminos no comunes multi-\par    plicados por el t\u233 rmino com\u250 n, m\u225 s la multiplicaci\u243 n de los t\u233 rminos no comunes\b0\i0 .\par \par \par    A la expresi\u243 n \f4\fs38\i{\*\mjaformula\f5\fs34\i (cx+a)(cx+b)=\f4\fs38 (cx){\supix 2}+(a+b)cx+ab}\f3\fs34\i0  se le conoce como el \b\i producto de \par    binomios con el mismo t\u233 rmino en\i0  x\b0 .\par \par    Y a la expresi\u243 n \f4\fs38\i{\*\mjaformula (c+ax)(c+bx)=c{\supix 2}+(ax+bx)c+abx{\supix 2}}\f3\fs34\i0  se le conoce como el\b  \i producto de \par    binomios con el mismo t\u233 rmino independiente\b0\i0 .\par \fs24}">
+   <param name="rtf_height" value="975">
+   <param name="image_loader" value="">
+   <param name="expand" value="">
+   <param name="editable" value="no">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="nombre" value="Arquimedes">
+   <param name="Versión" value="5.336, 2015-02-13">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no">
+</ajs>
+</div>
+
+<!-- TERMINA EL CONTENIDO DE LA PÁGINA -->
+
+<!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Joel Espinosa Longi</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica fue creada con <a href="http://arquimedes.matem.unam.mx/Descartes5/creditos/conCCL.html" target="_blank">Arquímedes</a>, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  <!--- Parche para que no se dupliquen los créditos Arquímedes -->
+  <img src='imgs/plastaBlanca.jpg' style="position:absolute; bottom: 100px; left: 10px;"></img>
+  <!-- Final parche -->
+
+
+</div>
+
+</article>
+
+</body>
+</html>

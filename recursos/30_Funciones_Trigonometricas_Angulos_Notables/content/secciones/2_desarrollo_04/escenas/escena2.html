@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=560 height=370 code="Descartes">
+   <param name="tamaño" value="560x370">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no">
+   <param name="E_01" value="tipo='R2' id='E0' fijo='sí' escala='150' imagen='images/fondo.png' despl_imagen='arr-izq' red='9fb8c4c8' red10='no' ejes='405860' texto='no'">
+   <param name="C_01" value="id='punto' tipo='gráfico' espacio='E0' tamaño='6' expresión='(.71,.71)' constricción='x^2+y^2=1'">
+   <param name="A_01" value="id='INIT' algoritmo='sí' evaluar='siempre' hacer='teta=acos(punto.x/((punto.x^2+punto.y^2)^.5));teta=(punto.y<0)?2*pi-teta:teta;ang=teta*180/pi;'">
+   <param name="G_01" value="espacio='E0' tipo='polígono' fondo='sí' color='grisObscuro' coord_abs='sí' expresión='(0,0)(E0._w-1,0)(E0._w-1,E0._h-1)(0,E0._h-1)(0,0)' ancho='3'">
+   <param name="G_02" value="espacio='E0' tipo='segmento' color='ae0000' expresión='(punto.x,0)(punto.x,punto.y)' fijo='sí' tamaño='0'">
+   <param name="G_03" value="espacio='E0' tipo='segmento' color='0000ae' expresión='(0,punto.y)(punto.x,punto.y)' fijo='sí' tamaño='0'">
+   <param name="G_04" value="espacio='E0' tipo='segmento' color='negro' expresión='(0,0)(punto.x,punto.y)' fijo='sí' tamaño='0'">
+   <param name="G_05" value="espacio='E0' tipo='arco' fijo='sí'">
+   <param name="G_06" value="espacio='E0' tipo='ecuación' expresión='y^2+x^2=1'">
+   <param name="G_07" value="espacio='E0' tipo='arco' radio='.2' fin='ang' fijo='sí' relleno='a1ffff80'">
+   <param name="G_08" value="espacio='E0' tipo='segmento' color='verde' expresión='(-sqrt(3)/2,-.5)(sqrt(3)/2,.5)' fijo='sí' tamaño='0'">
+   <param name="G_09" value="espacio='E0' tipo='segmento' color='naranja' expresión='(-sqrt(2)/2,-sqrt(2)/2)(sqrt(2)/2,sqrt(2)/2)' fijo='sí' tamaño='0'">
+   <param name="G_10" value="espacio='E0' tipo='segmento' color='magenta' expresión='(-.5,-sqrt(3)/2)(.5,sqrt(3)/2)' fijo='sí' tamaño='0'">
+   <param name="G_11" value="espacio='E0' tipo='segmento' color='verde' expresión='(-sqrt(3)/2,.5)(sqrt(3)/2,-.5)' fijo='sí' tamaño='0'">
+   <param name="G_12" value="espacio='E0' tipo='segmento' color='naranja' expresión='(-sqrt(2)/2,sqrt(2)/2)(sqrt(2)/2,-sqrt(2)/2)' fijo='sí' tamaño='0'">
+   <param name="G_13" value="espacio='E0' tipo='segmento' color='magenta' expresión='(-.5,sqrt(3)/2)(.5,-sqrt(3)/2)' fijo='sí' tamaño='0'">
+   <param name="G_14" value="espacio='E0' tipo='punto' dibujar-si='(ent(ang)=30)|(ent(ang)=150)|(ent(ang)=210)|(ent(ang)=330)' expresión='(sqrt(3)/2+.1-(2.7*s%(2)),.5-ent(s/2)+.1)' familia='s' s.intervalo='[0,3]' s.pasos='3' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}{\colortbl\red0\green0\blue0;\red32\green48\blue58;}\f0\fs30\cf0  \fs34\i{\*\mjaformula ({\expr ((s=1)|(s=3))?&squot;-&squot;:&squot;&squot;\decimals 0\fixed1}{\fraction{\num{\radical{\index}{\radicand 3}}}{\den 2}},{\expr (s&gt;1)?&squot;-&squot;:&squot;&squot;\decimals 0\fixed1}{\fraction{\num 1}{\den 2}})}\cf1\f2\fs30\i0}' fuente='Serif,PLAIN,15' fijo='sí' tamaño='0'">
+   <param name="G_15" value="espacio='E0' tipo='punto' dibujar-si='(ent(ang)=45)|(ent(ang)=135)|(ent(ang)=225)|(ent(ang)=315)' expresión='(sqrt(2)/2-(2.2*s%(2)),sqrt(2)/2+.1-1.5*ent(s/2))' familia='s' s.intervalo='[0,3]' s.pasos='3' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}{\colortbl\red0\green0\blue0;\red32\green48\blue58;}\f0\fs30\cf0  \fs34\i{\*\mjaformula ({\expr ((s=1)|(s=3))?&squot;-&squot;:&squot;&squot;\decimals 0\fixed1}{\fraction{\num{\radical{\index}{\radicand 2}}}{\den 2}},{\expr (s&gt;1)?&squot;-&squot;:&squot;&squot;\decimals 0\fixed1}{\fraction{\num{\radical{\index}{\radicand 2}}}{\den 2}})}\cf1\f2\fs30\i0}' fuente='Serif,PLAIN,15' fijo='sí' tamaño='0'">
+   <param name="G_16" value="espacio='E0' tipo='punto' dibujar-si='(ent(ang)=60)|(ent(ang)=120)|(ent(ang)=240)|(ent(ang)=300)' expresión='(.5-(1.8*s%(2)),sqrt(3)/2+.1-1.8*ent(s/2))' familia='s' s.intervalo='[0,3]' s.pasos='3' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}{\colortbl\red0\green0\blue0;\red32\green48\blue58;}\f0\fs30\cf0  \fs34\i{\*\mjaformula ({\expr ((s=1)|(s=3))?&squot;-&squot;:&squot;&squot;\decimals 0\fixed1}{\fraction{\num 1}{\den 2}},{\expr (s&gt;1)?&squot;-&squot;:&squot;&squot;\decimals 0\fixed1}{\fraction{\num{\radical{\index}{\radicand 3}}}{\den 2}})}\cf1\f2\fs30\i0}' fuente='Serif,PLAIN,15' fijo='sí' tamaño='0'">
+   <param name="G_17" value="espacio='E0' tipo='texto' expresión='[5,5]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Courier New;}\f1\fs30{\*\mjaformula\u952 ={\expr ang\decimals 1\fixed0}}\par {\*\mjaformula X={\expr punto.x\decimals 1\fixed0}}\par {\*\mjaformula Y={\expr punto.y\decimals 1\fixed0}}}' decimales='1' fijo='sí'">
+</ajs></p>
+
+</body>
+</html>

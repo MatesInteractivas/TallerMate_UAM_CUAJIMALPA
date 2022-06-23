@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Determinación de la semejanza de triángulos</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Condiciones de semejanza</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    Ya has abordado anteriormente algunas propiedades entre triángulos que permiten hasta cierto punto decidir si son o no semejantes. Ahora se te ofrece un recurso interactivo en el que podrás hacer algunas comparaciones de los ángulos y (las longitudes de) los lados de dos triángulos con el fin de establecer, en primer lugar, si dichos triángulos son semejantes o no. Recuerda que a pesar de parecer semejantes, tal vez no lo sean.
+    </p>
+    
+    <p>
+    Cuando los triángulos son semejantes, has de ubicar las <strong>condiciones mínimas</strong> necesarias para determinar dicha condición (la semejanza). Esto es, a pesar de que puedes contar con muchas condiciones, has de ubicar las mínimas. Ello es útil pues en problemas de semejanza que se te presenten podrás ahorrar tiempo si conoces las condiciones mínimas.
+    </p>
+    
+    <div class="instrucciones">Aborda el recurso de la siguiente manera:
+      <ul>
+	<li>Observa los dos triángulos y trata de darte una idea, a simple vista, de si pueden ser semejantes o no.</li>
+	<li>Presiona el botón 'Comparar' y sigue las indicaciones para elegir los criterios de comparación. Por cada par de triángulos podrás escoger solo 3 criterios.</li>
+	<li>Con base en los datos arrojados por la comparación, indica si los triángulos son semejantes o no. </li>
+	<li>Repite el mismo procedimiento con otros pares, procurando explorar otros criterios de semejanza.</li>
+	<li>Cuando crees haber identificado las condiciones mínimas para establecer si dos triángulos son o no semejantes, pulsa 'Cuestionario'.</li>
+      </ul>
+    </div>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="480" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    
+    <h2>Condiciones mínimas de semejanza</h2>
+    
+    <p>
+    Algunas situaciones que probablemente habrás notado en el espacio anterior cuando los triángulos son semejantes:
+	<ul>
+		<li>Supón que tomas el cociente de un lado de tu triángulo a la derecha (por ejemplo, el lado DE) respecto a cada uno de los 3 lados del otro. Luego tomas el cociente de otro lado (digamos, DF) contra los 3 lados del otro triángulo. Y finalmente tomas el cociente del último lado (EF) respecto a los 3 lados del otro triángulo. Nota que alguno de los cocientes se repite en las 3 series de datos. Si observas cuidadosamente, el número que se repite aparece cuando relacionas los lados correspondientes de los triángulos. Por ejemplo, \(\frac{DE}{AB}\) es igual que cuando tomas \(\frac{DF}{AC}\). Y también es igual a \(\frac{EF}{BC}\). Esto nos indica que los lados correspondientes de los triángulos son <em>proporcionales</em>. Dicho de otra manera, hay un número general por el cual podemos multiplicar la longitud de un lado de un triángulo para obtener la longitud del lado correspondiente en el otro triángulo. Es decir, si un par de triángulos es semejante, sus lados son proporcionales.<br><br></li>
+		<li>Nota que tener los 3 ángulos iguales dentro del triángulo también te determinan semejanza. No obstante, no es necesario contar con los 3. Si cuentas con sólo 2, el tercero lo puedes calcular a partir del hecho de que la suma de ángulos internos de un triángulo es 180 grados. Así pues, si dos triángulos tienen 2 ángulos iguales, serán semejantes.<br><br></li>
+		<li>Si dos triángulos comparten un ángulo, pero además notas que los lados que subtienden dicho ángulo son proporcionales en ambos triángulos, el lado opuesto al ángulo tendrá por fuerza que tener la misma inclinación en ambos triángulos. El que tenga la misma inclinación implica que los ángulos que forme con los otros lados habrán de ser los mismos y por lo tanto los triángulos son semejantes. Es decir, si dos triángulos tienen un mismo ángulo y los lados que subtienden dicho ángulo son proporcionales, los triángulos serán semejantes. El matemático griego Eudoxo fue quien hizo precisamente la relación entre semejanza de triángulos y la proporcionalidad de los lados.<br><br></li>
+	</ul>
+    </p>
+
+
+
+
+  
+    <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

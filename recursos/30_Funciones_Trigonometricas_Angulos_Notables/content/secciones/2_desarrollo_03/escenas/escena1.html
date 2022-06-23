@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=560 height=370 code="Descartes">
+   <param name="tamaño" value="560x370">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no">
+   <param name="E_01" value="tipo='R2' id='E0' fijo='sí' O.y='100' imagen='images/fondo.png' despl_imagen='arr-izq' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='anterior' tipo='numérico' interfaz='botón' región='interior' espacio='E0' nombre='Anterior' expresión='(10,E0._h-35,100,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' fuente puntos='18' imagen='images/btn90x30.png' acción='calcular' parámetro='m=m-1' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='m>0'">
+   <param name="C_02" value="id='continuar' tipo='numérico' interfaz='botón' región='interior' espacio='E0' nombre='Continuar' expresión='(E0._w-110,E0._h-35,100,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' fuente puntos='18' imagen='images/btn90x30.png' acción='calcular' parámetro='m=m+1' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='m<7'">
+   <param name="C_03" value="id='comenzar' tipo='numérico' interfaz='botón' región='interior' espacio='E0' nombre='Comenzar' expresión='(E0._w-110,E0._h-35,100,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' fuente puntos='18' imagen='images/btn90x30.png' acción='calcular' parámetro='m=0' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='m=7' activo-si='m=7'">
+   <param name="G_01" value="espacio='E0' tipo='polígono' color='ffffffff' dibujar-si='1' expresión='(0,0)(4,0)(4,4)' relleno='b6c5cc'">
+   <param name="G_02" value="espacio='E0' tipo='polígono' color='negro' expresión='(4,0)(4,0.5)(3.5,0.5)(3.5,0)'">
+   <param name="G_03" value="espacio='E0' tipo='arco' color='negro' radio='0.5' fin='45' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_04" value="espacio='E0' tipo='arco' color='negro' centro='(4,4)' radio='0.5' inicio='225' fin='270' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_05" value="espacio='E0' tipo='segmento' color='3366dd' expresión='(0,0)(4,0)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_06" value="espacio='E0' tipo='segmento' color='3366dd' expresión='(4,0)(4,4)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_07" value="espacio='E0' tipo='segmento' color='3366dd' expresión='(4,4)(0,0)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_08" value="espacio='E0' tipo='texto' color='negro' expresión='[345,170]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs34 1\f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_09" value="espacio='E0' tipo='texto' dibujar-si='m<6' expresión='[10,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}\f1\fs34 Aplicamos el teorema de Pit\u225 goras para encontrar la magnitud\par de los catetos.\par }' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_10" value="espacio='E0' tipo='texto' dibujar-si='m<6' expresión='[485,180]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs34{\*\mjaformula x}\f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_11" value="espacio='E0' tipo='texto' dibujar-si='m<6' expresión='[380,300]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs34{\*\mjaformula x}\f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_12" value="espacio='E0' tipo='texto' expresión='[310,260]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs34{\*\mjaformula 45{\supix o}}\f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_13" value="espacio='E0' tipo='texto' expresión='[440,130]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs34{\*\mjaformula 45{\supix o}}\f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_14" value="espacio='E0' tipo='texto' dibujar-si='(m>0)&(m<6)' expresión='[30,65]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs34{\*\mjaformula x{\supix 2}+x{\supix 2}=1{\supix 2}}\f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_15" value="espacio='E0' tipo='texto' dibujar-si='(m>1)&(m<6)' expresión='[30,115]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs34{\*\mjaformula 2x{\supix 2}=1}\f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_16" value="espacio='E0' tipo='texto' dibujar-si='(m>2)&(m<6)' expresión='[30,165]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Arial;\f3\fcharset0 Courier New;}\f1\fs34{\*\mjaformula x{\supix 2}={\fraction{\num 1}{\den\f2\fs30 2}}}\f3\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_17" value="espacio='E0' tipo='texto' dibujar-si='(m>3)&(m<6)' expresión='[30,215]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Arial;\f3\fcharset0 Courier New;}{\colortbl\red32\green48\blue58;\red0\green0\blue0;}\f1\fs34{\*\mjaformula x={\radical\cf0{\fraction{\num\f2\fs30 1}{\den\f2\fs30 2}}\cf1}}\f3\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_18" value="espacio='E0' tipo='texto' dibujar-si='(m=5)' expresión='[30,265]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Arial;\f3\fcharset0 Courier New;}{\colortbl\red32\green48\blue58;\red0\green0\blue0;}\f1\fs34{\*\mjaformula x={\fraction{\num\f2\fs30 1}{\den{\radical\cf0\f2\fs30 2\cf1}\f2\fs30}}}\f3\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_19" value="espacio='E0' tipo='texto' dibujar-si='m>5' expresión='[485,180]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs34{\*\mjaformula{\fraction{\num 1}{\den{\radical 2}}}}\f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_20" value="espacio='E0' tipo='texto' dibujar-si='m>5' expresión='[380,300]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs34{\*\mjaformula{\fraction{\num 1}{\den{\radical 2}}}}\f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_21" value="espacio='E0' tipo='texto' dibujar-si='m>6' expresión='[10,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}\f1\fs34 As\u237 , las razones trigonom\u233 tricas para el \u225 ngulo de {\*\mjaformula 45{\supix o}} son:\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_22" value="espacio='E0' tipo='texto' dibujar-si='m=7' expresión='[30,65]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs34{\*\mjaformula sin(45{\supix o})={\fraction{\num{\fraction{\num 1}{\den{\radical 2}}}}{\den 1}}={\fraction{\num 1}{\den{\radical 2}}}\u8776 0.7071}\f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_23" value="espacio='E0' tipo='texto' dibujar-si='m=7' expresión='[30,165]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs34{\*\mjaformula cos(45{\supix o})={\fraction{\num{\fraction{\num 1}{\den{\radical 2}}}}{\den 1}}={\fraction{\num 1}{\den{\radical 2}}}\u8776 0.7071}\f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_24" value="espacio='E0' tipo='texto' dibujar-si='m=7' expresión='[30,265]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs34{\*\mjaformula tan(45{\supix o})={\fraction{\num{\fraction{\num 1}{\den{\radical 2}}}}{\den{\fraction{\num 1}{\den{\radical 2}}}}}={\fraction{\num{\radical 2}}{\den{\radical 2}}}= 1}\f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_25" value="espacio='E0' tipo='polígono' fondo='sí' color='grisObscuro' dibujar-si='0' coord_abs='sí' expresión='(0,0)(E0._w-1,0)(E0._w-1,E0._h-1)(0,E0._h-1)(0,0)' ancho='3'">
+   <param name="G_26" value="espacio='E0' tipo='texto' dibujar-si='0' expresión='[20,40]' texto='m=[m]' fijo='sí'">
+</ajs></p>
+
+</body>
+</html>

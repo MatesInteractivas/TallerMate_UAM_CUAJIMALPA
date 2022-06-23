@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+   <title>El plano cartesiano &nbsp;-&nbsp; Introducci�n.</title>
+   <style>
+   *{
+      border:0;
+      margin:0;
+      padding:0;
+   }
+   body{
+      /*background-color:#7db9f2;*/
+      background-color:#f8a56a;
+      margin-top: 5px;
+   }
+   </style>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+
+<body>
+
+<p align="center">
+<ajs name="Descartes" width=790 height=520 code="Descartes">
+   <param name="tamaño" value="790x520">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no">
+   <param name="E_01" value="tipo='R2' id='FONDO' y='65' alto='455' fijo='sí' imagen='images/fondoAplett.png' despl_imagen='arr-izq' fondo='ffffffff' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='raya' x='0' y='0' ancho='780' alto='12' despl_imagen='expand.' fondo='ffffffff' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_03" value="tipo='R2' id='E0' x='30' y='130' ancho='460' alto='280' fijo='sí' escala='36' despl_imagen='arr-izq' fondo='eff8fa' red='a8b4b8' red10='no' ejes='405860' texto='no'">
+   <param name="E_04" value="tipo='R2' id='Counter' x='23' y='440' ancho='740' alto='70' fijo='sí' despl_imagen='arr-izq' fondo='ffffffff' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_05" value="tipo='R2' id='E1' x='535' y='130' ancho='220' alto='240' despl_imagen='arr-izq' fondo='eff8fa' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_06" value="tipo='R2' id='pleca' x='0' y='0' ancho='790' alto='65' fijo='sí' imagen='images/instrucciones.png' despl_imagen='expand.' fondo='ffffffff' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='A' tipo='gráfico' espacio='E0' tamaño='6' expresión='(X[0],Y[0])' activo-si='!verif'">
+   <param name="C_02" value="id='B' tipo='gráfico' espacio='E0' color-int='a800ff' tamaño='6' expresión='(B.x,B.y)' fijo='sí' activo-si='!verif'">
+   <param name="C_03" value="id='C' tipo='gráfico' espacio='E0' color-int='turquesa' tamaño='6' expresión='(X[2],0)' fijo='sí' activo-si='!verif'">
+   <param name="C_04" value="id='D' tipo='gráfico' espacio='E0' color-int='naranja' tamaño='6' expresión='(2,Y[3])' fijo='sí' activo-si='!verif'">
+   <param name="C_05" value="id='E' tipo='gráfico' espacio='E0' color-int='verde' tamaño='6' expresión='(E.x,E.y)' fijo='sí' activo-si='!verif'">
+   <param name="C_06" value="id='Ax' tipo='numérico' interfaz='campo de texto' región='interior' espacio='E1' expresión='(57,17,40,31)' valor='&squot;&squot;' fijo='no' visible='sí' activo-si='!verif' pos_mensajes='centro'">
+   <param name="C_07" value="id='Ay' tipo='numérico' interfaz='campo de texto' región='interior' espacio='E1' expresión='(113,17,40,31)' valor='&squot;&squot;' fijo='no' visible='sí' activo-si='!verif' pos_mensajes='centro'">
+   <param name="C_08" value="id='Cy' tipo='numérico' interfaz='campo de texto' región='interior' espacio='E1' expresión='(113,102,40,31)' valor='&squot;&squot;' fijo='no' visible='sí' activo-si='!verif' pos_mensajes='centro'">
+   <param name="C_09" value="id='Dx' tipo='numérico' interfaz='campo de texto' región='interior' espacio='E1' expresión='(57,145,40,31)' valor='&squot;&squot;' fijo='no' visible='sí' activo-si='!verif' pos_mensajes='centro'">
+   <param name="C_10" value="id='btnVerif' tipo='numérico' interfaz='botón' región='interior' espacio='Counter' nombre='Verificar' expresión='((Counter._w-140)/2,2,140,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' fuente puntos='17' imagen='images/btn140.png' acción='calcular' parámetro='aux=(!verif)?Verificar():0' parámetro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro'">
+   <param name="C_11" value="id='OtraEv' tipo='numérico' interfaz='botón' región='interior' espacio='Counter' nombre='Otro ejercicio' expresión='((Counter._w-140)/2,38,140,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' fuente puntos='17' imagen='images/btn140.png' acción='calcular' parámetro='aux=(verif)?reInit():0' parámetro.fuente='Monospaced,PLAIN,12' activo-si='verif' pos_mensajes='centro'">
+   <param name="C_12" value="id='g' tipo='gráfico' espacio='E1' fijo='sí' dibujar-si='0'">
+   <param name="C_13" value="id='n1' tipo='numérico' región='exterior' espacio='raya' nombre='n1' incr='1' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_14" value="id='n2' tipo='numérico' región='exterior' espacio='raya' nombre='n2' incr='1' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_15" value="id='B.x' tipo='numérico' región='exterior' espacio='raya' nombre='B.x' valor='B.x' incr='1' min='-4' max='4' discreto='sí' fijo='sí' visible='sí' parámetro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro'">
+   <param name="C_16" value="id='B.y' tipo='numérico' región='exterior' espacio='raya' nombre='B.y' valor='B.y' incr='1' min='-3' max='3' discreto='sí' fijo='sí' visible='sí' parámetro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro'">
+   <param name="C_17" value="id='C.x' tipo='numérico' región='exterior' espacio='raya' nombre='C.x' valor='C.x' incr='1' min='-4' max='4' discreto='sí' fijo='sí' visible='sí' parámetro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro'">
+   <param name="C_18" value="id='D.y' tipo='numérico' región='exterior' espacio='raya' nombre='D.y' valor='D.y' incr='1' min='-3' max='3' discreto='sí' fijo='sí' visible='sí' parámetro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro'">
+   <param name="C_19" value="id='E.x' tipo='numérico' región='exterior' espacio='raya' nombre='E.x' valor='E.x' incr='1' min='-4' max='4' discreto='sí' fijo='sí' visible='sí' parámetro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro'">
+   <param name="C_20" value="id='E.y' tipo='numérico' región='exterior' espacio='raya' nombre='E.y' valor='E.y' incr='1' min='-3' max='3' discreto='sí' fijo='sí' visible='sí' parámetro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro'">
+   <param name="A_01" value="id='X' vector='sí' evaluar='una-sola-vez' tamaño='5'">
+   <param name="A_02" value="id='Y' vector='sí' evaluar='una-sola-vez' tamaño='5'">
+   <param name="A_03" value="id='dosIguales()' algoritmo='sí' expresión='di' algoritmo='sí' inicio='di=0' hacer='di=di|((abs(A.x-B.x)<0.01)&(abs(A.y-B.y)<0.01));di=di|((abs(A.x-C.x)<0.01)&(abs(A.y-C.y)<0.01));di=di|((abs(A.x-D.x)<0.01)&(abs(A.y-D.y)<0.01));di=di|((abs(A.x-E.x)<0.01)&(abs(A.y-E.y)<0.01));di=di|((abs(B.x-C.x)<0.01)&(abs(B.y-C.y)<0.01));di=di|((abs(B.x-D.x)<0.01)&(abs(B.y-D.y)<0.01));di=di|((abs(B.x-E.x)<0.01)&(abs(B.y-E.y)<0.01));di=di|((abs(C.x-D.x)<0.01)&(abs(C.y-D.y)<0.01));di=di|((abs(C.x-E.x)<0.01)&(abs(C.y-E.y)<0.01));di=di|((abs(D.x-E.x)<0.01)&(abs(D.y-E.y)<0.01));'">
+   <param name="A_04" value="id='randX()' algoritmo='sí' algoritmo='sí' hacer='X[0]=(ent(rnd*8))-4;X[1]=(ent(rnd*8))-4;X[2]=(ent(rnd*8))-4;X[3]=(ent(rnd*8))-4;X[4]=(ent(rnd*8))-4;;flag=((X[0]=X[1])|(X[0]=X[2])|(X[0]=X[3])|(X[0]=X[4])|(X[1]=X[3])|(X[1]=X[4])|(X[2]=X[3])|(X[2]=X[4])|(X[3]=X[4]))?1:0' mientras='flag=1'">
+   <param name="A_05" value="id='randY()' algoritmo='sí' algoritmo='sí' hacer='Y[0]=(ent(rnd*6))-3;Y[1]=(ent(rnd*6))-3;Y[2]=(ent(rnd*6))-3;Y[3]=(ent(rnd*6))-3;Y[4]=(ent(rnd*6))-3;;flag=((Y[0]=Y[1])|(Y[0]=Y[2])|(Y[0]=Y[3])|(Y[0]=Y[4])|(Y[1]=Y[3])|(Y[1]=Y[4])|(Y[2]=Y[3])|(Y[2]=Y[4])|(Y[3]=Y[4]))?1:0' mientras='flag=1'">
+   <param name="A_06" value="id='reInit()' algoritmo='sí' algoritmo='sí' inicio='verif=0;otraVez=0;Ax=&squot;&squot;;Ay=&squot;&squot;;Cy=&squot;&squot;;Dx=&squot;&squot;;randX();randY()' hacer='A.x=X[0];A.y=Y[0];B.x=(ent(rnd*8))-4;B.y=(ent(rnd*6))-3;C.x=(ent(rnd*8))-4;C.y=Y[2];D.x=X[3];D.y=(ent(rnd*6))-3;E.x=(ent(rnd*8))-4;E.y=(ent(rnd*6))-3;' mientras='dosIguales()|(B.x=X[1])|(B.y=Y[1])|(C.x=X[2])|(D.y=Y[3])|(E.x=X[4])|(E.y=Y[4])'">
+   <param name="A_07" value="id='Verificar()' algoritmo='sí' algoritmo='sí' inicio='puntos=5' hacer='verif=1;bienA=((Ax=X[0])&(Ay=Y[0]));bienB=((B.x=X[1])&(B.y=Y[1]));bienC=((C.x=X[2])&(Cy=Y[2]));bienD=((Dx=X[3])&(D.y=Y[3]));bienE=((E.x=X[4])&(E.y=Y[4]));buenas=bienA+bienB+bienC+bienD+bienE;nota=buenas*100/puntos;Evaluaciones=Evaluaciones+1;Buenas=Buenas+buenas;Nota=(Buenas*100)/(Evaluaciones*puntos);otraVez=1-otraVez'">
+   <param name="A_08" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' inicio='Evaluaciones=0;Buenas=0' hacer='reInit();'">
+   <param name="A_09" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' hacer='A.x=X[0];A.y=Y[0];C.y=Y[2];D.x=X[3];;;'">
+   <param name="A_10" value="id='clean' evento='sí' condición='otraVez=1' acción='limpiar' parámetro.fuente='Monospaced,PLAIN,12' ejecución='siempre' pos_mensajes='centro'">
+   <param name="A_11" value="id='fin' evento='sí' condición='1' acción='calcular' parámetro='otraVez=0' parámetro.fuente='Monospaced,PLAIN,12' ejecución='alternar' pos_mensajes='centro'">
+   <param name="G_01" value="espacio='FONDO' tipo='imagen' coord_abs='sí' expresión='(0,0)' archivo='images/marco.png'">
+   <param name="G_02" value="espacio='FONDO' tipo='texto' fondo='sí' expresión='[25,20]' texto='Escribe las coordenadas correctas o ubica el punto en el plano, según sea el caso.' fuente='SansSerif,PLAIN,18' fijo='sí'">
+   <param name="G_03" value="espacio='pleca' tipo='texto' fondo='sí' color='blanco' expresión='[35,8]' texto='Resuelve los siguientes ejercicios, al terminar presiona el botón ‘Verificar’.\n        Realiza varias evaluaciones hasta que la media sea satisfactoria.\n' fuente='SansSerif,BOLD,20' fijo='sí'">
+   <param name="G_04" value="espacio='Counter' tipo='texto' dibujar-si='Evaluaciones>0' expresión='[50,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs36 Evaluaciones:{\*\mjaformula{\expr Evaluaciones}} \par    Media={\*\mjaformula{\expr Nota}}\f2\fs24}' fuente='Arial,PLAIN,18' decimales='1' fijo='no'">
+   <param name="G_05" value="espacio='Counter' tipo='texto' dibujar-si='verif' expresión='[515,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs36 Buenas={\*\mjaformula{\expr buenas}} Malas={\*\mjaformula{\expr puntos-buenas}} \par          Nota={\*\mjaformula{\expr nota}}\f2\fs24}' fuente='Arial,PLAIN,18' decimales='1' fijo='no'">
+   <param name="G_06" value="espacio='E1' tipo='texto' expresión='[20,18]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}\f1\fs46 A (        ,        )}' fuente='SansSerif,PLAIN,23' fijo='sí'">
+   <param name="G_07" value="espacio='E1' tipo='texto' expresión='[20,60]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}\f1\fs46 B (  {\*\mjaformula{\expr X[1]\decimals 0\fixed1} ,  {\expr Y[1]\decimals 0\fixed1} })}' fuente='SansSerif,PLAIN,23' fijo='sí'">
+   <param name="G_08" value="espacio='E1' tipo='texto' expresión='[20,102]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}\f1\fs46 C ( {\*\mjaformula{\expr X[2]\decimals 0\fixed1} , }       )}' fuente='SansSerif,PLAIN,23' fijo='sí'">
+   <param name="G_09" value="espacio='E1' tipo='texto' expresión='[20,144]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}\f1\fs46 D (        , {\*\mjaformula{\expr Y[3]\decimals 0\fixed1}} )}' fuente='SansSerif,PLAIN,23' fijo='sí'">
+   <param name="G_10" value="espacio='E1' tipo='texto' expresión='[20,186]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}\f1\fs46 E ( {\*\mjaformula{\expr X[4]\decimals 0\fixed1}  ,  {\expr Y[4]\decimals 0\fixed1} })}' fuente='SansSerif,PLAIN,23' fijo='sí'">
+   <param name="G_11" value="espacio='E1' tipo='imagen' dibujar-si='(verif)&(!bienA)' coord_abs='sí' expresión='(170,9)' archivo='images/ko.png'">
+   <param name="G_12" value="espacio='E1' tipo='imagen' dibujar-si='(verif)&(bienA)' coord_abs='sí' expresión='(170,9)' archivo='images/ok.png'">
+   <param name="G_13" value="espacio='E1' tipo='imagen' dibujar-si='(verif)&(!bienB)' coord_abs='sí' expresión='(170,50)' archivo='images/ko.png'">
+   <param name="G_14" value="espacio='E1' tipo='imagen' dibujar-si='(verif)&(bienB)' coord_abs='sí' expresión='(170,50)' archivo='images/ok.png'">
+   <param name="G_15" value="espacio='E1' tipo='imagen' dibujar-si='(verif)&(!bienC)' coord_abs='sí' expresión='(170,94)' archivo='images/ko.png'">
+   <param name="G_16" value="espacio='E1' tipo='imagen' dibujar-si='(verif)&(bienC)' coord_abs='sí' expresión='(170,94)' archivo='images/ok.png'">
+   <param name="G_17" value="espacio='E1' tipo='imagen' dibujar-si='(verif)&(!bienD)' coord_abs='sí' expresión='(170,137)' archivo='images/ko.png'">
+   <param name="G_18" value="espacio='E1' tipo='imagen' dibujar-si='(verif)&(bienD)' coord_abs='sí' expresión='(170,137)' archivo='images/ok.png'">
+   <param name="G_19" value="espacio='E1' tipo='imagen' dibujar-si='(verif)&(!bienE)' coord_abs='sí' expresión='(170,181)' archivo='images/ko.png'">
+   <param name="G_20" value="espacio='E1' tipo='imagen' dibujar-si='(verif)&(bienE)' coord_abs='sí' expresión='(170,181)' archivo='images/ok.png'">
+   <param name="G_21" value="espacio='E0' tipo='punto' expresión='(A.x,A.y)' texto=' A' fuente='SansSerif,PLAIN,18' fijo='sí'">
+   <param name="G_22" value="espacio='E0' tipo='punto' expresión='(B.x,B.y)' texto=' B' fuente='SansSerif,PLAIN,18' fijo='sí'">
+   <param name="G_23" value="espacio='E0' tipo='punto' expresión='(C.x,C.y)' texto=' C' fuente='SansSerif,PLAIN,18' fijo='sí'">
+   <param name="G_24" value="espacio='E0' tipo='punto' expresión='(D.x,D.y)' texto=' D' fuente='SansSerif,PLAIN,18' fijo='sí'">
+   <param name="G_25" value="espacio='E0' tipo='punto' expresión='(E.x,E.y)' texto=' E' fuente='SansSerif,PLAIN,18' fijo='sí'">
+</ajs>
+</p>
+
+</body>
+
+</html>

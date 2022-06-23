@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+  
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>El lugar geométrico de la parábola</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>El foco y la directriz</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    Imagina que tienes una recta horizontal cuya ecuación es \(y=r\). \(r\) puede adoptar cualquier valor real; por ejemplo la recta podría ser \(y=-2\). Llamemos a esta recta <em><strong>directriz</strong></em>. Por otro lado considera un punto en el plano cartesiano que no cae en la recta. Llamémoslo <em>foco</em>, denotémoslo el punto \(F\), y asignémosle las coordenadas \((x_F,y_F)\).
+    </p>
+    
+    <p>
+    Supón que existen puntos en el plano cartesiano cuya distancia a la directriz es la misma que la distancia al foco. Hagamos que el punto \((x,y)\) represente cualquiera de estos puntos que cumplen esa propiedad particular. ¿Qué condiciones han de cumplir estos puntos?
+    </p>
+
+	<h2>El conjunto de puntos que equidistan de la directriz y del foco</h2>
+
+    <p>
+    En el siguiente espacio interactivo podrás ver las propiedades que deben cumplir los puntos \((x,y)\) que tienen igual distancia a la directriz que al foco.
+    </p>
+
+    
+    <!--- Instrucciones --->
+    <div class="instrucciones">Podrás elegir la ecuación de tu directriz y las coordenadas del foco haciendo uso de los pulsadores. Mueve el punto rojo y observa la distancia de éste a la directriz y la distancia de éste al foco. Aborda la deducción de la ecuación de la curva que cumple la propiedad antes mencionada y avanza en ella con el botón 'Siguiente', o retrocede con 'Anterior'. Al final de esta deducción podrás ver una deducción general similar, que te llevará a una ecuación general de esta curva.<br>
+   </div>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="480" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    <p>
+    Como has notado, la curva que cumple la propiedad de que la distancia de cualquier punto de la curva al foco es igual a la distancia del punto a la directriz es, precisamente, <strong><em>la parábola</em></strong>.
+    </p>
+
+    <p>
+    Para el caso particular de la parábola vertical, la ecuación de ésta es la variable \(y\) igualada a una ecuación cuadrática cuya variable es \(x\). Y ya has abordado los métodos con que se pueden resolver ecuaciones cuadráticas.
+    </p>
+
+    <p>
+    Adelantándonos un poco, observa que para una parábola vertical, el buscar los valores de \(x\) de los puntos de la parábola que además satisfagan la ecuación \(y=0\), corresponde a encontrar los valores de la coordenada horizontal de los puntos de la curva (la parábola) que tocan al eje \(Y\). Esto lo abordarás más a fondo en la unidad sobre interpretación de la existencia de raíces reales de la cuadrática.
+    </p>
+    
+    <p>
+    Algunos aspectos a considerar para la ecuación de la parábola:
+		<ul>
+			<li>Es importante que notes que la parábola puede ser expresada directamente en la forma \(y=\frac{(x-x_F)^2}{4p}+\frac{y_F+r}{2}\) (en cuyo caso puedes obtener directamente las coordenadas del foco y el vértice, así como la ecuación de la directriz). A esta forma de la ecuación, también expresada como \(y-k=\frac{(x-h)^2}{4p}\), se le conoce como <em><strong>forma ordinaria de la ecuación</strong></em>. En este caso, el punto \((h,k)\) corresponde a las coordenadas del vértice, con \(h=x_F\) y \(k=\frac{y_F+r}{2}\).</li>
+			<li>No obstante, la ecuación también se puede encontrar expresada en la <strong>forma desarrollada</strong> o <strong>general</strong> \(y=Ax^2+Bx+C\). En este caso, la identificación del foco, vértice y ecuación de la directriz no es tan inmediata. Sin embargo, echando mano del método de completar el cuadrado, es posible migrar de esta forma de la ecuación a la forma ordinaria para así poder identificar estos parámetros. Ello lo abordarás en la parte de ejercicios.</li>
+			<li>En esta unidad, la deducción se encuentra hecha para el caso de la parábola vertical, en que la directriz es una recta horizontal. No obstante, la deducción para una parábola horizontal (donde la directriz sería una recta vertical) puede realizarse de forma similar a la vista antes, y llegando a una ecuación de la forma \(x-h=\frac{(y-k)^2}{4p}\). De forma aún más general, puede haber parábolas donde la directriz sea una recta inclinada (ni horizontal ni vertical), en cuyo caso las parábolas correspondientes no serán ni verticales ni horizontales.</li>
+		</ul>
+    </p>
+    
+    <p>
+    Avanza a la siguiente página para que observes una propiedad física que hace que la parábola sea tan útil.
+    </p>
+
+  
+    <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

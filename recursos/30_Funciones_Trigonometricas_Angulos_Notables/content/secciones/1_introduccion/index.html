@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+
+<article class="course_content_container">
+  
+  <div class="course_content">
+    
+    
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    
+    <!--- Título de la página --->
+    <h1>Funciones trigonométricas de ángulos notables</h1>
+    
+    
+    <!--- Párrafo --->
+    <p>En la actualidad para obtener el valor de una razón trigonométrica a partir de un ángulo dado, simplemente se utiliza una calculadora en la cual se introduce el valor del ángulo dado y se evalúa en la relación trigonométrica requerida. Los valores de estas razones también se pueden obtener utilizando triángulos rectángulos, cuyos ángulos serán a los que se les quiere encontrar sus razones trigonométricas. En ocasiones este método es muy engorroso, ya que para crear los triángulos se deben realizar bastantes operaciones. Sin embargo, existen ángulos en los que es muy fácil; a estos ángulos se les conoce como <strong>ángulos notables</strong>.</p>
+
+    <!--- Párrafo --->
+    <p>En las matemáticas y específicamente en la trigonometría, la palabra “notable” se utiliza para referirnos a procesos o valores que están bien definidos o muy comunes, y por ende, se reconocen y memorizan fácilmente. En este sentido, los <em>ángulos notables</em> son aquellos que tienen valores que aparecen muy seguido en la vida cotidiana. Estos ángulos son los de <strong>30°, 45° y 60°</strong> y, en segundo lugar, los ángulos de <strong>0°, 90°, 180°, 270° y 360°</strong>. Estos últimos, aunque no están definidos como 'notables', también son muy comunes.</p>
+
+    <!--- Párrafo --->
+    <p>Para los 3 ángulos notables podemos encontrar las razones trigonométricas &#8212;seno, coseno, tangente, cotangente, secante y cosecante&#8212; sin conocer las medidas exactas de los triángulos que los contienen, pues estos ángulos están contenidos en dos triángulos muy especiales e importantes en geometría, a saber: los <strong>triángulos isósceles rectángulos</strong> y los <strong>triángulos equiláteros</strong>.</p>
+    
+    <!-- ejemplo para incluir una imagen -->
+    <div class="course_extern_content"> 
+      <img src="imgs/intro.jpg"></img>
+    </div>
+    
+
+    <!------ TERMINA EL CONTENIDO DE LA PÁGINA --------->
+
+
+
+
+     <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Introducción elaborada para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Víctor Hugo García Jarillo</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

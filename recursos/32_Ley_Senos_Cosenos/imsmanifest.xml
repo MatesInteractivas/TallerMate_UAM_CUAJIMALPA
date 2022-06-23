@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--This is a Reload version 2.5.6 SCORM 1.2 Content Package document-->
+<!--Spawned from the Reload Content Package Generator - http://www.reload.ac.uk-->
+<manifest xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" identifier="MANIFEST-C51B770DC10499E56D2A78EF8D8ECE52" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <adlcp:location />
+    <imsmd:lom>
+      <imsmd:general>
+        <imsmd:identifier>32_Ley_Senos_Cosenos</imsmd:identifier>
+        <imsmd:title>
+          <imsmd:langstring xml:lang="es">Ley de los senos y los cosenos</imsmd:langstring>
+        </imsmd:title>
+      </imsmd:general>
+      <imsmd:lifecycle>
+        <imsmd:version>
+          <imsmd:langstring xml:lang="es">1.0</imsmd:langstring>
+        </imsmd:version>
+        <imsmd:status>
+          <imsmd:source>
+            <imsmd:langstring xml:lang="x-none">LOMv1.0</imsmd:langstring>
+          </imsmd:source>
+          <imsmd:value>
+            <imsmd:langstring xml:lang="es" />
+          </imsmd:value>
+        </imsmd:status>
+        <imsmd:contribute>
+          <imsmd:role>
+            <imsmd:source>
+              <imsmd:langstring xml:lang="x-none">LOMv1.0</imsmd:langstring>
+            </imsmd:source>
+            <imsmd:value>
+              <imsmd:langstring xml:lang="es">Autor</imsmd:langstring>
+            </imsmd:value>
+          </imsmd:role>
+          <imsmd:centity>
+            <imsmd:vcard>Alejandro Radillo Díaz</imsmd:vcard>
+          </imsmd:centity>
+        </imsmd:contribute>
+      </imsmd:lifecycle>
+      <imsmd:metametadata>
+        <imsmd:identifier>32_Ley_Senos_Cosenos</imsmd:identifier>
+      </imsmd:metametadata>
+      <imsmd:technical>
+        <imsmd:format>text/html</imsmd:format>
+        <imsmd:requirement>
+          <imsmd:name>
+            <imsmd:source>
+              <imsmd:langstring xml:lang="x-none">LOMv1.0</imsmd:langstring>
+            </imsmd:source>
+            <imsmd:value>
+              <imsmd:langstring xml:lang="es" />
+            </imsmd:value>
+          </imsmd:name>
+        </imsmd:requirement>
+      </imsmd:technical>
+      <imsmd:classification>
+        <imsmd:description>
+          <imsmd:langstring xml:lang="es"><![CDATA[Demostración y aplicaciones de la ley de senos y cosenos para el cálculo de lados y ángulos de triángulos no rectángulos.
+		  
+		  En esta unidad sobre las leyes de senos y cosenos se aborda el caso de triángulos no necesariamente rectángulos. De estos triángulos se suelen conocer, por ejemplo, los 3 lados, o un par de ángulos internos y el lado opuesto a alguno de ellos, o dos lados y un ángulo opuesto a alguno de ellos. A partir del teorema de Pitágoras y algunas identidades trigonométricas se realiza la deducción de la ley de cosenos, la cual se expresa como una generalización del teorema de Pitágoras a triángulos no rectángulos. Por otra parte, a partir del argumento de conservación de áreas de triángulos independientemente de la base elegida se realiza la deducción de la ley de senos. En la parte de ejercicios se pone de manifiesto la utilidad de estas dos leyes en la solución de problemas tanto teóricos como de aplicación, y se da la oportunidad al alumno de ejercitar lo aprendido. Por último, el recurso proporciona una breve autoevaluación que consta de cinco preguntas de opción múltiple, para valorar que los conceptos del recurso han sido comprendidos.]]></imsmd:langstring>
+        </imsmd:description>
+        <imsmd:keyword>
+          <imsmd:langstring xml:lang="es">Ley de senos</imsmd:langstring>
+	  <imsmd:langstring xml:lang="es">Leyes de los senos</imsmd:langstring>
+	  <imsmd:langstring xml:lang="es">Ley de cosenos</imsmd:langstring>
+	  <imsmd:langstring xml:lang="es">Ley de los cosenos</imsmd:langstring>
+	  <imsmd:langstring xml:lang="es">Relación de lados y ángulos de triángulos</imsmd:langstring>
+	  <imsmd:langstring xml:lang="es">Triángulos no rectángulos</imsmd:langstring>
+        </imsmd:keyword>
+      </imsmd:classification>
+    </imsmd:lom>
+  </metadata>
+  <organizations default="ORG-66DFEE253D6A683735115ADE32F39FD5">
+    <organization identifier="ORG-66DFEE253D6A683735115ADE32F39FD5" structure="hierarchical">
+      <title>main</title>
+      <item identifier="ITEM-7D8E13C3DD94DF2137682321FE228CC3" isvisible="true" identifierref="RES-7AEBA12A3C37D31569C88FD366C6F96A">
+        <title>Ley de los senos y los cosenos</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="RES-7AEBA12A3C37D31569C88FD366C6F96A" type="webcontent" href="content/index.html">
+      <file href="content/index.html" />
+      <file href="content/css/contenedor.css" />
+    </resource>
+  </resources>
+</manifest>
+

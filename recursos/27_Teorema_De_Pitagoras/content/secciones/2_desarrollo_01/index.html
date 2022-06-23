@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+  
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Propiedades de un triángulo rectángulo</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <!--<h2>Enunciación del teorema</h2>-->
+    
+    
+    <p>En la introducción vimos que la escuela pitagórica enunció al teorema junto con su demostración como sigue: <strong><em>El cuadrado de la hipotenusa de un triángulo rectángulo es igual a la suma de los cuadrados de los catetos</em></strong>. Euclides, en su libro I de los elementos, lo enunció de esta otra manera: <em><strong>En triángulos rectángulos, el cuadrado del lado opuesto al ángulo recto es igual a la suma de los cuadrados de los lados que comprenden el ángulo recto</strong></em>.</p>
+    
+    <p>Ya te habrás dado cuenta de que, para comprender que ambos enunciados son equivalentes y, por ende, para lograr un adecuado entendimiento del teorema de Pitágoras, es muy importante que tengas un conocimiento sólido de los conceptos básicos de la <strong>trigonometría</strong>, específicamente de los <strong>triángulos rectángulos</strong> y sus propiedades.</p>
+    
+    <div class="instrucciones">A continuación se muestra un triángulo rectángulo. Arrastra los vértices para modificar la longitud de los tres lados y la medida de los dos ángulos que no son rectas. A partir de lo que observas, trata de inferir algunas propiedades del triángulo rectángulo (si aún no las conoces).</div>
+    
+        <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="400" height="350" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+    
+    <p>En la escena interactiva podemos observar las siguientes propiedades del triángulo rectángulo:</p>
+    <ul>
+      <li>Se dice que un triángulo es rectángulo cuando uno de sus ángulos es <strong>recto</strong>, es decir cuando mide <strong>90°</strong>. Recordemos que la suma de los ángulos de cualquier triángulo es <strong>180°</strong>, por lo que si un triángulo tiene un ángulo de 90°, los otros dos ángulos deben sumar 90°. En otras palabras, los otros ángulos son menores que 90°.<br><br></li>
+      <li>La <strong><em>hipotenusa</em></strong> siempre es el lado más largo. Los otros dos lados se llaman <strong><em>catetos</em></strong>.<br><br></li>
+      <li>También podemos notar que la hipotenusa siempre se encuentra opuesta al ángulo de 90° y que el orden de tamaño de los lados del triángulo está dado por el orden del tamaño de los ángulos opuestos a cada uno de ellos. Por ejemplo, si tenemos un triángulo con ángulos de 90°, 60° y 30°, el lado más grande es el opuesto al ángulo más grande (en este caso el de 90°); el lado más pequeño es el opuesto al ángulo más pequeño (el de 30°); y el lado de tamaño intermedio es el opuesto al ángulo de 60°.<br><br></li>
+    </ul>
+
+
+
+  
+    <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Víctor Hugo García Jarillo</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

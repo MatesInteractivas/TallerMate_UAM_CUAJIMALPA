@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title></title>
+        <link href="css/descartes.css" rel="stylesheet" type="text/css" />
+        <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+	
+	<script>
+	 
+	   if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+	     document.addEventListener('touchend', function(e) {  
+	       if(window.parent.document.getElementById("main")!=null){
+		 parent.manageZoom();
+	       }
+	     },false);
+	   }
+	 
+	   function showCredits(){
+	     
+	     if(window.parent.document.getElementById("main")!=null){
+	       showCreditsContainer();
+	     } else {
+	       document.getElementById('popup_creditos').className='visible';
+	     }
+	   }
+	   
+	   function showCreditsContainer(){
+	     
+	     window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+	     window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+	     var newDiv = document.createElement("div");
+	     newDiv.setAttribute("style","margin:0px; padding: 0px;")
+	     newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+	     window.parent.document.getElementById('popup_content').appendChild(newDiv);
+	   }
+       
+	 </script>
+	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+
+<body>
+    
+<article class="course_content_container">
+
+<div class="course_content">
+   
+   <!--- Título de la página --->
+ <h1>Problema 2</h1>
+    
+<div>
+<ajs name="Arquimedes" width=820 height=565 code="Arquimedes">
+   <param name="tamaño" value="820x565">
+   <param name="pleca" value="title='' subtitle='' subtitlines='0' bgcolor='' fgcolor='' align='' titleimage='' titlefont='' subtitlefont='' ">
+   <param name="rtf" value="{\rtf1\uc0{\fonttbl\f0\fcharset0 Arial;\f1\fcharset0 Arial;\f2\fcharset0 Arial;\f3\fcharset0 Arial;\f4\fcharset0 Times New Roman;\f5\fcharset0 Arial;}{\colortbl\red112\green63\blue24;\red208\green112\blue32;\red0\green0\blue0;}\cf0\f1\fs40   \fs36\cf1 Planteamiento del problema en lenguaje algebraico\fs34\cf2\par \par    Estudiemos ahora el siguiente problema:\par  \par    {\*\component\Space 12119e5b70a}\par     \par \par \par \par \par    Para resolver el problema debemos conocer la \b proporci\u243 n \b0 de dinero que le corresponde a la hija y la\par    proporci\u243 n de dinero que le corresponde a la esposa de la primer cantidad. Esta proporci\u243 n equi-\par    vale al \b cociente\b0  de las cantidades correspondientes, por lo que nuestra primera ecuaci\u243 n con dos\par    variables es: \par                                                        \f4\fs38\i{\*\mjaformula (1) {\fraction{\num x}{\den y}} = {\fraction{\num 28 000}{\den 12 000}} = {\fraction{\num 7}{\den 3}}}\f0\fs34\i0  \par  \par    Tambi\u233 n sabemos que en el momento de su muerte, s\u243 lo hay \f4\fs38\i{\*\mjaformula 14,800}\f0\fs34\i0  pesos. Esto signifca que la \par    \b suma\b0  de las respectivas cantidades para la esposa y la hija equivale a \f4\fs38\i{\*\mjaformula 14,800}\f0\fs34\i0 . De ah\u237  obtenemos \par    la segunda ecuaci\u243 n:\par \par                                                     \i  \f4\fs38{\*\mjaformula (2)   x+y=14 800}\f5\fs34\par \par     \par    \i0  Ahora ya tenemos un sistema de dos ecuaciones y podemos resolverlo.\i\par \par                                                     \f4\fs38  \f5\fs34  \i0  \par \par    \cf1\fs36 Soluci\u243 n al sistema\cf2\fs34\par \par    Al despejar la inc\u243 gnita \f4\fs38\i{\*\mjaformula x}\f0\fs34\i0  en la ecuaci\u243 n (2) obtenemos el siguiente sistema de ecuaciones lineales \par    (equivalente al anterior):\par                                                     \i   \f4\fs38{\*\mjaformula (3)   x+y=14 800}\f5\fs34\par \par                                                       \f4\fs38{\*\mjaformula (4)   x={\fraction{\num 7}{\den 3}}y}\f0\fs34\i0\par \par    Dado que la inc\u243 gnita \f4\fs38\i{\*\mjaformula x}\f0\fs34\i0  se encuentra despejada en la ecuaci\u243 n (4), conviene utilizar el m\u233 todo de \par    sustituci\u243 n. As\u237  tenemos:\par                                                       \i  \f4\fs38{\*\mjaformula{\fraction{\num 7}{\den 3}}y+y=14 800}\f0\fs34\i0\par    \par    \u201 sta es una ecuaci\u243 n lineal que al resolverse produce el resultado \f4\fs38\i{\*\mjaformula y=4 440}\f0\fs34\i0 , con lo que se tiene el\par    valor de una de las inc\u243 gnitas. Para encontrar el valor de la otra, basta con sustituir este valor en (3), \par    y se obtiene el resultado  \f4\fs38\i{\*\mjaformula x=10 360}\f0\fs34\i0 .}">
+   <param name="rtf_height" value="967">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Arquimedes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no alto=32">
+   <param name="E_01" value="tipo='R2' id='E2' x='31' y='105' ancho='740' alto='115' despl_imagen='arr-izq' fondo='blanco' red='no' red10='no' ejes='no' texto='no' cID='12119e5b70a'">
+   <param name="A_01" value="id='inicia1()' algoritmo='sí' algoritmo='sí' hacer='ejercitochico=(7*ent(8.99*rnd)+28)*1000;ejercitogrande=11*ejercitochico/7;a1=ent((ejercitochico/9000-1)*rnd)+1;muertoschico=ejercitochico-9000*a1;muertosgrande=ejercitogrande-13000*a1;'">
+   <param name="A_02" value="id='inicia3()' algoritmo='sí' algoritmo='sí' hacer='angulo1=ent(25.99*rnd)+20;angulo2=angulo1+ent(74.99*rnd)+10;'">
+   <param name="A_03" value="id='inicia2()' algoritmo='sí' algoritmo='sí' hacer='base=ent(19.99*rnd)+25;ladoA=ent(6.99*rnd)+15;exceso=ent(7*rnd)+3;ladoB=2*ladoA-exceso;;' mientras='(ladoB>=(base+ladoA))|(base>=ladoB+ladoA)|(ladoA>=base+ladoB)'">
+   <param name="A_04" value="id='calculo1()' algoritmo='sí' algoritmo='sí' hacer='baraja=ent(7.99*rnd)+1;respuestaA=baraja-ent(baraja/5)*5;'">
+   <param name="A_05" value="id='calculo2()' algoritmo='sí' algoritmo='sí' hacer='baraja2=ent(7.99*rnd)+1;respuestaA2=baraja2-ent(baraja2/5)*5;'">
+   <param name="A_06" value="id='calculo3()' algoritmo='sí' algoritmo='sí' hacer='baraja3=ent(7.99*rnd)+1;respuestaA3=baraja3-ent(baraja3/5)*5;'">
+   <param name="A_07" value="id='Inicio' algoritmo='sí' evaluar='una-sola-vez' hacer='aleat=1;calculo1();inicia1();inicia2();inicia3();bien2=0;bien=0'">
+   <param name="G_01" value="espacio='E2' tipo='texto' expresión='[60,10]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}\f1\fs36\b Un hombre hace testamento a favor de su mujer y de su hija dejando 28,000 pesos\par a la primera y 12,000 a la segunda. Sin embargo, al momento de su muerte s\u243 lo\par dispone de 14,800. \u191 Qu\u233  cantidad debe recibir cada una de las herederas\par respetando la proporci\u243 n establecida en el testamento?\f2\fs36\b0}' fuente='Serif,BOLD,18' fijo='sí'">
+   <param name="C_00" value="id='n0' espacio='E0' tipo=' numérico' interfaz='campo de texto' región='escenario' expresión='(0,0,120,25)' valor='&squot;&squot;' decimales='4' fijo='no' visible='sí' acción='calcular' parámetro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro' tooltip.fuente='Monospaced,PLAIN,12' Explicación.fuente='Monospaced,PLAIN,12' cID='11ff789aa77'">
+</ajs>
+</div>
+
+
+<!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Víctor Hugo García Jarillo</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+    
+	 <!-- Créditos recursos DGEE -->
+          <div class="creditos">
+                  <p class="proyecto">Inclusión de material didáctico de las unidades interactivas para bachillerato desarrolladas para la Dirección General de Evaluación Educativa (DGEE) de la UNAM en colaboración con el Instituto de Matematicas de la UNAM y el Proyecto Arquímedes.</p>
+                  <ul class="autores">
+                          <li>Dirección: <span class="nombre">Rosamaría Valle Gómez-Tagle</span></li>
+                          <li>Subdirección: <span class="nombre">Patricia Murillo Villegas</span></li>
+                          <li>Autor: <span class="nombre">Fernando René Martínez Ortiz</span></li>
+                          <li>Edición académica: <span class="nombre">José Luis Abreu León</span></li>
+                          <li>Edición técnica: <span class="nombre">Norma Patricia Apodaca Álvarez</span></li>
+                  </ul>
+                  <img class="logos" src="icns/logosDGEE.png"></img>
+          </div>
+          
+      
+          <!-- Créditos adaptación HTML5 (en caso de haberse incluido material de DGEE, Telesecundaria o PI) -->
+          <div class="creditos">
+                  <p class="proyecto">Adaptación a DescartesJS realizada en el marco del proyecto <a href="http://arquimedes.matem.unam.mx/lite/2013/" target="_blank">LITE 2013</a> y financiada por CONACyT.</p>
+                  <ul class="autores">
+                          <li>Adaptación: <span class="nombre">Víctor Hugo García Jarillo, Deyanira Monroy Zariñán</span></li>
+                          <li>Asesoría técnica: <span class="nombre">José Luis Abreu León, Óscar Escamilla González, Joel Espinosa Longi</span></li>
+                  </ul>
+                  <img class="logos" src="icns/logosDescartesJS.png"></img>
+          </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		     <p>La unidad didáctica fue creada con <a href="http://arquimedes.matem.unam.mx/Descartes5/creditos/conCCL.html" target="_blank">Arquímedes</a>, una herramienta de código abierto.</p>		    
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  <!--- Parche para esconder créditos Arquímedes -->
+  <img src='imgs/plastaBlanca.jpg' style="position:absolute; bottom: 100px; left: 10px;"></img>
+  <!-- Final parche -->
+
+  
+
+</div>
+
+</article>
+
+</body>
+</html>

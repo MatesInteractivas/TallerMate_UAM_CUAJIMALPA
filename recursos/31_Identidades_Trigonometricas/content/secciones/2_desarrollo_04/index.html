@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+<script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>La tangente de la suma y resta de ángulos: una aplicación</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Fórmulas para la tangente de la suma y resta de ángulos</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    Ya has revisado las razones trigonométricas y sabes que la tangente puede escribirse como el cociente del seno entre el coseno. Es decir, \(tan(a)=\frac{sin(a)}{cos(a)}\). Veamos, a partir de esa razón, cuál es la expresión para \(tan(a+b)\) y \(tan(a-b)\).
+    </p>
+
+    <p>
+    \(tan(a+b)=\frac{sin(a+b)}{cos(a+b)}\). Expresamos el seno y coseno en dicha fórmula con las expresiones ya vistas: \(tan(a+b)=\frac{sin(a)cos(b)+sin(b)cos(a)}{cos(a)cos(b)-sin(a)sin(b)}\). Para simplificar, dividimos tanto numerador como denominador por la misma cantidad. Dicha cantidad es \(cos(a)cos(b)\). Así pues, nuestra expresión queda: \(tan(a+b)=\frac{\frac{sin(a)cos(b)+sin(b)cos(a)}{cos(a)cos(b)}}{\frac{cos(a)cos(b)-sin(a)sin(b)}{cos(a)cos(b)}}\). De donde:
+    </p>
+
+	\[tan(a+b)=\frac{tan(a)+tan(b)}{1-{tan(a)tan(b)}}\]
+
+    <p>
+    Nota que en el último paso se cancelan varios cosenos, pero además también reescribimos términos de seno entre coseno nuevamente como una tangente.
+    </p>
+
+    <p>
+    Con esta misma estrategia podemos obtener una expresión para \(tan(a-b)\). \(tan(a-b)=\frac{sin(a-b)}{cos(a-b)}=\frac{sin(a)cos(b)-sin(b)cos(a)}{cos(a)cos(b)+sin(a)cos(b)}\). Si ahora dividimos numerador y denominador por la misma expresión (nuevamente usamos \(cos(a)cos(b)\)), obtenemos que:
+    </p>
+
+	\[tan(a-b)=\frac{tan(a)-tan(b)}{1+tan(a)tan(b)}\]
+
+	<h2>Fórmula para la pendiente entre rectas</h2>
+
+    <p>
+    En la siguiente imagen, puedes notar dos rectas que se intersecan. La primera recta hace un ángulo \(a\) con las abscisas y la segunda hace un ángulo \(b\).
+    </p>
+
+    <div class="course_extern_content"> 
+      <img src="imgs/DifAngulos.jpg"></img>
+    </div>
+    
+    <p>
+    Observa que el ángulo interno de arriba resulta ser simplemente \(a-b\).
+    </p>
+
+    <p>
+    De la unidad sobre rectas y sus pendientes aprendiste que hay 2 formas de medir la inclinación de una recta respecto a las abscisas. Una es mediante el ángulo, y la otra es mediante la pendiente. Y también aprendiste que la fórmula de relacionar ambas es mediante la función tangente. Esto es, \(m=tan(q)\). Es decir, si tu recta hace un ángulo \(q\) con las abscisas, la tangente de ese ángulo será la pendiente de la recta.
+    </p>
+
+    <p>
+    De tal forma que, si quisieras calcular la pendiente entre dos rectas cualesquiera, basta con tomar la tangente del ángulo que forman. En este ejemplo, el ángulo que las rectas forman es \(a-b\). Así, \(tan(a-b)=\frac{tan(a)-tan(b)}{1+tan(a)tan(b)}\). Llamemos \(m_{ab}\) a la pendiente entre estas 2 rectas. Esa pendiente es, como lo hemos notado, \(tan(a-b)\), de la misma forma que la pendiente de la recta verde es \(m_b=tan(b)\) y la pendiente de la recta azul es \(m_a=tan(a)\). Sustituyendo dichas equivalencias, obtenemos que \(m_{ab}=\frac{m_a-m_b}{1+m_am_b}\).
+    </p>
+
+    <p>
+    Si recuerdas la unidad sobre paralelismo y perpendicularidad, ésta es la fórmula que te permitía calcular la pendiente entre 2 rectas. Y es a partir de dicha fórmula que obtuvimos los criterios que determinan, a partir de sus pendientes, si dos rectas son paralelas y perpendiculares. Ahora ya sabes de dónde viene dicha fórmula. Es, finalmente, una aplicación de las razones trigonométricas de la diferencia de dos ángulos.
+    </p>
+  
+    <p>
+    Ahora ya estás listo para avanzar a la parte de ejercicios.
+    </p>
+
+  
+  <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>  
+
+  <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	  <!-- Créditos UAM  (siempre deben ir en primer lugar) -->
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>    
+       
+	    <!-- Aviso licencias -->
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <!--arquimedes (optativo)-->
+		    <!-- Descartes -->
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+	</div>
+      </div>
+    </div> 
+    
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

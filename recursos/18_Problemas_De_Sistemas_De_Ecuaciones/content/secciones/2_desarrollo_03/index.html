@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Problema 3</h1>
+    
+    <!--- Subtítulo (no necesario en introducción)--->
+    <h2>Planteamiento del problema</h2> 
+    
+    
+    <p>Analicemos un tercer y último problema.</p>
+    <p style="font-family: serif; font-size: 18px; font-weight: bold; padding: 0px 50px;text-align: justify;">En una carrera hay dos corredores con distintas velocidades uniformes y distintas posiciones iniciales. Los dos empiezan a correr al mismo tiempo y llegan a la meta uno después de otro. Si el corredor que recorre una mayor distancia llega a la meta antes que el otro corredor, ¿en qué momento están a la misma distancia de la meta?</p>
+    
+    <p>Esta pregunta tiene fácil solución si analizamos las rectas que se construyen a partir del movimiento de cada corredor. En otras palabras, se trata de encontrar la solución a un sistema de ecuaciones dado por las velocidades y las posiciones de cada individuo. La posición de ambos corredores se puede definir por medio de dos ecuaciones lineales de la forma \(y=mx+b\) donde para cada ecuación:</p>
+    
+    <ul>
+      <li>\(y\) tomará el valor de la distancia recorrida \(d\);</li>
+      <li>\(x\) corresponde al tiempo transcurrido \(t\);</li>
+      <li>la pendiente \(m\) es la velocidad \(v\) de cada corredor y</li>
+      <li>\(b\) equivale a la posición en la que inician a correr.</li>
+    </ul>
+    
+    <p>
+      Obtendremos dos ecuaciones de la forma \(d=vt+b\).
+    </p>
+    
+    <!--- Instrucciones --->
+    <div class="instrucciones">En el siguiente espacio puedes usar los pulsadores para modificar los parámetros del movimiento de cada corredor. Luego oprime el botón 'Iniciar' y observa el movimiento y la gráfica de cada corredor. Puedes repetir el proceso cuantas veces lo desees.</div>
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="790" height="520" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+    
+    <p>
+    Como puedes ver cada ecuación representa una recta y la solución al sistema es el punto en donde las rectas se cruzan. La <strong>pendiente</strong> de cada recta es indicativa de la velocidad y la <strong>ordenada al origen</strong> equivale a la posición inicial.
+    </p>
+
+
+<!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Introducción elaborada para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Víctor Hugo García Jarillo</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+    
+    <!-- Créditos escena Telesecundaria -->
+          <div class="creditos">
+                  <p class="proyecto">Inclusión de escena(s) interactiva(s) desarrollada(s) para el proyecto Telesecundaria ... [Por completar]</p>
+                  <ul class="autores">
+                          <li>Autor: <span class="nombre">Nombre del autor</span></li>
+                  </ul>
+          </div>
+ 
+ 
+          <!-- Créditos adaptación HTML5 (en caso de haberse incluido material de DGEE, Telesecundaria o PI) -->
+          <div class="creditos">
+                  <p class="proyecto">Adaptación a DescartesJS realizada en el marco del proyecto <a href="http://arquimedes.matem.unam.mx/lite/2013/" target="_blank">LITE 2013</a> y financiada por CONACyT.</p>
+                  <ul class="autores">
+                          <li>Adaptación: <span class="nombre">Víctor Hugo García Jarillo, Deyanira Monroy Zariñán</span></li>
+                          <li>Asesoría técnica: <span class="nombre">José Luis Abreu León, Óscar Escamilla González, Joel Espinosa Longi</span></li>
+                  </ul>
+                  <img class="logos" src="icns/logosDescartesJS.png"></img>
+          </div>
+          
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

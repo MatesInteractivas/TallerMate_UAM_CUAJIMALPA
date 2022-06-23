@@ -1,0 +1,13 @@
+tipo_de_macro=R2
+Idioma=espa&ntilde;ol
+id='largo' constante='s&iacute;' expresi&oacute;n='40'
+id='ancho' constante='s&iacute;' expresi&oacute;n='40'
+id='grueso' constante='s&iacute;' expresi&oacute;n='16'
+id='hp' constante='s&iacute;' expresi&oacute;n='2'
+id='hc' constante='s&iacute;' expresi&oacute;n='0'
+id='Transp' constante='s&iacute;' expresi&oacute;n='0'
+id='Rojo' constante='s&iacute;' expresi&oacute;n='1'
+id='Verde' constante='s&iacute;' expresi&oacute;n='1'
+id='Azul' constante='s&iacute;' expresi&oacute;n='0'
+id='CALCULOS' algoritmo='s&iacute;' evaluar='siempre' hacer='y1=(ancho-grueso)/2;y2=y1+grueso;x1=largo-ancho/2;'
+tipo='pol&iacute;gono' color='707070' coord_abs='s&iacute;' expresi&oacute;n='(x1,hp)(x1,y1)(hc,y1)(0,y1+hc)(0,y2-hc)(hc,y2)(x1,y2)(x1,ancho-hp)(x1+hp,ancho-hp)(largo-hc/2,ancho/2+hc/2)(largo-hc/2,ancho/2-hc/2)(x1+hp,hp)(x1,hp)' relleno='(Rojo,Verde,Azul,Transp)'

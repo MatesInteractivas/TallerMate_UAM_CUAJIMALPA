@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=750 height=480 code="Descartes">
+   <param name="tamaño" value="750x480">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo.png' despl_imagen='arr-izq' fondo='f3f0ec' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='PCar' x='51%' y='17%' ancho='48%' alto='70%' fijo='sí' despl_imagen='arr-izq' red='b8c4c8' red10='889498' ejes='405860' texto='no'">
+   <param name="E_03" value="tipo='R2' id='Expl' x='10%' y='17%' ancho='80%' alto='80%' dibujar-si='shwExpl' fijo='sí' despl_imagen='arr-izq' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='d' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(E1._w*3/4,15,27,50)' incr='5' decimales='1' fijo='sí' visible='no' acción='calcular' parámetro='drad=d*pi/180' activo-si='(FuncMn!=0)&(!shwExpl)'">
+   <param name="C_02" value="id='FuncMn' tipo='numérico' interfaz='menú' región='interior' espacio='E1' nombre='_nada_' expresión='(E1._w*3/4-50,E1._h-50,100,34)' fijo='sí' visible='no' opciones=' ,seno,coseno' acción='calcular' parámetro='Func1=(FuncMn==1)?&squot;sin(x)&squot;:Func1\nFunc1=(FuncMn==2)?&squot;cos(x)&squot;:Func1\nFunc2=(FuncMn==1)?&squot;cos(drad-x)&squot;:Func2\nFunc2=(FuncMn==2)?&squot;sin(drad-x)&squot;:Func2\nd=0\ndrad=0\n\nVisit1=(FuncMn==1)?1:Visit1\nVisit2=(FuncMn==2)?1:Visit2\nVisitAll=(Visit1&Visit2)' activo-si='!shwExpl'">
+   <param name="C_03" value="id='ExplBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='?' expresión='(E1._w/2-25,E1._h/2-15,30,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn30x30.png' acción='calcular' parámetro='shwExpl=1' dibujar-si='VisitAll' activo-si='!shwExpl'">
+   <param name="C_04" value="id='clsExplBt' tipo='numérico' interfaz='botón' región='interior' espacio='Expl' nombre='_nada_' expresión='(Expl._w-25,5,20,20)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/cerrar.png' acción='calcular' parámetro='shwExpl=0' pos_mensajes='centro'">
+   <param name="A_01" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='PCar.escala=30'">
+   <param name="A_02" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='texto' color='232323' expresión='[E1._w*3/4-40,30]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs38\i d=        {\*\mjaformula{\expr d\decimals 2\fixed0}{\supix o}={\expr drad\decimals 3\fixed0} rad}\f2\fs30\i0}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_02" value="espacio='PCar' tipo='ecuación' color='azul' dibujar-si='FuncMn!=0' expresión='y=_Eval_(Func1)' ancho='2'">
+   <param name="G_03" value="espacio='E1' tipo='punto' fondo='sí' dibujar-si='0' expresión='(0000,0)' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_04" value="espacio='E1' tipo='texto' color='232323' dibujar-si='FuncMn!=0' expresión='[10,10]' texto='Como una onda, el seno y el coseno son funciones periódicas. Si su periodo (o frecuencia) y amplitud son iguales, se pueden hacer empalmar.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='300'">
+   <param name="G_05" value="espacio='PCar' tipo='ecuación' color='rojo' dibujar-si='FuncMn!=0' expresión='y=_Eval_(Func2)' ancho='2'">
+   <param name="G_06" value="espacio='E1' tipo='texto' color='232323' dibujar-si='FuncMn==1' expresión='[10,115]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue255;\red35\green35\blue35;}\f1\fs34 Tu gr\u225 fica \cf0 azul\cf1  corresponde a una funci\u243 n\par seno de un \u225 ngulo. La funci\u243 n en cuesti\u243 n\par es \f2\fs38\i{\*\mjaformula y=sin(x)}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_07" value="espacio='E1' tipo='texto' color='232323' dibujar-si='FuncMn==1' expresión='[10,195]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red255\green0\blue0;\red35\green35\blue35;}\f1\fs34 Tambi\u233 n cuentas, con color \cf0 rojo\cf1 , con una\par funci\u243 n coseno: \f2\fs38\i{\*\mjaformula y=cos(d-x)}\f1\fs34\i0 . Podr\u225 s\par variar el par\u225 metro \f2\fs38\i d\f1\fs34\i0  con el pulsador\par correspondiente.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_08" value="espacio='E1' tipo='texto' color='232323' dibujar-si='FuncMn!=0' expresión='[10,300]' texto='Mueve el pulsador hasta que el valor de tu parámetro sea 90.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='300'">
+   <param name="G_09" value="espacio='PCar' tipo='polígono' color='negro' coord_abs='sí' expresión='(1,1)(PCar._w-1,1)(PCar._w-1,PCar._h-1)(1,PCar._h-1)(1,1)' ancho='2'">
+   <param name="G_10" value="espacio='E1' tipo='punto' fondo='sí' dibujar-si='0' expresión='(0000,0)' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_11" value="espacio='E1' tipo='texto' color='232323' dibujar-si='FuncMn==2' expresión='[10,115]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue255;\red35\green35\blue35;}\f1\fs34 Tu gr\u225 fica \cf0 azul\cf1  corresponde a una funci\u243 n\par coseno de un \u225 ngulo. La funci\u243 n en\par cuesti\u243 n es \f2\fs38\i{\*\mjaformula y=cos(x)}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_12" value="espacio='E1' tipo='texto' color='232323' dibujar-si='FuncMn==2' expresión='[10,195]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red255\green0\blue0;\red35\green35\blue35;}\f1\fs34 Tambi\u233 n cuentas, con color \cf0 rojo\cf1 , con una\par funci\u243 n seno: \f2\fs38\i{\*\mjaformula y=sin(d-x)}\f1\fs34\i0 . Podr\u225 s\par variar el par\u225 metro \f2\fs38\i d\f1\fs34\i0  con el pulsador\par correspondiente.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_13" value="espacio='E1' tipo='punto' fondo='sí' dibujar-si='0' expresión='(0000,0)' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_14" value="espacio='E1' tipo='texto' dibujar-si='FuncMn==1' expresión='[30,E1._h-80]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}{\colortbl\red0\green0\blue255;\red32\green48\blue58;\red255\green0\blue0;}\f1\fs38\i{\*\mjaformula\cf0 y=sin(x)\cf1}\f2\fs30\i0\par \f1\fs38\i{\*\mjaformula\cf2 y=cos(d-x)=cos({\expr d\decimals 2\fixed0}-x)\cf1}\f2\fs30\i0}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_15" value="espacio='E1' tipo='texto' dibujar-si='FuncMn==2' expresión='[30,E1._h-80]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}{\colortbl\red0\green0\blue255;\red32\green48\blue58;\red255\green0\blue0;}\f1\fs38\i{\*\mjaformula\cf0 y=cos(x)\cf1}\f2\fs30\i0\par \f1\fs38\i{\*\mjaformula\cf2 y=sin(d-x)=sin({\expr d\decimals 2\fixed0}-x)\cf1}\f2\fs30\i0}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_16" value="espacio='Expl' tipo='polígono' fondo='sí' color='negro' coord_abs='sí' expresión='(1,1)(Expl._w-1,1)(Expl._w-1,Expl._h-1)(1,Expl._h-1)(1,1)' ancho='2'">
+   <param name="G_17" value="espacio='Expl' tipo='texto' color='232323' expresión='[10,10]' texto='Aunque pueda parecer mágica esta relación entre el seno y el coseno, es bastante sencillo verla desde el punto de vista de un triángulo rectángulo.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='525'">
+   <param name="G_18" value="espacio='Expl' tipo='texto' color='232323' expresión='[10,90]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}\f1\fs38\i{\*\mjaformula sin(a)={\fraction{\num A}{\den C}}}\f2\fs34\i0  y \f1\fs38\i{\*\mjaformula cos(b)={\fraction{\num A}{\den C}}}\f2\fs34\i0 . Por lo tanto,\par \f1\fs38\i{\*\mjaformula sin(a)=cos(b)}\f2\fs34\i0 .}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_19" value="espacio='Expl' tipo='texto' color='232323' expresión='[10,170]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Arial;}\f1\fs34 Pero, por ser un tri\u225 ngulo rect\u225 ngulo, y a partir de la\par suma de \u225 ngulos internos: \f2\fs38\i{\*\mjaformula a+b+90=180}\f3\fs38\i0   \u8658 \f2\fs38\i\par {\*\mjaformula a=90-b}\f1\fs34\i0  o bien \f2\fs38\i{\*\mjaformula b=90-a}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_20" value="espacio='Expl' tipo='texto' color='232323' expresión='[10,260]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 De ah\u237  que \f2\fs38\i{\*\mjaformula sin(a)=cos(90-a)}\f1\fs34\i0  o bien\par \f2\fs38\i{\*\mjaformula cos(a)=sin(90-a)}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_21" value="espacio='Expl' tipo='imagen' expresión='(4.5,-1,0.75,0.75)' archivo='images/Tri.png'">
+</ajs></p>
+
+</body>
+</html>

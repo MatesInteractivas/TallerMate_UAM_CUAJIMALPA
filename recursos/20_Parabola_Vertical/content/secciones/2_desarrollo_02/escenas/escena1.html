@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>
+
+      <style type="text/css" media="screen">
+	/*pulsador*/
+	#zm { }
+	#zm > canvas {
+	  display: none;
+	}
+    
+	#zm .up {
+	  background: white url("images/zoomIn.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zm > .up:hover {
+	  background-color: #efefef !important;
+	}
+	#zm > .up:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+    
+	#zm .down {
+	  background: white url("images/zoomOut.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zm .down:hover {
+	  background-color: #efefef !important;
+	}
+	#zm .down:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+      </style>	
+
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=750 height=480 code="Descartes">
+   <param name="tamaño" value="750x480">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo.png' despl_imagen='arr-izq' fondo='f3f0ec' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='PanDer' x='51%' y='18%' ancho='48%' alto='81%' despl_imagen='arr-izq' red='no' red10='no' ejes='405860' texto='no'">
+   <param name="E_03" value="tipo='R2' id='Expl' x='10%' y='12%' ancho='80%' alto='80%' dibujar-si='shwExpl' fijo='sí' despl_imagen='arr-izq' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='ydir' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(130,85,27,50)' valor='-1' max='-0.5' discreto='sí' decimales='1' fijo='no' visible='no' acción='calcular' parámetro='pgraf.x=-1\npgraf.y=((x-xF)^2+yF^2-ydir^2)/(2*(yF-ydir))' activo-si='(!shwExpl)'">
+   <param name="C_02" value="id='yF' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(300,83,27,50)' valor='1' min='0.5' discreto='sí' decimales='1' fijo='no' visible='no' acción='calcular' parámetro='pgraf.x=-1\npgraf.y=((x-xF)^2+yF^2-ydir^2)/(2*(yF-ydir))' activo-si='(!shwExpl)' pos_mensajes='centro'">
+   <param name="C_03" value="id='zm' tipo='numérico' región='interior' espacio='PanDer' nombre='_nada_' expresión='(PanDer._w-34,PanDer._h-64,30,60)' valor='70' incr='5' min='5' max='150' discreto='sí' decimales='0' fijo='sí' visible='no' acción='calcular' parámetro='PanDer.escala=zm' activo-si='(!shwExpl)'">
+   <param name="C_04" value="id='pgraf' tipo='gráfico' espacio='PanDer' expresión='(-1,0.243)' constricción='y=((x-xF)^2+yF^2-ydir^2)/(2*(yF-ydir))' fijo='sí' dibujar-si='yF!=ydir'">
+   <param name="C_05" value="id='AntExplBt' tipo='numérico' interfaz='botón' región='interior' espacio='Expl' nombre='Anterior' expresión='(Expl._w/3-45,Expl._h-35,90,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrlExpl=scrlExpl-1' dibujar-si='scrlExpl>0' pos_mensajes='centro'">
+   <param name="C_06" value="id='SigExplBt' tipo='numérico' interfaz='botón' región='interior' espacio='Expl' nombre='Siguiente' expresión='(Expl._w*2/3-45,Expl._h-35,90,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrlExpl=scrlExpl+1' dibujar-si='scrlExpl<scrlExplmax' pos_mensajes='centro'">
+   <param name="C_07" value="id='clsExpl' tipo='numérico' interfaz='botón' región='interior' espacio='Expl' nombre='_nada_' expresión='(Expl._w-25,5,20,20)' fijo='sí' visible='sí' color='blanco' color-int='blanco' fuente puntos='16' imagen='images/cerrar.png' acción='calcular' parámetro='shwExpl=0' activo-si='!shwExplGral' pos_mensajes='centro'">
+   <param name="C_08" value="id='DedBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Explicación' expresión='(E1._w/4-60,E1._h-35,120,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn120x30.png' acción='calcular' parámetro='shwExpl=1' activo-si='(!shwExpl)&(yF!=ydir)' pos_mensajes='centro'">
+   <param name="A_01" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='PanDer.escala=70;PanDer.Oy=70;scrlExplmax=6'">
+   <param name="A_02" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' hacer='zm=PanDer.escala;;m1=(pgraf.x-xF)/(yF-ydir);m2=(abs(pgraf.x-xF)>0.05)?(ydir-yF)/(pgraf.x-xF):1000000;b2=pgraf.y-m2*pgraf.x;;Ang1=90-atan(abs(m2))*180/pi'">
+   <param name="G_01" value="espacio='E1' tipo='texto' color='232323' expresión='[10,10]' texto='Aquí, tu parábola es vertical y abre hacia arriba (el foco está siempre por encima de la directriz). El eje de la parábola (la recta vertical que contiene al foco) coincide con las ordenadas.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='625'">
+   <param name="G_02" value="espacio='E1' tipo='texto' color='232323' expresión='[10,97]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue255;\red35\green35\blue35;}\f1\fs34 Directriz: \f2\fs38\i{\*\mjaformula\cf0 y=\cf1}\f1\fs34\i0         \f2\fs38\i{\*\mjaformula\cf0{\expr ydir\decimals 2\fixed0}}\f1\fs34\i0}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_03" value="espacio='E1' tipo='texto' color='009f00' expresión='[240,97]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;}\f1\fs38\i{\*\mjaformula y{\subix F}}=         {\*\mjaformula{\expr yF\decimals 2\fixed0}}}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_04" value="espacio='PanDer' tipo='ecuación' color='azul' expresión='y=ydir' ancho='2'">
+   <param name="G_05" value="espacio='PanDer' tipo='ecuación' color='8b008b' expresión='y=(pgraf.x-xF)/(yF-ydir)*x+(pgraf.y-(pgraf.x-xF)/(yF-ydir)*pgraf.x)'">
+   <param name="G_06" value="espacio='PanDer' tipo='segmento' color='aaaa00' expresión='(xF,yF)(pgraf.x,pgraf.y)' fijo='sí'">
+   <param name="G_07" value="espacio='E1' tipo='texto' color='232323' expresión='[10,150]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red139\green0\blue139;\red35\green35\blue35;\red255\green0\blue0;}\f1\fs34 Se traza una \cf0 recta tangente\cf1  a la par\u225 bola en\par el punto \f2\fs38\i\cf2 P\cf1\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_08" value="espacio='E1' tipo='texto' color='232323' expresión='[10,205]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red64\green64\blue64;\red35\green35\blue35;\red139\green0\blue139;}\f1\fs34 El segmento \f2\fs38\i\cf0 Pt\cf1\f1\fs34\i0  se traza de tal forma que sea\par perpendicular a la \cf2 recta tangente\cf1 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_09" value="espacio='E1' tipo='texto' color='232323' expresión='[10,260]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red170\green170\blue0;\red35\green35\blue35;\red64\green64\blue64;}\f1\fs34 El \u225 ngulo formado por el \f2\fs38\i\cf0 rayo\f1\fs34\i0\cf1  incidente con el\par segmento \f2\fs38\i\cf2 Pt\f1\fs34\i0\cf1  es \f2\fs38\i{\*\mjaformula{\expr Ang1\decimals 2\fixed0}{\supix o}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_10" value="espacio='PanDer' tipo='segmento' color='aaaa00' expresión='(pgraf.x,pgraf.y)(pgraf.x,100)' fijo='sí'">
+   <param name="G_11" value="espacio='Expl' tipo='polígono' fondo='sí' color='negro' coord_abs='sí' expresión='(1,1)(Expl._w-1,1)(Expl._w-1,Expl._h-1)(1,Expl._h-1)(1,1)' ancho='2'">
+   <param name="G_12" value="espacio='Expl' tipo='texto' color='232323' dibujar-si='(scrlExpl<4)' expresión='[10,10]' texto='En la reflexión de un rayo, el ángulo de incidencia es aquél formado por la dirección del rayo con un segmento perpendicular a la superficie de reflexión.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='525'">
+   <param name="G_13" value="espacio='Expl' tipo='texto' color='232323' dibujar-si='(scrlExpl>0)&(scrlExpl<4)' expresión='[10,95]' texto='El ángulo de reflexión es aquél formado por el rayo reflejado con un segmento perpendicular a la superficie de reflexión.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='525'">
+   <param name="G_14" value="espacio='Expl' tipo='texto' color='232323' dibujar-si='(scrlExpl>1)&(scrlExpl<4)' expresión='[10,155]' texto='Y la ley de reflexión nos dice que el ángulo de incidencia siempre es igual al de reflexión.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='525'">
+   <param name="G_15" value="espacio='Expl' tipo='texto' color='232323' dibujar-si='(scrlExpl>2)&(scrlExpl<4)' expresión='[10,215]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red255\green0\blue0;\red35\green35\blue35;\red64\green64\blue64;}\f1\fs34 Para el caso de una par\u225 bola, dependiendo del punto elegido en ella (\f2\fs38\i\cf0 P\f1\fs34\i0\cf1 ),\par se traza una recta tangente que hace el papel de la superficie de\par reflexi\u243 n. Perpendicular a \u233 sta se traza el segmento \f2\fs38\i\cf2 Pt\f1\fs34\i0\cf1 , respecto al cual\par se miden los \u225 ngulos de los haces incidente y reflejado.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_16" value="espacio='Expl' tipo='punto' fondo='sí' dibujar-si='0' expresión='(0000,0)' fijo='sí'">
+   <param name="G_17" value="espacio='Expl' tipo='texto' color='232323' dibujar-si='(scrlExpl>3)' expresión='[10,10]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red64\green64\blue64;\red35\green35\blue35;\red255\green0\blue0;}\f1\fs34 Observa que el \u225 ngulo formado por la recta vertical (que corresponder\u237 a\par al rayo) con el segmento \f2\fs38\i\cf0 Pt\f1\fs34\i0\cf1  es igual al formado por el segmento \f2\fs38\i\cf0 Pt\f1\fs34\i0\cf1  con\par el segmento que une el foco con el punto \f2\fs38\i\cf2 P\f1\fs34\i0\cf1 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_18" value="espacio='Expl' tipo='texto' color='232323' dibujar-si='(scrlExpl>4)' expresión='[10,90]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}\f1\fs34 Otra forma de verlo es que un rayo que incide de forma paralela al\par eje de una par\u225 bola, por fuerza ser\u225  reflejado de tal forma que caiga\par sobre el foco de la misma.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_19" value="espacio='Expl' tipo='texto' color='232323' dibujar-si='(scrlExpl>5)' expresión='[10,165]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Arial;}\f1\fs34 De tal forma que en el \i foco\i0  se \i enfocan\i0  todos los rayos, siempre y\par cuando vengan todos paralelos al eje de la par\u225 bola (que, en este\par caso, son precisamente las ordenadas).}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_20" value="espacio='PanDer' tipo='segmento' color='grisObscuro' expresión='(pgraf.x,pgraf.y)(0,b2)' fijo='sí'">
+   <param name="G_21" value="espacio='PanDer' tipo='ecuación' color='00ff80' expresión='y=((x-xF)^2+yF^2-ydir^2)/(2*(yF-ydir))' ancho='2'">
+   <param name="G_22" value="espacio='PanDer' tipo='punto' color='009f00' expresión='(xF,yF)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs34\i{\*\mjaformula foco({\expr xF\decimals 2\fixed0},{\expr yF\decimals 2\fixed0})}\f2\fs30\i0}' fuente='Serif,ITALIC,17' fijo='sí' tamaño='4'">
+   <param name="G_23" value="espacio='PanDer' tipo='punto' color='rojo' expresión='(pgraf.x,pgraf.y)' texto='\nP' fuente='Serif,ITALIC,17' fijo='sí' tamaño='0'">
+   <param name="G_24" value="espacio='PanDer' tipo='punto' color='grisObscuro' expresión='(0,b2)' texto=' t' fuente='Serif,ITALIC,17' fijo='sí' tamaño='0'">
+   <param name="G_25" value="espacio='PanDer' tipo='punto' color='aaaa00' dibujar-si='PanDer._h/2+PanDer.Oy>pgraf.y*PanDer.escala' coord_abs='sí' expresión='(PanDer._w/2+PanDer.Ox+pgraf.x*PanDer.escala,20)' texto='rayo' fuente='Serif,ITALIC,17' fijo='sí' tamaño='0'">
+   <param name="G_26" value="espacio='E1' tipo='texto' color='232323' expresión='[10,320]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red170\green170\blue0;\red35\green35\blue35;\red64\green64\blue64;}\f1\fs34 El \u225 ngulo formado por el \f2\fs38\i\cf0 rayo\f1\fs34\i0\cf1  reflejado con el\par segmento \f2\fs38\i\cf2 Pt\f1\fs34\i0\cf1  es \f2\fs38\i{\*\mjaformula{\expr Ang1\decimals 2\fixed0}{\supix o}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_27" value="espacio='PanDer' tipo='polígono' color='negro' coord_abs='sí' expresión='(1,1)(PanDer._w-1,1)(PanDer._w-1,PanDer._h-1)(1,PanDer._h-1)(1,1)' ancho='2'">
+</ajs></p>
+
+</body>
+</html>

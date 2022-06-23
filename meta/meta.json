@@ -1,0 +1,16 @@
+{
+  "nivel": [
+    "Bachillerato",
+    "Licenciatura"
+  ],
+  "titulo": "Unidades Didácticas Interactivas para la asignatura Taller de Matemáticas",
+  "abreviacion": "UAM Taller Mate",
+  "descripcion": "25 Unidades variadas destinadas a servir en el curso 'Taller de Matemáticas' de la Universidad Autónoma de México (UAM) Cuajimalpa. Dicho curso trata los temas mínimos necesarios para poder abordar el estudio de problemas de las licenciaturas comprendidas en el área de las Ciencias Básicas y Naturales. Se tratan temas fundamentales de aritmética, álgebra, trigonometría, geometría y geometría analítica. Cada unidad abarca un tema distinto dentro del temario de dicho curso. Los recursos se encuentran empaquetados según el estándar SCORM 1.2. La secuencia didáctica utilizada se encuentra conformada por: 1. Introducción; 2. Desarrollo; 3. Ejercicios; y 4. Evaluación. En la evaluación se presentan 5 preguntas de opción múltiple que comunican la calificación del alumno a la plataforma Moodle utilizando el API del mismo estándar SCORM.",
+  "resena": "Unidades interactivas de las áreas básicas para el curso 'Taller de Matemáticas' de la UAM Cuajimalpa",
+  "recursos_valores_omision": {
+    "tamano": {
+      "ancho":997,
+      "alto":665
+    }
+  }
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+
+  <!-- MathJax - para fórmulas matemáticas -->
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+<script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+  
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+
+<div class="course_content">
+
+<!-- INICIA EL CONTENIDO DE LA PÁGINA -->
+<!-- Título de la página -->
+<h1>La distancia entre dos puntos en la recta numérica</h1>
+
+<!-- Subtítulo -->
+<!-- <h2></h2> -->
+
+<!-- Párrafo -->
+<p>
+La noción de <em>distancia</em> entre dos puntos sobre el plano corresponde al tamaño del fragmento de recta comprendido entre dichos puntos, es decir, <em>la magnitud del segmento definido por los puntos</em>.
+</p>
+
+<p>
+Antes de iniciar directamente con puntos sobre el plano cartesiano, veamos qué ocurre con puntos sobre la <strong>recta numérica</strong>, que es un caso más sencillo.
+</p>
+
+<p>
+Primero denotemos a la operación de distancia entre dos puntos \(A\) y \(B\) como: \(d(A, B)\).
+</p>
+
+<br>
+<p>
+<h2>Distancia entre un punto y el origen</h2>
+</p>
+
+<p>
+Si consideramos la distancia que hay entre un punto cualquiera \(A\) positivo y el origen, podemos observar que la longitud del segmento que los une corresponde al valor de la posición del punto.
+</p>
+
+<div class="course_extern_content"> 
+<img src="imgs/escena1.png"></img>
+</div>
+
+<p>
+¿Qué sucede con un punto cualquiera negativo? Lo que sucede es que la distancia que hay entre dicho punto y el origen corresponde al valor de la posición del punto, pero sin considerar el signo negativo. La razón por la que no debemos considerar el signo, es que estamos midiendo una <em>distancia</em>, es decir, el tamaño del fragmento de recta entre ambos puntos, y este valor siempre es positivo.
+</p>
+
+<div class="course_extern_content"> 
+<img src="imgs/escena2.png"></img>
+</div>
+
+<p>
+Observando estos dos casos, podemos notar que de forma general <strong>la distancia entre un punto cualquiera en la recta numérica y el origen corresponde al valor de la posición del punto, sin considerar el signo.</strong>
+</p>
+
+<p>
+A esta operación de no considerar el signo se le conoce como <strong><em>valor absoluto</em></strong> y tiene diversos usos dentro de las matemáticas, principalmente relacionados con las nociones de magnitud, distancia y norma.
+</p>
+
+<br>
+<p>
+<h2>¿Qué es el valor absoluto?</h2>
+</p>
+
+<p>
+El valor absoluto es una función definida de la siguiente manera:
+</p>
+
+$$|n| = \left \{ \begin{matrix} n & \mbox{si } n ≥ 0\\ 
+                               -n & \mbox{si } n < 0 \end{matrix}\right.$$
+
+<p>
+El resultado del valor absoluto siempre es mayor que o igual a cero, y nunca negativo, por ejemplo: $$|0| = 0,$$ $$|3.1416| = 3.1416,$$ $$|-123.456| = -(-123.456) = 123.456$$
+</p>
+
+<br>
+<p>
+<h2>Distancia entre dos puntos en la recta numérica</h2>
+</p>
+<p>
+Ahora veamos qué sucede con la distancia entre dos puntos cualesquiera \(A\) y \(B\) sobre la recta numérica.
+</p>
+
+<div class="course_extern_content"> 
+<img src="imgs/escena3.png"></img>
+</div>
+
+<p>
+Lo que sucede es que la distancia entre ambos puntos se define como la diferencia entre la posición de los puntos, y al resultado de esa diferencia se le obtiene su valor absoluto, para que corresponda a una longitud. Por lo tanto, <strong>\(d(A, B)=|A-B|\)</strong>.
+</p>
+
+<p>
+Como nota, no importa qué punto se tome como el extremo inicial o el final, la fórmula \(d(A, B)=|A-B|\), siempre devuelve el valor correcto de la distancia entre ambos puntos.
+</p>
+
+<!-- TERMINA EL CONTENIDO DE LA PÁGINA -->
+
+  <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Joel Espinosa Longi</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+</div>
+
+</article>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0;padding:0;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=450 height=400 code="Descartes">
+   <param name="tamaño" value="450x400">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' escala='120' O.y='-50' imagen='images/fondo.png' despl_imagen='expand.' fondo='blanco' red='no' red10='no' ejes='grisObscuro' texto='no'">
+   <param name="C_01" value="id='animar' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Animar' expresión='(200,10,120,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' fuente puntos='18' imagen='images/btn120x30.png' acción='animar' dibujar-si='0'">
+   <param name="C_02" value="id='p' tipo='gráfico' espacio='E1' tamaño='5' expresión='(p.x,p.y)' fijo='sí'">
+   <param name="C_03" value="id='p.x' tipo='numérico' región='exterior' espacio='E1' nombre='p.x' valor='1' min='0' max='1' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_04" value="id='p.y' tipo='numérico' región='exterior' espacio='E1' nombre='p.y' min='0' max='1' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="A_01" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez'">
+   <param name="A_02" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' hacer='p.x=max(0,p.x);p.y=max(0,p.y);p.y=sqrt(1-p.x^2);teta=asen(p.y);teta=teta*180/pi'">
+   <param name="G_01" value="espacio='E1' tipo='arco' fin='360' fijo='sí'">
+   <param name="G_02" value="espacio='E1' tipo='segmento' color='00ae00' expresión='(-p.x,0)(p.x,0)' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_03" value="espacio='E1' tipo='segmento' color='0000ae' expresión='(p.x,0)(p.x,p.y)' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_04" value="espacio='E1' tipo='segmento' color='0000ae' expresión='(-p.x,0)(-p.x,p.y)' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_05" value="espacio='E1' tipo='segmento' color='ae0000' expresión='(0,0)(p.x,p.y)' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_06" value="espacio='E1' tipo='segmento' color='ae0000' expresión='(0,0)(-p.x,p.y)' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_07" value="espacio='E1' tipo='arco' radio='.5' fin='180-teta' fijo='sí' relleno='b5ffff80'">
+   <param name="G_08" value="espacio='E1' tipo='arco' radio='.2' fin='teta' fijo='sí' relleno='6900ff00'">
+   <param name="G_09" value="espacio='E1' tipo='arco' radio='.2' inicio='180' fin='180-teta' fijo='sí' relleno='51c0c0c0'">
+   <param name="G_10" value="espacio='E1' tipo='texto' color='00ae00' expresión='[20,285]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Arial;}\f1\fs40 El \u225 ngulo \f2\fs44\i{\*\mjaformula a}\f1\fs40\i0  es el de color verde.\fs44}' fuente='SansSerif,PLAIN,20' fijo='sí'">
+   <param name="G_11" value="espacio='E1' tipo='texto' color='e3e300' expresión='[20,315]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Arial;}\f1\fs40\b El \u225 ngulo \f2\fs44\b0\i{\*\mjaformula 180-a}\f1\fs40\b\i0  es el de color amarillo.\fs44}' fuente='SansSerif,BOLD,20' fijo='sí'">
+   <param name="G_12" value="espacio='E1' tipo='polígono' fondo='sí' color='grisObscuro' coord_abs='sí' expresión='(0,0)(E1._w-1,0)(E1._w-1,E1._h-1)(0,E1._h-1)(0,0)' ancho='3'">
+   <param name="G_13" value="espacio='E1' tipo='texto' expresión='[400,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs48\b I\f2\fs30\b0}' fuente='Serif,BOLD,24' fijo='sí' info='I'">
+   <param name="G_14" value="espacio='E1' tipo='texto' expresión='[20,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs48\b II\f2\fs30\b0}' fuente='Serif,BOLD,24' fijo='sí' info='II'">
+   <param name="G_15" value="espacio='E1' tipo='texto' expresión='[20,350]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs48\b III\f2\fs30\b0}' fuente='Serif,BOLD,24' fijo='sí' info='III'">
+   <param name="G_16" value="espacio='E1' tipo='texto' expresión='[400,350]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs48\b IV\f2\fs30\b0}' fuente='Serif,BOLD,24' fijo='sí' info='IV'">
+   <param name="Animación" value="pausa='0' controles='no' auto='no' inicio='alfa=0;ianim=0' hacer='x=cos(ianim*pi/180);y=sin(ianim*pi/180);ianim=ianim+1' mientras='ianim<361'">
+</ajs></p>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>
+
+        <link rel="stylesheet" type="text/css" href="css/descartes.css">	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=750 height=510 code="Descartes">
+   <param name="tamaño" value="750x510">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo_760x510.png' despl_imagen='arr-izq' fondo='f3f0ec' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='Coeficiente' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(132,185,25,50)' valor='1.5' incr='1' min='0.5' max='4.5' decimales='1' fijo='sí' visible='no'">
+   <param name="C_02" value="id='ExponenteY' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(365,185,25,50)' valor='2' incr='1' min='1' max='5' discreto='sí' decimales='0' fijo='sí' visible='no'">
+   <param name="C_03" value="id='ExponenteGen' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(598,185,25,50)' valor='2' incr='1' min='1' max='5' discreto='sí' decimales='0' fijo='sí' visible='no'">
+   <param name="C_04" value="id='AntBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Anterior' expresión='(E1._w/3-45,E1._h-35,90,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrl=scrl-1' dibujar-si='scrl>0' pos_mensajes='centro'">
+   <param name="C_05" value="id='SigBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Siguiente' expresión='(E1._w*2/3-45,E1._h-35,90,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrl=scrl+1' dibujar-si='scrl<scrlmax' pos_mensajes='centro'">
+   <param name="A_01" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='scrlmax=3'">
+   <param name="A_02" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='texto' expresión='[20,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Cuentas con un producto de un t\u233 rmino con 2 variables (\f2\fs38\i x\f1\fs34\i0  y \f2\fs38\i y\f1\fs34\i0 ) con su coeficiente.\par Mientras que la variable \f2\fs38\i x\f1\fs34\i0  est\u225  en este caso con un exponente fijo de 1, puedes\par elegir el exponente de la variable \f2\fs38\i y\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_02" value="espacio='E1' tipo='texto' expresión='[20,110]' texto='Elige el valor del término, del exponente y el del exponente que eleva todo el producto.' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_03" value="espacio='E1' tipo='texto' expresión='[20,155]' texto='Utiliza el botón en la parte inferior para ver paso a paso el procedimiento.' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_04" value="espacio='E1' tipo='texto' expresión='[20,200]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;}\f1\fs38\i Coeficiente =        {\*\mjaformula{\expr Coeficiente\decimals 1\fixed1}}}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_05" value="espacio='E1' tipo='texto' expresión='[245,200]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;}\f1\fs38\i Exponente y =         {\*\mjaformula{\expr ExponenteY\decimals 0\fixed1}}}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_06" value="espacio='E1' tipo='texto' expresión='[475,200]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;}\f1\fs38\i Exp general =          {\*\mjaformula{\expr ExponenteGen\decimals 0\fixed1}}}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_07" value="espacio='E1' tipo='texto' expresión='[20,250]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;}\f1\fs38\i{\*\mjaformula ({\expr Coeficiente\decimals 1\fixed1}xy{\supix{\expr ExponenteY\decimals 0\fixed1}}){\supix{\expr ExponenteGen\decimals 0\fixed1}}} =\fs34}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_08" value="espacio='E1' tipo='texto' dibujar-si='scrl>0' expresión='[140+80*s,250]' familia='s' s.intervalo='[0,ExponenteGen-1]' s.pasos='ExponenteGen-1' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;}\f1\fs38\i{\*\mjaformula ({\expr Coeficiente\decimals 1\fixed1}xy{\supix{\expr ExponenteY\decimals 0\fixed1}})}\fs34}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_09" value="espacio='E1' tipo='texto' dibujar-si='scrl>1' expresión='[124,280]' texto='=' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_10" value="espacio='E1' tipo='texto' dibujar-si='scrl>1' expresión='[140+60*s,280]' familia='s' s.intervalo='[0,ExponenteGen-1]' s.pasos='ExponenteGen-1' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;}\f1\fs38\i{\*\mjaformula ({\expr Coeficiente\decimals 1\fixed1})}}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_11" value="espacio='E1' tipo='texto' dibujar-si='scrl>1' expresión='[155+60*ExponenteGen+15*s,280]' familia='s' s.intervalo='[0,ExponenteGen-1]' s.pasos='ExponenteGen-1' texto='x' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_12" value="espacio='E1' tipo='texto' dibujar-si='scrl>1' expresión='[155+75*ExponenteGen+20*s,278]' familia='s' s.intervalo='[0,ExponenteGen-1]' s.pasos='ExponenteGen-1' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;}\f1\fs38\i{\*\mjaformula y{\supix{\expr ExponenteY\decimals 0\fixed1}}}}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_13" value="espacio='E1' tipo='texto' dibujar-si='scrl>2' expresión='[125,310]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;}\f1\fs38\i = {\*\mjaformula{\expr Coeficiente\decimals 1\fixed1}{\supix{\expr ExponenteGen\decimals 0\fixed1}}x{\supix{\expr ExponenteGen\decimals 0\fixed1}}y{\supix{\expr ExponenteGen*ExponenteY\decimals 0\fixed1}}}={\*\mjaformula{\expr Coeficiente^ExponenteGen\decimals 10\fixed0}x{\supix{\expr ExponenteGen\decimals 0\fixed1}}y{\supix{\expr ExponenteY*ExponenteGen\decimals 0\fixed1}}}}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_14" value="espacio='E1' tipo='texto' dibujar-si='scrl==1' expresión='[20,350]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 La base (el contenido del par\u233 ntesis), al estar elevada al exponente \f2\fs38\i{\*\mjaformula{\expr ExponenteGen\decimals 0\fixed1}}\f1\fs34\i0 , implica\par que se multiplica por s\u237  misma ese n\u250 mero de veces.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_15" value="espacio='E1' tipo='texto' dibujar-si='scrl==2' expresión='[20,350]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Como la \u250 nica operaci\u243 n que se est\u225  considerando en toda la expresi\u243 n es el\par producto, podemos aprovechar la propiedad conmutativa y reorganizar los factores.\par De esta forma, agrupamos los coeficientes, la variable \f2\fs38\i x\f1\fs34\i0  y la variable \f2\fs38\i y\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_16" value="espacio='E1' tipo='texto' dibujar-si='scrl==3' expresión='[20,350]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;}\f1\fs34 Agrupamos el producto de cantidades iguales (\f2\fs38\i{\*\mjaformula{\expr Coeficiente\decimals 1\fixed1}}\f1\fs34\i0 , \f2\fs38\i x\f1\fs34\i0  y \f2\fs38\i{\*\mjaformula y{\supix{\expr ExponenteY\decimals 0\fixed1}}}\f1\fs34\i0 ) y los expresamos\par como una base elevada a un exponente para cada uno de ellos. Para el caso \f2\fs38\i{\*\mjaformula y{\supix{\expr ExponenteY\decimals 0\fixed1}}}\f1\fs34\i0 ,\par al aparecer \f2\fs38\i{\*\mjaformula{\expr ExponenteGen\decimals 0\fixed1}}\f1\fs34\i0  veces, aprovechamos la ley aditiva de exponentes y lo expresamos\par como \f2\fs38\i{\*\mjaformula (y{\supix\f3\fs26\i{\expr ExponenteY\decimals 0\fixed1}}){\supix{\expr ExponenteGen\decimals 0\fixed1}}}\f1\fs34\i0 , y tras usar la ley mutliplicativa, queda \f2\fs38\i{\*\mjaformula y{\supix ({\expr ExponenteY\decimals 0\fixed1})({\expr ExponenteGen\decimals 0\fixed1})}=y{\supix{\expr ExponenteY*ExponenteGen\decimals 0\fixed1}}}\f1\fs34\i0}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+</ajs></p>
+
+</body>
+</html>

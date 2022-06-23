@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>
+
+        <link rel="stylesheet" type="text/css" href="css/descartes.css">	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=750 height=480 code="Descartes">
+   <param name="tamaño" value="750x480">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo_760x510.png' despl_imagen='arr-izq' fondo='f3f0ec' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='Base' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(90,135,25,50)' valor='1.5' incr='0.5' min='0.5' max='5' decimales='1' fijo='sí' visible='no'">
+   <param name="C_02" value="id='Numerador' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(330,135,25,50)' valor='2' incr='1' min='1' max='5' discreto='sí' decimales='0' fijo='sí' visible='no'">
+   <param name="C_03" value="id='Denominador' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(563,135,25,50)' valor='1' incr='1' min='1' max='4' discreto='sí' decimales='0' fijo='sí' visible='no'">
+   <param name="C_04" value="id='AntBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Anterior' expresión='(E1._w/3-45,E1._h-35,90,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrl=scrl-1' dibujar-si='scrl>0'">
+   <param name="C_05" value="id='SigBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Siguiente' expresión='(E1._w*2/3-45,E1._h-35,90,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrl=scrl+1' dibujar-si='scrl<scrlmax'">
+   <param name="A_01" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='scrlmax=5'">
+   <param name="A_02" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='texto' expresión='[20,20]' texto='Elige un valor para la base, para el numerador del exponente y para el denominador.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='600'">
+   <param name="G_02" value="espacio='E1' tipo='texto' expresión='[20,85]' texto='Utiliza el botón en la parte inferior para observar los pasos que te llevan a la simplificación.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='600'">
+   <param name="G_03" value="espacio='E1' tipo='texto' expresión='[20,150]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;}\f1\fs40\i Base =       {\*\mjaformula{\expr Base\decimals 1\fixed1}}}' fuente='Serif,ITALIC,20' fijo='sí'">
+   <param name="G_04" value="espacio='E1' tipo='texto' expresión='[205,150]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;}\f1\fs40\i Numerador =        {\*\mjaformula{\expr Numerador\decimals 0\fixed1}}}' fuente='Serif,ITALIC,20' fijo='sí'">
+   <param name="G_05" value="espacio='E1' tipo='texto' expresión='[420,150]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;}\f1\fs40\i Denominador =        {\*\mjaformula{\expr Denominador\decimals 0\fixed1}}}' fuente='Serif,ITALIC,20' fijo='sí'">
+   <param name="G_06" value="espacio='E1' tipo='texto' expresión='[20,210]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs40\i{\*\mjaformula{\expr Base\decimals 1\fixed1}{\supix{\fraction{\num{\expr Numerador\decimals 0\fixed1}}{\den{\expr Denominador\decimals 0\fixed1}}}}}\f2\fs30\i0}' fuente='Serif,ITALIC,20' fijo='sí'">
+   <param name="G_07" value="espacio='E1' tipo='texto' dibujar-si='scrl>0' expresión='[95,210]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;}\f1\fs40 = \i{\*\mjaformula{\expr Base\decimals 1\fixed1}{\supix{\expr Numerador\decimals 0\fixed1}x{\fraction{\num 1}{\den{\expr Denominador\decimals 0\fixed1}}}}}\fs36}' fuente='Serif,PLAIN,20' fijo='sí'">
+   <param name="G_08" value="espacio='E1' tipo='texto' dibujar-si='scrl>1' expresión='[200,215]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;}\f1\fs40 = \i{\*\mjaformula ({\expr Base\decimals 1\fixed1}{\supix{\expr Numerador\decimals 0\fixed1}}){\supix{\fraction{\num 1}{\den{\expr Denominador\decimals 0\fixed1}}}}}\fs36}' fuente='Serif,PLAIN,20' fijo='sí'">
+   <param name="G_09" value="espacio='E1' tipo='texto' dibujar-si='scrl>2' expresión='[315,215]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;}\f1\fs40 = \i{\*\mjaformula{\radical{\index{\expr Denominador\decimals 0\fixed1}}{\radicand{\expr Base\decimals 1\fixed1}{\supix{\expr Numerador\decimals 0\fixed1}}}}}\fs36}' fuente='Serif,PLAIN,20' fijo='sí'">
+   <param name="G_10" value="espacio='E1' tipo='texto' dibujar-si='scrl>3' expresión='[420,215]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;}\f1\fs40 = \i{\*\mjaformula{\radical{\index{\expr Denominador\decimals 0\fixed1}}{\radicand{\expr Base^Numerador\decimals 10\fixed0}}}}\fs36}' fuente='Serif,PLAIN,20' fijo='sí'">
+   <param name="G_11" value="espacio='E1' tipo='texto' dibujar-si='scrl>4' expresión='[560,222]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;}\f1\fs40 = \i{\*\mjaformula{\expr Base^(Numerador/Denominador)\decimals 10\fixed0}}\fs36}' fuente='Serif,PLAIN,20' fijo='sí'">
+   <param name="G_12" value="espacio='E1' tipo='texto' dibujar-si='scrl==1' expresión='[20,290]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;}\f1\fs34 Yendo un poco en reversa, descomponemos el exponente \f2\fs38\i{\*\mjaformula{\fraction{\num{\expr Numerador\decimals 0\fixed1}}{\den{\expr Denominador\decimals 0\fixed1}}}}\f1\fs34\i0  y lo\par expresamos como el producto de \f2\fs38\i{\*\mjaformula{\fraction{\num{\expr Numerador\decimals 0\fixed1}}{\den 1}}x{\fraction{\num 1}{\den{\expr Denominador\decimals 0\fixed1}}}}\f1\fs34\i0 . A su vez, \f2\fs38\i{\*\mjaformula{\fraction{\num{\expr Numerador\decimals 0\fixed1}}{\den 1}}}\par \f1\fs34\i0 podemos simplemente expresarlo como \f3\fs40\i{\*\mjaformula{\expr Numerador\decimals 0\fixed1}}\f1\fs34\i0 .\f3\fs40\i}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_13" value="espacio='E1' tipo='texto' dibujar-si='scrl==2' expresión='[20,290]' texto='Agrupamos la base con el primer exponente y dejamos la parte fraccionaria fuera\ndel paréntesis. Habíamos visto que el elevar una potencia a un exponente equivalía\na elevar la base al producto de los exponentes. Ahora estamos yendo al revés.' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_14" value="espacio='E1' tipo='texto' dibujar-si='scrl==3' expresión='[20,290]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Ahora que tenemos algo (lo que est\u225  en el par\u233 ntesis) elevado a una fracci\u243 n\par \f2\fs40\i{\*\mjaformula ({\fraction{\num 1}{\den{\expr Denominador\decimals 0\fixed1}}})}\f1\fs34\i0 , hacemos uso de lo aprendido anteriormente. Es decir, que una\par base elevada a \f2\fs40\i{\*\mjaformula{\fraction{\num 1}{\den n}}}\f1\fs34\i0  es lo mismo que tomar la ra\u237 z \f2\fs40\i n\f1\fs34\i0 -\u233 sima de dicha base.\f2\fs40\i}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_15" value="espacio='E1' tipo='texto' dibujar-si='scrl==4' expresión='[20,290]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;}\f1\fs34 Primero resolvemos lo que est\u225  dentro de la ra\u237 z. Es decir, obtenemos que\par \f2\fs38\i{\*\mjaformula{\expr Base\decimals 1\fixed1}{\supix{\expr Numerador\decimals 0\fixed1}}={\expr Base^Numerador\decimals 10\fixed0}}\f1\fs34\i0 .\f3\fs40\i}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_16" value="espacio='E1' tipo='texto' dibujar-si='scrl==5' expresión='[20,290]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;}\f1\fs34 Finalmente, tomamos la ra\u237 z \f2\fs40\i{\*\mjaformula{\expr Denominador\decimals 0\fixed1}}\f1\fs34\i0 -\u233 sima de \f3\fs38\i{\*\mjaformula{\expr Base\decimals 1\fixed1}}\f1\fs34\i0 . Esto lo puedes checar con\par una calculadora cient\u237 fica.\f2\fs40\i}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+</ajs></p>
+
+</body>
+</html>

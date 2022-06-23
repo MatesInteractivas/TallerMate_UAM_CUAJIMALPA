@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=760 height=480 code="Descartes">
+   <param name="tamaño" value="760x480">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo.png' despl_imagen='arr-izq' fondo='f5f5f5' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='E2' x='19' y='52' ancho='410' alto='410' fijo='sí' escala='22' despl_imagen='arr-izq' fondo='blanco' red='b8c4c8' red10='889498' ejes='405860' texto='no'">
+   <param name="C_01" value="id='p1' tipo='gráfico' espacio='E2' color='1e1e87' color-int='1e1e87' tamaño='5' expresión='(6,5)'">
+   <param name="C_02" value="id='p2' tipo='gráfico' espacio='E2' color='a51e1e' color-int='a51e1e' tamaño='5' expresión='(-5,-7)' fijo='sí'">
+   <param name="A_01" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez'">
+   <param name="A_02" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='texto' expresión='[15,15]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs36 Observa c\u243 mo se calcula la distancia entre los puntos \f2\fs40\i{\*\mjaformula p{\subix 1}}\f1\fs36\i0  y \f2\fs40\i{\*\mjaformula p{\subix 2}}\f1\fs36\i0 . }' fuente='SansSerif,PLAIN,18' fijo='sí'">
+   <param name="G_02" value="espacio='E1' tipo='texto' expresión='[440,55]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;}{\colortbl\red30\green30\blue135;\red32\green48\blue58;\red165\green30\blue30;}\cf0\f1\fs40\i{\*\mjaformula p{\subix 1}=({\expr p1.x\decimals 2\fixed0} , {\expr p1.y\decimals 2\fixed0})}\cf1\par \cf2{\*\mjaformula p{\subix 2}=({\expr p2.x\decimals 2\fixed0} , {\expr p2.y\decimals 2\fixed0})}\cf1\par \par {\*\mjaformula x{\subix 1} \u8722  x{\subix 2} ={\expr p1.x\decimals 2\fixed0} \u8722  {\expr p2.x\decimals 2\fixed0} ={\expr p1.x-p2.x\decimals 2\fixed0}}\par {\*\mjaformula y{\subix 1} \u8722  y{\subix 2} ={\expr p1.y\decimals 2\fixed0} \u8722  {\expr p2.y\decimals 2\fixed0} ={\expr p1.y-p2.y\decimals 2\fixed0}}\par \par {\*\mjaformula (x{\subix 1} \u8722  x{\subix 2}){\supix 2} ={\expr (p1.x-p2.x)*(p1.x-p2.x)\decimals 2\fixed0}}\par {\*\mjaformula (y{\subix 1} \u8722  y{\subix 2}){\supix 2} ={\expr (p1.y-p2.y)*(p1.y-p2.y)\decimals 2\fixed0}}\par \par {\*\mjaformula d(p{\subix 1} , p{\subix 2})}\fs34{\*\mjaformula ={\radical{\index}{\radicand (x{\subix 1} \u8722  x{\subix 2}){\supix 2}+(y{\subix 1} \u8722  y{\subix 2}){\supix 2} }}}\fs40\par \par                   {\*\mjaformula ={\radical{\index}{\radicand{\expr (p1.x-p2.x)*(p1.x-p2.x)\decimals 2\fixed0}+{\expr (p1.y-p2.y)*(p1.y-p2.y)\decimals 2\fixed0} }}}\par \par                   {\*\mjaformula ={\radical{\index}{\radicand{\expr (p1.x-p2.x)*(p1.x-p2.x) + (p1.y-p2.y)*(p1.y-p2.y)\decimals 2\fixed0} }}}{\*\mjaformula ={\expr sqrt((p1.x-p2.x)*(p1.x-p2.x)+(p1.y-p2.y)*(p1.y-p2.y))\decimals 2\fixed0}}\fs38}' fuente='Serif,ITALIC,20' fijo='no'">
+   <param name="G_03" value="espacio='E2' tipo='polígono' fondo='sí' color='grisClaro' coord_abs='sí' expresión='(0,0)(E2._w-1,0)(E2._w-1,E2._h-1)(0,E2._h-1)(0,0)' ancho='3'">
+   <param name="G_04" value="espacio='E2' tipo='segmento' color='negro' expresión='(p1.x,p1.y)(p2.x,p2.y)' fijo='sí' tamaño='0'">
+   <param name="G_05" value="espacio='E2' tipo='punto' expresión='(p1.x+0.25,p1.y+0.25)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs34\i{\*\mjaformula p{\subix 1}}\f2\fs30\i0}' fijo='sí' tamaño='0'">
+   <param name="G_06" value="espacio='E2' tipo='punto' expresión='(p2.x+0.25,p2.y+0.25)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs34\i{\*\mjaformula p{\subix 2}}\f2\fs30\i0}' fijo='sí' tamaño='0'">
+</ajs></p>
+
+</body>
+</html>

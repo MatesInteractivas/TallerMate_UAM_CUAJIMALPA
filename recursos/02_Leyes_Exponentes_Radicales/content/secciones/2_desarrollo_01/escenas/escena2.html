@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>
+
+        <link rel="stylesheet" type="text/css" href="../../../css/descartes.css">	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=760 height=480 code="Descartes">
+   <param name="tamaño" value="760x480">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo_760x510.png' despl_imagen='arr-izq' fondo='f3f0ec' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='Base' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(90,100,25,50)' valor='1' incr='0.5' min='-5' max='5' decimales='1' fijo='sí' visible='no'">
+   <param name="C_02" value="id='Exponente1' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(335,100,25,50)' valor='1' incr='1' min='1' max='5' decimales='1' fijo='sí' visible='no'">
+   <param name="C_03" value="id='Exponente2' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(555,100,25,50)' valor='1' incr='1' min='1' max='5' decimales='1' fijo='sí' visible='no'">
+   <param name="A_01" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez'">
+   <param name="A_02" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='texto' color='232323' expresión='[20,20]' texto='En este interactivo verás el producto de dos potencias. Podrás controlar la base (que es común a ambas potencias), el exponente de la primera potencia y el exponente de la segunda potencia.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='600'">
+   <param name="G_02" value="espacio='E1' tipo='texto' expresión='[20,115]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}{\colortbl\red0\green0\blue207;\red32\green48\blue58;}\f1\fs40\i\cf0 Base\cf1  =        {\*\mjaformula\cf0{\expr Base\decimals 1\fixed1}}\f2\fs30\i0}' fuente='Serif,ITALIC,20' fijo='sí'">
+   <param name="G_03" value="espacio='E1' tipo='texto' expresión='[200,115]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}{\colortbl\red190\green0\blue0;\red32\green48\blue58;}\f1\fs40\i\cf0 Exponente 1\cf1  =        {\*\mjaformula\cf0{\expr Exponente1\decimals 0\fixed1}}\f2\fs30\i0}' fuente='Serif,ITALIC,20' fijo='sí'">
+   <param name="G_04" value="espacio='E1' tipo='texto' expresión='[420,115]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}{\colortbl\red0\green166\blue0;\red32\green48\blue58;}\f1\fs40\i\cf0 Exponente 2\cf1  =        {\*\mjaformula\cf0{\expr Exponente2\decimals 0\fixed1}}\f2\fs30\i0}' fuente='Serif,ITALIC,20' fijo='sí'">
+   <param name="G_05" value="espacio='E1' tipo='texto' expresión='[20,175]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;\f4\fcharset0 Courier New;}{\colortbl\red0\green0\blue207;\red190\green0\blue0;\red0\green166\blue0;}\f1\fs34 (\f2\fs40\i{\*\mjaformula\cf0{\expr Base\decimals 1\fixed1}}\fs44{\*\mjaformula{\supix\cf1{\expr Exponente1\decimals 0\fixed1}}}\f1\fs34\i0 )(\f2\fs40\i{\*\mjaformula\cf0{\expr Base\decimals 1\fixed1}}\fs44{\*\mjaformula{\supix\cf2{\expr Exponente2\decimals 0\fixed1}}}\f1\fs34\i0 ) =\f4\fs30}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_06" value="espacio='E1' tipo='texto' expresión='[200+s*60,180]' familia='s' s.intervalo='[0,Exponente1-1]' s.pasos='Exponente1-1' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue207;}\f1\fs34 (\f2\fs40\i{\*\mjaformula\cf0{\expr Base\decimals 1\fixed1}}\f1\fs34\i0 )}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_07" value="espacio='E1' tipo='texto' expresión='[203+60*Exponente1,182]' texto='x...' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_08" value="espacio='E1' tipo='texto' expresión='[200+s*55,215]' familia='s' s.intervalo='[0,Exponente2-1]' s.pasos='Exponente2-1' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue207;}\f1\fs34 (\f2\fs40\i{\*\mjaformula\cf0{\expr Base\decimals 1\fixed1}}\f1\fs34\i0 )}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_09" value="espacio='E1' tipo='texto' expresión='[220,250]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red190\green0\blue0;\red33\green48\blue58;\red32\green48\blue58;\red0\green166\blue0;}\f1\fs34\{\f2\fs40\i{\*\mjaformula\cf0{\expr Exponente1\decimals 0\fixed1}}\f1\fs34\i0\cf1  + \cf2\f2\fs40\i{\*\mjaformula\cf3{\expr Exponente2\decimals 0\fixed1}}\f1\fs34\i0  = \f2\fs40\i{\*\mjaformula{\expr Exponente1+Exponente2\decimals 0\fixed1}}\f1\fs34\i0  veces\}}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_10" value="espacio='E1' tipo='texto' expresión='[180,285]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue207;}\f1\fs34 = \f2\fs40\i{\*\mjaformula\cf0{\expr Base\decimals 1\fixed1}}{\*\mjaformula{\supix{\expr Exponente1+Exponente2\decimals 0\fixed1}}}\f1\fs34\i0  = \f2\fs40\i{\*\mjaformula{\expr Base^(Exponente1+Exponente2)\decimals 10\fixed0}}\f1\fs34\i0}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_11" value="espacio='E1' tipo='texto' expresión='[20,330]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Arial;}\f1\fs34 Ahora ya has notado que al \b multiplicar\b0  potencias con igual base, el resultado es\par igual a elevar la base a un exponente que es la \b suma\b0  de los exponentes originales.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_12" value="espacio='E1' tipo='texto' expresión='[20,395]' texto='Ello se debe a que, al ser el exponente un indicador de cuántas veces se multiplica un número (la base) por sí mismo, el exponente final será el número de veces totales que se multiplica, que es la suma del exponente de cada potencia.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='600'">
+</ajs></p>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+
+<article class="course_content_container">
+
+<div class="course_content">
+
+<!-- INICIA EL CONTENIDO DE LA PÁGINA -->
+<!-- Título de la página -->
+<h1>Plano cartesiano</h1>
+
+<!-- Subtítulo -->
+<!-- <h2>Producto de dos binomios</h2> -->
+
+<!-- Párrafo -->
+<p>
+Los elementos más básicos con los que cuenta la geometría son los puntos, pero para poder entender, localizar y representar un punto, es necesario proporcionar un sistema que nos permita trabajar con ellos.
+</p>
+
+<p>
+Debido a esto surge la necesidad de crear un <strong>sistema de referencia</strong> y así entender los objetos de estudio de la geometría.
+</p>
+
+<p>
+El sistema de referencia que se presenta es el <strong>plano cartesiano</strong>, llamado así en honor al filósofo y matemático francés, René Descartes (1596-1650).
+</p>
+
+<!-- ejemplo para incluir una imagen -->
+<div class="course_extern_content">
+<figure>
+  <img style="width:50%;" src="imgs/Frans_Hals__Portret_van_Ren_Descartes.jpg"></img>
+
+  <figcaption style="padding-left:25%; padding-right:25%; font-style: italic; font-size:12px;">
+    <a href="http://commons.wikimedia.org/wiki/File:Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg#mediaviewer/Archivo:Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg">Frans Hals - Portret van René Descartes</a>» por Después de <a href="//es.wikipedia.org/wiki/Frans_Hals" class="extiw" title="es:Frans Hals">Frans Hals</a> (1582/1583–1666) - André Hatala [e.a.] (1997) De eeuw van Rembrandt, Bruxelles: Crédit communal de Belgique, <a href="//commons.wikimedia.org/wiki/Special:BookSources/2908388324" class="internal mw-magiclink-isbn">ISBN 2-908388-32-4</a>.. Disponible bajo la licencia Public domain vía <a href="//commons.wikimedia.org/wiki/">Wikimedia Commons</a>.
+  </figcaption>
+</figure>
+</div>
+
+<p>
+En esta lección se presenta qué es un plano cartesiano, cuál es su utilidad, así como la forma en la que se ubica y se representa un punto sobre el plano cartesiano.
+</p>
+
+<br>
+
+<!-- TERMINA EL CONTENIDO DE LA PÁGINA -->
+
+
+    <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Joel Espinosa Longi</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+</div>
+
+</article>
+
+</body>
+</html>

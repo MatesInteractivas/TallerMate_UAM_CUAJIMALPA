@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+ <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+  
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Ecuaciones de primer grado con una incógnita y estrategias de solución</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Ecuaciones de primer grado con una incógnita</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    Como vimos brevemente en la introducción, las ecuaciones de primer orden (y, en general, todas las ecuaciones) son una forma de abstraer un problema. Es decir, un problema que puede ser descrito en palabras, pero que en el fondo involucra cálculos, se puede intentar resolver con ecuaciones. Por ejemplo, <em>"Carmen le da a Miguel una ventaja de 20 m en una carrera. Cuando corren, ella avanza 3 metros cada segundo, y Miguel avanza 1.5 metros cada segundo. ¿Cuánto tiempo transcurrirá en que Carmen alcance a Miguel?</em>
+    </p>
+
+    <p>
+    Éste es un ejemplo de un problema enunciado en palabras y que involucra cálculos. Son este tipo de problemas los que originalmente motivaron la creación de ecuaciones que permitieran una solución ágil de los mismos. Pero para ello, es necesario modelar cuidadosamente el problema en forma de una ecuación (esto es, pasar del enunciado en palabras a una correcta representación de la ecuación correspondiente). Ello se abordará más a fondo en la parte de aplicaciones. Sin embargo, es importante que sepas la motivación de las ecuaciones.
+    </p>
+    
+    <!--- Párrafo --->
+    <p>
+    Ahora sí, regresemos a la parte de las ecuaciones como tal. Como también se notó en la introducción, lo que se busca es el valor de la incógnita. Una de las opciones es usar una estrategia de <em>prueba y error</em>.
+    </p>
+
+    <div class="instrucciones">Revisa el siguiente interactivo para observar esta estrategia en acción.</div>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="480" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+   
+    <p>
+    En el pasado interactivo ya notaste mejor qué es lo que buscas al resolver una ecuación. Se te dieron 5 respuestas entre las cuales una era la correcta. Sin embargo, habrás notado que la estrategia de <em>prueba y error</em> no es la más eficiente. En los problemas que te enfrentes, no habrá opción múltiple, y tratar de <em>atinarle</em> a la respuesta ya no sería costeable. Es entonces cuando hacemos uso del álgebra.
+    </p>
+
+    <h2>Estrategias de solución</h2>
+
+    <p>
+    Para encontrar de forma más dirigida el valor de la incógnita, necesitamos poder expresar la igualdad de una forma distinta. Necesitamos dejar toda la parte <em>numérica</em> de un lado de la igualdad, y la incógnita del otro. Para que esta manipulación no resulte en una violación de la igualdad, la acción que apliquemos de un lado de la igualdad debemos aplicarla del otro. Esta técnica posteriormente se puede resumir en algunos pasos memorizados y es entonces conocida como <strong><em>despeje</em></strong>.
+    </p>
+
+    <div class="instrucciones">Observa el siguiente interactivo. Es parecido al anterior, con la salvedad de que ahora observas el despeje de la incógnita para encontrar su valor de forma directa.</div>
+
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="510" frameborder="0" src="escenas/escena2.html"> </iframe>
+    </div>
+  
+    <p>
+    Nota que lo que se suma o resta inicialmente al lado izquierdo de la igualdad está justo diseñado para que se cancele lo que está estorbando en ese lado. Por lo mismo, si el primero estaba siendo sumado, el que se le agrega debe estar restado y viceversa. ¿Y para qué se hace lo mismo del otro lado de la igualdad? Pues precisamente para que siga siendo una igualdad (¡si le agregaras o quitaras algo sólo a un lado, ya no serían iguales ambos lados!).
+    </p>
+
+    <p>
+    Igualmente, lo que se divide del lado izquierdo (y que para mantener la igualdad también se divide del lado derecho) está justamente escogido para que sea lo mismo que el factor que está multiplicando a la \( x \), de tal forma que al ser dividido lo mismo entre sí mismo, dé la unidad (el número \( 1 \)). Ese número \( 1 \) está multiplicando a \( x \), pero sabemos que \( 1x=x \), por lo que podemos dejar de escribir el \( 1 \).
+    </p>
+
+    <p>
+    Ahora ves también que la regla o mnemotecnia del despeje (lo que esté sumando, pasarlo restando; lo que esté restando, pasarlo sumando; lo que esté multiplicando, pasarlo dividiendo; y lo que esté dividiendo, pasarlo multiplicando) proviene precisamente de la manipulación algebraica que hiciste para irte deshaciendo de los número incómodos. Finalmente, llegaste a una expresión donde sólo queda \( x \) de un lado de la igualdad. La simplificación o mnemotecnia es útil, ¡pero es mucho más remunerante si sabes de dónde viene!
+    </p>
+
+    <p>
+    Adicionalmente, en la comprobación pudiste ver que, usando esta estrategia, el valor que obtienes para tu incógnita satisface la igualdad (lo que queda del lado izquierdo es lo mismo que lo que queda del lado derecho).
+    </p>
+
+    <p>
+    No todos los despejes son así de sencillos. Para poder abordar despejes un poco más complicados, basta con siempre tener en cuenta que lo que estás haciendo es usar una <strong><em>operación inversa</strong></em> para cancelar alguno de los números incómodos. Es decir, si hay un número que está siendo sumado a tu incógnita, debes restarlo para cancelarlo. Pero si el número está multiplicando a tu incógnita, su operación inversa consiste en dividir por dicho número.
+    </p>
+
+    <p>
+    Más adelante observarás que hay ecuaciones que están escritas de distinta forma, pero que pueden reducirse a ecuaciones de primer grado con una incógnita. Entonces abordaremos un poco más a fondo cómo lidiar con dichas ecuaciones.
+    </p>
+
+  
+ <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>  
+
+  <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	  <!-- Créditos UAM  (siempre deben ir en primer lugar) -->
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>    
+       
+	    <!-- Aviso licencias -->
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <!-- Descartes -->
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+	</div>
+      </div>
+    </div> 
+    
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<head>
+   <title></title>
+        <link href="css/descartes.css" rel="stylesheet" type="text/css" />
+        <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+	
+	<script>
+  
+	 if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+	   document.addEventListener('touchend', function(e) {  
+	     if(window.parent.document.getElementById("main")!=null){
+	       parent.manageZoom();
+	     }
+	   },false);
+	 }
+       
+	 function showCredits(){
+	   
+	   if(window.parent.document.getElementById("main")!=null){
+	     showCreditsContainer();
+	   } else {
+	     document.getElementById('popup_creditos').className='visible';
+	   }
+	 }
+	 
+	 function showCreditsContainer(){
+	   
+	   window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+	   window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+	   var newDiv = document.createElement("div");
+	   newDiv.setAttribute("style","margin:0px; padding: 0px;")
+	   newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+	   window.parent.document.getElementById('popup_content').appendChild(newDiv);
+	 }
+     
+       </script>
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+
+<body>
+<article class="course_content_container">
+
+<div class="course_content">
+   
+<!--- Título de la página --->
+ <h1>Producto de dos binomios</h1>
+
+<div>
+<ajs name="Arquimedes" width=820 height=600 code="Arquimedes">
+   <param name="tamaño" value="820x600">
+   <param name="pleca" value="title='' subtitle='' subtitlines='0' bgcolor='' fgcolor='' align='' titleimage='' titlefont='' subtitlefont='' ">
+   <param name="rtf" value="{\rtf1\uc0{\fonttbl\f0\fcharset0 Arial;\f1\fcharset0 Arial;\f2\fcharset0 Arial;\f3\fcharset0 Times New Roman;\f4\fcharset0 Arial;\f5\fcharset0 Times New Roman;}{\colortbl\red208\green112\blue32;\red35\green35\blue35;}\cf0\f1\fs36    \cf1\fs34 Al multiplicar los binomios \f3\fs38\i{\*\mjaformula\f4\fs34\i ax+by\f3\fs38}\f2\fs34\i0  y \f3\fs38\i{\*\mjaformula\f4\fs34\i cx+dy\f3\fs38}\f2\fs34\i0  , el producto que obtenemos corresponde a multiplicar\par    cada t\u233 rmino de un binomio con los t\u233 rminos del otro:\par \par                                  \f3\fs38\i{\*\mjaformula (ax + by)(cx + dy) = axcx + axdy + bycx + bydy}\f2\fs34\i0\par \par    Si agrupamos y realizamos la suma de los t\u233 rminos semejantes obtenemos:\par \par                                 \f3\fs38\i{\*\mjaformula\f4\fs34\i (ax + by)(cx + dy) = acx{\supix 2} + (ad + bc)xy + bdy{\supix 2}\f3\fs38}\f2\fs34\i0\par \par    Este resultado ser\u225  la base para obtener los productos notables.\par \par    El producto de dos binomios suele representarse gr\u225 ficamente por medio del \u225 rea de un rect\u225 ngulo, \par    cuya base corresponde al primer binomio y cuya altura corresponde al segundo binomio. Por ejemplo, \par    el producto de \f3\fs38\i{\*\mjaformula\f4\fs34\i x+\f3\fs38 3}\f2\fs34\i0  con \f3\fs38\i{\*\mjaformula\f4\fs34\i x+\f3\fs38 1}\f2\fs34\i0 , se representar\u237 a de la siguiente manera:\par \par \par                                                          {\*\component\Space 147b11c99c5}\par \par \par \par \par \par \par \par \par    Contando los rect\u225 ngulos de cada tipo, tenemos uno de \u225 rea \f3\fs38\i{\*\mjaformula x{\supix 2}}\f2\fs34\i0 , cuatro de \u225 rea \f3\fs38\i{\*\mjaformula x}\f2\fs34\i0  y tres de \u225 rea \f3\fs38\i{\*\mjaformula 1}\f2\fs34\i0 .\par    De esto podemos observar que el producto \f3\fs38\i{\*\mjaformula (x+1)(x+3)=xx+3x+x+3=x{\supix 2}+4x+3}\f2\fs34\i0 , lo que \par    corresponde a los rect\u225 ngulos obtenidos en el diagrama.\par \par \par    \fs36\cf0 Ejemplos del producto de dos polinomios\fs34\cf1\par \par    1) \f3\fs38\i{\*\mjaformula 5x+3y}\f2\fs34\i0  por \f3\fs38\i{\*\mjaformula 17x+2y}\f2\fs34\i0\par \par    Realizando el producto tenemos:\par    \f3\fs38\i{\*\mjaformula (5x+3y)(17x+2y)}{\*\mjaformula =85x{\supix 2}+10xy+51xy+6y{\supix 2}}\par                                       {\*\mjaformula =85x{\supix 2}+(10+51)xy+6y{\supix 2}}\par                                       {\*\mjaformula =85x{\supix 2}+61xy+6y{\supix 2}}\f2\fs34\i0\par \par \par    2) \f3\fs38\i{\*\mjaformula 9x-2y}\f2\fs34\i0  por \f3\fs38\i{\*\mjaformula 15x+2y}\f2\fs34\i0\par \par    Realizando el producto tenemos:\par    \f3\fs38\i{\*\mjaformula (9x-2y)(15x+2y)}{\*\mjaformula =135x{\supix 2}+18xy-30xy-4y{\supix 2}}\par \f2\fs34\i0                                     \f3\fs38\i{\*\mjaformula =135x{\supix 2}+(18xy-30xy)-4y{\supix 2}}\f2\fs34\i0\par                                     \f3\fs38\i{\*\mjaformula =135x{\supix 2}-12xy-4y{\supix 2}}\f2\fs34\i0\par \par \par    3) \f3\fs38\i{\*\mjaformula 13x-4y}\f2\fs34\i0  por \f3\fs38\i{\*\mjaformula 8x-6y}\f2\fs34\i0\par \par    Realizando el producto tenemos:\par    \f3\fs38\i{\*\mjaformula (13x-4y)(8x-6y)}{\*\mjaformula\f3\fs38\i =104x{\supix 2}-78xy-32xy+24y{\supix 2}\fs42}\par \f2\fs34\i0                                    \f3\fs38\i{\*\mjaformula\f3\fs38\i =104x{\supix 2}-(78+32)xy+24y{\supix 2}}\f2\fs34\i0\par                                    \f3\fs38\i{\*\mjaformula\f3\fs38\i =104x{\supix 2}-110xy+24y{\supix 2}}\f0\fs24\i0\par }">
+   <param name="rtf_height" value="1229">
+   <param name="image_loader" value="">
+   <param name="expand" value="">
+   <param name="editable" value="no">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="nombre" value="Arquimedes">
+   <param name="Versión" value="5.4, 2016-05-18">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no">
+   <param name="E_01" value="tipo='R2' id='E0' x='301' y='354' ancho='200' alto='150' fijo='sí' imagen='imgs/ejemplo_producto_binomios_1.png' despl_imagen='arr-izq' fondo='blanco' red='no' red10='no' ejes='no' texto='no' cID='147b11c99c5'">
+</ajs>
+</div>
+
+<!-- TERMINA EL CONTENIDO DE LA PÁGINA -->
+
+
+<!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Joel Espinosa Longi</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica fue creada con <a href="http://arquimedes.matem.unam.mx/Descartes5/creditos/conCCL.html" target="_blank">Arquímedes</a>, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+   <!--- Parche para que no se dupliquen los créditos Arquímedes -->
+  <img src='imgs/plastaBlanca.jpg' style="position:absolute; bottom: 100px; left: 10px;"></img>
+  <!-- Final parche -->
+
+
+
+
+</div>
+
+</article>
+
+</body>
+</html>

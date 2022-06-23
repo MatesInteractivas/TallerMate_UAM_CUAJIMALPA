@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+  
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Solución a la ecuación de segundo grado por despeje directo y factorización</h1>
+
+    <p>
+    La ecuación cuadrática es de la forma \(ax^2+bx+c=0\), con \(a\), \(b\) y \(c\) los coeficientes de la misma. En ciertos casos, algunos de éstos pueden ser cero, simplificando la solución a la ecuación.
+    </p>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Despeje directo</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    En el caso en que \(b=0\), la ecuación cuadrática se reduce a \(ax^2+c=0\). Como podrás imaginarte, el despeje aquí es bastante directo. Se pasa \(c\) restando al otro lado de la igualdad, obteniendo \(ax^2=-c\). Se dividen ambos lados de la ecuación por \(a\), obteniendo \(x^2=-\frac{c}{a}\). Y, finalmente, se extrae la raíz de ambos lados de la ecuación, obteniendo \(x=\pm{\sqrt{-\frac{c}{a}}}\). Nota que esto sólo tiene sentido si el argumento de la raíz cuadrada (\(-\frac{c}{a}\)) es positivo, que a su vez implica que \(c\) y \(a\) deben tener signos opuestos.
+    </p>
+
+    <h2>Factorización</h2>
+    
+    <p>
+    Otro de los coeficientes que puede ser cero es \(c\). En este caso, tu ecuación será de la forma \(ax^2+bx=0\). Como te imaginarás, aquí se puede factorizar directamente \(x\), obteniendo la siguiente ecuación: \(x(ax+b)=0\). Para que esa ecuación sea cierta, algunos de sus factores (ya sea \(x\) o \(ax+b\), o bien los dos) tienen que ser cero. Así, una de tus soluciones es directamente \(x=0\). Y la otra solución es \(ax+b=0\) de donde \(ax=-b\) y, finalmente, \(x=-\frac{b}{a}\).
+    </p>
+
+	<p>
+    Como una nota al margen, aquí ves una de las primeras diferencias entre las ecuaciones de primer grado y las de segundo grado o cuadráticas. En las últimas, es posible tener más de una solución, mientras que en las primeras máximo habrá una. En general, las ecuaciones cuadráticas pueden tener dos soluciones, o una sola, o bien ninguna. Ello lo abordarás más adelante en otras unidades.
+    </p>
+
+	<p>
+    Hay ecuaciones en que los tres coeficientes son distintos de cero pero que, por tratarse de coeficientes <em>enteros</em>, sugieren que la ecuación pueda factorizarse. Por ejemplo, la ecuación \(2x^2-3x-2=0\) se puede factorizar en \((2x+1)(x-2)=0\). Para que sea cero, el primer factor \(2x+1\), o el segundo factor \(x-2\), o bien ambos habrán de ser cero. Si el primero es cero, entonces \(2x+1=0\), de donde \(2x=-1\) y, finalmente, \(x=-0.5\). Si el segundo factor es cero, entonces \(x-2=0\), de donde \(x=2\). Observa que en este tipo de ecuaciones, debes encontrar los coeficientes para las \(x\) dentro de los factores y el valor de los términos tales que, al ser multiplicados y la expresión simplificada, obtengas la ecuación cuadrática dada.
+    </p>
+
+	<p>
+    Un último ejemplo de factorización es cuando tu ecuación cuadrática es un trinomio cuadrado perfecto. Por ejemplo, \(x^2-10x+25=0\). En ese caso, sabemos que dicho trinomio cuadrado perfecto se puede factorizar como \((x-5)^2\), por lo que la ecuación cuadrática queda \((x-5)^2=0\). En este caso, ambos factores \(x-5\) son iguales y ambos habrán de ser cero para que toda la ecuación sea cero y la igualdad se cumpla. Así pues, \(x-5=0\), de donde \(x=5\). Nota que, en este caso, sólo hay una solución para la cuadrática, que es \(x=5\).
+    </p>
+
+	<p>
+    En el siguiente espacio interactivo verás ejemplos de los tipos de solución mencionados anteriormente.
+    </p>
+
+    
+    <!--- Instrucciones --->
+    <div class="instrucciones">Analiza la ecuación cuadrática en cada ejemplo. Antes de avanzar en la solución de la misma, intenta ubicar qué tipo de estrategia de las mencionadas anteriormente sería conveniente usar. Posteriormente, avanza en la solución con el botón 'Siguiente' o retrocede en la misma con 'Anterior'. Presta atención a todos los pasos.
+   </div>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="480" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    <p>
+    Adelantándonos un poco, eventualmente verás en otras unidades ecuaciones del tipo \(y=ax^2+bx+c\) en que se te pedirá obtener los cruces de su gráfica con el eje \(X\). En este caso, como te imaginarás, habrás de hacer que \(y\) sea 0 y obtener las soluciones de la ecuación cuadrática que te queda. En este caso, a las soluciones se les conoce como <em>raíces</em>, y son precisamente los valores de \(x\) en que la curva de una ecuación \(y=ax^2+bx+c\) cruza el eje \(X\).
+    </p>
+
+    <p>
+    Ahora que has visto ejemplos de solución en que la estrategia es la factorización, te imaginarás que hay otros casos en que la respuesta no es tan directa. En la siguiente página abordarás este tipo de ecuaciones y una forma general de encontrar las soluciones a ellas.
+    </p>
+
+
+  
+    <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

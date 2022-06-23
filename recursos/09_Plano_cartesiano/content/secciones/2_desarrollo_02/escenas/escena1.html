@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body BGCOLOR="e0e4e8" style="margin:0;padding:0;">
+
+<p align="center">
+<ajs name="Descartes" width=770 height=520 code="Descartes">
+   <param name="tamaño" value="770x520">
+   <param name="editable" value="no">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' escala='25' imagen='images/fondo.png' despl_imagen='arr-izq' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='E2' x='10' y='10' ancho='500' alto='500' fijo='sí' escala='25' despl_imagen='arr-izq' red='b8c4c8' red10='no' ejes='405860' texto='no'">
+   <param name="C_01" value="id='objGeo' tipo='numérico' interfaz='menú' región='interior' espacio='E1' expresión='(550,65,200,40)' fijo='sí' visible='no' opciones=' ,segmento,triángulo,cuadrilátero'">
+   <param name="C_02" value="id='p1_seg' tipo='gráfico' espacio='E2' color='88404040' color-int='88404040' tamaño='10' expresión='(p1_seg.x,p1_seg.y)' fijo='sí' dibujar-si='objGeo==1' activo-si='objGeo==1'">
+   <param name="C_03" value="id='p2_seg' tipo='gráfico' espacio='E2' color='88404040' color-int='88404040' tamaño='10' expresión='(p2_seg.x,p2_seg.y)' fijo='sí' dibujar-si='objGeo==1' activo-si='objGeo==1'">
+   <param name="C_04" value="id='p1_tri' tipo='gráfico' espacio='E2' color='88404040' color-int='88404040' tamaño='10' expresión='(p1_tri.x,p1_tri.y)' fijo='sí' dibujar-si='objGeo==2' activo-si='objGeo==2'">
+   <param name="C_05" value="id='p2_tri' tipo='gráfico' espacio='E2' color='88404040' color-int='88404040' tamaño='10' expresión='(p2_tri.x,p2_tri.y)' fijo='sí' dibujar-si='objGeo==2' activo-si='objGeo==2'">
+   <param name="C_06" value="id='p3_tri' tipo='gráfico' espacio='E2' color='88404040' color-int='88404040' tamaño='10' expresión='(p3_tri.x,p3_tri.y)' fijo='sí' dibujar-si='objGeo==2' activo-si='objGeo==2'">
+   <param name="C_07" value="id='p1_cua' tipo='gráfico' espacio='E2' color='88404040' color-int='88404040' tamaño='10' expresión='(p1_cua.x,p1_cua.y)' fijo='sí' dibujar-si='objGeo==3' activo-si='objGeo==3'">
+   <param name="C_08" value="id='p2_cua' tipo='gráfico' espacio='E2' color='88404040' color-int='88404040' tamaño='10' expresión='(p2_cua.x,p2_cua.y)' fijo='sí' dibujar-si='objGeo==3' activo-si='objGeo==3'">
+   <param name="C_09" value="id='p3_cua' tipo='gráfico' espacio='E2' color='88404040' color-int='88404040' tamaño='10' expresión='(p3_cua.x,p3_cua.y)' fijo='sí' dibujar-si='objGeo==3' activo-si='objGeo==3'">
+   <param name="C_10" value="id='p4_cua' tipo='gráfico' espacio='E2' color='88404040' color-int='88404040' tamaño='10' expresión='(p4_cua.x,p4_cua.y)' fijo='sí' dibujar-si='objGeo==3' activo-si='objGeo==3'">
+   <param name="A_01" value="id='constrain()' algoritmo='sí' expresión='0' algoritmo='sí' Local='minV,maxV' inicio='minV=-9;maxV=9' hacer='p1_seg.x=(max(minV,min(maxV,p1_seg.x)));p1_seg.y=(max(minV,min(maxV,p1_seg.y)));p2_seg.x=(max(minV,min(maxV,p2_seg.x)));p2_seg.y=(max(minV,min(maxV,p2_seg.y)));;p1_tri.x=(max(minV,min(maxV,p1_tri.x)));p1_tri.y=(max(minV,min(maxV,p1_tri.y)));p2_tri.x=(max(minV,min(maxV,p2_tri.x)));p2_tri.y=(max(minV,min(maxV,p2_tri.y)));p3_tri.x=(max(minV,min(maxV,p3_tri.x)));p3_tri.y=(max(minV,min(maxV,p3_tri.y)));;p1_cua.x=(max(minV,min(maxV,p1_cua.x)));p1_cua.y=(max(minV,min(maxV,p1_cua.y)));p2_cua.x=(max(minV,min(maxV,p2_cua.x)));p2_cua.y=(max(minV,min(maxV,p2_cua.y)));p3_cua.x=(max(minV,min(maxV,p3_cua.x)));p3_cua.y=(max(minV,min(maxV,p3_cua.y)));p4_cua.x=(max(minV,min(maxV,p4_cua.x)));p4_cua.y=(max(minV,min(maxV,p4_cua.y)));;'">
+   <param name="A_02" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='p1_seg.x=-9+ent(rnd*18);p1_seg.y=-9+ent(rnd*18);p2_seg.x=-9+ent(rnd*18);p2_seg.y=-9+ent(rnd*18);;p1_tri.x=-9+ent(rnd*18);p1_tri.y=-9+ent(rnd*18);p2_tri.x=-9+ent(rnd*18);p2_tri.y=-9+ent(rnd*18);p3_tri.x=-9+ent(rnd*18);p3_tri.y=-9+ent(rnd*18);;p1_cua.x=-9+ent(rnd*18);p1_cua.y=-9+ent(rnd*18);p2_cua.x=-9+ent(rnd*18);p2_cua.y=-9+ent(rnd*18);p3_cua.x=-9+ent(rnd*18);p3_cua.y=-9+ent(rnd*18);p4_cua.x=-9+ent(rnd*18);p4_cua.y=-9+ent(rnd*18);;;'">
+   <param name="A_03" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' hacer='constrain()'">
+   <param name="G_01" value="espacio='E1' tipo='polígono' color='be3c3ca5' dibujar-si='0'  coord_abs='sí' expresión='(0,0)(E1._w-1,0)(E1._w-1,E1._h-1)(0,E1._h-1)(0,0)'">
+   <param name="G_02" value="espacio='E2' tipo='segmento' color='grisObscuro' expresión='(0,-11)(0,11)' fijo='sí' tamaño='0'">
+   <param name="G_03" value="espacio='E2' tipo='segmento' color='grisObscuro' expresión='(-20,0)(20,0)' fijo='sí' tamaño='0'">
+   <param name="G_04" value="espacio='E2' tipo='segmento' color='negro' expresión='(s,0.1)(s,-0.1)' familia='s' s.intervalo='[-20,20]' s.pasos='40' fijo='sí' tamaño='0'">
+   <param name="G_05" value="espacio='E2' tipo='segmento' color='negro' expresión='(0.1,s)(-0.1,s)' familia='s' s.intervalo='[-20,20]' s.pasos='40' fijo='sí' tamaño='0'">
+   <param name="G_06" value="espacio='E2' tipo='punto' expresión='(s-1,-0.8)' familia='s' s.intervalo='[-20,-10]' s.pasos='10' texto='[s]' fuente='Monospaced,PLAIN,12' decimales='0' fijo='no' tamaño='0'">
+   <param name="G_07" value="espacio='E2' tipo='punto' expresión='(s-0.8,-0.8)' familia='s' s.intervalo='[-9,-1]' s.pasos='8' texto='[s]' fuente='Monospaced,PLAIN,12' decimales='0' fijo='no' tamaño='0'">
+   <param name="G_08" value="espacio='E2' tipo='punto' expresión='(s-0.6,-0.8)' familia='s' s.intervalo='[1,9]' s.pasos='8' texto='[s]' fuente='Monospaced,PLAIN,12' decimales='0' fijo='no' tamaño='0'">
+   <param name="G_09" value="espacio='E2' tipo='punto' expresión='(s-0.7,-0.8)' familia='s' s.intervalo='[10,20]' s.pasos='10' texto='[s]' fuente='Monospaced,PLAIN,12' decimales='0' fijo='no' tamaño='0'">
+   <param name="G_10" value="espacio='E2' tipo='punto' expresión='(-1.35,s-0.2)' familia='s' s.intervalo='[-20,-1]' s.pasos='19' texto='[s]' fuente='Monospaced,PLAIN,12' decimales='0' fijo='no' tamaño='0'">
+   <param name="G_11" value="espacio='E2' tipo='punto' expresión='(-1.2,s-0.2)' familia='s' s.intervalo='[1,20]' s.pasos='19' texto='[s]' fuente='Monospaced,PLAIN,12' decimales='0' fijo='no' tamaño='0'">
+   <param name="G_12" value="espacio='E1' tipo='texto' fondo='sí' color='282891' expresión='[565,20]' texto='Objeto geométrico' fuente='SansSerif,PLAIN,19' fijo='sí'">
+   <param name="G_13" value="espacio='E1' tipo='texto' color='282891' dibujar-si='objGeo>0' expresión='[580,150]' texto='Coordenadas:' fuente='SansSerif,PLAIN,19' fijo='sí'">
+   <param name="G_14" value="espacio='E1' tipo='texto' color='282891' dibujar-si='objGeo==1' expresión='[590,200]' texto='([p1_seg.x], [p1_seg.y]),\n([p2_seg.x], [p2_seg.y])' fuente='SansSerif,PLAIN,19' fijo='sí'">
+   <param name="G_15" value="espacio='E1' tipo='texto' color='282891' dibujar-si='objGeo==2' expresión='[590,200]' texto='([p1_tri.x], [p1_tri.y]),\n([p2_tri.x], [p2_tri.y]),\n([p3_tri.x], [p3_tri.y])' fuente='SansSerif,PLAIN,19' fijo='sí'">
+   <param name="G_16" value="espacio='E1' tipo='texto' color='282891' dibujar-si='objGeo==3' expresión='[590,200]' texto='([p1_cua.x], [p1_cua.y]),\n([p2_cua.x], [p2_cua.y]),\n([p3_cua.x], [p3_cua.y]),\n([p4_cua.x], [p4_cua.y])' fuente='SansSerif,PLAIN,19' fijo='sí'">
+   <param name="G_17" value="espacio='E2' tipo='polígono' color='b8c4c8' coord_abs='sí' expresión='(0,0)(E2._w-1,0)(E2._w-1,E2._h-1)(0,E2._h-1)(0,0)' ancho='2'">
+   <param name="G_18" value="espacio='E2' tipo='segmento' dibujar-si='objGeo==1' expresión='(p1_seg.x,p1_seg.y)(p2_seg.x,p2_seg.y)' fijo='sí' tamaño='3' ancho='3'">
+   <param name="G_19" value="espacio='E2' tipo='polígono' dibujar-si='objGeo==2' expresión='(p1_tri.x,p1_tri.y)(p2_tri.x,p2_tri.y)(p3_tri.x,p3_tri.y)(p1_tri.x,p1_tri.y)' relleno='98e1e100' ancho='3'">
+   <param name="G_20" value="espacio='E2' tipo='polígono' dibujar-si='objGeo==3' expresión='(p1_cua.x,p1_cua.y)(p2_cua.x,p2_cua.y)(p3_cua.x,p3_cua.y)(p4_cua.x,p4_cua.y)(p1_cua.x,p1_cua.y)' relleno='98e1e100' ancho='3'">
+</ajs></p>
+
+</body>
+</html>

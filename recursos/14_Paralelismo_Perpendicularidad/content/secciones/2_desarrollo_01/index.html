@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+ <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+  
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Nociones de paralelismo y/o perpendicularidad</h1>
+
+	<!--- Subtítulo (no necesario en introducción) --->
+    <h2>Concepto familiar de paralelismo y perpendicularidad</h2>
+    
+	<p>
+	El concepto de <em>paralelo</em> en el caso de rectas evoca una noción de que ellas deben de alguna forma tener la misma inclinación. Otra noción que se evoca es que, si está una más arriba que la otra, nunca se tocarán. Estas nociones familiares tienen una explicación matemática que veremos más adelante.
+	</p>
+
+	<p>
+	El concepto de <em>perpendicular</em> en el caso de rectas nos hace pensar que se cruzan formando un ángulo de 90 grados. Por lógica esperamos que dos rectas perpendiculares, a diferencia de las paralelas, se crucen en algún punto.
+	</p>
+
+	<!--- Subtítulo (no necesario en introducción) --->
+    <h2>Breve recordatorio de la recta</h2>
+        
+    <!--- Párrafo --->
+    <p>
+    Dado que el paralelismo y la perpendicularidad se tratarán con rectas, se proporciona este recordatorio de los parámetros que componen la ecuación de la recta típicamente representada por \( y=mx+b \):
+	<ul>
+		<li>\(m\) corresponde a la <strong>pendiente</strong> de la recta. Está relacionada con la inclinación de la misma. Su signo es positivo si al aumentar el valor de \(x\) también aumenta el valor de \(y\). Su signo es negativo si al aumentar el valor de \(x\) disminuye el valor de \(y\). Su magnitud es proporcional al grado de inclinación de la recta. De esta forma, indica cuánto aumenta o disminuye la recta en el eje \(Y\) al moverse una cantidad dada en el eje \(X\). La pendiente tiende a infinito conforme el ángulo de la recta con el eje \(X\) se aproxima a 90 grados.</li>
+		<li>\(b\) corresponde a la <strong>ordenada al origen</strong>; es el valor que adopta \(y\) cuando \(x\) vale cero. En otras palabras, corresponde a la distancia entre el origen y el punto en el cual la recta cruza el eje vertical. De esta forma, es una medida de qué tan arriba o abajo se encuentra la recta en cuestión.</li>
+	</ul>
+    </p>
+
+    <h2>Relación entre parámetros de rectas y su paralelismo o perpendicularidad</h2>
+
+	<p>
+	Ahora que has recordado los parámetros de la recta, observa el siguiente recurso interactivo en que se muestran dos rectas, que bien pueden ser paralelas o perpendiculares.
+	</p>
+    
+    <!--- Instrucciones --->
+    <div class="instrucciones">Observa el par de rectas mencionado y las ecuaciones de las mismas. Elige si las rectas han de ser paralelas o perpendiculares. Intenta determinar qué propiedades deben tener sus respectivos parámetros para que se cumpla que sean paralelas, perpendiculares o ninguna de las anteriores. Usa las lupas en la esquina inferior de la gráfica para controlar la escala de la misma.</div>
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="480" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+	<p>
+	Los segmentos verde y naranja en el interactivo son una forma de ver la pendiente. Es decir, la puedes obtener dividiendo el segmento vertical entre el horizontal, y el signo será positivo si el valor en \(y\) (la vertical) aumenta cuando aumenta el de \(x\) (la horizontal). Por otro lado, el signo será negativo si el valor en \(y\) disminuye cuando aumenta el de \(x\). Algunos puntos de interés que puedes notar del triángulo que se forma con los 2 segmentos y el pedazo de recta subtendido por ellos es:
+	<ul>
+		<li>En el caso de las rectas paralelas el triángulo es el mismo y, de hecho, no presenta rotación. Solamente se encuentra desplazado verticalmente, como pudiste notar al presionar el botón 'Intercambiar'. El que sea el mismo implica que la pendiente es la misma en rectas paralelas. Expresándolo matemáticamente, si la pendiente de la primera recta es \(m_1\) y la pendiente de la segunda recta es \(m_2\) y las rectas son paralelas, entonces \(m_1=m_2\).<br></li>
+		<li>En el caso de las rectas perpendiculares también obtienes el mismo triángulo, pero ahora no sólo está desplazado. El tamaño del lado del triángulo que antes era horizontal es ahora el tamaño del lado vertical. Y el tamaño del lado que antes era vertical ahora es el tamaño del horizontal. Es eso lo que sucede al intercambiar el numerador y denominador para pasar de la pendiente de una recta a la pendiente de su perpendicular. Esa inversión entre numerador y denominador la puedes lograr tomando el inverso de la fracción en cuestión. Por ejemplo, \(\frac{1}{\frac{c}{d}}=\frac{d}{c}\).<br></li>
+		<li>Adicionalmente al caso de las rectas perpendiculares, si la recta original está inclinada a la derecha, la perpendicular estará inclinada a la izquierda y viceversa. Eso implica que la pendiente de la recta perpendicular tendrá el signo opuesto al de la original.<br></li>
+		<li>Los dos puntos anteriores se pueden resumir, para las rectas perpendiculares, mediante \(m_1=-\frac{1}{m_2}\), donde nuevamente \(m_1\) es la pendiente de una de las rectas y \(m_2\) es la pendiente de su perpendicular. Otra forma de verlo es que si las rectas son perpendiculares, \(m_1m_2=-1\).<br></li>
+		<li>Si las pendientes respectivas de dos rectas no cumplen ninguna de las fórmulas mencionadas arriba, no serán ni perpendiculares ni paralelas.<br></li>
+	</ul>
+	</p>
+    
+    <p>
+    Ahora ya tienes los criterios que determinan que una recta sea paralela o perpendicular. Estos criterios dependen de la pendiente. ¡Claro, la pendiente es una forma de expresar la inclinación, y es la inclinación la encargada de determinar el ángulo entre las rectas! Es por eso que sólo depende de la pendiente y no de la ordenada al origen. Esta última sólo se encarga de desplazar la recta (sea paralela o perpendicular) hacia arriba o hacia abajo.
+    </p>
+    
+    <h2>Breviario cultural</h2>
+  
+    <p>
+    Tal vez recuerdes de la unidad sobre <em>Ecuaciones de primer grado con una incógnita</em> que la solución al problema puede verse como la coordenada en el eje \(X\) del punto en que se cruzan las dos rectas de las cuales se origina tu problema. En esa unidad también se vio que hay situaciones en que no hay solución al problema (normalmente esto resulta de una división por cero al despejar \(x\) de la ecuación). Este comportamiento responde a que, en esos casos, las dos rectas son paralelas, y por lo tanto no se cruzan nunca.
+    </p>
+
+  
+  <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>  
+
+  <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	  <!-- Créditos UAM  (siempre deben ir en primer lugar) -->
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>    
+       
+	    <!-- Aviso licencias -->
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <!-- Descartes -->
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+	</div>
+      </div>
+    </div> 
+    
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

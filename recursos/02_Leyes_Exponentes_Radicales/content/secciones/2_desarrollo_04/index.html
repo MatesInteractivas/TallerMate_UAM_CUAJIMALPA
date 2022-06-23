@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+   <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Agrupación por paréntesis y radicales</h1>
+	
+	<h2>Agrupación por paréntesis</h2>
+    
+    <!--- Párrafo --->
+    <p>
+    A veces, los exponentes (sean positivos, negativos, enteros o racionales) actúan sobre un producto de factores que constituyen la base. Por ejemplo, en la expresión \( ((2)(3))^3 \), la base es el producto de \( 2 \) por \( 3 \). En este caso, sabemos que dicho producto es \( 6 \), por lo que tal vez no le veas mucha utilidad. Pero ahora imagina que usas expresiones algebraicas como \( (xy)^3 \), donde \( xy \) representa el producto de una variable \( x \) por una \( y \).
+    </p>
+    
+    <!--- Instrucciones --->
+    <div class="instrucciones">Del siguiente interactivo nota qué sucede en este tipo de ejemplos.</div>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="510" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    <p>
+    En el interactivo de arriba pudiste notar cómo el exponente general de una base que está compuesta del producto de factores se <em>reparte</em> a cada uno de los factores de la base. Es una propiedad que también permite simplificar las expresiones.
+    </p>
+
+    <p>
+    Ya has visto como exponentes del tipo \( \frac{1}{n} \), con <em>n</em> siendo 1, 2, 3, ... (esto es, cualquier natural), implican que estás tomando la raíz \( n \)-ésima de tu base. Esa raíz se conoce como <em><strong>radical</strong></em>. Ahora observarás algunas leyes de los radicales que se pueden deducir a partir de las leyes de exponentes que hemos revisado.
+    </p>
+
+
+    <h2>Radicales</h2>
+    
+    <p>
+    La famosa "casita" presente en la raíz cuadrada es un símbolo que se conoce como <em>radical</em>. Como ya sabes, no es más que una forma de decir que estás elevando tu base a la potencia \( \frac{1}{n} \), con \( n \) apareciendo en la esquina superior izquierda de la "casita" de tu radical. Para el caso \( n=2 \) (la raíz cuadrada) es posible omitir dicho número. Es decir, si no ves el número en el radical, implica que es una raíz cuadrada.
+	</p>
+	
+	<p>
+	El número (o variable) \( n \) se conoce como el <em>índice del radical</em>. Lo que queda dentro de la "casita" es el <em>radicando</em>. Los radicandos son mayores o iguales a cero, pues de lo contrario estarías tomando la raíz de un número negativo. 
+    </p>
+	
+    <div class="instrucciones">En el siguiente interactivo trabajarás con variables que están sujetas a algún tipo de radicación (extracción de raíces) dependiendo de la propiedad que desees estudiar.</div>
+
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="510" frameborder="0" src="escenas/escena2.html"> </iframe>
+    </div>
+
+  <p>
+  Resumiendo:
+  </p>
+    <ul class='ley'>
+      <li>
+      El producto de dos raíces con igual radical y distintos radicandos equivale a tomar la raíz del producto de los radicandos: \({\sqrt[\leftroot{-2}\uproot{2}n]{x}}{\sqrt[\leftroot{-2}\uproot{2}n]{y}}=\sqrt[\leftroot{-2}\uproot{2}n]{xy}\)
+      </li>
+  
+      <li>
+      El tomar el cociente de dos raíces con igual radical pero distintos radicandos equivale a tomar la raíz correspondiente del cociente de los radicandos: \(\frac{\sqrt[\leftroot{-2}\uproot{2}n]{x}}{\sqrt[\leftroot{-2}\uproot{2}n]{y}}=\sqrt[\leftroot{-2}\uproot{2}n]{\frac{x}{y}}\)
+      </li>
+      
+      <li>
+      El tomar la potencia de una raíz elevada a un exponente equivale a elevar el radicando de la raíz al cociente del exponente entre el radical: \((\sqrt[\leftroot{-2}\uproot{2}m]{x})^n=x^\frac{n}{m}\)
+      </li>
+  
+      <li>
+      El tomar la raíz enésima de una raíz emésima equivale a tomar la raíz nm-ésima: \(\sqrt[\leftroot{-2}\uproot{2}n]{\sqrt[\leftroot{-2}\uproot{2}m]{x}}=\sqrt[\leftroot{-2}\uproot{2}nm]{x}\)
+      </li>
+      
+    </ul>
+
+    <p>
+    Ahora ya has visto que la notación con radicales puede ser explicada en términos de potencias con exponentes fraccionarios.
+    </p>
+
+    <p>
+    Nota nuevamente la utilidad de tomar en ocasiones un procedimiento pero en reversa. Ello nos ayudó a encontrar varias de las propiedades de los radicales.
+    </p>
+
+    <p>
+    Ahora ya estás listo para abordar los ejercicios.
+    </p>
+
+  
+  <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>    
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="hideCredits()">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+        <!-- Créditos UAM  (siempre deben ir en primer lugar) -->
+          <div class="creditos">
+                  <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+                  <ul class="autores">
+                          <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+                          <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+                  </ul>
+                  <img class="logos" src="icns/logosUAM.png"></img>
+          </div>
+          
+     
+          <!-- Aviso licencias -->
+          <div class="licencias">
+          
+                  <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+                  <!-- Descartes -->
+                  <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+          
+          </div>
+      </div>
+      </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

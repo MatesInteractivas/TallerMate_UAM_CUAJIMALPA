@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>
+
+      <style type="text/css" media="screen">
+	/*pulsador*/
+	#zm { }
+	#zm > canvas {
+	  display: none;
+	}
+    
+	#zm .up {
+	  background: white url("images/zoomIn.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zm > .up:hover {
+	  background-color: #efefef !important;
+	}
+	#zm > .up:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+    
+	#zm .down {
+	  background: white url("images/zoomOut.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zm .down:hover {
+	  background-color: #efefef !important;
+	}
+	#zm .down:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+      </style>	
+
+      <script type='text/javascript' src='lib/descartes-min.js'></script>
+      
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=750 height=480 code="Descartes">
+   <param name="tamaño" value="750x480">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo.png' despl_imagen='arr-izq' fondo='f3f0ec' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='Ans' x='10%' y='17%' ancho='80%' alto='81%' dibujar-si='shwAns' fijo='sí' despl_imagen='arr-izq' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_03" value="tipo='R2' id='PCar' x='20%' y='20%' ancho='60%' alto='70%' dibujar-si='(scrlAns=scrlAnsmax)&shwAns' despl_imagen='arr-izq' red='b8c4c8' red10='889498' ejes='405860' texto='405860'">
+   <param name="C_01" value="id='VerifBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Verificar' expresión='(E1._w/4-45,E1._h-35,90,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='sinRaicesResp=0\nVerif()' activo-si='!shwAns'">
+   <param name="C_02" value="id='VerRespBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Respuesta' expresión='(E1._w/2-60,E1._h-35,120,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn120x30.png' acción='calcular' parámetro='shwAns=1' dibujar-si='shwResp' activo-si='!shwAns' pos_mensajes='centro'">
+   <param name="C_03" value="id='OtroEjBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Otro ejercicio' expresión='(E1._w*3/4-60,E1._h-35,120,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn120x30.png' acción='calcular' parámetro='ReInit()' activo-si='!shwAns' pos_mensajes='centro'">
+   <param name="C_04" value="id='SinRaicesBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Sin raíces' expresión='(400,130,120,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn120x30.png' acción='calcular' parámetro='sinRaicesResp=1\nVerif()' dibujar-si='Tipo==3' activo-si='!shwAns' pos_mensajes='centro'">
+   <param name="C_05" value="id='Tp1Resp' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' nombre='_nada_' expresión='(110,60,150,40)' valor='&squot;?&squot;' incr='1' min='0' max='2' discreto='sí' decimales='0' fijo='sí' visible='sí' dibujar-si='Tipo==1' activo-si='!shwAns'">
+   <param name="C_06" value="id='zm' tipo='numérico' región='interior' espacio='PCar' nombre='_nada_' expresión='(PCar._w-33,PCar._h-63,30,60)' incr='5' max='2000' decimales='0' fijo='sí' visible='no' acción='calcular' parámetro='PCar.escala=zm'">
+   <param name="C_07" value="id='clsAnsBt' tipo='numérico' interfaz='botón' región='interior' espacio='Ans' nombre='_nada_' expresión='(Ans._w-25,5,20,20)' fijo='sí' visible='sí' imagen='images/cerrar.png' acción='calcular' parámetro='shwAns=0\nshwResp=0' pos_mensajes='centro'">
+   <param name="C_08" value="id='AntAnsBt' tipo='numérico' interfaz='botón' región='interior' espacio='Ans' nombre='Anterior' expresión='(Ans._w/3-45,Ans._h-35,90,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrlAns=scrlAns-1' dibujar-si='scrlAns>0' pos_mensajes='centro'">
+   <param name="C_09" value="id='SigAnsBt' tipo='numérico' interfaz='botón' región='interior' espacio='Ans' nombre='Siguiente' expresión='(Ans._w*2/3-45,Ans._h-35,90,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrlAns=scrlAns+1' dibujar-si='scrlAns<scrlAnsmax' pos_mensajes='centro'">
+   <param name="A_01" value="id='ReInit()' algoritmo='sí' algoritmo='sí' hacer='ReiniciaCampos();correcto=0;scrlAns=0;nTry=0;shwResp=0;RespVisit=0;sinRaices=0;sinRaicesResp=0;Tipo=1;bla=(Tipo==1)?GeneraTipo1():bla'">
+   <param name="A_02" value="id='ReiniciaCampos()' algoritmo='sí' algoritmo='sí' hacer='Tp1Resp=&squot;?&squot;'">
+   <param name="A_03" value="id='GeneraTipo1()' algoritmo='sí' algoritmo='sí' inicio='q=rnd;Tp1Caso=(q<0.3333)?&squot;Negativo&squot;:((q>0.6666)?&squot;Positivo&squot;:&squot;Cero&squot;);scrlAnsmax=3;PCar.escala=20;zm=20;PCar.Ox=0;PCar.Oy=0' hacer='bla=(Tp1Caso==&squot;Negativo&squot;)?SinRaices():bla;bla=(Tp1Caso==&squot;Cero&squot;)?IgualACero():bla;bla=(Tp1Caso==&squot;Positivo&squot;)?ConRaices():bla;'">
+   <param name="A_04" value="id='SinRaices()' algoritmo='sí' algoritmo='sí' hacer='Tp1A=sgn(0.5-rnd)*(0.5+ent(39.9999*rnd)/2);Tp1B=sgn(0.5-rnd)*(0.5+ent(39.9999*rnd)/2);Tp1C=sgn(0.5-rnd)*(0.5+ent(39.9999*rnd)/2);;Tp1Discrim=Tp1B^2-4*Tp1A*Tp1C;;Tp1xm=-Tp1B/(2*Tp1A);Tp1ym=Tp1A*Tp1xm^2+Tp1B*Tp1xm+Tp1C;;PCar.escala=200/abs(Tp1ym);PCar.Ox=-Tp1xm*PCar.escala;PCar.Oy=Tp1ym/2*PCar.escala;zm=PCar.escala' mientras='Tp1Discrim>=0'">
+   <param name="A_05" value="id='IgualACero()' algoritmo='sí' algoritmo='sí' hacer='Tp1A=sgn(0.5-rnd)*(0.5+ent(39.9999*rnd)/2);Tp1B=sgn(0.5-rnd)*(0.5+ent(39.9999*rnd)/2);Tp1C=(Tp1B^2)/(4*Tp1A);;Tp1xm=-Tp1B/(2*Tp1A);;PCar.escala=30;PCar.Ox=-Tp1xm*PCar.escala;PCarOy=0;zm=PCar.escala'">
+   <param name="A_06" value="id='ConRaices()' algoritmo='sí' algoritmo='sí' hacer='Tp1A=sgn(0.5-rnd)*(0.5+ent(39.9999*rnd)/2);Tp1B=sgn(0.5-rnd)*(0.5+ent(39.9999*rnd)/2);Tp1C=sgn(0.5-rnd)*(0.5+ent(39.9999*rnd)/2);;Tp1Discrim=Tp1B^2-4*Tp1A*Tp1C;;Tp1xm=-Tp1B/(2*Tp1A);Tp1ym=Tp1A*Tp1xm^2+Tp1B*Tp1xm+Tp1C;Tp1R1=(-Tp1B+sqrt(Tp1B^2-4*Tp1A*Tp1C))/(2*Tp1A);Tp1R2=(-Tp1B-sqrt(Tp1B^2-4*Tp1A*Tp1C))/(2*Tp1A);;PCar.escala=300/max(abs(Tp1R1-Tp1R2),abs(Tp1ym));PCar.Ox=-Tp1xm*PCar.escala;PCar.Oy=Tp1ym/2*PCar.escala;zm=PCar.escala' mientras='Tp1Discrim<=0'">
+   <param name="A_07" value="id='Verif()' algoritmo='sí' algoritmo='sí' hacer='bla=(Tipo==1)?Verif1():bla;;nTry=(correcto==2)?nTry+1:0;shwResp=((nTry>2)|((nTry>0)&(RespVisit)))?1:0;RespVisit=(shwResp)?1:RespVisit'">
+   <param name="A_08" value="id='Verif1()' algoritmo='sí' algoritmo='sí' inicio='correcto=1' hacer='aaa=_Eval_(Tp1Resp);correcto=(((Tp1Caso==&squot;Negativo&squot;)&(aaa==0))|((Tp1Caso==&squot;Cero&squot;)&(aaa==1))|((Tp1Caso==&squot;Positivo&squot;)&(aaa==2)))?correcto:2;correcto=(((Tp1Caso==&squot;Negativo&squot;)&(Tp1Resp==&squot;0&squot;))|((Tp1Caso==&squot;Cero&squot;)&(Tp1Resp==&squot;1&squot;))|((Tp1Caso==&squot;Positivo&squot;)&(Tp1Resp==&squot;2&squot;)))?correcto:2'">
+   <param name="A_09" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='ReInit()'">
+   <param name="A_10" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='imagen' dibujar-si='(correcto==1)' coord_abs='sí' expresión='(300,70)' archivo='images/bien.png'">
+   <param name="G_02" value="espacio='E1' tipo='imagen' dibujar-si='correcto==2' coord_abs='sí' expresión='(300,70)' archivo='images/mal.png'">
+   <param name="G_03" value="espacio='E1' tipo='punto' fondo='sí' dibujar-si='0' expresión='(0,0)' fijo='sí'">
+   <param name="G_04" value="espacio='E1' tipo='texto' dibujar-si='(Tipo==1)' expresión='[10,10]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34\u191 Cu\u225 ntas ra\u237 ces tiene la ecuaci\u243 n \f2\fs38\i{\*\mjaformula y={\expr Tp1A\decimals 2\fixed0}x{\supix 2}{\expr (Tp1B>=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(Tp1B)\decimals 2\fixed0}x{\expr (Tp1C>=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(Tp1C)\decimals 5\fixed0}}\f1\fs34\i0 ?}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_05" value="espacio='E1' tipo='texto' dibujar-si='(Tipo==1)' expresión='[10,70]' texto='# raíces =' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_06" value="espacio='Ans' tipo='polígono' fondo='sí' coord_abs='sí' expresión='(1,1)(Ans._w-1,1)(Ans._w-1,Ans._h-1)(1,Ans._h-1)(1,1)' ancho='2'">
+   <param name="G_07" value="espacio='PCar' tipo='ecuación' expresión='y=0' ancho='2'">
+   <param name="G_08" value="espacio='Ans' tipo='texto' dibujar-si='(Tipo==1)' expresión='[10,10]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 El discriminante, mismo que se encuentra en la ra\u237 z dentro de la\par f\u243 rmula general, es en este caso: \f2\fs38\i{\*\mjaformula b{\supix 2}-4ac={\expr Tp1B^2\decimals 2\fixed0}{\expr (-4*Tp1A*Tp1C>=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(4*Tp1A*Tp1C)\decimals 2\fixed0}={\expr Tp1B^2-4*Tp1A*Tp1C\decimals 2\fixed0}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_09" value="espacio='Ans' tipo='texto' dibujar-si='((Tipo==1)&(scrlAns>0))' expresión='[10,80]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}\f1\fs34 Notamos que dicho discriminante es {\*\mjaformula{\expr (Tp1Caso==&squot;Negativo&squot;)?&squot;negativo&squot;:((Tp1Caso==&squot;Cero&squot;)?&squot;cero&squot;:&squot;positivo&squot;)\decimals 0\fixed1}}.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_10" value="espacio='Ans' tipo='texto' dibujar-si='((Tipo==1)&(scrlAns>1)&(Tp1Caso==&squot;Positivo&squot;))' expresión='[10,130]' texto='Por lo tanto, su raíz dará un número real, mismo que se suma y se resta en la fórmula general para dar las dos raíces. De ahí que se cuenta con 2 raíces.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='550'">
+   <param name="G_11" value="espacio='Ans' tipo='texto' dibujar-si='((Tipo==1)&(scrlAns>1)&(Tp1Caso==&squot;Cero&squot;))' expresión='[10,130]' texto='Como el discriminante es cero, y la raíz de cero es cero, en la fórmula general se está sumando cero para obtener una de las raíces y se está restando cero para calcular la otra. De tal forma que se trata de la misma raíz. Es decir, sólo hay una raíz.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='550'">
+   <param name="G_12" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(Tipo==1)&(correcto==2)' expresión='[10,120]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Nota que, aunque puedes obtener la respuesta encontrando las ra\u237 ces, hay una forma\par m\u225 s econ\u243 mica de determinar el n\u250 mero de ra\u237 ces.\par \par Recuerda el discriminante \f2\fs38\i{\*\mjaformula b{\supix 2}-4ac}\f1\fs34\i0 . \u191 Qu\u233  pasa cuando es negativo? \u191 Cu\u225 ntas ra\u237 ces\par hay en tal caso? \u191 Cu\u225 ntas en el caso de que sea positivo? \u191 Cu\u225 ntas hay cuando\par vale cero?\par \par Nota que, de esta forma, no es necesario calcular las ra\u237 ces como tal para saber\par cu\u225 ntas hay.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_13" value="espacio='Ans' tipo='texto' dibujar-si='((Tipo==1)&(scrlAns>1)&(Tp1Caso==&squot;Negativo&squot;))' expresión='[10,130]' texto='Como el discriminante es negativo, la fórmula general estaría intentando calcular la raíz de un número negativo. Por lo tanto, no hay raíces para este problema.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='550'">
+   <param name="G_14" value="espacio='E1' tipo='punto' fondo='sí' dibujar-si='0' expresión='(0,0)' fijo='sí'">
+   <param name="G_15" value="espacio='E1' tipo='texto' dibujar-si='0' expresión='[20,E1._h-100]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;\f3\fcharset0 Courier New;}\f1\fs34\i Tp1Caso=\fs38{\*\mjaformula{\expr Tp1Caso\decimals 2\fixed0}}\f3\fs30\i0}' fuente='Serif,ITALIC,17' fijo='sí'">
+   <param name="G_16" value="espacio='PCar' tipo='ecuación' color='00b580' dibujar-si='Tipo==1' expresión='y=Tp1A*x^2+Tp1B*x+Tp1C' ancho='2'">
+   <param name="G_17" value="espacio='PCar' tipo='polígono' coord_abs='sí' expresión='(1,1)(PCar._w-1,1)(PCar._w-1,PCar._h-1)(1,PCar._h-1)(1,1)' ancho='2'">
+</ajs></p>
+
+</body>
+</html>

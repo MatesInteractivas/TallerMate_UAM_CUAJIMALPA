@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title></title>
+        <link href="css/descartes.css" rel="stylesheet" type="text/css" />
+        <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+	
+	<script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+
+<body>
+    
+<article class="course_content_container">
+
+<div class="course_content">
+   
+<!--- Título de la página --->
+<h1>Razones trigonométricas inversas: secante, cosecante y cotangente</h1>
+    
+<div>
+<ajs name="Arquimedes" width=820 height=600 code="Arquimedes">
+   <param name="tamaño" value="820x600">
+   <param name="pleca" value="title='' subtitle='' subtitlines='0' bgcolor='' fgcolor='' align='' titleimage='' titlefont='' subtitlefont='' ">
+   <param name="rtf" value="{\rtf1\uc0{\fonttbl\f0\fcharset0 Arial;\f1\fcharset0 Arial;\f2\fcharset0 Arial;\f3\fcharset0 Times New Roman;\f4\fcharset0 Times New Roman;\f5\fcharset0 Times New Roman;\f6\fcharset0 Arial;}{\colortbl\red32\green80\blue96;\red0\green0\blue0;}\f1\fs36\cf0    \fs34\cf1 Adem\u225 s del seno, el coseno y la tangente, hay otras tres razones trigonom\u233 tricas que son de utilidad:\par    \b cotangente\b0  (\f3\fs38\i{\*\mjaformula cot}\f0\fs34\i0 ), \b secante\b0  (\f3\fs38\i{\*\mjaformula sec}\f0\fs34\i0 ) y \b cosecante\b0  (\f3\fs38\i{\*\mjaformula csc}\f0\fs34\i0 ). Son las razones inversas de tangente, coseno\par    y seno, respectivamente. Estas razones trigonom\u233 tricas inversas se definen como:\par \par                \f4\fs38\b\i{\*\mjaformula cot(\u945 )={\fraction{\num 1}{\den tan}}={\fraction{\num c\f5\fs34\b\i a}{\den c\f5\fs34\b\i o}}                 sec(\u945 )={\fraction{\num 1}{\den cos}}={\fraction{\num hip}{\den\f5\fs34\b\i ca}}                  csc(\u945 )={\fraction{\num 1}{\den sin}}={\fraction{\num hip\f5\fs34\b\i}{\den c\f5\fs34\b\i o}}}\f0\fs34\b0\i0\par \par    Como puedes ver, para obtener estas relaciones inversas, solo se intercambian el numerador y el\par    denominador en las relaciones iniciales. De igual forma, las funciones inversas est\u225 n determinadas\par    por los lados de un tri\u225 ngulo rect\u225 ngulo.\par \par    Una notaci\u243 n alternariva para estas tres razones trigonom\u233 tricas inversas es \f3\fs38\i{\*\mjaformula tan{\supix -1}(\f3\fs38\i\u945 )}\f0\fs34\i0  para la\par    cotangente del \u225 ngulo \u945 , \f3\fs38\i{\*\mjaformula cos{\supix -1}(\f6\fs34\i\u945 \f3\fs38 )}\f0\fs34\i0  para la secante de \u945  y\f3\fs38\i  {\*\mjaformula sen{\supix -1}(\f6\fs34\i\u945 \f3\fs38 )}\f0\fs34\i0  para la cosecante de \u945 . \par    \par    Una forma com\u250 n para denotar los lados de un tri\u225 ngulo es d\u225 ndole al lado opuesto de un \u225 ngulo\par    la misma letra que dicho \u225 ngulo, pero en el alfabeto romano en vez del griego. As\u237 , estas nuevas\par    razones trigonom\u233 tricas se definen como:\par \par                                                                             {\*\component\Space 121b0e096d2}\cf0\par      \par          \cf1\f3\fs38\i{\*\mjaformula cot(\u945 )={\fraction{\num a}{\den b}}}\f0\fs34\i0                 \f3\fs38\i{\*\mjaformula cot(\u946 )={\fraction{\num b}{\den a}}}\f0\fs34\i0\par \par          \f3\fs38\i{\*\mjaformula sec(\u945 )={\fraction{\num c}{\den a}}}\f0\fs34\i0                \f3\fs38\i{\*\mjaformula sec(\u946 )={\fraction{\num c}{\den b}}}\f0\fs34\i0\par \par          \f3\fs38\i{\*\mjaformula csc(\u945 )={\fraction{\num c}{\den b}}}\f0\fs34\i0                \f3\fs38\i{\*\mjaformula csc(\u946 )={\fraction{\num c}{\den a}}}\f0\fs34\i0}">
+   <param name="rtf_height" value="651">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Arquimedes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no alto=32">
+   <param name="E_01" value="tipo='R2' id='E2' x='396' y='396' ancho='360' alto='240' fijo='sí' O.y='-20' imagen='images/fondo.png' despl_imagen='arr-izq' fondo='blanco' red='no' red10='no' ejes='no' texto='no' cID='121b0e096d2'">
+   <param name="A_01" value="id='inicia1()' algoritmo='sí' algoritmo='sí' hacer='bien2=0;aleat=ent(rnd*5.99);;'">
+   <param name="A_02" value="id='inicia2()' algoritmo='sí' algoritmo='sí' hacer='angulo=ent(rnd*36.99)+20;aleato=ent(rnd*3.99);hipotenusa=rnd*24.99+5;cady=hipotenusa*cos(angulo*pi/180);copu=hipotenusa*sen(angulo*pi/180);verifik1=0;verifik2=0;verifik3=0;numsen=&squot;&squot;;densen=&squot;&squot;;numcos=&squot;&squot;;dencos=&squot;&squot;;numtan=&squot;&squot;;dentan=&squot;&squot;;;;'">
+   <param name="A_03" value="id='Inicio' algoritmo='sí' evaluar='una-sola-vez' hacer='inicia1();inicia2();'">
+   <param name="G_01" value="espacio='E2' tipo='polígono' color='ffffffff' expresión='(-3,-1.5)(2,1)(2,-1.5)' relleno='b6c5cc'">
+   <param name="G_02" value="espacio='E2' tipo='polígono' color='negro' expresión='(2,-1.5)(2,-1.2)(1.7,-1.2)(1.7,-1.5)'">
+   <param name="G_03" value="espacio='E2' tipo='arco' color='negro' centro='(2,1)' radio='0.5' inicio='206.56' fin='270' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_04" value="espacio='E2' tipo='arco' color='negro' centro='(-3,-1.5)' fin='26.56' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_05" value="espacio='E2' tipo='segmento' color='negro' expresión='(-3,-1.5)(2,1)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_06" value="espacio='E2' tipo='segmento' color='negro' expresión='(-3,-1.5)(2,-1.5)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_07" value="espacio='E2' tipo='segmento' color='negro' expresión='(2,-1.5)(2,1)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_08" value="espacio='E2' tipo='punto' expresión='(-3,-1.5)' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_09" value="espacio='E2' tipo='punto' expresión='(2,-1.5)' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_10" value="espacio='E2' tipo='punto' expresión='(2,1)' fuente='Monospaced,PLAIN,12' fijo='sí'">
+   <param name="G_11" value="espacio='E2' tipo='texto' expresión='[145,85]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}{\colortbl\red0\green0\blue0;\red32\green48\blue58;}\f1\fs34\cf0 c\cf1\f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_12" value="espacio='E2' tipo='texto' expresión='[280,110]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}{\colortbl\red0\green0\blue0;\red32\green48\blue58;}\f1\fs34\cf0 b\cf1\f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_13" value="espacio='E2' tipo='texto' expresión='[150,180]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}{\colortbl\red0\green0\blue0;\red32\green48\blue58;}\f1\fs34\cf0 a\cf1\f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_14" value="espacio='E2' tipo='texto' color='negro' expresión='[90,150]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs34\u945 \f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="G_15" value="espacio='E2' tipo='texto' color='negro' expresión='[245,85]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs34\u946 \f2\fs24\par}' fuente='Arial,PLAIN,17' fijo='sí'">
+   <param name="S_01" value="nombre='jarrón' tipo='superficie' fondo='sí' expresión='aa=2*pi*u  \nhh=2*v-1  \nff=0.5+hh-hh^3  \nx=ff*cos(aa)  \ny=ff*sen(aa)  \nz=hh  \n' rotini='(0,180,-30)' Nu='32' Nv='24'">
+</ajs>
+</div>
+
+
+  
+  
+  <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Víctor Hugo García Jarillo</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+    
+	     <!-- Créditos recursos DGEE -->
+          <div class="creditos">
+                  <p class="proyecto">Inclusión de material didáctico de las unidades interactivas para bachillerato desarrolladas para la Dirección General de Evaluación Educativa (DGEE) de la UNAM en colaboración con el Instituto de Matematicas de la UNAM y el Proyecto Arquímedes.</p>
+                  <ul class="autores">
+                          <li>Dirección: <span class="nombre">Rosamaría Valle Gómez-Tagle</span></li>
+                          <li>Subdirección: <span class="nombre">Patricia Murillo Villegas</span></li>
+                          <li>Autor: <span class="nombre">Fernaro René Martínez Ortiz</span></li>
+                          <li>Edición académica: <span class="nombre">José Luis Abreu León</span></li>
+                          <li>Edición técnica: <span class="nombre">Norma Patricia Apodaca Álvarez</span></li>
+                  </ul>
+                  <img class="logos" src="icns/logosDGEE.png"></img>
+          </div>
+          
+
+          <!-- Créditos adaptación HTML5 (en caso de haberse incluido material de DGEE, Telesecundaria o PI) -->
+          <div class="creditos">
+                  <p class="proyecto">Adaptación a DescartesJS realizada en el marco del proyecto <a href="http://arquimedes.matem.unam.mx/lite/2013/" target="_blank">LITE 2013</a> y financiada por CONACyT.</p>
+                  <ul class="autores">
+                          <li>Adaptación: <span class="nombre">Víctor Hugo García Jarillo, Deyanira Monroy Zariñán</span></li>
+                          <li>Asesoría técnica: <span class="nombre">José Luis Abreu León, Óscar Escamilla González, Joel Espinosa Longi</span></li>
+                  </ul>
+                  <img class="logos" src="icns/logosDescartesJS.png"></img>
+          </div>
+          
+       
+	    <div class="licencias">
+		  <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		  <p>La unidad didáctica fue creada con <a href="http://arquimedes.matem.unam.mx/Descartes5/creditos/conCCL.html" target="_blank">Arquímedes</a>, una herramienta de código abierto.</p>	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  <!--- Parche para esconder créditos Arquímedes -->
+  <img src='images/plastaBlanca.jpg' style="position:absolute; bottom: 100px; left: 10px;"></img>
+  <!-- Final parche -->
+
+</div>
+
+</article>
+
+</body>
+</html>

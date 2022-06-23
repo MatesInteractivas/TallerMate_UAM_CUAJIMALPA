@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+		<title>Unidad 1.6 - La razón de cambio</title>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body BGCOLOR="c0c0c0" leftmargin="0" topmargin="0">
+<ajs name="Descartes" width=750 height=450 code="Descartes">
+   <param name="tamaño" value="750x450">
+   <param name="sonido" value="sí">
+   <param name="álgebra" value="sí">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no">
+   <param name="E_01" value="tipo='R2' id='E2' fijo='sí' escala='1' O.x='-50%' O.y='-50%' imagen='images/fondo.png' despl_imagen='expand.' fondo='blanco' red='no' red10='no' ejes='no' texto='negro'">
+   <param name="E_02" value="tipo='R2' id='E3' y='80' alto='400' fijo='sí' O.x='130' O.y='30' despl_imagen='arr-izq' fondo='ffc0c0c0' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='btnEspOp' tipo='numérico' interfaz='botón' región='interior' espacio='E2' nombre='Boton' expresión='(btnEspOp.x,btnEspOp.y,btnEspOp.w,btnEspOp.h)' fijo='sí' visible='sí' imagen='images/titulo/navegacion/espBtn.png' acción='calcular' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='0'">
+   <param name="C_02" value="id='pulsa.up' tipo='numérico' interfaz='botón' región='exterior' espacio='E3' expresión='(pulsa.up.x,pulsa.up.y,pulsa.up.w,pulsa.up.h)' valor='pulsa' fijo='sí' visible='sí' imagen='images/navEsp/up.png' acción='calcular' parámetro='pulsa=min(pulsa+1,pulsa.max)' parámetro.fuente='Monospaced,PLAIN,12'">
+   <param name="C_03" value="id='pulsa.dw' tipo='numérico' interfaz='botón' región='exterior' espacio='E3' expresión='(pulsa.dw.x,pulsa.dw.y,pulsa.dw.w,pulsa.dw.h)' fijo='sí' visible='sí' imagen='images/navEsp/dw.png' acción='calcular' parámetro='pulsa=max(pulsa-1,pulsa.min)' parámetro.fuente='Monospaced,PLAIN,12'">
+   <param name="C_04" value="id='pulsa' tipo='numérico' interfaz='campo de texto' región='exterior' espacio='E3' expresión='(pulsa.txt.x,pulsa.txt.y,pulsa.txt.w,pulsa.txt.h)' valor='pulsa' min='pulsa.min' max='pulsa.max' fijo='no' visible='sí' parámetro.fuente='Monospaced,PLAIN,12'">
+   <param name="C_05" value="id='---POS_BTNS---' tipo='numérico' interfaz='botón' región='interior' espacio='E2' nombre='------POS_BTNS---' expresión='(0,0,0,0)' fijo='sí' visible='no' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='0' activo-si='0' pos_mensajes='centro'">
+   <param name="C_06" value="id='graficas' tipo='gráfico' espacio='E2' color='azul' color-int='rojo' expresión='(graficas.x,graficas.y)' dibujar-si='verCtrAcomodar' activo-si='verCtrAcomodar'">
+   <param name="C_07" value="id='btnVerArriba' tipo='gráfico' espacio='E2' color='azul' color-int='rojo' expresión='(btnVerArriba.x,btnVerArriba.y)' dibujar-si='verCtrAcomodar' activo-si='verCtrAcomodar'">
+   <param name="C_08" value="id='btnVerAbajo' tipo='gráfico' espacio='E2' color='azul' color-int='rojo' expresión='(btnVerAbajo.x,btnVerAbajo.y)' dibujar-si='verCtrAcomodar' activo-si='verCtrAcomodar'">
+   <param name="C_09" value="id='pulsa' tipo='gráfico' espacio='E2' color='azul' color-int='rojo' expresión='(pulsa.x,pulsa.y)' dibujar-si='verCtrAcomodar' activo-si='verCtrAcomodar'">
+   <param name="C_10" value="id='outputPos' tipo='numérico' interfaz='campo de texto' región='exterior' espacio='E2' fijo='sí' visible='sí' acción='calcular' parámetro='muestraPosBtns()\n' parámetro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro'">
+   <param name="C_11" value="id='verCtrAcomodar' tipo='numérico' región='exterior' espacio='E2' nombre='verCtrAcomodar' incr='1' min='0' fijo='sí' visible='sí' acción='calcular' parámetro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro'">
+   <param name="C_12" value="id='Reiniciar' tipo='numérico' interfaz='botón' región='interior' espacio='E3' nombre='Reiniciar' expresión='(200,E3._h-35,120,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' fuente puntos='18' imagen='images/btn120x30.png' acción='calcular' parámetro='g1.x=2\ng1.y=2\nE3.escala=50\nt=0\ns=0\nr=0\n\n\n' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='(t=g1.x)&((s!=0)|(r!=0))' pos_mensajes='centro'">
+   <param name="C_13" value="id='t' tipo='numérico' interfaz='barra' región='interior' espacio='E3' expresión='(100,E3._h-5-200,260,30)' incr='0.01' min='0' max='g1.x' fijo='sí' visible='no' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='(g1.x!=0)&(g1.y!=0)&(t<g1.x)' pos_mensajes='centro'">
+   <param name="C_14" value="id='g1' tipo='gráfico' espacio='E3' color='azul' color-int='azul' tamaño='8' expresión='(g1.x,g1.y)' fijo='sí' dibujar-si='0' activo-si='t=0'">
+   <param name="C_15" value="id='g1.x' tipo='numérico' región='exterior' espacio='E3' nombre='g1.x' valor='2' incr='0.01' min='0' max='6' fijo='sí' visible='sí' parámetro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro'">
+   <param name="C_16" value="id='g1.y' tipo='numérico' región='exterior' espacio='E3' nombre='g1.y' valor='2' incr='0.01' min='0' max='5' fijo='sí' visible='sí' parámetro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro'">
+   <param name="C_17" value="id='s' tipo='numérico' interfaz='barra' región='interior' espacio='E3' expresión='(20,E3._h-5-280,30,130)' incr='0.001' min='0' max='1' fijo='no' visible='no' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='(t>=g1.x)&(prolongacion>=1)' activo-si='(t>=g1.x)&(prolongacion>=1)' pos_mensajes='centro'">
+   <param name="C_18" value="id='r' tipo='numérico' interfaz='barra' región='interior' espacio='E3' expresión='(60,E3._h-5-280,30,130)' incr='0.001' min='0' max='1' fijo='sí' visible='no' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='(t>=g1.x)&(prolongacion>=1)' activo-si='(t>=g1.x)&(prolongacion>=1)' pos_mensajes='centro'">
+   <param name="C_19" value="id='E3.escala' tipo='numérico' región='interior' espacio='E3' nombre='E3.escala' expresión='(E3._w-30,E3._h-45,24,40)' valor='50' incr='E3.escala*0.01' fijo='sí' visible='sí' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='0'">
+   <param name="A_01" value="id='---PLATILLA----------------'">
+   <param name="A_02" value="id='ctrsVarNames' vector='sí' evaluar='una-sola-vez' tamaño='4' expresión='ctrsVarNames[0]=&squot;graficas&squot;;ctrsVarNames[1]=&squot;btnVerArriba&squot;;ctrsVarNames[2]=&squot;btnVerAbajo&squot;;ctrsVarNames[3]=&squot;pulsa&squot;;;;;'">
+   <param name="A_03" value="id='muestraPosBtns()' algoritmo='sí' algoritmo='sí' inicio='_i=0;strOut=&squot;&squot;;strX=&squot;.x&squot;;strY=&squot;.y&squot;;strIgual=&squot;=&squot;;strSep=&squot;@&squot;' hacer='COMM=|***********************************************  *|;COMM=|*CON ESTA FUNCION SE PUEDE OBTENER LA POSICION   *|;COMM=|*DE LOS CONTROLES. HAY QUE REGISTRARLOS EN EL    *|;COMM=|*VECTOR -ctrsVarNames-. Hacer enter en el campo  *|;COMM=|*de texto externo y copiar la cadena que se ponga*|;COMM=|*Hay que remplazar las @ por el simbolo          *|;COMM=|*-punto y coma- y ponerlo en un  ALG para que    *|;COMM=|*asigne esas pocisiones -INIT_CTR-               *|;COMM=|**************************************************|;;;_strVar=ctrsVarNames[_i];_strVarX=_strVar+strX;_strVarY=_strVar+strY;_valVarX=_Eval_(_strVarX);_valVarY=_Eval_(_strVarY);;strTMP=_strVarX+strIgual+_valVarX+strSep;strTMP2=_strVarY+strIgual+_valVarY+strSep;;strOut=strOut+strTMP+strTMP2;outputPos=strOut;_i=_i+1;' mientras='_i<ctrsVarNames.long'">
+   <param name="A_04" value="id='acomodaDependientes()' algoritmo='sí' algoritmo='sí' hacer='btnEspOp.x=graficas.x+graficas.w-btnEspOp.w;btnEspOp.y=-graficas.y+graficas.h-1;;;;pulsa.up.x=pulsa.x+3;pulsa.up.y=-pulsa.y;pulsa.dw.x=pulsa.up.x+pulsa.up.w+2;pulsa.dw.y=pulsa.up.y;;pulsa.txt.x=pulsa.dw.x+pulsa.dw.w+2;pulsa.txt.y=pulsa.dw.y+1'">
+   <param name="A_05" value="id='---CODIGO-----------'">
+   <param name="A_06" value="id='h1' expresión='g1.x+g1.y'">
+   <param name="A_07" value="id='h2' expresión='g1.x-g1.y'">
+   <param name="A_08" value="id='k' expresión='(g1.x>=g1.y)?-abs(h2):abs(h2)'">
+   <param name="A_09" value="id='R' expresión='0.25*sqrt(g1.x*g1.x+g1.y*g1.y)'">
+   <param name="A_10" value="id='INIT_ESP' algoritmo='sí' evaluar='una-sola-vez' hacer='E2.w=E2._w;E2.h=E2._h;graficas.w=graficas._w;graficas.h=graficas._h'">
+   <param name="A_11" value="id='INIT_T' algoritmo='sí' evaluar='una-sola-vez' hacer='ô=&squot;***********************************************&squot;;ô=&squot;*****INICIALIZAMOS LOS TEXTOS DEL TITULO*******&squot;;ô=&squot;***********************************************&squot;;;titulo.capitulo=1;titulo.capitulo.txt=&squot;Geometría&squot;;titulo.titulo.txt=&squot;Teorema de Pitágoras&squot;;ô=&squot;*Para centrar el titulo*&squot;;titulo.titulo.dx=160;;;;ô=&squot;***********************************************&squot;;ô=&squot;*******INICIALIZAMOS LAS INSTRUCCIONES*********&squot;;ô=&squot;***********************************************&squot;;titulo.nRenglones=0;titulo.instrucciones[2]=&squot;&squot;;;titulo.verPestanaTitulo=1;titulo.verFondoMenu=1;'">
+   <param name="A_12" value="id='INIT_BTN_PLANT' algoritmo='sí' evaluar='una-sola-vez' hacer='retro.visible=1;avanzar.visible=1;;retro.x=(avanzar.visible)?667:690;retro.y=520;retro.w=35;retro.h=35;;avanzar.x=retro.x+retro.w+10;avanzar.x=(retro.visible)?avanzar.x:690;avanzar.y=retro.y;avanzar.w=retro.w;avanzar.h=retro.h;;;;;escBtn1.visible=1;escBtn2.visible=1;;escBtn1.x=72;escBtn1.y=531;escBtn1.w=148;escBtn1.h=25;;escBtn2.x=escBtn1.x+escBtn1.w+35;escBtn2.y=escBtn1.y;escBtn2.w=escBtn1.w;escBtn2.h=escBtn1.h'">
+   <param name="A_13" value="id='INIT_CTR' algoritmo='sí' evaluar='una-sola-vez' hacer='btnVerArriba.visible=1;btnVerArriba.act=1;btnVerArriba.w=100;btnVerArriba.h=27;;btnVerAbajo.visible=1;btnVerAbajo.act=1;btnVerAbajo.w=100;btnVerAbajo.h=27;;btnEspOp.visible=1;btnEspOp.w=147;btnEspOp.h=27;;pulsa.txt.w=50;pulsa.txt.h=22;;pulsa.up.w=22;pulsa.up.h=22;;pulsa.dw.w=22;pulsa.dw.h=22;pulsa.min=0;pulsa.max=10;pulsa=5;;COMM=|************************************************|;COMM=|**POSICION DE CONTROLES GRAFICOS*|;;;graficas.x=517;graficas.y=-223;btnVerArriba.x=266;btnVerArriba.y=-421;btnVerAbajo.x=145;btnVerAbajo.y=-422;pulsa.x=150;pulsa.y=-260;;;;;;;acomodaDependientes();;;'">
+   <param name="A_14" value="id='INIT' algoritmo='sí' evaluar='una-sola-vez'">
+   <param name="A_15" value="id='SYNC_ESP' algoritmo='sí' evaluar='siempre' hacer='titulo.Esp.w=E2._w;titulo.Esp.h=E2._h;;marcoG1.Esp.w=graficas._w;marcoG1.Esp.h=graficas._h;marcoG1.Esp.x=graficas.x;marcoG1.Esp.y=-graficas.y;marcoG1.margenImg=2;;;acomodaDependientes()'">
+   <param name="A_16" value="id='sigEscena' evento='sí' condición='nextEscena==1' acción='abrir Escena' parámetro='escena2.html target=_self' parámetro.fuente='Monospaced,PLAIN,12' ejecución='alternar' pos_mensajes='centro'">
+   <param name="A_17" value="id='antEscena' evento='sí' condición='prevEscena==1' acción='abrir Escena' parámetro='escena0.html target=_self' parámetro.fuente='Monospaced,PLAIN,12' ejecución='alternar' pos_mensajes='centro'">
+   <param name="A_18" value="id='CALC' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E2' tipo='texto' expresión='[25,25]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Arial;}\f1\fs36 Aqu\u237  se demuestra el teorema de Pit\u225 goras probando que la suma de las \u225 reas\par de los cuadrados de lados \f2\fs40\i{\*\mjaformula a}\f1\fs36\i0  y \f2\fs40\i{\*\mjaformula b}\f1\fs36\i0  corresponde al \u225 rea del cuadrado de lado \f2\fs40\i{\*\mjaformula c}\f3\fs36\b\i0 .\par }' fuente='SansSerif,PLAIN,18' fijo='sí'">
+   <param name="G_02" value="espacio='E3' tipo='texto' dibujar-si='(g1.x!=0)&(g1.y!=0)&(t<g1.x)' expresión='[100,E3._h-5-180]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Courier New;}\f1\fs36\par Desplaza la barra para mover el \par cuadrado de lado \f2\fs36\b\i b \f1\fs36\b0\i0 hacia abajo.\f3\fs24\par }' fuente='SansSerif,PLAIN,18' fijo='sí'">
+   <param name="G_03" value="espacio='E3' tipo='texto' dibujar-si='(prolongacion>1)&(t>=g1.x)&((r!=1)|(s!=1))' expresión='[100,E3._h-5-280]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Arial;\f3\fcharset0 Courier New;}\f1\fs36\b\par \b0 Manipula los controles \par de barra de la izquierda \par para mover los tri\u225 ngulos\par que se han generado \par debajo de los segmentos \par de recta que se han trazado.\f3\fs24\par \par }' fuente='SansSerif,BOLD,18' fijo='sí'">
+   <param name="G_04" value="espacio='E3' tipo='texto' dibujar-si='(s==1)&(r==1)' expresión='[100,E3._h-5-300]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Arial;\f3\fcharset0 Times New Roman;\f4\fcharset0 Courier New;}\f1\fs36\b\par \b0 Esto prueba el teorema \par de Pit\u225 goras \f3\fs40\i{\*\mjaformula a{\supix 2}+b{\supix 2}=c{\supix 2}}\f2\fs36\i0 ,\par ya que la suma de las \u225 reas \par de los cuadrados de \par lados \f3\fs40\i{\*\mjaformula a}\f2\fs36\i0  y \f3\fs40\i{\*\mjaformula b}\f2\fs36\i0  corresponde \par al \u225 rea del cuadrado de\par lado \f3\fs40\i{\*\mjaformula c}\f2\fs36\i0 .\par \f4\fs24}' fuente='SansSerif,BOLD,18' fijo='sí'">
+   <param name="G_05" value="espacio='E3' tipo='texto' dibujar-si='(g1.y=0)&(g1.x!=0)' expresión='[50,E3._h-5-300]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;\f4\fcharset0 Courier New;\f5\fcharset0 Courier New;}\f1\fs36\b\par Esto prueba el teorema \par de Pit\u225 goras\f2\fs36\i  \fs40{\*\mjaformula a{\supix 2}+b{\supix 2}=c{\supix 2}}\f1\fs36\i0 . \par En este caso particular \f2\fs36\i\par \fs40 b=0\f1\fs36\i0  y \f3\fs40\i a=c\f4\fs40\b0\i0 .\fs24\par \par }' fuente='SansSerif,BOLD,18' fijo='sí'">
+   <param name="G_06" value="espacio='E3' tipo='texto' dibujar-si='(g1.x=0)&(g1.y!=0)' expresión='[50,E3._h-5-300]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Courier New;\f4\fcharset0 Courier New;}\f1\fs36\b\par Esto prueba el teorema \par de Pit\u225 goras \f2\fs40\i{\*\mjaformula a{\supix 2}+b{\supix 2}=c{\supix 2}}\f1\fs36\i0 . \par En este caso particular\par \f2\fs40\i a=0\f1\fs36\i0  y \f2\fs40\i b=c\f3\fs38\b0\i0 .\fs24\par \par }' fuente='SansSerif,BOLD,18' fijo='sí'">
+   <param name="G_07" value="espacio='E3' tipo='polígono' color='9000b07d' expresión='(0,0)(g1.x,0)(g1.x,-g1.x)(0,-g1.x)(0,0)' relleno='9000b07d' ancho='0'">
+   <param name="G_08" value="espacio='E3' tipo='polígono' color='turquesa' dibujar-si='t=0' expresión='(0,0)(g1.x,0)(g1.x,g1.y)(0,0)' relleno='00dee7' ancho='0'">
+   <param name="G_09" value="espacio='E3' tipo='polígono' color='9000b07d' expresión='(g1.x,-t)(h1,-t)(h1,g1.y-t)(g1.x,g1.y-t)' relleno='9000b07d' ancho='0'">
+   <param name="G_10" value="espacio='E3' tipo='polígono' color='negro' expresión='(0,0)(g1.x,g1.y)(h2,h1)(-g1.y,g1.x)(0,0)' relleno='21bb95ff' ancho='2'">
+   <param name="G_11" value="espacio='E3' tipo='segmento' color='9200d6ff' dibujar-si='(prolongacion>=0.2)&(prolongacion<0.5)' expresión='(0,0)(g1.y,-g1.x)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0'">
+   <param name="G_12" value="espacio='E3' tipo='segmento' color='gris' dibujar-si='(prolongacion>0.5)&(prolongacion<1)' expresión='(0,0)(g1.y,-g1.x)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_13" value="espacio='E3' tipo='segmento' color='008000' dibujar-si='prolongacion>=1' expresión='(0,0)(g1.y,-g1.x)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0' ancho='3'">
+   <param name="G_14" value="espacio='E3' tipo='segmento' color='9200d6ff' dibujar-si='(prolongacion>=0.2)&(prolongacion<0.5)' expresión='(g1.y,-g1.x)(h1,k)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0'">
+   <param name="G_15" value="espacio='E3' tipo='segmento' color='gris' dibujar-si='(prolongacion>0.5)&(prolongacion<1)' expresión='(g1.y,-g1.x)(h1,k)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_16" value="espacio='E3' tipo='segmento' color='008000' dibujar-si='prolongacion>=1' expresión='(g1.y,-g1.x)(h1,k)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0' ancho='3'">
+   <param name="G_17" value="espacio='E3' tipo='segmento' color='9200d6ff' dibujar-si='(prolongacion>=0.2)&(prolongacion<0.5)' expresión='(g1.x,g1.y)(h1,k)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0'">
+   <param name="G_18" value="espacio='E3' tipo='segmento' color='gris' dibujar-si='(prolongacion>0.5)&(prolongacion<1)' expresión='(g1.x,g1.y)(h1,k)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_19" value="espacio='E3' tipo='segmento' color='008000' dibujar-si='prolongacion>=1' expresión='(g1.x,g1.y)(h1,k)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0' ancho='3'">
+   <param name="G_20" value="espacio='E3' tipo='polígono' dibujar-si='s>0' expresión='(0,0)(0,-g1.x)(g1.y,-g1.x)(0,0)' relleno='900000ff' ancho='0'">
+   <param name="G_21" value="espacio='E3' tipo='polígono' color='007775' dibujar-si='prolongacion>=1' expresión='(g1.y,-g1.x)(h1,-g1.x)(h1,k)(g1.y,-g1.x)' relleno='9000b077' ancho='0'">
+   <param name="G_22" value="espacio='E3' tipo='polígono' color='grisClaro' dibujar-si='s!=0' expresión='(0,0)(0,-g1.x)(g1.y,-g1.x)(0,0)' relleno='grisClaro'">
+   <param name="G_23" value="espacio='E3' tipo='polígono' color='grisClaro' dibujar-si='r!=0' expresión='(g1.y,-g1.x)(h1,k)(h1,-g1.x)(g1.y,-g1.x)' relleno='grisClaro'">
+   <param name="G_24" value="espacio='E3' tipo='polígono' color='008a85' dibujar-si='prolongacion>=1' expresión='(0+s*g1.x,0+s*g1.y)(0+s*g1.x,-g1.x+s*(k+g1.x))(g1.y+s*(h1-g1.y),-g1.x+s*(k+g1.x))(0+s*g1.x,0+s*g1.y)' relleno='9000b07d' ancho='0'">
+   <param name="G_25" value="espacio='E3' tipo='polígono' color='008a85' dibujar-si='r>0' expresión='(g1.y-r*g1.y,-g1.x+r*g1.x)(h1+r*(g1.x-h1),-g1.x+r*g1.x)(h1+r*(g1.x-h1),k+r*(g1.y-k))(g1.y-r*g1.y,-g1.x+r*g1.x)' relleno='9000b07d' ancho='0'">
+   <param name="G_26" value="espacio='E3' tipo='polígono' color='negro' dibujar-si='(s==1)&(r==1)' expresión='(0,0)(g1.y,-g1.x)(h1,k)(g1.x,g1.y)(0,0)' relleno='1bbb95ff' ancho='2'">
+   <param name="G_27" value="espacio='E3' tipo='segmento' color='negro' dibujar-si='s=1' expresión='(0,0)(g1.y,-g1.x)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_28" value="espacio='E3' tipo='segmento' color='negro' dibujar-si='r=1' expresión='(h1,k)(g1.y,-g1.x)' fuente='Monospaced,PLAIN,12' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_29" value="espacio='E3' tipo='segmento' dibujar-si='t=0' expresión='(0,0)(g1.x,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs36\b\i\par     a\f2\fs24\b0\i0\par}' fuente='Times New Roman,BOLD+ITALIC,18' fijo='sí' tamaño='0'">
+   <param name="G_30" value="espacio='E3' tipo='segmento' dibujar-si='t=0' expresión='(g1.x,0)(g1.x,g1.y)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs36\b\i b\f2\fs24\b0\i0\par}' fuente='Times New Roman,BOLD+ITALIC,18' fijo='sí' tamaño='0'">
+   <param name="G_31" value="espacio='E3' tipo='segmento' dibujar-si='t=0' expresión='(0,0)(g1.x,g1.y)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs36\b\i     c\f2\fs24\b0\i0\par}' fuente='Times New Roman,BOLD+ITALIC,18' fijo='sí' tamaño='0'">
+   <param name="G_32" value="espacio='E2' tipo='polígono' fondo='sí' color='grisObscuro' dibujar-si='0' coord_abs='sí' expresión='(0,0)(E2._w-1,0)(E2._w-1,E2._h-1)(0,E2._h-1)(0,0)' ancho='3'">
+   <param name="Animación" value="controles='no' auto='sí' repetir='sí' hacer='prolongacion=(t=g1.x)?prolongacion+0.01:0' mientras='prolongacion<1'">
+</ajs>
+
+<script id="macros/marcoGraf.txt" type="descartes/macro">
+tipo_de_macro=R2
+
+Idioma=español
+
+id='debug' constante='sí' expresión='1' evaluar='una-sola-vez'
+
+id='Esp.x' constante='sí' expresión='0' evaluar='una-sola-vez'
+
+id='Esp.y' constante='sí' expresión='0' evaluar='una-sola-vez'
+
+id='Esp.w' constante='sí' expresión='20' evaluar='una-sola-vez'
+
+id='Esp.h' constante='sí' expresión='20' evaluar='una-sola-vez'
+
+id='margenImg' constante='sí' expresión='4' evaluar='una-sola-vez'
+
+id='INIT' algoritmo='sí' evaluar='una-sola-vez' hacer='imgEsq.h=10;imgEsq.w=10;imgLado.w=10;imgLado.h=2'
+
+id='CALC' algoritmo='sí' evaluar='siempre' hacer='tmpEsp.x=Esp.x-margenImg;tmpEsp.y=Esp.y-margenImg;tmpEsp.w=Esp.w+2*margenImg;tmpEsp.h=Esp.h+2*margenImg;;tmpEsp.w=tmpEsp.w+(tmpEsp.w%2);tmpEsp.h=tmpEsp.h+(tmpEsp.h%2);;esqLT.x=tmpEsp.x-imgEsq.w/2;esqLT.y=tmpEsp.y-imgEsq.h/2;;esqLB.x=tmpEsp.x-imgEsq.w/2;esqLB.y=tmpEsp.y+tmpEsp.h-imgEsq.h/2;;esqRT.x=tmpEsp.x+tmpEsp.w-imgEsq.w/2;esqRT.y=tmpEsp.y-imgEsq.h/2;;esqRB.x=tmpEsp.x+tmpEsp.w-imgEsq.w/2;esqRB.y=tmpEsp.y+tmpEsp.h-imgEsq.h/2;;;borL.escX=1;borL.escY=(tmpEsp.h-imgEsq.h)/imgLado.h;borL.x=tmpEsp.x;borL.y=tmpEsp.y+tmpEsp.h/2;;borR.escX=1;borR.escY=borL.escY;borR.x=tmpEsp.x+tmpEsp.w;borR.y=borL.y;;;;;;borT.x=tmpEsp.x+tmpEsp.w/2;borT.y=tmpEsp.y;borT.escX=1;borT.escY=(tmpEsp.w-imgEsq.w)/imgLado.h;;;borB.x=tmpEsp.x+tmpEsp.w/2;borB.y=tmpEsp.y+tmpEsp.h;borB.escX=1;borB.escY=(tmpEsp.w-imgEsq.w)/imgLado.h'
+
+tipo='imagen' coord_abs='sí' expresión='(borT.x,borT.y,borT.escX,borT.escY)' archivo='images/titulo/marcoGraf/lado.png' rotini='90' 
+
+tipo='imagen' coord_abs='sí' expresión='(borR.x,borR.y,borR.escX,borR.escY)' archivo='images/titulo/marcoGraf/lado.png' 
+
+tipo='imagen' coord_abs='sí' expresión='(borB.x,borB.y,borB.escX,borB.escY)' archivo='images/titulo/marcoGraf/lado.png' rotini='-90' 
+
+tipo='imagen' coord_abs='sí' expresión='(borL.x,borL.y,borL.escX,borL.escY)' archivo='images/titulo/marcoGraf/lado.png' rotini='180' 
+
+tipo='imagen' coord_abs='sí' expresión='(esqLT.x,esqLT.y)' archivo='images/titulo/marcoGraf/esquina.png' rotini='180' 
+
+tipo='imagen' coord_abs='sí' expresión='(esqRT.x,esqRT.y)' archivo='images/titulo/marcoGraf/esquina.png' rotini='90' 
+
+tipo='imagen' coord_abs='sí' expresión='(esqLB.x,esqLB.y)' archivo='images/titulo/marcoGraf/esquina.png' rotini='-90' 
+
+tipo='imagen' coord_abs='sí' expresión='(esqRB.x,esqRB.y)' archivo='images/titulo/marcoGraf/esquina.png' 
+
+tipo='polígono' coord_abs='sí' expresión='(Esp.x,Esp.y)(Esp.x+Esp.w,Esp.y)(Esp.x+Esp.w,Esp.y+Esp.h)(Esp.x,Esp.y+Esp.h)(Esp.x,Esp.y)' relleno='blanco' ancho='0' 
+
+</script>
+
+<script id="macros/tituloUNAM.txt" type="descartes/macro">
+tipo_de_macro=R2
+
+Idioma=español
+
+id='verFondo' constante='sí' expresión='1' evaluar='una-sola-vez'
+
+id='verFondoMenu' constante='sí' expresión='1' evaluar='una-sola-vez'
+
+id='verPestanaTitulo' constante='sí' expresión='1' evaluar='una-sola-vez'
+
+id='Esp.w' constante='sí' expresión='1' evaluar='una-sola-vez'
+
+id='Esp.h' constante='sí' expresión='1' evaluar='una-sola-vez'
+
+id='nRenglones' constante='sí' expresión='6' evaluar='una-sola-vez'
+
+id='instrucciones' vector='sí' evaluar='una-sola-vez' tamaño='nRenglones' expresión='instrucciones[0]=|Instrucciones Renglon 1|;instrucciones[1]=|Instrucciones Renglon 2|;instrucciones[2]=|Instrucciones Renglon 3|;instrucciones[3]=|Instrucciones Renglon 3|;instrucciones[4]=|Instrucciones Renglon 3|;instrucciones[5]=|Instrucciones Renglon 3|;instrucciones[6]=|Instrucciones Renglon 3|'
+
+id='capitulo' constante='sí' expresión='3' evaluar='una-sola-vez'
+
+id='capitulo.txt' constante='sí' expresión='|Curvas, reas y volmenes. El cálculo diferencial e integral|' evaluar='una-sola-vez'
+
+id='titulo.dx' constante='sí' expresión='170' evaluar='una-sola-vez'
+
+id='titulo.txt' constante='sí' expresión='|La razón de cambio|' evaluar='una-sola-vez'
+
+id='INIT' algoritmo='sí' evaluar='una-sola-vez' hacer='head.img.w=1;head.img.h=50;;head.escX=Esp.w/head.img.w;head.escY=1;;head.x=(head.img.w*head.escX)/2;head.y=(head.img.h*head.escY)/2;;quitar=1;espacio.w=900;espacio.h=460;;hRenglonTxt=20;totalHeightTxt=hRenglonTxt*nRenglones;;;panelInst.partUp.w=756;panelInst.partUp.h=9;panelInst.partC.w=756;panelInst.partC.h=1;panelInst.partDw.w=778;panelInst.partDw.h=9;;;titulo.x=0;titulo.y=0;titulo.w=max(200,titulo.w);titulo.izq.w=13;titulo.izq.h=41;titulo.der.w=12;titulo.der.h=41;titulo.c.w=1;titulo.c.h=41;;;;imgEsq.w=20;imgEsq.h=20;;imgLado.w=19	;imgLado.h=2;;;panelInst.x=16;panelInst.y=55;;Menu.h=130;Menu.w=790'
+
+id='CALC' algoritmo='sí' evaluar='siempre' hacer='_guionTmp=|Capítulo |;_pipe=&squot;      |       &squot;;;;capituloTxt=_guionTmp+capitulo+&squot; | &squot;+capitulo.txt;tituloInterTxt=titulo.txt;;;;titulo.izq.x=titulo.x;titulo.izq.y=titulo.y;;;_faltaPorLlenar=titulo.w-titulo.der.w-titulo.izq.w;titulo.c.escX=_faltaPorLlenar/titulo.c.w;titulo.c.escY=1;titulo.c.x=titulo.x+titulo.izq.w+_faltaPorLlenar/2;titulo.c.y=titulo.y+titulo.c.h/2;;_aumento=(_faltaPorLlenar%2)?1:0;titulo.der.x=titulo.izq.x+_faltaPorLlenar+titulo.izq.w+_aumento;titulo.der.y=titulo.izq.y;;;totalHeightTxt=15*nRenglones;hTxtPorCubrir=totalHeightTxt-2*panelInst.partUp.h+15;hTxtPorCubrir=max(hTxtPorCubrir,2);;;panelInst.x=(Esp.w-panelInst.partUp.w)/2;panelInst.y=60;;panelInst.partUp.x=panelInst.x;panelInst.partUp.y=panelInst.y;;panelInst.partC.x=panelInst.partUp.x+panelInst.partC.w/2;panelInst.partC.y=panelInst.y+panelInst.partUp.h+hTxtPorCubrir/2-1;panelInst.partC.escX=1;panelInst.partC.escY=hTxtPorCubrir/panelInst.partC.h;;panelInst.partDw.x=panelInst.partUp.x;panelInst.partDw.y=panelInst.partC.y+hTxtPorCubrir/2;;;inst.x=panelInst.x+3;inst.y=panelInst.y+((nRenglones>1)?6:6);;panelInst.pestana.x=panelInst.x+20;panelInst.pestana.y=panelInst.partDw.y+panelInst.partDw.h-2;;verDialogInstruciones=(nRenglones>0);;;;;'
+
+tipo='polígono' coord_abs='sí' expresión='(0,0)(0,Esp.h)(Esp.w,Esp.h)(Esp.w,0)' relleno='e4e2df' ancho='0' 
+
+tipo='imagen' coord_abs='sí' expresión='(0,0)' archivo='images/titulo/fondo.png' 
+
+tipo='texto' expresión='[5,5]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}{\colortbl\red0\green0\blue0;\red60\green18\blue6;\red0\green0\blue255;}\cf0\f1\fs26\b{\*\mjaformula\cf1{\expr capituloTxt}\cf0}\cf2\f2\fs24\b0\par}' fuente='Arial,BOLD,13' fijo='sí' 
+
+tipo='texto' expresión='[153+titulo.dx,30]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Arial;\f3\fcharset0 Courier New;}{\colortbl\red0\green0\blue0;\red255\green255\blue255;\red0\green0\blue255;}\cf0\f1\fs24\b{\*\mjaformula\f2\fs22\b\cf1{\expr tituloInterTxt}\f3\fs24\b0\cf0}\cf2\f3\fs24\b0\par}' fuente='Arial,BOLD,12' fijo='sí' 
+
+tipo='imagen' dibujar-si='(nRenglones>0)' coord_abs='sí' expresión='(panelInst.partC.x,panelInst.partC.y,panelInst.partC.escX,panelInst.partC.escY)' archivo='images/titulo/panel/enMedio.png' 
+
+tipo='imagen' dibujar-si='(nRenglones>0)' coord_abs='sí' expresión='(panelInst.partUp.x,panelInst.partUp.y)' archivo='images/titulo/panel/arriba.png' 
+
+tipo='imagen' dibujar-si='(nRenglones>0)' coord_abs='sí' expresión='(panelInst.partDw.x,panelInst.partDw.y)' archivo='images/titulo/panel/arriba.png' rotini='-180' 
+
+tipo='imagen' dibujar-si='(nRenglones>0)&(verPestanaTitulo)' coord_abs='sí' expresión='(panelInst.pestana.x,panelInst.pestana.y)' archivo='images/titulo/panel/pestana.png' 
+
+tipo='texto' dibujar-si='(nRenglones>0)' expresión='[inst.x,inst.y+s*15]' familia='s' s.intervalo='[0,nRenglones-1]' s.pasos='nRenglones-1' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}{\colortbl\red50\green77\blue88;\red0\green0\blue255;}\f1\fs28{\*\mjaformula\cf0{\expr instrucciones[s]}\cf1}\f2\fs24\par}' fuente='Arial,PLAIN,14' fijo='sí' 
+
+tipo='imagen' dibujar-si='verFondoMenu' coord_abs='sí' expresión='(0,Esp.h-Menu.h)' archivo='images/titulo/menu/fondoMenu.png' 
+
+</script>
+
+</body>
+</html>

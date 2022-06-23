@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>
+
+      <style type="text/css" media="screen">
+	/*pulsador*/
+	#zm { }
+	#zm > canvas {
+	  display: none;
+	}
+    
+	#zm .up {
+	  background: white url("images/zoomIn.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zm > .up:hover {
+	  background-color: #efefef !important;
+	}
+	#zm > .up:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+    
+	#zm .down {
+	  background: white url("images/zoomOut.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zm .down:hover {
+	  background-color: #efefef !important;
+	}
+	#zm .down:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+      </style>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=750 height=480 code="Descartes">
+   <param name="tamaño" value="750x480">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo.png' despl_imagen='arr-izq' fondo='f3f0ec' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='PCar' x='51%' y='15%' ancho='350' alto='400' despl_imagen='arr-izq' red='b8c4c8' red10='889498' ejes='405860' texto='405860'">
+   <param name="C_01" value="id='a' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(50,5,27,50)' valor='0.5' incr='0.25' discreto='sí' fijo='no' visible='no' acción='calcular' parámetro='ReInit()'">
+   <param name="C_02" value="id='b' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(180,5,27,50)' valor='0.25' incr='0.25' discreto='sí' fijo='no' visible='no' acción='calcular' parámetro='ReInit()' pos_mensajes='centro'">
+   <param name="C_03" value="id='c' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(310,5,27,50)' valor='-2' incr='0.25' discreto='sí' fijo='no' visible='no' acción='calcular' parámetro='ReInit()' pos_mensajes='centro'">
+   <param name="C_04" value="id='AntBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Anterior' expresión='(E1._w/6-45,E1._h-35,90,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrl=scrl-1' dibujar-si='scrl>0' pos_mensajes='centro'">
+   <param name="C_05" value="id='SigBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Siguiente' expresión='(E1._w/3-45,E1._h-35,90,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrl=scrl+1' dibujar-si='scrl<scrlmax' pos_mensajes='centro'">
+   <param name="C_06" value="id='zm' tipo='numérico' región='interior' espacio='PCar' nombre='_nada_' expresión='(PCar._w-34,PCar._h-64,30,60)' valor='zm' incr='zmincr' min='1' discreto='sí' decimales='0' fijo='sí' visible='no' acción='calcular' parámetro='PCar.escala=zm' pos_mensajes='centro'">
+   <param name="A_01" value="id='ReInit()' algoritmo='sí' algoritmo='sí' hacer='discrim=b^2-4*a*c;;x1=((discrim>=0)&(a!=0))?ExtraeRaiz1():&squot;No hay raíz&squot;;x2=((discrim>=0)&(a!=0))?ExtraeRaiz2():&squot;No hay raíz&squot;;;h=(a!=0)?-b/(2*a):h;k=a*h^2+b*h+c;;p=(a!=0)?(1/a)/4:p;;Focox=h;Focoy=k+p;Directriz=k-p;;Inter_x=0;Inter_y=a*Inter_x^2+b*Inter_x+c'">
+   <param name="A_02" value="id='ExtraeRaiz1()' algoritmo='sí' expresión='x' algoritmo='sí' hacer='x=(-b+sqrt(b^2-4*a*c))/(2*a)'">
+   <param name="A_03" value="id='ExtraeRaiz2()' algoritmo='sí' expresión='x' algoritmo='sí' hacer='x=(-b-sqrt(b^2-4*a*c))/(2*a)'">
+   <param name="A_04" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='PCar.escala=48;zm=48;zmincr=48*0.05;scrlmax=8;ReInit()'">
+   <param name="A_05" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='PCar' tipo='ecuación' color='00ff80' expresión='y=a*x^2+b*x+c' ancho='2'">
+   <param name="G_02" value="espacio='PCar' tipo='punto' color='rojo' dibujar-si='(a!=0)&(scrl>3)' expresión='(Inter_x,Inter_y)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs38\i{\*\mjaformula (0,{\expr Inter_y\decimals 4\fixed0})}\f2\fs30\i0}' fuente='Serif,ITALIC,19' fijo='sí' tamaño='3'">
+   <param name="G_03" value="espacio='E1' tipo='texto' color='232323' expresión='[10,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}\f1\fs38\i a =       {\*\mjaformula{\expr a\decimals 4\fixed0}}\f2\fs34\i0}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_04" value="espacio='E1' tipo='texto' color='232323' expresión='[140,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}\f1\fs38\i b =       {\*\mjaformula{\expr b\decimals 4\fixed0}}\f2\fs34\i0}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_05" value="espacio='E1' tipo='texto' color='232323' expresión='[270,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}\f1\fs38\i c =       {\*\mjaformula{\expr c\decimals 4\fixed0}}\f2\fs34\i0}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_06" value="espacio='E1' tipo='texto' color='232323' expresión='[400,30]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}\f1\fs42\i{\*\mjaformula y=ax{\supix 2}+bx+c={\expr a\decimals 4\fixed0}x{\supix 2}{\expr (b>=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(b)\decimals 4\fixed0}x{\expr (c>=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(c)\decimals 4\fixed0}}\f2\fs34\i0}' fuente='Serif,ITALIC,21' fijo='sí'">
+   <param name="G_07" value="espacio='PCar' tipo='polígono' color='negro' coord_abs='sí' expresión='(1,1)(PCar._w-1,1)(PCar._w-1,PCar._h-1)(1,PCar._h-1)(1,1)' ancho='2'">
+   <param name="G_08" value="espacio='E1' tipo='punto' fondo='sí' dibujar-si='0' expresión='(0000,0)' fijo='sí'">
+   <param name="G_09" value="espacio='E1' tipo='texto' color='232323' dibujar-si='a==0' expresión='[10,90]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Esta no es la ecuaci\u243 n de una par\u225 bola. El\par valor de \f2\fs38\i a\f1\fs34\i0  ha de ser distinto de cero para\par que est\u233 s tratando con una par\u225 bola.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_10" value="espacio='E1' tipo='punto' fondo='sí' dibujar-si='0' expresión='(0000,0)' fijo='sí'">
+   <param name="G_11" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(a!=0)&(scrl>0)&(scrl<4)' expresión='[10,90]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\f1\fs34 La forma ordinaria de la ecuaci\u243 n de esta\par par\u225 bola es \f2\fs38\i{\*\mjaformula y{\expr (-k>=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(k)\decimals 4\fixed0}={\expr (p>=0)?&squot;&squot;:&squot;-&squot;\decimals 0\fixed1}{\fraction{\num (x{\expr (-h>=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(h)\decimals 4\fixed0}\cf0 ){\supix 2}}{\den{\expr abs(4*p)\decimals 4\fixed0}}}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_12" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(a!=0)&(scrl>1)&(scrl<4)' expresión='[10,170]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Del lado derecho de la igualdad, el \u250 nico\par t\u233 rmino que no depender\u225  de \f2\fs38\i x\f1\fs34\i0  (y que por\par lo mismo no se cancelar\u225  al hacer \f2\fs38\i x=0\f1\fs34\i0  al\par desarrollar la expresi\u243 n) es \f2\fs38\i{\*\mjaformula h{\supix 2}={\expr abs(h)\decimals 4\fixed0}{\supix 2}=}\f1\fs34\i0\par \f2\fs38\i{\*\mjaformula\f2\fs38\i{\expr h^2\decimals 4\fixed0}}\f1\fs34\i0 . Este t\u233 rmino est\u225  dividido por\par \f2\fs38\i{\*\mjaformula{\expr 4*p\decimals 4\fixed0}}\f1\fs34\i0 , por lo que el t\u233 rmino independiente\par ser\u225  \f2\fs38\i{\*\mjaformula{\expr h^2/(4*p)\decimals 4\fixed0}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_13" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(a!=0)&(scrl>2)&(scrl<4)' expresión='[10,355]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Del lado izquierdo de la ecuaci\u243 n, el t\u233 rmino\par \f2\fs38\i{\*\mjaformula -k={\expr -k\decimals 4\fixed0}}\f1\fs34\i0 , al no depender de \f2\fs38\i x\f1\fs34\i0 , tampoco\par se cancelar\u225  al sustituir \f2\fs38\i x=0\f1\fs34\i0  en ella.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_14" value="espacio='E1' tipo='punto' fondo='sí' dibujar-si='0' expresión='(0000,0)' fijo='sí'">
+   <param name="G_15" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(a!=0)&(scrl>3)&(scrl<7)' expresión='[10,90]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Pasando este t\u233 rmino al otro lado de la\par igualdad obtenemos un t\u233 rmino indepen-\par diente de \f2\fs38\i x\f1\fs34\i0  para nuestra ecuaci\u243 n que es\par \f2\fs38\i{\*\mjaformula{\fraction{\num h{\supix 2}}{\den 4p}}+k}\f1\fs34\i0 , que en este ejemplo es\par \f2\fs38\i{\*\mjaformula{\expr h^2/(4*p)\decimals 4\fixed0}{\expr (k&gt;=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(k)\decimals 4\fixed1}={\expr h^2/(4*p)+k\decimals 4\fixed0}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_16" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(a!=0)&(scrl>4)&(scrl<7)' expresión='[10,240]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Como era de esperarse, \u233 ste es el t\u233 rmino\par independiente \f2\fs38\i c\f1\fs34\i0  en la forma general.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_17" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(a!=0)&(scrl>5)&(scrl<7)' expresión='[10,300]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Nota que, como \f2\fs38\i a\f1\fs34\i0  y \f2\fs38\i b\f1\fs34\i0  est\u225 n multiplicados\par por \f2\fs38\i{\*\mjaformula x{\supix 2}}\f1\fs34\i0  y \f2\fs38\i{\*\mjaformula x}\f1\fs34\i0  respectivamente, siempre que\par se use \f2\fs38\i x=0\f1\fs34\i0 , no importa el valor que estos\par coeficientes tengan, el valor de la coorde-\par nada vertical del punto de cruce con el eje\par \f2\fs38\i Y\f1\fs34\i0  siempre ser\u225  el mismo.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_18" value="espacio='E1' tipo='punto' fondo='sí' dibujar-si='0' expresión='(0000,0)' fijo='sí'">
+   <param name="G_19" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(a!=0)&(scrl>6)' expresión='[10,90]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Esto lo puedes notar alterando el valor de\par \f2\fs38\i a\f1\fs34\i0  y \f2\fs38\i b\f1\fs34\i0  en los pulsadores. Aunque la forma\par de la curva cambie, el punto de intersec-\par ci\u243 n con las ordenadas no cambia. S\u243 lo \f2\fs38\i c\f1\fs34\i0\par (el t\u233 rmino independiente de \f2\fs38\i x\f1\fs34\i0 ) juega un\par papel en cambiar el valor de la coorde-\par nada vertical de este punto.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_20" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(a!=0)&(scrl>7)' expresión='[10,270]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Generalizando, las coordenadas del punto\par de intersecci\u243 n con el eje \f2\fs38\i Y\f1\fs34\i0  para una\par par\u225 bola vertical son \f2\fs38\i{\*\mjaformula (0,c)}\f1\fs34\i0  o, lo que es\par lo mismo, \f2\fs38\i{\*\mjaformula (0,{\fraction{\num h{\supix 2}}{\den 4p}}+k)}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+</ajs></p>
+
+</body>
+</html>

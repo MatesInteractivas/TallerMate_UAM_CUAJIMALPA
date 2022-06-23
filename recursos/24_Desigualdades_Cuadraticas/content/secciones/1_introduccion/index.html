@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+
+<article class="course_content_container">
+  
+  <div class="course_content">
+    
+    
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    
+    <!--- Título de la página --->
+    <h1>Uso de las desigualdades cuadráticas</h1>
+    
+    
+    <!--- Párrafo --->
+    <p>En unidades anteriores, se estudiaron las propiedades de las desigualdades y los métodos que se emplean para resolverlas en los casos más sencillos, por ejemplo desigualdades entre números reales o las desigualdades para ecuaciones de primer grado (lineales).</p>
+    
+    <p>A continuación se expondrán las propiedades principales de las desigualdades de segundo grado (cuadráticas), las cuales desempeñan un papel importante en distintas áreas de las ciencias y las matemáticas superiores debido a sus aplicaciones. La razón de esto estriba en que cuando resolvemos problemas aplicados, los valores de las magnitudes utilizadas tanto para los datos iniciales como para los resultados obtenidos son valores <em>aproximados</em>, no exactos, por ejemplo: la distancia a la Luna, la velocidad de la Tierra, etc.</p>
+    
+    <p>En el caso de desigualdades de primer grado, cuando resolvemos un problema aplicado y \(x\) es el valor encontrado, tenemos un cierto error de medición, en este caso es \( \Delta x \). Entonces nuestro valor exacto cumple que:</p>
+    
+    <p><div align="center">\( x-\left|\Delta x\right| \leq y \leq x+\left|\Delta x\right| \)</div></p>
+    
+    <p>Este análisis se puede tomar como base para soluciones de problemas más complejos en los cuales intervienen ecuaciones de segundo grado, por lo que en esta unidad nos enfocaremos en ellos.</p>
+
+
+    <!------ TERMINA EL CONTENIDO DE LA PÁGINA --------->
+
+
+
+  <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Víctor Hugo García Jarillo</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+    
+     
+          <div class="creditos">
+                  <p class="proyecto"><strong>Fuentes consultadas</strong></p>
+                  <ul>
+                          <li>J.J. Aparicio Pedreño. <em>Ecuaciones lineales. Didáctica y perspectiva histórica, </em><a href="http://www.sinewton.org/numeros/numeros/57/Articulo01.pdf" target='_blank'>http://www.sinewton.org/numeros/numeros/57/Articulo01.pdf</a></li>
+                          <li>Campus virtual Birtuala. <em>Sistemas de ecuaciones lineales, </em><a href="http://cvb.ehu.es/open_course_ware/castellano/tecnicas/fundamen_mate/contenidos/teoria/documentos-pdf/sistemas-ecuaciones-lineales.pdf" target='_blank'>http://cvb.ehu.es/open_course_ware/castellano/tecnicas/fundamen_mate/contenidos/teoria/documentos-pdf/sistemas-ecuaciones-lineales.pdf</a></li>
+                  </ul>
+          </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

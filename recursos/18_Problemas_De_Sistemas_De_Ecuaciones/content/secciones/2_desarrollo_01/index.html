@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title></title>
+        <link href="css/descartes.css" rel="stylesheet" type="text/css" />
+        <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+	<script>
+  
+	 if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+	   document.addEventListener('touchend', function(e) {  
+	     if(window.parent.document.getElementById("main")!=null){
+	       parent.manageZoom();
+	     }
+	   },false);
+	 }
+       
+	 function showCredits(){
+	   
+	   if(window.parent.document.getElementById("main")!=null){
+	     showCreditsContainer();
+	   } else {
+	     document.getElementById('popup_creditos').className='visible';
+	   }
+	 }
+	 
+	 function showCreditsContainer(){
+	   
+	   window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+	   window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+	   var newDiv = document.createElement("div");
+	   newDiv.setAttribute("style","margin:0px; padding: 0px;")
+	   newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+	   window.parent.document.getElementById('popup_content').appendChild(newDiv);
+	 }
+     
+       </script>
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+
+<body>
+    
+<article class="course_content_container">
+
+<div class="course_content">
+   
+<!--- Título de la página --->
+ <h1>Problema 1</h1>
+    
+<div>
+<ajs name="Arquimedes" width=820 height=565 code="Arquimedes">
+   <param name="tamaño" value="820x565">
+   <param name="pleca" value="title='' subtitle='' subtitlines='0' bgcolor='' fgcolor='' align='' titleimage='' titlefont='' subtitlefont='' ">
+   <param name="rtf" value="{\rtf1\uc0{\fonttbl\f0\fcharset0 Arial;\f1\fcharset0 Arial;\f2\fcharset0 Arial;\f3\fcharset0 Times New Roman;\f4\fcharset0 Arial;}{\colortbl\red32\green80\blue96;\red35\green35\blue35;\red208\green112\blue32;\red0\green0\blue0;}\f1\fs36\cf0    \fs34\cf1 El \b lenguaje algebraico\b0  nos permite resolver diferentes tipos de problemas. A menudo, las\par    dificultades se presentan cuando queremos traducir un problema a este lenguaje; una vez \par    que logremos eso, ya s\u243 lo se trata de seguir el m\u233 todo para encontrar la soluci\u243 n al problema.\par    Por ejemplo, cuando en un problema se necesita encontrar el valor de dos inc\u243 gnitas y al traducirlo\par    al lenguaje algebraico se obtiene un par de ecuaciones lineales con dos variables,  entonces s\u243 lo\par    se necesita resolver el sistema por cualquiera de los m\u233 todos estudiados en la unidad anterior.\par \par    Veamos un primer ejemplo.\par \par \par    \fs36\cf2 Planteamiento del problema en lenguaje algebraico\fs34\cf1\par \par    Como ejemplo podemos traducir al lenguaje algebraico el problema que se enuncia a continuaci\u243 n.\cf3  \par \par    {\*\component\Space 12119ec893f}\par \par \par \par \par \par    \par    \cf1 En este ejemplo se tienen dos inc\u243 gnitas:  la cantidad de litros de la soluci\u243 n A (inc\u243 gnita a la cu\u225 l le\par    asignamos la letra \f3\fs38\i{\*\mjaformula x}\f0\fs34\i0 ) y la cantidad de litros de la soluci\u243 n B (a la cual se le asigna la inc\u243 gnita \f3\fs38\i{\*\mjaformula y}\f0\fs34\i0 ).\par \par    Por un lado, se sabe que el n\u250 mero de litros de la soluci\u243 n A m\u225 s el n\u250 mero de litros de la soluci\u243 n \par    B debe producir los 50 litros que se necesitan. De aqu\u237  se tiene la ecuaci\u243 n:\par \par                                                                \f3\fs38\i{\*\mjaformula x + y = 50}\f0\fs34\i0\par \par    Por otro lado, la concentraci\u243 n de alcohol de la soluci\u243 n A (3%) multiplicada por el n\u250 mero de litros \par    de la soluci\u243 n A (\f3\fs38\i{\*\mjaformula x}\f0\fs34\i0 ) m\u225 s la concentraci\u243 n de alcohol de la soluci\u243 n B (6%) multiplicado por el n\u250 mero \par    de litros de la soluci\u243 n B (\f3\fs38\i{\*\mjaformula y}\f0\fs34\i0 ) debe producir el porcentaje de alcohol deseado (4.4%) multiplicado por\par    el n\u250 mero de litros totales (50). Se tiene entonces una segunda ecuaci\u243 n:\par \par                                                          \f3\fs38\i{\*\mjaformula 0.03x + 0.06y = 0.044(50)}\f0\fs34\i0  \cf0\fs36\par \par \par    \cf2 Soluci\u243 n al sistema\cf3\fs34\par \par    Una vez que el problema ha quedado expresado como un sistema de ecuaciones lineales de \f3\fs38\i{\*\mjaformula 2x2}\f0\fs34\i0 ,\par    hay que aplicar alguno de los m\u233 todos de soluci\u243 n para encontrar la respuesta al problema.\par \par    Recordemos que la soluci\u243 n a un sistema de ecuaciones lineales est\u225  dada por el punto de\par    intersecci\u243 n de las rectas que corresponden a las ecuaciones, siempre y cuando dichas rectas se\par    crucen. Si no lo hacen el sistema no tiene soluci\u243 n. Otra posibilidad es que el sistema tenga una\par    infinidad de soluciones; esto es el caso si las rectas est\u225 n sobrepuestas.\par \par                                                      \f3\fs38\i{\*\mjaformula (1) x+y=50}\f4\fs34  \par \par                                                      \f3\fs38{\*\mjaformula (2) 0.03 x+0.06 y=2.2} \f0\fs34\i0\par \par    Se puede utilizar el \b m\u233 todo de sustituci\u243 n\b0  puesto que es f\u225 cil despejar cualquiera de las inc\u243 gnitas\par    de la ecuaci\u243 n (1). As\u237 , el anterior sistema es equivalente al sistema:\par \par                                                     \i  \f3\fs38{\*\mjaformula (3) y=50-x}\f4\fs34\par \par                                                      \f3\fs38{\*\mjaformula (4) 0.03 x+0.06 y=2.2}  \f0\fs34\i0\par \par    Sustituyendo el valor de \f3\fs38\i{\*\mjaformula y}\f0\fs34\i0  de la ecuaci\u243 n (3) en la ecuaci\u243 n (4) se obtiene la ecuaci\u243 n:\par                              \par                                                        \f3\fs38\i{\*\mjaformula 0.03 x+0.06(50-x)=2.2}\f0\fs34\i0\par \par    \u201 sta es una ecuaci\u243 n lineal que se simplifica como:\par \par                                                               \f3\fs38\i{\*\mjaformula -0.03 x+3=2.2}\f0\fs34\i0\par \par    Al resolver esta \u250 ltima ecuaci\u243 n se obtiene que  \f3\fs38\i{\*\mjaformula x = 26.67}\f4\fs34\cf0  \fs36\i0  \fs34\cf3 litros, valor que, al ser sustituido en la\par    ecuaci\u243 n (3) produce  \f3\fs38\i{\*\mjaformula y = 23.33}\f4\fs34\cf0  \fs36\i0  \fs34\cf3 litros. }">
+   <param name="rtf_height" value="1448">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Arquimedes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no alto=32">
+   <param name="E_01" value="tipo='R2' id='E2' x='31' y='305' ancho='740' alto='115' fijo='sí' despl_imagen='arr-izq' fondo='blanco' red='no' red10='no' ejes='no' texto='no' cID='12119ec893f'">
+   <param name="A_01" value="id='inicia1()' algoritmo='sí' algoritmo='sí' hacer='porcentajeA=ent(8.99*rnd)+1;porcentajeB=porcentajeA+ent(3.99*rnd)+1;litros=(ent(9.99*rnd)+4)*10;porcentajetotal=porcentajeA+0.1+ent(10*(porcentajeB-porcentajeA-0.2)*rnd)/10;'">
+   <param name="A_02" value="id='inicia3()' algoritmo='sí' algoritmo='sí' hacer='mult=ent(2.99*rnd)+2;edadpeque=ent(14.99*rnd)+10;anios=ent(7.99*rnd)+1;edadgrande=mult*(edadpeque+anios)-anios;excedente=edadgrande-edadpeque'">
+   <param name="A_03" value="id='inicia2()' algoritmo='sí' algoritmo='sí' hacer='velrio=ent(3.99*rnd)+1;velbote=velrio+ent(6.99*rnd)+1;tiempo1=ent(9.99*rnd)+1;tiempo2=ent(9.99*rnd)+1;'">
+   <param name="A_04" value="id='calculo1()' algoritmo='sí' algoritmo='sí' hacer='baraja=ent(7.99*rnd)+1;respuestaA=baraja-ent(baraja/5)*5;respuestaB=(3+baraja)-ent((3+baraja)/5)*5;respuestaC=(1+baraja)-ent((1+baraja)/5)*5'">
+   <param name="A_05" value="id='calculo2()' algoritmo='sí' algoritmo='sí' hacer='baraja2=ent(7.99*rnd)+1;respuestaA2=baraja2-ent(baraja2/5)*5;respuestaB2=(3+baraja2)-ent((3+baraja2)/5)*5'">
+   <param name="A_06" value="id='calculo3()' algoritmo='sí' algoritmo='sí' hacer='baraja3=ent(7.99*rnd)+1;respuestaA3=baraja3-ent(baraja3/5)*5;respuestaB3=(3+baraja3)-ent((3+baraja3)/5)*5'">
+   <param name="A_07" value="id='Inicio' algoritmo='sí' evaluar='una-sola-vez' hacer='aleat=0;calculo1();inicia1();inicia2();inicia3();bien2=0;bien=0'">
+   <param name="G_01" value="espacio='E2' tipo='texto' expresión='[50,10]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}\f1\fs36\b Una soluci\u243 n A contiene 3% de alcohol y otra soluci\u243 n B, 6% de alcohol. Se desea\par mezclar las dos soluciones para obtener 50 litros de una soluci\u243 n que contenga 4.4%\par de alcohol. \u191 Cu\u225 ntos litros de cada una de las soluciones (A y B) ser\u225 n necesarios\par para obtener la soluci\u243 n pedida?\f2\fs36\b0\par }' fuente='Serif,BOLD,18' fijo='sí'">
+</ajs>
+</div>
+
+<!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Víctor Hugo García Jarillo</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+    
+    
+	 <!-- Créditos recursos DGEE -->
+          <div class="creditos">
+                  <p class="proyecto">Inclusión de material didáctico de las unidades interactivas para bachillerato desarrolladas para la Dirección General de Evaluación Educativa (DGEE) de la UNAM en colaboración con el Instituto de Matematicas de la UNAM y el Proyecto Arquímedes.</p>
+                  <ul class="autores">
+                          <li>Dirección: <span class="nombre">Rosamaría Valle Gómez-Tagle</span></li>
+                          <li>Subdirección: <span class="nombre">Patricia Murillo Villegas</span></li>
+                          <li>Autor: <span class="nombre">Fernando René Martínez Ortiz</span></li>
+                          <li>Edición académica: <span class="nombre">José Luis Abreu León</span></li>
+                          <li>Edición técnica: <span class="nombre">Norma Patricia Apodaca Álvarez</span></li>
+                  </ul>
+                  <img class="logos" src="icns/logosDGEE.png"></img>
+          </div>
+          
+       
+          <!-- Créditos adaptación HTML5 (en caso de haberse incluido material de DGEE, Telesecundaria o PI) -->
+          <div class="creditos">
+                  <p class="proyecto">Adaptación a DescartesJS realizada en el marco del proyecto <a href="http://arquimedes.matem.unam.mx/lite/2013/" target="_blank">LITE 2013</a> y financiada por CONACyT.</p>
+                  <ul class="autores">
+                          <li>Adaptación: <span class="nombre">Víctor Hugo García Jarillo, Deyanira Monroy Zariñán</span></li>
+                          <li>Asesoría técnica: <span class="nombre">José Luis Abreu León, Óscar Escamilla González, Joel Espinosa Longi</span></li>
+                  </ul>
+                  <img class="logos" src="icns/logosDescartesJS.png"></img>
+          </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		     <p>La unidad didáctica fue creada con <a href="http://arquimedes.matem.unam.mx/Descartes5/creditos/conCCL.html" target="_blank">Arquímedes</a>, una herramienta de código abierto.</p>		    
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  <!--- Parche para esconder créditos Arquímedes -->
+  <img src='imgs/plastaBlanca.jpg' style="position:absolute; bottom: 100px; left: 10px;"></img>
+  <!-- Final parche -->
+
+
+</div>
+
+</article>
+
+</body>
+</html>

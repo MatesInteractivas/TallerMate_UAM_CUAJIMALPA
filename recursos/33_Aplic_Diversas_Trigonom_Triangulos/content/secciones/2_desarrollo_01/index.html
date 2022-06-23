@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+  
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Tipo de problemas y herramientas disponibles</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Tipos de problemas</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    En los problemas que involucran triángulos, primero conviene identificar qué tipo de triángulo se tiene. En particular, se puede analizar si el problema involucra lo siguiente:
+	<ul>
+		<li>Triángulos semejantes</li>
+		<li>Triángulos rectángulos.</li>
+		<li>Triángulos no rectángulos.</li>
+	</ul>
+    </p>
+
+    <h2>Triángulos semejantes</h2>
+    
+    <!--- Párrafo --->
+    <p>
+    En este tipo de problemas normalmente se proporcionan datos de un triángulo modelo y se piden datos desconocidos de otro triángulo, pero que se identifica como semejante del triángulo modelo.
+    </p>
+
+    <p>
+    Aunque no necesariamente los lados que se proporcionan para el triángulo modelo corresponden a los solicitados en el triángulo desconocido, se puede buscar la información faltante en el triángulo original para poder hacer la relación y encontrar los datos faltantes del triángulo desconocido.
+    </p>
+    
+    <h2>Triángulos rectángulos</h2>
+    
+    <!--- Párrafo --->
+    <p>
+    Los problemas que involucran típicamente estructuras verticales y horizontales (por ejemplo, postes, torres, edificios, etc.) que se encuentran sobre el suelo pertenecen a este rubro.
+    </p>
+
+    <p>
+    Estos problemas pueden o no involucrar semejanza. En los que típicamente la involucran, el triángulo desconocido es inmediatamente identificado como rectángulo y basta determinar que comparte otro ángulo con el triángulo modelo para poder echar mano de la semejanza. Ejemplos típicos de estos problemas son aquellos que involucran <strong>reflexiones especulares</strong> de postes, edificios, etc., donde el reflejo de la punta de la estructura es vislumbrada por una persona (también considerada vertical). Así, al ser rectángulos los dos triángulos involucrados y al compartir otro ángulo por la propiedad de reflexión, tienen 2 ángulos idénticos y, por ende, son semejantes.
+    </p>
+
+    <p>
+    No todos los problemas con triángulos rectángulos presentan semejanza. Otro tipo involucra un ángulo en particular y las <strong>relaciones trigonométricas</strong> conocidas para dicho ángulo. En este tipo de problemas, las incógnitas pueden ser el ángulo o el tamaño de un lado particular. Para abordar este tipo de problemas, es preciso conocer de forma inmediata la relación trigonométrica que, valga la redundancia, relaciona las dos magnitudes particulares del triángulo en cuestión (es decir, saber que el seno relaciona el cateto opuesto con la hipotenusa, etc.).
+    </p>
+
+    <p>
+    En este rubro no sólo entran las relaciones trigonométricas básicas. También entran aquellas deducidas de la <strong>suma o resta</strong> de ángulos. Aunque se sugiere tener en la memoria las relaciones trigonométricas básicas para los ángulos notables, no se considera recomendable memorizarse las relaciones para cada ángulo resultante de suma o resta, o ángulo medio de ángulos notables, sino más bien tener bien identificadas las fórmulas trigonométricas de adición y sustracción de ángulos de las cuales uno puede obtener la información para un ángulo particular que resulta de operar los otros dos. De forma general, también se pueden presentar problemas en que no se identifica al ángulo como una suma o resta de los ángulos notables. Para este tipo de problemas se vuelve necesario el uso de la calculadora.
+    </p>
+
+    <p>
+    En este punto, que ya involucra trigonometría como tal, es preciso entender y manipular correctamente los arcos de las relaciones trigonométricas (el arco seno, arco coseno y arco tangente), que son las operaciones inversas de las relaciones trigonométricas y que permiten obtener el ángulo a partir del valor de la relación trigonométrica que opera sobre el ángulo.
+    </p>
+
+    <p>
+    También en este rubro entran los problemas en que, a partir de 2 lados, se te pide calcular un tercero desconocido. Dado que se trata de triángulos rectángulos, para este tipo de problemas siempre se puede echar mano del <strong>teorema de Pitágoras</strong>.
+    </p>
+
+    <h2>Triángulos no rectángulos</h2>
+
+    <p>
+    Cuando el ángulo en cuestión no se identifica como rectángulo (por ejemplo, torres inclinadas y no completamente verticales, árboles inclinados o, en general, problemas que involucran triángulos que no tienen un ángulo recto), normalmente hay que recurrir a la <strong>ley de senos o de cosenos</strong>.
+    </p>
+    
+    <p>
+    También los problemas que típicamente involucran el cálculo de alturas de triángulos no rectángulos suelen abordarse sobre todo por la ley de los senos, debido a que ésta involucra directamente dicho cálculo.
+    </p>
+
+    <p>
+    En el siguiente espacio podrás observar algunos ejemplos de los problemas anteriormente expuestos y el abordaje conveniente en cada caso.
+    </p>
+    
+    <!--- Párrafo --->
+    <p class="instrucciones">En este recurso interactivo contarás con varios ejercicios que involucran triángulos. Trata de resolver cada uno antes de ver el desarrollo propuesto. Una vez hecho esto, puedes avanzar en la solución con el botón 'Siguiente' y retroceder con 'Anterior'. Con el botón 'Otro' podrás generar otro problema distinto.</p>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="480" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    
+    <h2>Para reflexionar</h2>
+    
+    <p>
+    Es posible que en algún ejercicio hayas llegado a la respuesta mediante una solución alternativa a la propuesta en el interactivo. Ello no te debe sorprender. Hay muchos caminos que llevan a Roma. La idea aquí es, más bien, tratar de minimizar el esfuerzo que has de hacer en cada problema. Ello disminuirá, también, el tiempo que te toma resolver un dado problema. Aunque existan formas de resolver un problema que dan muchas vueltas o involucran muchos cálculos, te conviene analizar el problema desde el principio con paciencia para identificar la forma de solución más directa.
+    </p>
+
+    <p>
+    También es importante que notes que, para resolver algunos problemas, es necesario usar una combinación de estrategias. Por ejemplo, para el problema de la altura del ave, primero fue necesario primero obtener un ángulo usando la ley de cosenos. Pero luego fue necesario echar mano de las razones trigonométricas para obtener la altura como tal. Así, no todos los problemas son directamente solubles con sólo una estrategia.
+    </p>
+    
+  
+    <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>  
+
+  <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	  <!-- Créditos UAM  (siempre deben ir en primer lugar) -->
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>    
+       
+	    <!-- Aviso licencias -->
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <!-- Descartes -->
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+	</div>
+      </div>
+    </div> 
+    
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

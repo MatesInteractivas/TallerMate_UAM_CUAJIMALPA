@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<head>
+   <title></title>
+        <link href="css/descartes.css" rel="stylesheet" type="text/css" />
+        <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+	
+	<script>
+  
+	 if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+	   document.addEventListener('touchend', function(e) {  
+	     if(window.parent.document.getElementById("main")!=null){
+	       parent.manageZoom();
+	     }
+	   },false);
+	 }
+       
+	 function showCredits(){
+	   
+	   if(window.parent.document.getElementById("main")!=null){
+	     showCreditsContainer();
+	   } else {
+	     document.getElementById('popup_creditos').className='visible';
+	   }
+	 }
+	 
+	 function showCreditsContainer(){
+	   
+	   window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+	   window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+	   var newDiv = document.createElement("div");
+	   newDiv.setAttribute("style","margin:0px; padding: 0px;")
+	   newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+	   window.parent.document.getElementById('popup_content').appendChild(newDiv);
+	 }
+     
+       </script>
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+
+<body>
+<article class="course_content_container">
+
+<div class="course_content">
+   
+<!--- Título de la página --->
+<h1>Binomio al cuadrado</h1>
+
+<div>
+<ajs name="Arquimedes" width=820 height=600 code="Arquimedes">
+   <param name="tamaño" value="820x600">
+   <param name="pleca" value="title='' subtitle='' subtitlines='0' bgcolor='' fgcolor='' align='' titleimage='' titlefont='' subtitlefont='' ">
+   <param name="rtf" value="{\rtf1\uc0{\fonttbl\f0\fcharset0 Arial;\f1\fcharset0 Arial;\f2\fcharset0 Arial;\f3\fcharset0 Times New Roman;\f4\fcharset0 Times New Roman;\f5\fcharset0 Arial;\f6\fcharset0 Arial;}{\colortbl\red35\green35\blue35;\red208\green112\blue32;}\cf0\f1\fs34    \cf1\fs36 Cuadrado de un binomio con el t\u233 rmino en \f3\fs40\i{\*\mjaformula y}\f2\fs36\i0  positivo\fs34\cf0\par \par    \u191 Qu\u233  sucede si multiplicamos el binomio \f4\fs38\i{\*\mjaformula\f5\fs34\i ax+by\f4\fs38}\f1\fs34\i0  consigo mismo? Lo que obtenemos es lo siguiente:\par \par \cf1\fs36                                        \cf0\f4\fs38\i{\*\mjaformula\f5\fs34\i (ax+by)(ax+by)=ax ax+ax by+by ax+by by\f4\fs38}\f1\fs34\i0\par \par \cf1\fs36    \cf0\fs34 Si agrupamos los t\u233 rminos semejantes obtenemos:\par \par \cf1\fs36    \cf0\f4\fs38\i                            {\*\mjaformula\f5\fs34\i (ax+by)(ax+by)=(ax+by){\supix 2}=(ax){\supix 2}+2(ax)(by)+(by){\supix 2}\f4\fs38}\f1\fs34\i0\par \par \cf1\fs36    \cf0\fs34 De aqu\u237  podemos observar que \b\i el cuadrado de una suma es la suma del primer t\u233 rmino al \par \cf1    \cf0 cuadrado, con el doble producto del primero por el segundo, m\u225 s el cuadrado del segundo \par \cf1    \cf0 t\u233 rmino\b0\i0 .\par \par \par    \fs36\cf1 Cuadrado de un binomio con el t\u233 rmino en \f3\fs40\i{\*\mjaformula y}\f2\fs36\i0  negativo\fs34\cf0\par \par \cf1\fs36    \cf0\fs34 Ahora veamos qu\u233  sucede si multiplicamos el binomio \f4\fs38\i{\*\mjaformula\f5\fs34\i ax-by\f4\fs38}\f1\fs34\i0  consigo mismo. Lo que obtenemos es \par \cf1\fs36    \cf0\fs34 lo siguiente:\par \par \cf1\fs36                                            \cf0\f4\fs38\i{\*\mjaformula\f5\fs34\i (ax-by)(ax-by)=ax ax-ax by-by ax+by by\f4\fs38}\f1\fs34\i0\par \par \cf1\fs36    \cf0\fs34 Si agrupamos los t\u233 rminos semejantes obtenemos:\par \par \cf1\fs36                                 \cf0\f4\fs38\i{\*\mjaformula\f5\fs34\i (ax-by)(ax-by)=(ax-by){\supix 2}=(ax){\supix 2}-2(ax)(by)+(by){\supix 2}\f4\fs38}\f1\fs34\i0\par \par \cf1\fs36    \cf0\fs34\par    \fs36\cf1 F\u243 rmula general\fs34\cf0\par \par    De este nuevo resultado podemos observar que \b\i el cuadrado de una resta es la suma del primer \par    t\u233 rmino al cuadrado, menos el doble producto del primero por el segundo, m\u225 s el cuadrado del \par    segundo t\u233 rmino\b0\i0 .\par    \par    La f\u243 rmula general de este producto es la siguiente:\par \par \cf1\fs36                                  \cf0\f4\fs38\i{\*\mjaformula (ax\u177 by)(ax\u177 by)=(ax\u177 by){\supix 2}=(ax)\u177 2(ax)(by)+(by)}\f1\fs34\i0\par \par \cf1\fs36    \cf0\fs34 y se conoce como \b\i binomio al cuadrado\b0\i0 .\par \fs24}">
+   <param name="rtf_height" value="869">
+   <param name="image_loader" value="">
+   <param name="expand" value="">
+   <param name="editable" value="no">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="nombre" value="Arquimedes">
+   <param name="Versión" value="5.336, 2015-02-13">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no">
+</ajs>
+</div>
+
+<!-- TERMINA EL CONTENIDO DE LA PÁGINA -->
+
+<!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Joel Espinosa Longi</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica fue creada con <a href="http://arquimedes.matem.unam.mx/Descartes5/creditos/conCCL.html" target="_blank">Arquímedes</a>, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  <!--- Parche para que no se dupliquen los créditos Arquímedes -->
+  <img src='imgs/plastaBlanca.jpg' style="position:absolute; bottom: 100px; left: 10px;"></img>
+  <!-- Final parche -->
+
+
+</div>
+
+</article>
+
+</body>
+</html>

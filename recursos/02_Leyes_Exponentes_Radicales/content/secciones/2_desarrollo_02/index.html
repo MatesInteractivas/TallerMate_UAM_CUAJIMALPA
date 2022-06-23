@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+ <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Ley de la diferencia de exponentes y el significado de exponentes negativos</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Cociente de dos potencias con igual base</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    Anteriormente notaste que, en el producto de potencias con base compartida, se logra una simplificación usando la base elevada a la suma de los exponentes. Ahora verás qué sucede cuando en vez de un producto de potencias se tiene un cociente.
+    </p>
+    
+    <!--- Párrafo --->
+    <div class="instrucciones">Del siguiente interactivo podrás elegir un valor para tu base, así como para los dos exponentes en cuestión. Intenta notar en particular qué operación aritmética se está haciendo en los exponentes para obtener el exponente final en la versión simplificada del cociente.</div>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="510" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    <!--- Párrafo --->
+    <p>
+    Como has notado, cuando se tiene la misma base en un cociente de potencias, ello implica que comparten factores. Cada vez que aparece la base como factor en el numerador, y aparece también en el denominador, dicho cociente se hace 1. Por lo mismo, nos interesa contar <strong>cuántos factores sobran</strong>, ya sea en el numerador o en el denominador, una vez que se han hecho las cancelaciones.
+    </p>
+	
+    <!--- Párrafo --->
+    <p>
+    El decir <em>cuántos factores sobran</em> implica que estamos tomando la <strong>diferencia</strong> del número de factores que aparecen en el numerador menos el número de factores que aparecen en el denominador. En otras palabras, estamos tomando la diferencia de los exponentes de la base del numerador menos la del denominador. Vuelve a usar el interactivo y nota que:<br>
+	<ol>
+	  <li>
+	  Si la potencia del numerador tiene un exponente más grande que la del denominador, habrá más factores en el numerador. Al cancelarse, ello implicará que sobran factores en el numerador y por lo tanto el numerador tendrá una potencia con exponente positivo.<br>
+	  </li>
+	  <li>
+	  Si el exponente de la potencia del denominador, por el contrario, excede al exponente en el numerador, ocurrirá lo opuesto y será la potencia en el denominador la que quedará con exponente positivo.<br>
+	  </li>
+	</ol>
+    </p>
+
+    <p>
+    La ley de la diferencia de exponentes se puede expresar como:
+	</p>
+
+	<p class='ley'>
+	Tomar el cociente de dos potencias de igual base corresponde a elevar la base a la diferencia del exponente del numerador menos el del denominador: \( \frac{x^n}{x^m}=x^{n-m} \), siempre y cuando la base no sea cero.
+    </p>
+
+    <h2>¿Exponentes negativos?</h2>
+
+    <!--- Párrafo --->
+    <p>
+    En la página anterior observaste que el producto de potencias con igual base resulta en expresar la base elevada a la suma de los exponentes. Acabas de ver que el cociente de potencias con igual base resulta en expresar la base elevada a la diferencia de los exponentes. Pero si la potencia en el denominador tiene un exponente que excede a la del numerador (por ejemplo, \( \frac{2.5^3}{2.5^5} \) ), entonces la diferencia de los exponentes resultará en un número negativo. Si intentas introducir este ejemplo en el interactivo, notarás que el penúltimo resultado que te genera es \( \frac{1}{2.5^2} \). Por otra parte, tomando la resta de los exponentes de forma literal, obtendríamos un resultado \( 2.5^{-2} \).
+    </p>
+
+	<p>
+	De ahí que el contar con un exponente negativo implica que puedes tomar el numerador y pasarlo al denominador simplemente cambiando el signo del exponente. Otra forma de verlo es que:
+	</p>
+
+	<p class='ley'>
+	Una base distinta de cero elevada a un exponente negativo equivale a tomar la unidad dividida entre la base elevada al exponente pero con signo positivo: \( x^{-n}=\frac{1}{x^n} \)
+	</p>
+
+	<p>
+	Y eso nos permite hacer varios juegos entre el numerador y denominador. Por ejemplo, aunque parezca incómodo, a veces es conveniente expresar una potencia con exponente positivo (al que estamos más acostumbrados) de tal forma que su exponente quede negativo. Ello se logra pasando la base al denominador si previamente estaba en el numerador, o viceversa si previamente estaba en el denominador. Ésa es una de las artimañas más comunes en el álgebra que involucra potencias. 
+	</p>
+	
+	<div class="instrucciones">Podrás experimentar con ello en el siguiente interactivo.</div>
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="510" frameborder="0" src="escenas/escena2.html"> </iframe>
+    </div>
+
+    <p>
+    Ahora puedes construir una especie de mnemotecnia: <em><strong>En una fracción, sea simple o compuesta, puedes mover una potencia arriba o abajo (al numerador o al denominador) siempre y cuando le cambies el signo a su exponente</strong></em>.
+    </p>
+	
+	<p>
+    Algunos aspectos interesantes que se desprenden de lo aprendido son que:
+	<ul>
+		<li>Si el numerador y el denominador tienen el mismo número de factores, entonces en el numerador hay lo mismo que en el denominador y el resultado será 1. Por otro lado, el que haya el mismo número de factores implica que la diferencia de los exponentes da cero. Así pues, podemos concluir que <strong><em>cualquier número</em></strong> (excepto el cero) <strong><em>elevado a la potencia cero tendrá como resultado la unidad</em></strong> (el número 1).</li>
+		<li>Estas reglas aplican a números en general, y por lo tanto también a la representación algebraica de los mismos. Esto es, así como son válidas en la aritmética, también son válidas en el álgebra. Por ejemplo, \( \frac{a^5}{a^3}=a^{5-3}=a^2 \), donde \( a \) puede ser cualquier número distinto de cero. Este último punto es importante también pues la base de cualquier denominador ha de ser distinta de cero. De lo contrario se estaría realizando una división por cero, la cual no está definida.</li>
+		<li>Recuerda que cualquier número expresado tal cual es lo mismo que si estuviera elevado a la unidad (aunque no siempre se escribe el exponente de forma explícita). De esta forma, se tiene que, por ejemplo, \( 2=2^1=\frac{1}{2^{-1}} \); o bien, \( 3^{-1}=\frac{1}{3^1}=\frac{1}{3} \). Todas éstas son sólo distintas formas de expresar un valor (o una variable, en caso que estés trabajando algebraicamente).</li>
+		<li>Además, nota que el producto de potencias del tipo \( (2^3)(2^{-2}) \) puede ser simplificado de la forma en que aprendiste en la página pasada (esto es, simplemente usando la suma de exponentes): \( (2^3)(2^{-2})=2^{3+(-2)}=2^1=2 \). Observa que obtienes lo mismo si pasaras la potencia con exponente negativo al denominador y luego hicieras la división común y corriente: \( (2^3)(2^{-2})=(2^3)(\frac{1}{2^2})=\frac{2^3}{2^2}=\frac{(2)(2)(2)}{(2)(2)}=2 \).</li>
+	</ul>
+    </p>
+
+    <p>
+    En la siguiente página abordaremos las potencias de potencias. Es decir, expresiones como \( (3.5^3)^4 \) y obtendremos también las leyes para simplificar expresiones de este tipo.
+    </p>
+
+  
+  <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits();">Créditos y condiciones de uso</a>
+    </div>    
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+        <!-- Créditos UAM  (siempre deben ir en primer lugar) -->
+          <div class="creditos">
+                  <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+                  <ul class="autores">
+                          <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+                          <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+                  </ul>
+                  <img class="logos" src="icns/logosUAM.png"></img>
+          </div>   
+     
+          <!-- Aviso licencias -->
+          <div class="licencias">
+          
+                  <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+                  <!-- Descartes -->
+                  <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+          
+          </div>
+      </div>
+      </div>
+  
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

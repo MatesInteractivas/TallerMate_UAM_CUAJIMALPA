@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=750 height=510 code="Descartes">
+   <param name="tamaño" value="750x510">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo_760x510.png' despl_imagen='arr-izq' fondo='f3f0ec' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='PanelDer' x='51%' y='17%' ancho='48%' alto='80%' fijo='sí' despl_imagen='arr-izq' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_03" value="tipo='R2' id='Conclus' x='10%' y='10%' ancho='80%' alto='80%' dibujar-si='shwConclus' fijo='sí' despl_imagen='arr-izq' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='ConclusBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='?' expresión='(E1._w/2-35,E1._h/2-15,30,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn30x30.png' acción='calcular' parámetro='shwConclus=1'">
+   <param name="C_02" value="id='A' tipo='gráfico' espacio='PanelDer' constricción='y=-2' fijo='sí'">
+   <param name="C_03" value="id='A.x' tipo='numérico' región='exterior' espacio='E1' nombre='A.x' valor='-2' min='-4' max='B.x' decimales='1' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_04" value="id='B' tipo='gráfico' espacio='PanelDer' constricción='y=-2' fijo='sí'">
+   <param name="C_05" value="id='B.x' tipo='numérico' región='exterior' espacio='E1' nombre='B.x' valor='1' min='A.x' max='4' decimales='1' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_06" value="id='C' tipo='gráfico' espacio='PanelDer' fijo='sí'">
+   <param name="C_07" value="id='C.x' tipo='numérico' región='exterior' espacio='E1' nombre='C.x' valor='3' min='-3' max='3' decimales='1' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_08" value="id='C.y' tipo='numérico' región='exterior' espacio='E1' nombre='C.y' valor='2' min='-1' max='4' decimales='1' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_09" value="id='clsConclusBt' tipo='numérico' interfaz='botón' región='interior' espacio='Conclus' nombre='_nada_' expresión='(Conclus._w-25,5,20,20)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/cerrar.png' acción='calcular' parámetro='shwConclus=0' pos_mensajes='centro'">
+   <param name="C_10" value="id='AntConclusBt' tipo='numérico' interfaz='botón' región='interior' espacio='Conclus' nombre='Anterior' expresión='(Conclus._w/3,Conclus._h-35,90,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrlConclus=scrlConclus-1' dibujar-si='scrlConclus>0'">
+   <param name="C_11" value="id='SigConclusBt' tipo='numérico' interfaz='botón' región='interior' espacio='Conclus' nombre='Siguiente' expresión='(Conclus._w*2/3,Conclus._h-35,90,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrlConclus=scrlConclus+1' dibujar-si='scrlConclus<scrlConclusmax'">
+   <param name="A_01" value="id='ReInit()' algoritmo='sí' algoritmo='sí' hacer='PanelDer.escala=40;scrlConclusmax=4'">
+   <param name="A_02" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='ReInit()'">
+   <param name="A_03" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='texto' color='232323' expresión='[10,10]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Cualquier tri\u225 ngulo puede ser orientado de tal forma que uno de sus lados quede\par orientado como el segmento \f2\fs38\i a\f1\fs34\i0 . Tambi\u233 n, nota que siempre se puede formar un tri\u225 ngulo\par rect\u225 ngulo como el dado por los segmentos rojo y azul. Llamemos \f2\fs38\i x\f1\fs34\i0  al rojo y \f2\fs38\i y\f1\fs34\i0  al azul.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_02" value="espacio='PanelDer' tipo='punto' color='232323' expresión='(B.x,B.y)' texto='\nA' fuente='Serif,ITALIC,19' fijo='sí' tamaño='0'">
+   <param name="G_03" value="espacio='PanelDer' tipo='punto' color='232323' expresión='(A.x,A.y)' texto='\nB' fuente='Serif,ITALIC,19' fijo='sí' tamaño='0'">
+   <param name="G_04" value="espacio='PanelDer' tipo='punto' color='232323' expresión='(C.x,C.y)' texto='C' fuente='Serif,ITALIC,19' fijo='sí' tamaño='0'">
+   <param name="G_05" value="espacio='PanelDer' tipo='segmento' expresión='(A.x,A.y)(B.x,B.y)' fijo='sí' tamaño='0' ancho='3'">
+   <param name="G_06" value="espacio='PanelDer' tipo='segmento' expresión='(A.x,A.y)(C.x,C.y)' fijo='sí' tamaño='0' ancho='3'">
+   <param name="G_07" value="espacio='PanelDer' tipo='segmento' expresión='(B.x,B.y)(C.x,C.y)' fijo='sí' tamaño='0' ancho='3'">
+   <param name="G_08" value="espacio='PanelDer' tipo='punto' color='232323' expresión='((B.x+C.x)/2,(B.y+C.y)/2)' texto=' b' fuente='Serif,ITALIC,19' fijo='sí' tamaño='0'">
+   <param name="G_09" value="espacio='PanelDer' tipo='punto' color='232323' expresión='(B.x-0.5,B.y+0.1)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;}\f1\fs42\i\u945 \fs38}' fuente='Serif,ITALIC,21' fijo='sí' tamaño='0'">
+   <param name="G_10" value="espacio='PanelDer' tipo='punto' color='232323' expresión='(B.x+0.2,B.y+0.1)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;}\f1\fs42\i 180-\u945 \fs38}' fuente='Serif,ITALIC,21' fijo='sí' tamaño='0'">
+   <param name="G_11" value="espacio='PanelDer' tipo='punto' color='232323' expresión='((B.x+A.x)/2,(B.y+A.y)/2)' texto=' c' fuente='Serif,ITALIC,19' fijo='sí' tamaño='0'">
+   <param name="G_12" value="espacio='PanelDer' tipo='punto' color='232323' expresión='((C.x+A.x)/2,(C.y+A.y)/2)' texto='  a' fuente='Serif,ITALIC,19' fijo='sí' tamaño='0'">
+   <param name="G_13" value="espacio='PanelDer' tipo='segmento' color='5700acff' expresión='(C.x+0.2,C.y)(C.x+0.2,-2)' fijo='sí' tamaño='0' ancho='3'">
+   <param name="G_14" value="espacio='PanelDer' tipo='segmento' color='53ff0000' expresión='(A.x+0.1,-2.2)(C.x+0.1,-2.2)' fijo='sí' tamaño='0' ancho='3'">
+   <param name="G_15" value="espacio='PanelDer' tipo='ecuación' expresión='y=-2'">
+   <param name="G_16" value="espacio='E1' tipo='texto' color='232323' expresión='[10,90]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}\f1\fs38\i{\*\mjaformula y=bsin(180-\u945 )}\f2\fs34\i0 . Usando el seno de la\par suma de \u225 ngulos:\par \f1\fs38\i{\*\mjaformula y=b((sin180)(cos\u945 )-(sina)(cos180))}\f2\fs34\i0 .}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_17" value="espacio='E1' tipo='texto' color='232323' expresión='[10,180]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red0\green172\blue255;\red35\green35\blue35;}\f1\fs34 Como \f2\fs38\i{\*\mjaformula sin180=0}\f1\fs34\i0  y \f2\fs38\i{\*\mjaformula cos180=-1}\f1\fs34\i0 ,\par obtenemos: \f2\fs38\i\cf0 y\cf1{\*\mjaformula =b(sina)}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_18" value="espacio='E1' tipo='texto' color='232323' expresión='[10,250]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}\f1\fs38\i{\*\mjaformula x=c+bcos(180-\u945 )}\f2\fs34\i0 . Usando el coseno\par de la suma de \u225 ngulos: \f1\fs38\i x=\f2\fs34\i0\par \f1\fs38\i{\*\mjaformula c+b((cos180)(cos\u945 )+(sin180)(sin\u945 ))}\f2\fs34\i0 .}' fuente='Serif,ITALIC,19' fijo='sí'">
+   <param name="G_19" value="espacio='E1' tipo='texto' color='232323' expresión='[10,340]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red255\green0\blue0;\red35\green35\blue35;}\f1\fs34 Usando los valores para seno y coseno de 180,\par \f2\fs38\i\cf0 x\cf1{\*\mjaformula =c+b(-cos\u945 )=c-b(cos\u945 )}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_20" value="espacio='E1' tipo='texto' color='232323' expresión='[10,400]' texto='Busca una expresión para el teorema de Pitágoras en este triángulo y redúcela. Corrobora tu resultado con el botón &squot;?&squot;.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='325'">
+   <param name="G_21" value="espacio='Conclus' tipo='polígono' fondo='sí' color='negro' coord_abs='sí' expresión='(1,1)(Conclus._w-1,1)(Conclus._w-1,Conclus._h-1)(1,Conclus._h-1)(1,1)' ancho='2'">
+   <param name="G_22" value="espacio='Conclus' tipo='texto' color='232323' expresión='[10,10]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 La hipotenusa del tri\u225 ngulo rect\u225 ngulo es \f2\fs38\i a\f1\fs34\i0 , con los catetos \f2\fs38\i x\f1\fs34\i0  y \f2\fs38\i y\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_23" value="espacio='Conclus' tipo='texto' color='232323' dibujar-si='scrlConclus>0' expresión='[10,45]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Por teorema de Pit\u225 goras, tenemos que \f2\fs38\i{\*\mjaformula a{\supix 2}=x{\supix 2}+y{\supix 2}}\f1\fs34\i0 , de donde:\par \f2\fs38\i{\*\mjaformula a{\supix 2}=(c-b(cos\u945 )){\supix 2}+(b(sin\u945 )){\supix 2}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_24" value="espacio='Conclus' tipo='texto' color='232323' dibujar-si='scrlConclus>1' expresión='[10,110]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Desarrollando:\par \f2\fs38\i{\*\mjaformula a{\supix 2}=c{\supix 2}-2cb{\supix}(cos\u945 )+b{\supix 2}cos{\supix 2}\u945 +b{\supix 2}sin{\supix 2}\u945 }\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_25" value="espacio='Conclus' tipo='texto' color='232323' dibujar-si='scrlConclus>2' expresión='[10,170]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Agrupando: \f2\fs38\i{\*\mjaformula a{\supix 2}=c{\supix 2}-2cb{\supix}(cos\u945 )+b{\supix 2}(cos{\supix 2}\u945 +sin{\supix 2}\u945 )}\f1\fs34\i0 .\par Por la relaci\u243 n pitag\u243 rica, \f2\fs38\i{\*\mjaformula cos{\supix 2}\u945 +sin{\supix 2}\u945 =1}\f1\fs34\i0 , de donde:\par \f2\fs38\i{\*\mjaformula a{\supix 2}=c{\supix 2}+b{\supix 2}-2bc(cos\u945 )}\f1\fs34\i0  que es la ley de los cosenos.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_26" value="espacio='Conclus' tipo='texto' color='232323' dibujar-si='scrlConclus>3' expresión='[10,265]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Observa que si tu tri\u225 ngulo original ya es rect\u225 ngulo, entonces \f2\fs38\i{\*\mjaformula\u945 =90{\supix o}}\f1\fs34\i0 .\par Y como \f2\fs38\i{\*\mjaformula cos(90)=0}\f1\fs34\i0 , tu expresi\u243 n ser\u237 a \f2\fs38\i{\*\mjaformula a{\supix 2}=b{\supix 2}+c{\supix 2}}\f1\fs34\i0 . Es decir, para\par tri\u225 ngulos rect\u225 ngulos, se recupera el teorema de Pit\u225 goras. \u161 Claro,\par pues si es precisamente de dicho teorema que deducimos esta ley!}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_27" value="espacio='PanelDer' tipo='polígono' color='negro' coord_abs='sí' expresión='(1,1)(PanelDer._w-1,1)(PanelDer._w-1,PanelDer._h-1)(1,PanelDer._h-1)(1,1)' ancho='2'">
+</ajs></p>
+
+</body>
+</html>

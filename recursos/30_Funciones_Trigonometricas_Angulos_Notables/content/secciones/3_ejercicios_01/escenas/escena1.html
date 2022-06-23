@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=760 height=550 code="Descartes">
+   <param name="tamaño" value="760x550">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' escala='23' O.x='-150' imagen='images/fondo.png' despl_imagen='arr-izq' fondo='f3f0ec' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='resp1' tipo='numérico' interfaz='campo de texto' región='interior' espacio='E1' expresión='(415,140,30,23)' valor='&squot;&squot;' decimales='0' fijo='sí' visible='sí' activo-si='verifico=0'">
+   <param name="C_02" value="id='resp2' tipo='numérico' interfaz='campo de texto' región='interior' espacio='E1' expresión='(407,167,30,25)' valor='&squot;&squot;' decimales='0' fijo='sí' visible='sí' activo-si='verifico=0' pos_mensajes='centro'">
+   <param name="C_03" value="id='resp3' tipo='numérico' interfaz='campo de texto' región='interior' espacio='E1' expresión='(407,200,30,25)' valor='&squot;&squot;' decimales='0' fijo='sí' visible='sí' activo-si='verifico=0' pos_mensajes='centro'">
+   <param name="C_04" value="id='resp4' tipo='numérico' interfaz='campo de texto' región='interior' espacio='E1' expresión='(407,230,30,25)' valor='&squot;&squot;' decimales='0' fijo='sí' visible='sí' activo-si='verifico=0' pos_mensajes='centro'">
+   <param name="C_05" value="id='verificar' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Verificar' expresión='(520,250,120,30)' fijo='sí' visible='sí' color='blanco' color-int='ffffffff' fuente puntos='18' imagen='images/btn120x30.png' acción='calcular' parámetro='verif=verif+1\nverifico=1\ncalifica()' dibujar-si='(verif<3)&(verifico=0)' pos_mensajes='centro'">
+   <param name="C_06" value="id='otroInt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Reintentar' expresión='(520,250,120,30)' fijo='sí' visible='sí' color='blanco' color-int='ffffffff' fuente puntos='18' imagen='images/btn120x30.png' acción='calcular' parámetro='verifico=0' dibujar-si='(verif<3)&(verifico=1)&(bien1=0)' pos_mensajes='centro'">
+   <param name="C_07" value="id='mosResp1' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Solución' expresión='(520,250,120,30)' fijo='sí' visible='sí' color='blanco' color-int='ffffffff' fuente puntos='18' imagen='images/btn120x30.png' acción='calcular' parámetro='mosResp1=1' dibujar-si='(verif=3)&(verifico=1)&(bien1=0)&(mosResp1=0)' pos_mensajes='centro'">
+   <param name="C_08" value="id='reinit' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Reiniciar' expresión='(520,250,120,30)' fijo='sí' visible='sí' color='blanco' color-int='ffffffff' fuente puntos='18' imagen='images/btn120x30.png' acción='inicio' dibujar-si='((bien1)&(verifico=1))|(mosResp1)' pos_mensajes='centro'">
+   <param name="A_01" value="id='init()' algoritmo='sí' algoritmo='sí' hacer='tipoEjer=ent(rnd*2);verif=0;intentos=0;ejer=0;valAl=4+2*ent(rnd*4);a=.5*valAl;b=(sqrt(3)/2)*valAl'">
+   <param name="A_02" value="id='califica()' algoritmo='sí' algoritmo='sí' inicio='_i=0' hacer='_i=(resp1=3)?_i+1:_i;_i=(resp2=2)?_i+1:_i;_i=(resp3=1)?_i+1:_i;_i=(resp4=2)?_i+1:_i;bien1=(_i=4)?1:0'">
+   <param name="A_03" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='init()'">
+   <param name="A_04" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='texto' expresión='[20,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}\f1\fs36 En el siguiente tri\u225 ngulo, \u191 cu\u225 l es el valor de sin(A) y sin(B)? Encuentra el valor\par de los \u225 ngulos a trav\u233 s de un tri\u225 ngulo que sea semejante al mostrado.}' fuente='SansSerif,PLAIN,18' fijo='sí' info='Título'">
+   <param name="G_02" value="espacio='E1' tipo='polígono' dibujar-si='ejer=0' expresión='(-6,0)(-6+a,0)(-6+a,b)(-6,0)' ancho='2'">
+   <param name="G_03" value="espacio='E1' tipo='punto' expresión='(-6+a/2-.5,-.5)' texto='b=[a]' decimales='0' fijo='sí' tamaño='0'">
+   <param name="G_04" value="espacio='E1' tipo='punto' expresión='(-6+a,b/2)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Courier New;}\f1\fs30 a={\*\mjaformula{\expr (valAl/2!=1)?valAl/2:&squot;&squot;\decimals 0\fixed0}{\radical{\index}{\radicand 3}}}}' fijo='sí' tamaño='0'">
+   <param name="G_05" value="espacio='E1' tipo='punto' expresión='(-6.5,-.5)' texto='A' fijo='sí' tamaño='0'">
+   <param name="G_06" value="espacio='E1' tipo='punto' expresión='(-6+a,b)' texto='B' fijo='sí' tamaño='0'">
+   <param name="G_07" value="espacio='E1' tipo='texto' dibujar-si='tipoEjer=0' expresión='[320,150]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}\f1\fs36 sin(A)=\par \par \par sin(B)=}' fuente='SansSerif,PLAIN,18' fijo='sí' info='Título'">
+   <param name="G_08" value="espacio='E1' tipo='texto' dibujar-si='tipoEjer=1' expresión='[320,150]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}\f1\fs36 cos(B)=\par \par \par cos(A)=}' fuente='SansSerif,PLAIN,18' fijo='sí' info='Título'">
+   <param name="G_09" value="espacio='E1' tipo='texto' expresión='[390,130]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}\f1\fs36{\*\mjaformula{\radical{\index}{\radicand}}}}' fuente='SansSerif,PLAIN,18' fijo='sí' info='Título'">
+   <param name="G_10" value="espacio='E1' tipo='segmento' coord_abs='sí' expresión='(400,165+62*s)(440,165+62*s)' familia='s' s.intervalo='[0,1]' s.pasos='1' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_11" value="espacio='E1' tipo='texto' dibujar-si='(mosResp1=1)&(tipoEjer=0)' expresión='[10,300]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;}\f1\fs36 Soluci\u243 n: Primero utilizamos el teorema de Pit\u225 goras para encontrar la longitud de la\par hipotenusa \f2\fs40\i{\*\mjaformula c}\f1\fs36\i0 :  \f3\fs36\i{\*\mjaformula c{\supix 2}=({\expr a\decimals 0\fixed1}){\supix 2}+({\expr valAl/2\decimals 0\fixed1}{\radical{\index}{\radicand 3}}){\supix 2}}\f1\fs36\i0  \u8658  \f3\fs36\i{\*\mjaformula c={\expr sqrt(a^2+3*((valAl/2)^2))\decimals 0\fixed1}}\f1\fs36\i0\par Si dividimos cada lado del tri\u225 ngulo entre {\*\mjaformula{\expr sqrt(a^2+3*((valAl/2)^2))\decimals 0\fixed1}}, obtenemos un tri\u225 ngulo semejante\par de catetos \f3\fs36\i{\*\mjaformula a={\fraction{\num 1}{\den 2}}, b={\fraction{\num{\radical{\index}{\radicand 3}}}{\den 2}}} \f1\fs36\i0 e hipotenusa \f3\fs36\i{\*\mjaformula c=1}\f1\fs36\i0 . El que los dos tri\u225 ngulos sean semejantes\par implica que tienen \u225 ngulos iguales. Por el an\u225 lisis que hicimos anteriormente en el tri\u225 ngulo\par de hipotenusa \f3\fs36\i{\*\mjaformula c=1}\f1\fs36\i0  y con estos mismos catetos, sabemos que los \u225 ngulos son\par  \f3\fs36\i{\*\mjaformula A=60\u176 , B=30\u176 }\f1\fs36\i0 , es decir: son \u225 ngulos notables. Por eso, no requerimos calculadora para\par  obtener los valores del seno, sino sabemos que\f3\fs36\i  {\*\mjaformula sin(A)={\fraction{\num{\radical{\index}{\radicand 3}}}{\den 2}}; sin(B)={\fraction{\num 1}{\den 2}}}\fs40}' fuente='SansSerif,PLAIN,18' fijo='sí' info='Título'">
+   <param name="G_12" value="espacio='E1' tipo='texto' dibujar-si='(mosResp1=1)&(tipoEjer=1)' expresión='[10,300]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;}\f1\fs36 Soluci\u243 n: Primero utilizamos el teorema de Pit\u225 goras para encontrar la longitud de la\par hipotenusa \f2\fs40\i{\*\mjaformula c}\f1\fs36\i0 :  \f3\fs36\i{\*\mjaformula c{\supix 2}=({\expr a\decimals 0\fixed1}){\supix 2}+({\expr valAl/2\decimals 0\fixed1}{\radical{\index}{\radicand 3}}){\supix 2}}\f1\fs36\i0  \u8658  \f3\fs36\i{\*\mjaformula c={\expr sqrt(a^2+3*((valAl/2)^2))\decimals 0\fixed1}}\f1\fs36\i0\par Si dividimos cada segmento del tri\u225 ngulo entre {\*\mjaformula{\expr sqrt(a^2+3*((valAl/2)^2))\decimals 0\fixed1}} , obtenemos el tri\u225 ngulo semejante\par de catetos\f3\fs36\i{\*\mjaformula a={\fraction{\num 1}{\den 2}}, b={\fraction{\num{\radical{\index}{\radicand 3}}}{\den 2}}} \f1\fs36\i0 e hipotenusa \f3\fs36\i{\*\mjaformula c=1}\f1\fs36\i0 . Trat\u225 ndose de dos tri\u225 ngulos semejantes,\par sabemos que tienen \u225 ngulos iguales. Por el an\u225 lisis que hicimos anteriormente en el\par tri\u225 ngulo de hipotenusa \f3\fs36\i{\*\mjaformula c=1}\f1\fs36\i0  y con los mismos catetos, sabemos que los \u225 ngulos son\par \f3\fs36\i{\*\mjaformula A=60\u176 , B=30\u176 }\f1\fs36\i0 , es decir: son \u225 ngulos notables. Entonces no requerimos calculadora para\par  determinar los valores del coseno:\f3\fs36\i  {\*\mjaformula cos(B)={\fraction{\num{\radical{\index}{\radicand 3}}}{\den 2}}; cos(A)={\fraction{\num 1}{\den 2}}}\fs40}' fuente='SansSerif,PLAIN,18' fijo='sí' info='Título'">
+   <param name="G_13" value="espacio='E1' tipo='imagen' dibujar-si='(resp1!=3)&(verifico)' coord_abs='sí' expresión='(450,120)' archivo='images/mal.png'">
+   <param name="G_14" value="espacio='E1' tipo='imagen' dibujar-si='(resp2!=2)&(verifico)' coord_abs='sí' expresión='(445,165)' archivo='images/mal.png'">
+   <param name="G_15" value="espacio='E1' tipo='imagen' dibujar-si='(resp3!=1)&(verifico)' coord_abs='sí' expresión='(445,200)' archivo='images/mal.png'">
+   <param name="G_16" value="espacio='E1' tipo='imagen' dibujar-si='(resp4!=2)&(verifico)' coord_abs='sí' expresión='(445,235)' archivo='images/mal.png'">
+   <param name="G_17" value="espacio='E1' tipo='imagen' dibujar-si='(resp1=3)&(verifico)' coord_abs='sí' expresión='(450,120)' archivo='images/bien.png'">
+   <param name="G_18" value="espacio='E1' tipo='imagen' dibujar-si='(resp2=2)&(verifico)' coord_abs='sí' expresión='(445,165)' archivo='images/bien.png'">
+   <param name="G_19" value="espacio='E1' tipo='imagen' dibujar-si='(resp3=1)&(verifico)' coord_abs='sí' expresión='(445,200)' archivo='images/bien.png'">
+   <param name="G_20" value="espacio='E1' tipo='imagen' dibujar-si='(resp4=2)&(verifico)' coord_abs='sí' expresión='(445,235)' archivo='images/bien.png'">
+   <param name="G_21" value="espacio='E1' tipo='texto' dibujar-si='debug' expresión='[20,50]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Courier New;}\f1\fs30 verif={\*\mjaformula{\expr verif}}\par verifico={\*\mjaformula{\expr verifico}}\par _i={\*\mjaformula{\expr _i}}\par bien={\*\mjaformula{\expr bien}}}' fijo='sí'">
+   <param name="G_22" value="espacio='E1' tipo='polígono' fondo='sí' color='grisObscuro' dibujar-si='0' coord_abs='sí' expresión='(0,0)(E1._w-1,0)(E1._w-1,E1._h-1)(0,E1._h-1)(0,0)' ancho='3'">
+</ajs></p>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Una aplicación práctica de la parábola</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>La antena parabólica</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    Imagina que los rayos de una fuente llegan desde muy lejos (podrían ser rayos solares, o bien señales desde un satélite que orbita la Tierra). Por venir de muy lejos, estos rayos se puede considerar que llegan paralelos. ¿Habrá alguna forma de concentrarlos en un solo punto?
+    </p>
+    
+    <p>
+    En esta página verás la respuesta a esa pregunta, además de que notarás una propiedad interesante de la parábola. Sin perder generalidad, en el siguiente espacio interactivo se supone que los rayos en cuestión viajan en el plano de dos dimensiones que ves en la escena, y que van de arriba hacia abajo y llegan de forma paralela (como si llovieran del cielo). Observa la propiedad de reflexión de la parábola echando mano de rectas tangentes a la misma, que serían la superficie de reflexión.
+    </p>
+    
+    <div class="instrucciones">Construye tu parábola alterando el valor de la coordenada vertical del foco \(y_F\) y el valor \(r\) de la recta directriz \(y=r\). En este caso, tu coordenada horizontal del foco \(x_F\) está restringida a 0. Una vez construida tu parábola vertical, mueve el punto rojo sobre ella y verás el comportamiento de un rayo que incide sobre dicho punto y dónde incide tras reflejarse.
+    </div>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="480" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    
+	<p>
+	Como habrás observado, independientemente de dónde incida un rayo en una parábola, siempre que éste incida paralelo al eje de la misma, el rayo reflejado caerá en el foco de la parábola. Éste es el principio de la antena parabólica.
+	</p>
+
+    <h2>Aplicaciones de las parábolas y sus focos</h2>
+    
+    <p>
+    Aunque el ejemplo mostrado en el interactivo anterior es en dos dimensiones, el principio ahí mostrado se puede generalizar a una superficie tridimensional conocida como <em>paraboloide de revolución</em>, que es básicamente una antena parabólica.
+    </p>
+
+    <p>
+    En ésta, se asume que los rayos (que, por ejemplo, vienen de un satélite muy lejos), caen todos paralelos. La antena se orienta de tal forma que su eje quede también paralelo a los rayos, asegurando así que éstos se concentren en el foco. Así, una señal muy débil se puede amplificar considerando no un solo rayo, sino tantos como pueda concentrar la antena. Mientras más grande sea el paraboloide, más rayos concentrará.
+    </p>
+
+    <p>
+    Este principio también puede ser utilizado para calentar. Si los rayos son, por ejemplo, los solares, y tu paraboloide es un espejo, toda la energía solar que incide en el paraboloide será concentrada en el foco, y bien podrías cocinar algo ahí.
+    </p>
+
+    <p>
+    Más aún, se puede considerar el inverso de este principio. Supón que tienes una bombilla luminosa que emite luz en todas direcciones, pero que deseas que esa luz sólo salga en una dirección. Si construyes un espejo en forma de paraboloide alrededor de la bombilla, y de tal forma que la bombilla quede en el foco del paraboloide, al reflejarse los rayos en éste, saldrán todos paralelos en la dirección del eje del paraboloide. Este es el principio de un faro de automóvil, por ejemplo.
+    </p>
+
+    <p>
+    Ahora que ya has visto, por un lado, los parámetros y la ecuación de la parábola vertical, y por otro una aplicación muy práctica de esta curva, pasa a la siguiente página donde verás una herramienta muy útil para pasar de la forma general de la ecuación de una parábola vertical a su forma ordinaria.
+    </p>
+
+
+  
+    <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

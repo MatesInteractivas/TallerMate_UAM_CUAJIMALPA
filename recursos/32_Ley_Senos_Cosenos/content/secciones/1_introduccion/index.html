@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+
+<article class="course_content_container">
+  
+  <div class="course_content">
+    
+    
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    
+    <!--- Título de la página --->
+    <h1>La ley de los senos y los cosenos</h1>
+    
+    <!--- Párrafo --->
+    <p>
+    En una gran cantidad de unidades pasadas has observado que el teorema de Pitágoras es una herramienta muy útil para muchas áreas de las matemáticas. Siempre que tienes un triángulo rectángulo, puedes hacer uso de este teorema. Pero, ¿será posible hacer algo así como un teorema de Pitágoras general que no sólo sea útil para triángulos rectángulos, sino que permita hacer relaciones entre los lados de triángulos de cualquier tipo? Eso nos sería muy útil pues en problemas cotidianos puedes enfrentarte a este tipo de figuras geométricas.
+    </p>
+
+    <!--- Párrafo --->
+    <p>
+    En efecto es posible hacer esta nueva versión del teorema de Pitágoras. Sólo que ya no se le conocerá como teorema de Pitágoras, sino como la <em><strong>ley de senos</strong></em> y la <em><strong>ley de cosenos</strong></em>. No obstante, observarás que es el teorema de Pitágoras el que se usa para deducir esta generalización, así que en el fondo sigue estando presente.
+    </p>
+
+    <!--- Párrafo --->
+    <p>
+    Los triángulos rectángulos aparecen comúnmente en aplicaciones que involucran el suelo y algún objeto vertical, que por construcción forman un ángulo recto. No obstante, en la naturaleza encontrarás una gran cantidad de situaciones en que esto no ocurre. Problemas en que, por ejemplo, contarás con dos lados de un triángulo donde el ángulo que subtienden no necesariamente será recto. Resulta que mediante la ley de cosenos puedes conocer los demás ángulos y lados del triángulo. O tal vez te enfrentes a un triángulo del cual conoces los tres ángulos y algún lado, pero no los otros dos lados. En este caso, la ley de los senos te puede ser útil para conocer el triángulo a profundidad.
+    </p>
+
+    <p>
+    Y resulta que cuentas con todas las herramientas necesarias para la deducción de estas leyes. ¡Así que abordémoslas!
+    </p>
+    
+
+    <!------ TERMINA EL CONTENIDO DE LA PÁGINA --------->
+
+
+
+
+   <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Introducción elaborada para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

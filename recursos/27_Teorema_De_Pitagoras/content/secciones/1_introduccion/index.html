@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+
+<article class="course_content_container">
+  
+  <div class="course_content">
+    
+    
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    
+    <!--- Título de la página --->
+    <h1>Teorema de Pitágoras: Nota histórica</h1>
+    
+    
+    <!--- Párrafo --->
+    <p>El <strong>teorema de Pitágoras</strong> era conocido por las culturas de China, Mesopotamia y Egipto, aunque no lo utilizaban formalmente; sólo sabían que ciertos números cumplían propiedades geométricas en un triángulo. El teorema como tal fue descubierto alrededor del año 500 a.c. por Pitágoras y los pitagóricos, quienes dieron la primera demostración formal del mismo.</p>
+    
+    <p>Pitágoras notó que los más incultos de los albañiles egipcios realizaban obras perfectas, con ángulos rectos perfectos, tan solo utilizando unas cuerdas especiales. Dichas cuerdas tenían una longitud de 12 unidades y contaban con un par de marcas, una en la tercera unidad y otra en la séptima. Es decir, estaban distribuidas en tres partes con longitudes de 3, 4 y 5 unidades. Con dicha cuerda los albañiles podían formar un triángulo con lados de 3, 4 y 5 unidades, respectivamente, y además, el ángulo formado entre los 2 lados de menor longitud <em>¡medía exactamente 90º!</em> Estos números no eran los únicos que tenían esta propiedad; otros ejemplos son: \((5,12,13)\), \((6,8,10)\), \((7,24,25)\) y \((12,16,20)\).</p>
+    
+
+    <p>De ahí que los pitagóricos derivaron y enunciaron el teorema de la siguiente manera: en un triángulo rectángulo, <strong><em>la suma de los cuadrados de los catetos es igual al cuadrado de la hipotenusa</em></strong>. También enunciaron &#8212;y demostraron&#8212; el converso del teorema: <em>si los lados de un triángulo satisfacen la ecuación, entonces el triángulo es recto</em>.</p>
+   </p>
+    
+    <p>El teorema de Pitágoras se considera la base para la comprensión de diversos conceptos propios de las matemáticas, que tienen que ver con áreas como el álgebra, la trigonometría y la geometría analítica. Se usa para deducir la ecuación de la <strong>circunferencia</strong>, la <strong>distancia entre dos puntos</strong> en un plano coordenado y la definición de los <strong>números irracionales</strong>, entre muchas otras cosas.</p>
+    
+    
+    <div class="course_extern_content">
+    <figure class="course_figure">
+    <img src="imgs/intro.jpg"></img>
+    <center>
+    <span style='font-size:10px;'>
+    Árbol de Pitágoras. Familia de fractales caracterizada por la formación de triángulos rectángulos.
+    </span>
+    </center>
+    </figure>
+    </div>
+  
+
+    <!------ TERMINA EL CONTENIDO DE LA PÁGINA --------->
+
+
+<!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Víctor Hugo García Jarillo</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+    
+      <!-- FUENTES CONSULTADAS -->
+     
+          <div class="creditos">
+                  <p class="proyecto"><strong>Fuentes consultadas</strong></a></p>
+                  <ul>
+                          <li>Wikipedia, la enciclopedia libre. <em>Artículo: Pitágoras, </em><a href="http://es.wikipedia.org/wiki/Pit%C3%A1goras" target='_blank'>http://es.wikipedia.org/wiki/Pit%C3%A1goras</a></li>
+                          <li>Ecured, Conocimiento con todos y para todos. <em>El teorema de Pitágoras, </em><a href="http://www.ecured.cu/index.php/Teorema_de_Pit%C3%A1goras"  target='_blank'>http://www.ecured.cu/index.php/Teorema_de_Pit%C3%A1goras</a></li>
+                  </ul>
+              
+          </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

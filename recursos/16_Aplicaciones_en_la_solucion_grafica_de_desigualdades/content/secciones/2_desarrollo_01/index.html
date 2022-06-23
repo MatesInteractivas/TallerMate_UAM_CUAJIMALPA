@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+
+  <!-- MathJax - para fórmulas matemáticas -->
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+  
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+
+<div class="course_content">
+
+<!-- INICIA EL CONTENIDO DE LA PÁGINA -->
+<!-- Título de la página -->
+<h1>Desigualdades</h1>
+
+<h2>Nociones básicas</h2>
+<p>
+Veamos qué son las desigualdades ubicando algunos números sobre la recta numérica.
+</p>
+
+<p>
+Si un número \(a\) se encuentra a la derecha del \(0\), entonces decimos que \(a > 0\).
+</p>
+
+<div class="course_extern_content"> 
+<img src="imgs/escena1.png"></img>
+</div>
+
+<p>
+Por otra parte, si un número \(b\) se encuentra a la izquierda del \(0\), entonces decimos que \(b < 0\).</p>
+
+<div class="course_extern_content"> 
+<img src="imgs/escena2.png"></img>
+</div>
+
+<p>
+Por último, decimos que \(a > b\) si se cumple que \(a - b > 0\).
+</p>
+
+<div class="course_extern_content"> 
+<img src="imgs/escena3.png"></img>
+</div>
+
+<p>
+Y de la misma forma \(a < b\) si \(a - b < 0\).
+</p>
+
+<div class="course_extern_content"> 
+<img src="imgs/escena4.png"></img>
+</div>
+
+<p>
+En general sobre la recta numérica, para cualesquiera dos números \(a\) y \(b\), podemos decir que \(a > b\) si \(b\) se encuentra a la izquierda de \(a\) y podemos decir que \(a < b\) si \(a\) se encuentra a la izquierda de \(b\).
+</p>
+<br>
+
+<h2>Definiciones de las desigualdades</h2>
+
+<p>
+Las desigualdades cumplen con las siguientes definiciones:
+</p>
+<p>
+<strong>Transitividad</strong>: para cualesquiera tres números reales \(a\), \(b\) y \(c\) se cumple que:
+</p>
+
+<p>
+<ul>
+<li>
+Si \(a > b\) y \(b > c\) entonces \(a > c\).
+</li>
+<li>
+Si \(a < b\) y \(b < c\) entonces \(a < c\).
+</li>
+<li>
+Si \(a > b\) y \(b = c\) entonces \(a > c\).
+</li>
+<li>
+Si \(a < b\) y \(b = c\) entonces \(a < c\).
+</li>
+</ul>
+</p>
+
+<p>
+<strong>Adición</strong>: para cualesquiera tres números reales \(a\), \(b\) y \(c\) se cumple que:
+</p>
+
+<p>
+<ul>
+<li>
+Si \(a > b\) entonces \(a + c > b + c\).
+</li>
+<li>
+Si \(a < b\) entonces \(a + c < b + c\).
+</li>
+</ul>
+</p>
+
+<p>
+<strong>Sustracción</strong>: para cualesquiera tres números reales \(a\), \(b\) y \(c\) se cumple que:
+</p>
+
+<p>
+<ul>
+<li>
+Si \(a > b\) entonces \(a - c > b - c\).
+</li>
+<li>
+Si \(a < b\) entonces \(a - c < b - c\).
+</li>
+</ul>
+</p>
+
+<p>
+<strong>Multiplicación</strong>: para cualesquiera tres números reales \(a\), \(b\) y \(c\), con \(c\) diferente de cero, se cumple que:
+</p>
+
+<p>
+<ul>
+<li>
+Si \(c > 0\) y \(a < b\) entonces \(ac < bc\).
+</li>
+<li>
+Si \(c < 0\) y \(a < b\) entonces \(ac > bc\).
+</li>
+</ul>
+</p>
+<p>
+<strong>División</strong>: para cualesquiera tres números reales \(a\), \(b\) y \(c\), con \(c\) diferente de cero, se cumple que:
+</p>
+
+<p>
+<ul>
+<li>
+Si \(c > 0\) y \(a < b\) entonces \(\frac{a}{c} < \frac{b}{c}\).
+</li>
+<li>
+Si \(c < 0\) y \(a < b\) entonces \(\frac{a}{c} > \frac{b}{c}\).
+</li>
+</ul>
+</p>
+
+<p>
+Hay que tener cuidado con estas dos últimas definiciones, ya que suelen olvidarse cuando se realizan operaciones con desigualdades. Recuerda: <em>cuando se multiplica o divide por un número negativo, el operador de la desigualdad cambia</em>.
+</p>
+
+
+<!-- TERMINA EL CONTENIDO DE LA PÁGINA -->
+
+  <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Joel Espinosa Longi</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+</div>
+
+</article>
+
+</body>
+
+</html>

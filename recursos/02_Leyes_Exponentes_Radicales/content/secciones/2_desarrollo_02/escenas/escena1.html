@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>
+
+        <link rel="stylesheet" type="text/css" href="css/descartes.css">	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=750 height=480 code="Descartes">
+   <param name="tamaño" value="750x480">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo_760x510.png' despl_imagen='arr-izq' fondo='f3f0ec' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='Base' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(85,165,25,50)' valor='2.5' incr='0.5' min='0.5' max='5' decimales='1' fijo='sí' visible='no'">
+   <param name="C_02" value="id='Exponente1' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(335,165,25,50)' valor='1' incr='1' min='1' max='7' decimales='0' fijo='sí' visible='no'">
+   <param name="C_03" value="id='Exponente2' tipo='numérico' región='interior' espacio='E1' nombre='_nada_' expresión='(585,165,25,50)' valor='1' incr='1' min='1' max='7' decimales='0' fijo='sí' visible='no'">
+   <param name="C_04" value="id='AntBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Anterior' expresión='(E1._w/3-45,E1._h-35,90,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrl=scrl-1' dibujar-si='scrl>0' pos_mensajes='centro'">
+   <param name="C_05" value="id='SigBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Siguiente' expresión='(E1._w*2/3-45,E1._h-35,90,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrl=scrl+1' dibujar-si='scrl<scrlmax' pos_mensajes='centro'">
+   <param name="A_01" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='scrlmax=5'">
+   <param name="A_02" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='texto' expresión='[20,20]' texto='Escoge un valor para la base. Posteriormente escoge un valor para el Exponente 1\n(el de la potencia en el numerador del cociente) y otro valor para el Exponente 2\n(el de la potencia en el denominador del cociente).' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_02" value="espacio='E1' tipo='texto' expresión='[20,115]' texto='Usa el botón &squot;Siguiente&squot; localizado en la parte inferior de este espacio para que veas qué ocurre en cada paso de la simplificación. ' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='660'">
+   <param name="G_03" value="espacio='E1' tipo='texto' expresión='[20,180]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}{\colortbl\red0\green170\blue0;\red32\green48\blue58;}\cf0\f1\fs40\i Base\f2\fs34\i0\cf1  =       \f1\fs40\i{\*\mjaformula\cf0{\expr Base\decimals 1\fixed1}}\f2\fs34\i0}' fuente='Serif,ITALIC,20' fijo='sí'">
+   <param name="G_04" value="espacio='E1' tipo='texto' expresión='[210,180]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}{\colortbl\red170\green0\blue0;\red32\green48\blue58;}\cf0\f1\fs40\i Exponente 1\cf1\f2\fs34\i0  =        \f1\fs40\i{\*\mjaformula\cf0{\expr Exponente1\decimals 0\fixed1}}\f2\fs34\i0}' fuente='Serif,ITALIC,20' fijo='sí'">
+   <param name="G_05" value="espacio='E1' tipo='texto' expresión='[460,180]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}{\colortbl\red0\green0\blue170;\red32\green48\blue58;}\cf0\f1\fs40\i Exponente 2\f2\fs34\i0\cf1  =       \f1\fs40\i{\*\mjaformula\cf0{\expr Exponente2\decimals 0\fixed1}}\f2\fs34\i0}' fuente='Serif,ITALIC,20' fijo='sí'">
+   <param name="G_06" value="espacio='E1' tipo='texto' dibujar-si='scrl>=1' expresión='[20,230]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;}{\colortbl\red0\green170\blue0;\red170\green0\blue0;}\f1\fs40\i{\*\mjaformula\cf0{\expr Base\decimals 1\fixed1}}{\*\mjaformula{\supix\cf1{\expr Exponente1\decimals 0\fixed1}}}\fs34\i0}' fuente='Serif,ITALIC,20' fijo='sí'">
+   <param name="G_07" value="espacio='E1' tipo='segmento' dibujar-si='scrl>=1' expresión='(-7.4,-0.5)(-6.2,-0.5)' fijo='sí' tamaño='1'">
+   <param name="G_08" value="espacio='E1' tipo='texto' dibujar-si='scrl>=1' expresión='[20,270]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;}{\colortbl\red0\green170\blue0;\red0\green0\blue170;}\f1\fs40\i{\*\mjaformula\cf0{\expr Base\decimals 1\fixed1}}{\*\mjaformula{\supix\cf1{\expr Exponente2\decimals 0\fixed1}}}\fs34\i0}' fuente='Serif,ITALIC,20' fijo='sí'">
+   <param name="G_09" value="espacio='E1' tipo='texto' dibujar-si='scrl>=1' expresión='[95,255]' texto='=' fuente='Serif,PLAIN,17' fijo='sí'">
+   <param name="G_10" value="espacio='E1' tipo='texto' dibujar-si='scrl>1' expresión='[120+s*55,230]' familia='s' s.intervalo='[0,Exponente1-1]' s.pasos='Exponente1-1' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;}{\colortbl\red0\green170\blue0;}\f1\fs34 (\fs40\i{\*\mjaformula\cf0{\expr Base\decimals 1\fixed1}}\fs34\i0 )}' fuente='Serif,PLAIN,17' fijo='sí'">
+   <param name="G_11" value="espacio='E1' tipo='segmento' dibujar-si='scrl>1' expresión='(-5.4,-0.5)(-5.4+max(Exponente1,Exponente2)*1.15,-0.5)' fijo='sí' tamaño='1'">
+   <param name="G_12" value="espacio='E1' tipo='texto' dibujar-si='scrl>1' expresión='[120+s*55,270]' familia='s' s.intervalo='[0,Exponente2-1]' s.pasos='Exponente2-1' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;}{\colortbl\red0\green170\blue0;}\f1\fs34 (\fs40\i{\*\mjaformula\cf0{\expr Base\decimals 1\fixed1}}\fs34\i0 )}' fuente='Serif,PLAIN,17' fijo='sí'">
+   <param name="G_13" value="espacio='E1' tipo='segmento' color='eb0000' dibujar-si='scrl>2' expresión='(-5.2+s*1.15,-0.3)(-4.3+s*1.15,0.1)' familia='s' s.intervalo='[0,min(Exponente1,Exponente2)-1]' s.pasos='min(Exponente1,Exponente2)-1' fijo='sí' ancho='4'">
+   <param name="G_14" value="espacio='E1' tipo='segmento' color='eb0000' dibujar-si='scrl>2' expresión='(-5.2+s*1.15,-1.1)(-4.3+s*1.15,-0.7)' familia='s' s.intervalo='[0,min(Exponente1,Exponente2)-1]' s.pasos='min(Exponente1,Exponente2)-1' fijo='sí' ancho='4'">
+   <param name="G_15" value="espacio='E1' tipo='texto' dibujar-si='scrl>3' expresión='[95,330]' texto='=' fuente='Serif,PLAIN,17' fijo='sí'">
+   <param name="G_16" value="espacio='E1' tipo='texto' dibujar-si='(scrl>3)&(Exponente1>Exponente2)' expresión='[120+s*55,315]' familia='s' s.intervalo='[0,abs(Exponente1-Exponente2)-1]' s.pasos='abs(Exponente1-Exponente2)-1' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;}{\colortbl\red0\green170\blue0;}\f1\fs34 (\fs40\i{\*\mjaformula\cf0{\expr Base\decimals 1\fixed1}}\fs34\i0 )}' fuente='Serif,PLAIN,17' fijo='sí'">
+   <param name="G_17" value="espacio='E1' tipo='texto' dibujar-si='(scrl>3)&(Exponente1<=Exponente2)' expresión='[120+s*55,315]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;}{\colortbl\red0\green170\blue0;}\f1\fs34 (\fs40\i{\*\mjaformula\cf0{\expr 1\decimals 1\fixed1}}\fs34\i0 )}' fuente='Serif,PLAIN,17' fijo='sí'">
+   <param name="G_18" value="espacio='E1' tipo='segmento' dibujar-si='scrl>3' expresión='(-5.4,-2.1)(-5.4+1.15,-2.1)' fijo='sí' tamaño='1'">
+   <param name="G_19" value="espacio='E1' tipo='segmento' dibujar-si='scrl>3' expresión='(-5.4,-2.1)(-5.4+abs(Exponente1-Exponente2)*1.15,-2.1)' fijo='sí' tamaño='1'">
+   <param name="G_20" value="espacio='E1' tipo='texto' dibujar-si='(scrl>3)&(Exponente1<Exponente2)' expresión='[120+s*55,345]' familia='s' s.intervalo='[0,abs(Exponente1-Exponente2)-1]' s.pasos='abs(Exponente2-Exponente1)-1' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;}{\colortbl\red0\green170\blue0;}\f1\fs34 (\fs40\i{\*\mjaformula\cf0{\expr Base\decimals 1\fixed1}}\fs34\i0 )}' fuente='Serif,PLAIN,17' fijo='sí'">
+   <param name="G_21" value="espacio='E1' tipo='texto' dibujar-si='(scrl>3)&(Exponente1>=Exponente2)' expresión='[120+s*55,345]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Times New Roman;}{\colortbl\red0\green170\blue0;}\f1\fs34 (\fs40\i{\*\mjaformula\cf0{\expr 1\decimals 1\fixed1}}\fs34\i0 )}' fuente='Serif,PLAIN,17' fijo='sí'">
+   <param name="G_22" value="espacio='E1' tipo='texto' dibujar-si='scrl>4' expresión='[95,375]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Times New Roman;}\f1\fs34\i = \f2\fs44{\*\mjaformula{\fraction{\num{\expr (Exponente1>Exponente2)?Base:1\decimals 1\fixed1}{\supix{\expr (Exponente1>Exponente2)?Exponente1-Exponente2:&squot;&squot;\decimals 0\fixed1}}}{\den{\expr (Exponente2>Exponente1)?Base:1\decimals 1\fixed1}{\supix{\expr (Exponente2>Exponente1)?Exponente2-Exponente1:&squot;&squot;\decimals 0\fixed1}}}}}\f1\fs34  = \f3\fs38{\*\mjaformula{\expr Base^(Exponente1-Exponente2)\decimals 10\fixed0}}\f1\fs34}' fuente='SansSerif,ITALIC,17' fijo='sí'">
+</ajs></p>
+
+</body>
+</html>

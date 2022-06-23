@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+  
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Estableciendo la ecuación de una recta para un problema</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Recordatorio de pendiente y ordenada al origen</h2>
+    
+    <!--- Párrafo --->
+    <p>
+    Como bien recordarás de las unidades que abordan dicho concepto, la <strong>pendiente</strong> es una medida de la inclinación de una recta respecto a la horizontal. Ella se suele denotar por \(m\) en la ecuación de la recta \(y=mx+b\). La <strong>ordenada al origen</strong> \(b\) es el valor de las ordenadas (eje vertical o eje Y) cuando la coordenada \(x\) vale cero. Otra forma de verlo es que es el valor del eje Y en el punto donde la recta cruza dicho eje.
+    </p>
+
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Significado de la recta</h2>
+    
+    <!--- Párrafo --->
+
+    <p>
+    La recta, expresada algebraicamente como \(y=mx+b\), es un conjunto infinito de pares de coordenadas (\(x\), \(y\)). Por ejemplo, para la recta particular \(y=3x+2\), el punto \((1,5)\) y el punto \((2,8)\) son soluciones a dicha recta. Ello pues, si sustituimos el primer punto en la recta obtenemos que \(5=3(1)+2\), que es lo mismo que \(5=5\) (se cumplió la igualdad, por lo tanto el punto es solución). Por el contrario, si sustituimos el punto \((3,10)\) en la recta, obtenemos que \(10=3(3)+2\) que es lo mismo que \(10=11\), situación que no es cierta. Por lo tanto, el punto \((3,10)\) no es solución de esa recta. Gráficamente, ese punto quedaría fuera de la linea que representa la recta en el plano cartesiano.
+    </p>
+
+    <p>
+    Entonces, la recta puede tener una infinidad de puntos. Una recta puede dar información parcial de un problema, mientras que otra recta da otra información. Llamemos a la primera recta R1 y a la segunda R2. Si esas rectas se cruzan en un punto, de la infinidad de puntos que satisfacen la ecuación de R1, sólo uno satisfará simultáneamente a R2. Este punto es solución de ambas. Como se mencionó, esta situación únicamente ocurre si se cruzan en un solo punto. De las unidades anteriores recordarás que ello ocurre si las rectas tienen pendientes distintas. Dos rectas que tienen pendiente igual pueden ya sea nunca cruzarse (en cuyo caso nunca encontrarás solución), o bien, si son idénticas (tienen, además de igual pendiente, igual ordenada al origen) se cruzan en todos los puntos y todos los puntos son solución, por lo que no encontrarás una solución única sino una infinidad de ellas.
+    </p>
+
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Algunos ejemplos</h2>
+    
+    <!--- Párrafo --->
+    <p>
+    A continuación veremos algunos ejemplos.
+    </p>
+    
+    <!--- Instrucciones --->
+    <div class="instrucciones">Visita varios ejemplos en el siguiente interactivo presionando el botón 'Otro ejemplo'. Para cada ejemplo, avanza en la explicación usando el botón 'Siguiente' y retrocede en la misma con el botón 'Anterior'.</div>
+
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="510" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    <p>
+    Nota que en todos estos ejemplos planteaste 2 distintas rectas. Posteriormente, usaste un método para calcular el valor de tus variables o incógnitas (por ejemplo, el metodo de igualación de ecuaciones que ya has visto en la unidad de <em>Sistemas de ecuaciones de primer grado</em>). Como ya sabes, cualquier método es válido. Siempre que hagas tus cálculos bien, obtendrás el mismo resultado. Puedes comprobar esto intentando resolver el sistema de ecuaciones de un mismo problema por otro método que el propuesto.
+    </p>
+
+    <p>
+    Por otra parte, nota que en los problemas se piden dos valores, uno para la \(x\) y otro para la \(y\). Por ello, es importante saber qué cosa estás representando en cada una de las variables y no confundirte. Esto te ayudará a plantear tu sistema de ecuaciones de forma consistente y, por ende, a obtener los resultados correctos.
+    </p>
+
+    <p>
+    También observa que en el problema de Alberto, no usamos las variables típicas \(x\) y \(y\) para representar las abscisas y las ordenadas, respectivamente. Aquí, cambiamos la incógnita de las ordenadas de \(y\) a \(w\). Te darás cuenta de que, al resolver problemas, no necesariamente querrás emplear la \(x\) y la \(y\) como variables; puedes usar cualquier letra que gustes. Otro ejemplo son las letras alfa y beta en el problema de los ángulos. Finalmente, cuando lleves la solución al plano cartesiano, observarás que los ejes que usaste no son, entonces, el típico \(x\) y \(y\).
+    </p>
+
+    <p>
+    Es importante también estar seguro del resultado. Una forma de comprobarlo es sustituir los valores encontrados de ambas variables <strong>en las 2 ecuaciones</strong>. ¿Por qué en ambas ecuaciones? Porque puede ser que erróneamente hayas encontrado un par de valores que caigan bien en, digamos, la primera ecuación (recuerda que para una sola ecuación, hay una infinidad de pares de puntos que la satisfacen). Pero sólo si también satisface la otra ecuación habrá seguridad de que es el punto correcto.
+    </p>
+
+    <p>
+    Ya habrás notado que ubicar la intersección de rectas es un poderoso método para resolver muchos problemas. Aunque queda fuera del alcance de esta unidad, algunos de estos métodos (como, por ejemplo, la sustitución) te permiten resolver sistemas de ecuaciones no necesariamente lineales (o sea, donde alguna de las ecuaciones no necesariamente es una recta). Adicionalmente, con ellos puedes resolver (con algunos pasos agregados) sistemas de ecuaciones lineales de 3 variables.
+    </p>
+
+  
+  <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>  
+
+  <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	  <!-- Créditos UAM  (siempre deben ir en primer lugar) -->
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>    
+       
+	    <!-- Aviso licencias -->
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <!--arquimedes (optativo)-->
+		    <!-- Descartes -->
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+	</div>
+      </div>
+    </div> 
+    
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

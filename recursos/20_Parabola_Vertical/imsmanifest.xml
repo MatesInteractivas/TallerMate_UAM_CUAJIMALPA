@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--This is a Reload version 2.5.6 SCORM 1.2 Content Package document-->
+<!--Spawned from the Reload Content Package Generator - http://www.reload.ac.uk-->
+<manifest xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" identifier="MANIFEST-C51B770DC10499E56D2A78EF8D8ECE52" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <adlcp:location />
+    <imsmd:lom>
+      <imsmd:general>
+        <imsmd:identifier>20_Parabola_Vertical</imsmd:identifier>
+        <imsmd:title>
+          <imsmd:langstring xml:lang="es">La parábola vertical</imsmd:langstring>
+        </imsmd:title>
+      </imsmd:general>
+      <imsmd:lifecycle>
+        <imsmd:version>
+          <imsmd:langstring xml:lang="es">1.0</imsmd:langstring>
+        </imsmd:version>
+        <imsmd:status>
+          <imsmd:source>
+            <imsmd:langstring xml:lang="x-none">LOMv1.0</imsmd:langstring>
+          </imsmd:source>
+          <imsmd:value>
+            <imsmd:langstring xml:lang="es" />
+          </imsmd:value>
+        </imsmd:status>
+        <imsmd:contribute>
+          <imsmd:role>
+            <imsmd:source>
+              <imsmd:langstring xml:lang="x-none">LOMv1.0</imsmd:langstring>
+            </imsmd:source>
+            <imsmd:value>
+              <imsmd:langstring xml:lang="es">Autor</imsmd:langstring>
+            </imsmd:value>
+          </imsmd:role>
+          <imsmd:centity>
+            <imsmd:vcard>Alejandro Radillo Díaz</imsmd:vcard>
+          </imsmd:centity>
+        </imsmd:contribute>
+      </imsmd:lifecycle>
+      <imsmd:metametadata>
+        <imsmd:identifier>20_Parabola_Vertical</imsmd:identifier>
+      </imsmd:metametadata>
+      <imsmd:technical>
+        <imsmd:format>text/html</imsmd:format>
+        <imsmd:requirement>
+          <imsmd:name>
+            <imsmd:source>
+              <imsmd:langstring xml:lang="x-none">LOMv1.0</imsmd:langstring>
+            </imsmd:source>
+            <imsmd:value>
+              <imsmd:langstring xml:lang="es" />
+            </imsmd:value>
+          </imsmd:name>
+        </imsmd:requirement>
+      </imsmd:technical>
+      <imsmd:classification>
+        <imsmd:description>
+          <imsmd:langstring xml:lang="es"><![CDATA[Se aborda la parábola vertical, sus propiedades geométricas y puntos y rectas relacionados.
+		  
+		  Se deduce su ecuación ordinaria a partir de la condición de que sus puntos equidistan lo mismo de un punto llamado 'foco' que de una recta (la directriz), que ha de ser horizontal por tratarse en este caso de una parábola vertical. Se introducen los conceptos de foco, vértice y directriz. Se analiza también la propiedad de enfoque de la parábola y su utilidad en la construcción de antenas parabólicas. En los ejercicios se presentan casos del paso de la forma ordinaria de la ecuación a la general y viceversa. Por último, se presentan cinco preguntas de opción múltiple para evaluar el aprendizaje y grado de dominio de los conceptos abordados en la unidad.]]></imsmd:langstring>
+        </imsmd:description>
+        <imsmd:keyword>
+          <imsmd:langstring xml:lang="es">Parábola vertical</imsmd:langstring>
+		  <imsmd:langstring xml:lang="es">Ecuación de segundo grado</imsmd:langstring>
+		  <imsmd:langstring xml:lang="es">Foco de una parábola</imsmd:langstring>
+		  <imsmd:langstring xml:lang="es">Vértice de una parábola</imsmd:langstring>
+		  <imsmd:langstring xml:lang="es">Directriz de una parábola</imsmd:langstring>
+        </imsmd:keyword>
+      </imsmd:classification>
+    </imsmd:lom>
+  </metadata>
+  <organizations default="ORG-66DFEE253D6A683735115ADE32F39FD5">
+    <organization identifier="ORG-66DFEE253D6A683735115ADE32F39FD5" structure="hierarchical">
+      <title>main</title>
+      <item identifier="ITEM-7D8E13C3DD94DF2137682321FE228CC3" isvisible="true" identifierref="RES-7AEBA12A3C37D31569C88FD366C6F96A">
+        <title>La parábola vertical</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="RES-7AEBA12A3C37D31569C88FD366C6F96A" type="webcontent" href="content/index.html">
+      <file href="content/index.html" />
+      <file href="content/css/contenedor.css" />
+    </resource>
+  </resources>
+</manifest>
+

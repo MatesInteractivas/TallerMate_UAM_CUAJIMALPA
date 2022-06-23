@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>
+
+<style type="text/css" media="screen">
+
+	/*pulsador*/
+	#zoom { }
+	#zoom > canvas {
+	  display: none;
+	}
+    
+	#zoom .up {
+	  background: white url("images/zoomIn.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zoom > .up:hover {
+	  background-color: #efefef !important;
+	}
+	#zoom > .up:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+    
+	#zoom .down {
+	  background: white url("images/zoomOut.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zoom .down:hover {
+	  background-color: #efefef !important;
+	}
+	#zoom .down:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+      </style>
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=750 height=480 code="Descartes">
+   <param name="tamaño" value="750x480">
+   <param name="image_loader" value="">
+   <param name="expand" value="">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.336, 2015-02-13">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo.png' despl_imagen='arr-izq' fondo='f3f0ec' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='PanelDer' x='51%' y='10%' ancho='48%' alto='81.5%' escala='15' despl_imagen='arr-izq' red='b8c4c8' red10='889498' ejes='405860' texto='405860'">
+   <param name="E_03" value="tipo='R2' id='Expl' x='15%' y='20%' ancho='70%' alto='70%' dibujar-si='shwExpl' fijo='sí' despl_imagen='arr-izq' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='RelacRectas' tipo='numérico' interfaz='menú' región='interior' espacio='E1' nombre='_nada_' expresión='(235,10,200,34)' decimales='0' fijo='sí' visible='no' opciones=' ,Paralelas,Perpendiculares' acción='calcular' parámetro='ReInit()' activo-si='!shwExpl'">
+   <param name="C_02" value="id='OtroEjBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Otro ejemplo' expresión='(E1._w*3/4-60,E1._h-35,120,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn120x30.png' acción='calcular' parámetro='ReInit()' activo-si='(RelacRectas!=0)&(!shwExpl)'">
+   <param name="C_03" value="id='AyudaBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='?' expresión='(E1._w-40,10,30,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn30x30.png' acción='calcular' parámetro='shwExpl=1' activo-si='(RelacRectas!=0)&(!shwExpl)' pos_mensajes='centro'">
+   <param name="C_04" value="id='zoom' tipo='numérico' región='interior' espacio='PanelDer' nombre='_nada_' expresión='(PanelDer._w-34,PanelDer._h-64,30,60)' valor='15' incr='2.5' min='5' max='100' discreto='sí' decimales='1' fijo='sí' visible='no' acción='calcular' parámetro='PanelDer.escala=zoom' activo-si='(RelacRectas!=0)&(!shwExpl)' pos_mensajes='centro'">
+   <param name="C_05" value="id='IntercambiarBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Intercambiar' expresión='(E1._w*3/4-70,10,140,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn140x30.png' acción='calcular' parámetro='indb=indb+1\nb=(indb%2==1)?b2:b1' activo-si='(RelacRectas!=0)&(!shwExpl)'">
+   <param name="C_06" value="id='ExplBt' tipo='numérico' interfaz='botón' región='interior' espacio='Expl' nombre='_nada_' expresión='(Expl._w-25,5,20,20)' fijo='sí' visible='sí' imagen='images/cerrar.png' acción='calcular' parámetro='shwExpl=0' pos_mensajes='centro'">
+   <param name="C_07" value="id='b1' tipo='numérico' región='interior' espacio='PanelDer' nombre='_nada_' expresión='(50,3,27,50)' min='-10' max='10' discreto='sí' decimales='1' fijo='sí' visible='no' acción='calcular' parámetro='b=(indb%2==1)?b2:b1' activo-si='(RelacRectas!=0)&(!shwExpl)' pos_mensajes='centro'">
+   <param name="C_08" value="id='b2' tipo='numérico' región='interior' espacio='PanelDer' nombre='_nada_' expresión='(PanelDer._w-50,3,27,50)' min='-10' max='10' discreto='sí' decimales='1' fijo='sí' visible='no' acción='calcular' parámetro='b=(indb%2==1)?b2:b1' activo-si='(RelacRectas!=0)&(!shwExpl)' pos_mensajes='centro'">
+   <param name="A_01" value="id='ReInit()' algoritmo='sí' algoritmo='sí' hacer='PanelDer.escala=15;bla=(RelacRectas==1)?Paralelas():bla;bla=(RelacRectas==2)?Perpendiculares():bla;SimpFrac();scrl=0;scrlInv=2;indb=0'">
+   <param name="A_02" value="id='Paralelas()' algoritmo='sí' algoritmo='sí' hacer='m1=0.1+ent(49.9999*rnd)/10;m1=(rnd<0.6)?0.1+ent(10.9999*rnd)/10:m1;m1=sgn(0.5-rnd)*m1;b1=-10+ent(200.9999*rnd)/10;b=b1;m2=m1;b2=-10+ent(200.9999*rnd)/10' mientras='abs(b2-b1)<0.2'">
+   <param name="A_03" value="id='Perpendiculares()' algoritmo='sí' algoritmo='sí' hacer='m1=0.1+ent(49.9999*rnd)/10;m1=(rnd<0.6)?0.1+ent(10.9999*rnd)/10:m1;m1=sgn(0.5-rnd)*m1;b1=-10+ent(200.9999*rnd)/10;b=b1;m2=-1/m1;b2=-10+ent(200.9999*rnd)/10' mientras='abs(b2-b1)<0.2'">
+   <param name="A_04" value="id='SimpFrac()' algoritmo='sí' algoritmo='sí' inicio='mNum1=10*m1;mDen1=10;iS=2' hacer='divisibles1=(mNum1%iS==0)&(mDen1%iS==0);mNum1=(divisibles1)?mNum1/iS:mNum1;mDen1=(divisibles1)?mDen1/iS:mDen1;;mNum2=(RelacRectas==1)?mNum1:-mDen1;mDen2=(RelacRectas==1)?mDen1:mNum1;;iS=iS+1' mientras='iS<6'">
+   <param name="A_05" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='PanelDer.escala=15'">
+   <param name="A_06" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='texto' color='232323' expresión='[10,20]' texto='Quiero que mis rectas sean' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_02" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(RelacRectas!=0)' expresión='[10,50]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Arial;}{\colortbl\red0\green0\blue255;\red35\green35\blue35;\red255\green0\blue0;\red0\green0\blue0;}\f1\fs34 Recta 1: \f2\fs38\i{\*\mjaformula\cf0 y={\expr m1\decimals 2\fixed0}x{\expr (b1>=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(b1)\decimals 2\fixed0}\cf1}\f3\fs38\i0  \u8658  \f2\fs38\i{\*\mjaformula\cf0 y={\expr (m1>=0)?&squot;&squot;:&squot;-&squot;\decimals 0\fixed1}{\fraction{\num\cf0{\expr abs(mNum1)\decimals 2\fixed0}}{\den\cf0{\expr abs(mDen1)\decimals 2\fixed0}}}x\f2\fs38\i{\expr (b1>=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(b1)\decimals 2\fixed0}\cf1}\f1\fs34\i0\par Recta 2: \f2\fs38\i{\*\mjaformula\cf2 y=\f2\fs38\i{\expr m2\decimals 2\fixed0}x{\expr (b2>=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(b2)\decimals 2\fixed0}\cf1}\f3\fs38\i0  \u8658  \f2\fs38\i{\*\mjaformula\cf2 y={\expr (m2>=0)?&squot;&squot;:&squot;-&squot;\decimals 0\fixed1}{\fraction{\num\cf2{\expr abs(mNum2)\decimals 2\fixed0}\cf1}{\den\cf2{\expr abs(mDen2)\decimals 2\fixed0}\cf1}}x\f2\fs38\i{\expr (b2>=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(b2)\decimals 2\fixed0}\cf3}\f1\fs34\i0}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_03" value="espacio='E1' tipo='texto' dibujar-si='(RelacRectas==1)' expresión='[10,150]' texto='Para el caso de paralelismo, las rectas comparten un parámetro. Este parámetro es la pendiente.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='350'">
+   <param name="G_04" value="espacio='E1' tipo='texto' dibujar-si='(RelacRectas==1)' expresión='[10,240]' texto='La ordenada al origen parece no seguir una regla que determine si son o no paralelas. Puedes manualmente cambiar el valor de la ordenada al origen con el pulsador en el gráfico cuyo color corresponde a la recta.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='350'">
+   <param name="G_05" value="espacio='PanelDer' tipo='ecuación' color='azul' dibujar-si='RelacRectas!=0' expresión='y=m1*x+b1' ancho='2'">
+   <param name="G_06" value="espacio='PanelDer' tipo='ecuación' color='rojo' dibujar-si='RelacRectas!=0' expresión='y=m2*x+b2' ancho='2'">
+   <param name="G_07" value="espacio='PanelDer' tipo='segmento' color='00cb00' dibujar-si='(RelacRectas==1)|((RelacRectas==2)&(indb%2==0))' expresión='(0,b)(mDen1,b)' fijo='sí' tamaño='1' ancho='2'">
+   <param name="G_08" value="espacio='E1' tipo='punto' fondo='sí' dibujar-si='0' expresión='(0,0)' fijo='sí'">
+   <param name="G_09" value="espacio='PanelDer' tipo='segmento' color='e7ac00' dibujar-si='(RelacRectas==1)|((RelacRectas==2)&(indb%2==0))' expresión='(mDen1,b)(mDen1,b+mNum1)' fijo='sí' tamaño='1' ancho='2'">
+   <param name="G_10" value="espacio='PanelDer' tipo='segmento' color='e7ac00' dibujar-si='(RelacRectas==2)&(indb%2==1)' expresión='(0,b)(-mNum1,b)' fijo='sí' tamaño='1' ancho='2'">
+   <param name="G_11" value="espacio='E1' tipo='texto' dibujar-si='(RelacRectas==2)' expresión='[10,150]' texto='Para el caso de perpendicularidad, observa que el numerador y el denominador de la pendiente parecen invertir su posición entre una recta y la otra. Adicionalmente, el signo de la pendiente cambia.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='325'">
+   <param name="G_12" value="espacio='E1' tipo='texto' dibujar-si='(RelacRectas==2)' expresión='[10,300]' texto='La ordenada al origen parece no seguir una regla que determine si son o no paralelas. Puedes manualmente cambiar el valor de la ordenada al origen con el pulsador en el gráfico cuyo color corresponde a la recta.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='325'">
+   <param name="G_13" value="espacio='PanelDer' tipo='segmento' color='00cb00' dibujar-si='(RelacRectas==2)&(indb%2==1)' expresión='(-mNum1,b)(-mNum1,b+mDen1)' fijo='sí' tamaño='1' ancho='2'">
+   <param name="G_14" value="espacio='PanelDer' tipo='texto' color='azul' expresión='[25,15]' texto='b' fuente='Serif,BOLD+ITALIC,20' fijo='sí'">
+   <param name="G_15" value="espacio='Expl' tipo='texto' expresión='[10,10]' texto='Usa el botón &squot;Intercambiar&squot; para mover los segmentos de la pendiente de una recta a otra.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='450'">
+   <param name="G_16" value="espacio='Expl' tipo='texto' dibujar-si='RelacRectas==1' expresión='[10,70]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}{\colortbl\red0\green203\blue0;\red32\green48\blue58;\red231\green172\blue0;}\f1\fs34 Nota que se pinta un segmento \cf0 verde\cf1  y uno \cf2 naranja\cf1 . El\par \cf2 naranja\cf1  corresponde al cambio vertical en el valor para\par la recta cuando realizas un cambio correspondiente al\par segmento \cf0 verde\cf1  horizontalmente.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_17" value="espacio='Expl' tipo='texto' dibujar-si='RelacRectas==1' expresión='[10,180]' texto='El segmento naranja, así pues, corresonde al numerador de la pendiente y el verde al denominador. Pero nota que al &squot;Intercambiar&squot;, es justo el mismo par de segmentos el que corresponde a la otra recta. Sólo que desplazado verticalmente.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='450'">
+   <param name="G_18" value="espacio='PanelDer' tipo='texto' color='rojo' expresión='[290,15]' texto='b' fuente='Serif,BOLD+ITALIC,20' fijo='sí'">
+   <param name="G_19" value="espacio='PanelDer' tipo='polígono' coord_abs='sí' expresión='(1,1)(PanelDer._w-1,1)(PanelDer._w-1,PanelDer._h-1)(1,PanelDer._h-1)(1,1)' ancho='2'">
+   <param name="G_20" value="espacio='Expl' tipo='punto' fondo='sí' dibujar-si='0' expresión='(0,0)' fijo='sí'">
+   <param name="G_21" value="espacio='Expl' tipo='texto' dibujar-si='RelacRectas==2' expresión='[10,70]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}{\colortbl\red0\green203\blue0;\red32\green48\blue58;\red231\green172\blue0;\red0\green0\blue255;\red255\green0\blue0;}\f1\fs34 Nota que se pinta un segmento \cf0 verde\cf1  y uno \cf2 naranja\cf1 . Para\par la recta \cf3 azul\cf1 , el \cf2 naranja\cf1  corresponde al cambio vertical y\par el \cf0 verde\cf1  al cambio horizontal. Pero para la recta \cf4 roja\cf1 , el\par segmento \cf0 verde\cf1  corresponde al cambio vertical, mientras\par que el segmento \cf2 naranja\cf1  corresponde al horizontal.}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_22" value="espacio='Expl' tipo='polígono' fondo='sí' coord_abs='sí' expresión='(1,1)(Expl._w-1,1)(Expl._w-1,Expl._h-1)(1,Expl._h-1)(1,1)' ancho='2'">
+</ajs></p>
+
+</body>
+</html>

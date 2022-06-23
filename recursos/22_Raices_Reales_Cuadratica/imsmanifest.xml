@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--This is a Reload version 2.5.6 SCORM 1.2 Content Package document-->
+<!--Spawned from the Reload Content Package Generator - http://www.reload.ac.uk-->
+<manifest xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" identifier="MANIFEST-C51B770DC10499E56D2A78EF8D8ECE52" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <adlcp:location />
+    <imsmd:lom>
+      <imsmd:general>
+        <imsmd:identifier>22_Raices_Reales_Cuadratica</imsmd:identifier>
+        <imsmd:title>
+          <imsmd:langstring xml:lang="es">Interpretación de la existencia de raíces reales en la función cuadrática</imsmd:langstring>
+        </imsmd:title>
+      </imsmd:general>
+      <imsmd:lifecycle>
+        <imsmd:version>
+          <imsmd:langstring xml:lang="es">1.0</imsmd:langstring>
+        </imsmd:version>
+        <imsmd:status>
+          <imsmd:source>
+            <imsmd:langstring xml:lang="x-none">LOMv1.0</imsmd:langstring>
+          </imsmd:source>
+          <imsmd:value>
+            <imsmd:langstring xml:lang="es" />
+          </imsmd:value>
+        </imsmd:status>
+        <imsmd:contribute>
+          <imsmd:role>
+            <imsmd:source>
+              <imsmd:langstring xml:lang="x-none">LOMv1.0</imsmd:langstring>
+            </imsmd:source>
+            <imsmd:value>
+              <imsmd:langstring xml:lang="es">Autor</imsmd:langstring>
+            </imsmd:value>
+          </imsmd:role>
+          <imsmd:centity>
+            <imsmd:vcard>Alejandro Radillo Díaz</imsmd:vcard>
+          </imsmd:centity>
+        </imsmd:contribute>
+      </imsmd:lifecycle>
+      <imsmd:metametadata>
+        <imsmd:identifier>22_Raices_Reales_Cuadratica</imsmd:identifier>
+      </imsmd:metametadata>
+      <imsmd:technical>
+        <imsmd:format>text/html</imsmd:format>
+        <imsmd:requirement>
+          <imsmd:name>
+            <imsmd:source>
+              <imsmd:langstring xml:lang="x-none">LOMv1.0</imsmd:langstring>
+            </imsmd:source>
+            <imsmd:value>
+              <imsmd:langstring xml:lang="es" />
+            </imsmd:value>
+          </imsmd:name>
+        </imsmd:requirement>
+      </imsmd:technical>
+      <imsmd:classification>
+        <imsmd:description>
+          <imsmd:langstring xml:lang="es"><![CDATA[Análisis de la existencia de raíces de la ecuación cuadrática a partir del discriminante.
+		  
+		  Esta unidad se aboca a la interpretación de la existencia (única o dual) o inexistencia de soluciones reales en una ecuación cuadrática a partir de análisis del discriminante en la fórmula general de la misma. Se extiende este conocimiento a las funciones cuadráticas y se muestra la contraparte gráfica de esta existencia o inexistencia de soluciones como la existencia o inexistencia de raíces de la función cuadrática. Se presentan ejercicios de determinación del número de raíces en una función cuadrática y del cálculo (en caso de existir) de las mismas. Se concluye con cinco preguntas de autoevaluación sobre el tema.]]></imsmd:langstring>
+        </imsmd:description>
+        <imsmd:keyword>
+          <imsmd:langstring xml:lang="es">Fórmula general de ecuaciones cuadráticas</imsmd:langstring>
+          <imsmd:langstring xml:lang="es">Fórmula general de segundo grado</imsmd:langstring>
+		  <imsmd:langstring xml:lang="es">Discriminante</imsmd:langstring>
+		  <imsmd:langstring xml:lang="es">Raíces reales</imsmd:langstring>
+		  <imsmd:langstring xml:lang="es">Raíces complejas</imsmd:langstring>
+		  <imsmd:langstring xml:lang="es">Ecuación cuadrática</imsmd:langstring>
+		  <imsmd:langstring xml:lang="es">Ecuación general de ecuaciones cuadráticas</imsmd:langstring>
+        </imsmd:keyword>
+      </imsmd:classification>
+    </imsmd:lom>
+  </metadata>
+  <organizations default="ORG-66DFEE253D6A683735115ADE32F39FD5">
+    <organization identifier="ORG-66DFEE253D6A683735115ADE32F39FD5" structure="hierarchical">
+      <title>main</title>
+      <item identifier="ITEM-7D8E13C3DD94DF2137682321FE228CC3" isvisible="true" identifierref="RES-7AEBA12A3C37D31569C88FD366C6F96A">
+        <title>Interpretación de la existencia de raíces reales en la función cuadrática</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="RES-7AEBA12A3C37D31569C88FD366C6F96A" type="webcontent" href="content/index.html">
+      <file href="content/index.html" />
+      <file href="content/css/contenedor.css" />
+    </resource>
+  </resources>
+</manifest>
+

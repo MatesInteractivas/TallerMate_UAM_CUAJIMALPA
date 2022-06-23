@@ -1,0 +1,79 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!-- iOS -->
+		<!--<meta name="viewport" content="width=device-width, user-scalable=yes">-->
+		<meta name="viewport" content="device-width=900">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!-- CSS -->
+		<link rel="stylesheet" href="css/contenedor.css">
+		<!-- Javascript -->
+		<script src="js/jquery-2.1.1.min.js"></script>
+		<script src="js/data.js"></script>
+		<script src="js/contribute/adl/SCORM_12_APIWrapper.js"></script>
+		<script src="js/player.js"></script>
+		<!-- Glosario / Biblio / Créditos-->
+		<script src="info/glosario.js"></script>
+		<script src="info/bibliografia.js"></script>
+		<script src="info/creditos.js"></script>
+		
+		<script>
+			function manageZoom(){
+				//alert("screen/zoom: "+screen.width/detectZoom.zoom()+"; innerWidth: "+ window.innerWidth);
+				if(window.innerWidth<900){
+					$('.lateral_button').css({'width':'0px','height':'0px'});	
+				} else {
+					$('.lateral_button').css({"width":"54px","height":"54px"});
+				}
+				
+				if(window.innerWidth<250){
+					$('#menu_links').css({ 'visibility':'hidden' });
+				} else if(window.innerWidth<700){
+					$('#menu_links').css({ 'visibility':'visible' });
+					$('#menu_links').css({'left':'0px','right':'auto'});
+				} else {
+					$('#menu_links').css({ 'visibility':'visible' });
+					$('#menu_links').css({'right':'0px','left':'auto'});
+				}
+			}
+		</script>
+		
+	<title>Funciones trigonométricas de ángulos notables</title>	
+	</head>
+	<body>
+		<!-- Layout -->		
+		<div id="container">
+			<div id="loading"></div>		
+			<div id="main"></div>
+			<div id="header">
+				<div id="header_title"></div>
+			</div>
+			<div id="menu">
+				<div id="menu_buttons"></div>
+				<div id="menu_pages"></div>
+				<div id="menu_links">
+					<span><a id="glossary_button" class="menu_link" title="Haz clic aquí para consultar el glosario.">Glosario</a>|<a id="credits_button" class="menu_link" title="Haz clic aquí para ver los créditos de esta unidad.">Créditos</a>|<a id="biblio_button" class="menu_link" title="Haz clic aquí para ver las referencias bibliográficas de esta unidad.">Bibliografía</a></span>
+				</div>
+			</div>
+			
+			<a class="lateral_button left compu" id="lb_left" href="#"></a>
+			<a class="lateral_button right compu" id="lb_right" href="#"></a>
+			
+			<div class="popupWindow oculto">
+				<div class='popup_inner'>
+					<a class="standardButton bt_close_popup" href="#">×</a>
+					<h1 id="popup_header"></h1>
+					<div id="popup_content"></div>
+				</div>
+			</div>
+		
+			<div id="footer">
+				<div id="footer_title"></div>
+			</div>
+			
+		</div>
+	</body>
+</html>
+
+<!-- End of File -->

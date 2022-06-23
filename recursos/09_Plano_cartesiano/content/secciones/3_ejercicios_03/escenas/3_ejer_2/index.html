@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+	<title>El plano cartesiano &nbsp;-&nbsp; Introducción.</title>
+   <style>
+   *{
+      border:0;
+      margin:0;
+      padding:0;
+   }
+   body{
+      /*background-color:#7db9f2;*/
+      background-color:#f8a56a;
+      margin-top: 5px;
+   }
+	</style>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+
+<body>
+
+<p align="center">
+<ajs name="Descartes" width=790 height=520 code="Descartes">
+   <param name="tamaño" value="790x520">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no">
+   <param name="E_01" value="tipo='R2' id='E0' y='65' alto='455' fijo='sí' imagen='images/fondoAplett.png' despl_imagen='arr-izq' fondo='blanco' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='E1' x='13' y='85' ancho='764' alto='365' fijo='sí' escala='29' O.x='-10' imagen='images/fondoPlano.png' despl_imagen='arr-izq' fondo='ffffffff' red='335196f3' red10='no' ejes='negro' texto='no'">
+   <param name="E_03" value="tipo='R2' id='E3' x='171' y='124' ancho='427' alto='290' dibujar-si='(verif==1)&&(!correcto)&&(cerrar==1)' fijo='sí' imagen='images/postitBig.png' despl_imagen='arr-izq' fondo='ffff0000' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_04" value="tipo='R2' id='E4' x='208' y='144' ancho='350' alto='252' dibujar-si='(verif==1)&&(correcto)&&(cerrar==1)' fijo='sí' imagen='images/postit.png' despl_imagen='arr-izq' fondo='ffff0000' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_05" value="tipo='R2' id='pleca' x='0' y='0' ancho='790' alto='65' fijo='sí' imagen='images/instrucciones.png' despl_imagen='expand.' fondo='ffffffff' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='_x' tipo='numérico' interfaz='campo de texto' región='interior' espacio='E0' expresión='(170,400,50,40)' valor='&squot;&squot;' decimales='0' fijo='sí' visible='sí' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='0' activo-si='!correcto'">
+   <param name="C_02" value="id='_y' tipo='numérico' interfaz='campo de texto' región='interior' espacio='E0' expresión='(430,400,50,40)' valor='&squot;&squot;' decimales='0' fijo='sí' visible='sí' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='0' activo-si='!correcto' pos_mensajes='centro'">
+   <param name="C_03" value="id='otros' tipo='numérico' interfaz='botón' región='interior' espacio='E0' nombre='Otro ejercicio' expresión='(586,404,140,30)' fijo='sí' visible='sí' color='blanco' fuente puntos='17' imagen='images/btn140.png' acción='calcular' parámetro='reInit()\n' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='correcto' pos_mensajes='centro'">
+   <param name="C_04" value="id='verif' tipo='numérico' interfaz='botón' región='interior' espacio='E0' nombre='Verificar' expresión='(586,404,140,30)' fijo='sí' visible='sí' color='blanco' fuente puntos='17' imagen='images/btn140.png' acción='calcular' parámetro='verificar()' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='correcto==0' pos_mensajes='centro'">
+   <param name="C_05" value="id='n7' tipo='numérico' región='interior' espacio='E0' nombre='n7' incr='1' fijo='sí' visible='sí' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='0' pos_mensajes='centro'">
+   <param name="C_06" value="id='n8' tipo='numérico' región='interior' espacio='E0' nombre='n8' incr='1' fijo='sí' visible='sí' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='0' pos_mensajes='centro'">
+   <param name="C_07" value="id='cerrar' tipo='numérico' interfaz='botón' región='interior' espacio='E3' expresión='(393,8,20,20)' fijo='sí' visible='sí' imagen='images/cerrar.png' acción='calcular' parámetro='cerrar=0' parámetro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro'">
+   <param name="C_08" value="id='_cuadrante' tipo='numérico' interfaz='menú' región='interior' espacio='E0' expresión='(50,400,300,40)' valor='&squot;&squot;' decimales='0' fijo='sí' visible='no' opciones=' ,Primer cuadrante (I),Segundo cuadrante (II),Tercer cuadrante (III),Cuarto cuadrante (IV)' parámetro.fuente='Monospaced,PLAIN,12' activo-si='!correcto' pos_mensajes='centro'">
+   <param name="A_01" value="id='Bien(x1,y1)' expresión='(abs(x1-y1)<0.15)?1:0' hacer=';;'">
+   <param name="A_02" value="id='reInit()' algoritmo='sí' algoritmo='sí' inicio='a_ant=a;b_ant=b' hacer='a=(ent(rnd*24))-12;b=(ent(rnd*10))-5;a=(abs(a)<2)?(ent(rnd*24))-12:a;b=(abs(b)<2)?(ent(rnd*10))-5:b;a=(a==0)?1:a;b=(b==0)?1:b;verif=0;G.x=0;G.y=0;correcto=0;cerrar=0;_x=&squot;&squot;;_y=&squot;&squot;;_cuadrante=0' mientras='(a=a_ant)|(b=b_ant)'">
+   <param name="A_03" value="id='verificar()' algoritmo='sí' expresión='x' algoritmo='sí' Local='cuad' inicio='cuad=0' hacer='verif=1;cerrar=1;;cuad=((a>0)&&(b>0))?1:cuad;cuad=((a<0)&&(b>0))?2:cuad;cuad=((a<0)&&(b<0))?3:cuad;cuad=((a>0)&&(b<0))?4:cuad;;;correcto=(cuad==_cuadrante)'">
+   <param name="A_04" value="id='Inicio' algoritmo='sí' evaluar='una-sola-vez' inicio='reInit()' hacer='SOM.Top=600;SOM.Left=400;SOM.transp=0.80;SOM.rojo=0.20;SOM.verde=0.80;SOM.azul=0.99'">
+   <param name="G_01" value="espacio='E0' tipo='imagen' coord_abs='sí' expresión='(0,0)' archivo='images/marco.png'">
+   <param name="G_02" value="espacio='pleca' tipo='texto' fondo='sí' color='blanco' expresión='[65,20]' texto='Selecciona en el menú el cuadrante en el que se localiza el autobús.' fuente='SansSerif,BOLD,20' fijo='sí'">
+   <param name="G_03" value="espacio='E1' tipo='imagen' expresión='(a,b)(1,1)' archivo='images/buspk.png'">
+   <param name="G_04" value="espacio='E3' tipo='texto' expresión='[28,-2]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Arial;\f3\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\f1\fs40\b\par        \cf0  \u161 INT\u201 NTALO DE NUEVO!\b0\par \par Recuerda que el primer cuadrante es\par la zona superior derecha, donde tanto\par el valor de la coordenada \f3\fs44\i{\*\mjaformula x}\f2\fs40\i0  como el \par de la coordenada \f3\fs44\i{\*\mjaformula y}\f2\fs40\i0  es positivo.\par A partir del primer cuadrante, los dem\u225 s\par se obtienen yendo en sentido contrario\par a las agujas del reloj.}' fuente='SansSerif,BOLD,20' fijo='sí'">
+   <param name="G_05" value="espacio='E4' tipo='texto' expresión='[30,45]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Arial;}{\colortbl\red0\green0\blue0;}\cf0\f1\fs40     \b       \u161 FELICIDADES!\b0\par \par Reconociste el cuadrante en \par el que se encuentra el autob\u250 s.}' fuente='SansSerif,PLAIN,20' fijo='sí'">
+   <param name="G_06" value="espacio='E1' tipo='punto' color='f69000' expresión='(12.5,-0.8)' texto='x' fuente='SansSerif,PLAIN,32' fijo='sí' tamaño='0'">
+   <param name="G_07" value="espacio='E1' tipo='punto' color='f69000' expresión='(-0.5,10.5-4.9)' texto='y' fuente='SansSerif,PLAIN,32' fijo='sí' tamaño='0'">
+   <param name="G_08" value="espacio='E1' tipo='punto' color='negro' expresión='(-12.2+s,-0.7)' familia='s' s.intervalo='[0,24]' s.pasos='24' texto='[-12+s]' fuente='SansSerif,BOLD,14' decimales='0' fijo='sí' tamaño='0'">
+   <param name="G_09" value="espacio='E1' tipo='punto' color='negro' dibujar-si='s!=5' expresión='(-1,4.8-s)' familia='s' s.intervalo='[0,10]' s.pasos='10' texto='[5-s]' fuente='SansSerif,BOLD,14' decimales='0' fijo='sí' tamaño='0'">
+</ajs>
+</p>
+
+<script id="macros/sombras.txt" type="descartes/macro">
+tipo_de_macro=R2
+Idioma=español
+id='W' constante='sí' expresión='790' evaluar='una-sola-vez'
+id='H' constante='sí' expresión='455' evaluar='una-sola-vez'
+id='Top' constante='sí' expresión='500' evaluar='una-sola-vez'
+id='Left' constante='sí' expresión='300' evaluar='una-sola-vez'
+id='transp' constante='sí' expresión='0.8' evaluar='una-sola-vez'
+id='rojo' constante='sí' expresión='0.2' evaluar='una-sola-vez'
+id='verde' constante='sí' expresión='0.8' evaluar='una-sola-vez'
+id='azul' constante='sí' expresión='0.99' evaluar='una-sola-vez'
+tipo='curva' color='(rojo,verde,azul,transp)' coord_abs='sí' expresión='((t<=1)?Top*t^2:Top*(1-t),(t<=1)?Left*(1-sqrt(1-(1-t^2)^2)):0)' t.intervalo='[0,2]' t.pasos='64' relleno='(rojo,verde,azul,transp)' ancho='0' visible='no' 
+tipo='curva' color='(rojo,verde,azul,transp)' coord_abs='sí' expresión='((t<=1)?W-Top*t^2:W-Top*(1-t),(t<=1)?H-Left*(1-sqrt(1-(1-t^2)^2)):H)' t.intervalo='[0,2]' t.pasos='64' relleno='(rojo,verde,azul,transp)' ancho='0' visible='no' 
+</script>
+
+</body>
+
+</html>

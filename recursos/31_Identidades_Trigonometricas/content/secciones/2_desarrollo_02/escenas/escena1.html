@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=750 height=480 code="Descartes">
+   <param name="tamaño" value="750x480">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo.png' despl_imagen='arr-izq' fondo='f3f0ec' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='PCar' x='51%' y='17%' ancho='48%' alto='80%' fijo='sí' despl_imagen='arr-izq' red='b8c4c8' red10='889498' ejes='405860' texto='405860'">
+   <param name="C_01" value="id='TipoFuncMn' tipo='numérico' interfaz='menú' región='interior' espacio='E1' nombre='_nada_' expresión='(E1._w*3/5-75,10,150,34)' decimales='0' fijo='sí' visible='no' opciones='Tipo de función,par,impar' acción='calcular' parámetro='ReInit()'">
+   <param name="C_02" value="id='EjemploMn' tipo='numérico' interfaz='menú' región='interior' espacio='E1' nombre='_nada_' expresión='(E1._w*4/5-50,10,100,34)' decimales='0' fijo='sí' visible='no' opciones='Ejemplo,Ejemplo 1,Ejemplo 2' acción='calcular' parámetro='ReInit()' pos_mensajes='centro'">
+   <param name="C_03" value="id='g9' tipo='gráfico' espacio='PCar' constricción='y=_Eval_(Func)' fijo='sí' dibujar-si='(TipoFuncMn!=0)&(EjemploMn!=0)'">
+   <param name="C_04" value="id='g9.x' tipo='numérico' región='exterior' espacio='E1' nombre='g9.y' decimales='1' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="C_05" value="id='g9.y' tipo='numérico' región='exterior' espacio='E1' nombre='g9.y' decimales='1' fijo='sí' visible='sí' pos_mensajes='centro'">
+   <param name="A_01" value="id='ReInit()' algoritmo='sí' algoritmo='sí' hacer='PCar.escala=48;PCar.Ox=0;PCar.Oy=0;Func=((TipoFuncMn==1)&(EjemploMn==1))?&squot;x^2&squot;:Func;Func=((TipoFuncMn==1)&(EjemploMn==2))?&squot;cos(x)&squot;:Func;Func=((TipoFuncMn==2)&(EjemploMn==1))?&squot;x^3&squot;:Func;Func=((TipoFuncMn==2)&(EjemploMn==2))?&squot;sin(x)&squot;:Func;ReiniciaCGrafico()'">
+   <param name="A_02" value="id='ReiniciaCGrafico()' algoritmo='sí' algoritmo='sí' hacer='g9.x=0;g9.y=((TipoFuncMn==1)&(EjemploMn==1))?0:g9.y;g9.y=((TipoFuncMn==1)&(EjemploMn==2))?1:g9.y'">
+   <param name="A_03" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='ReInit()'">
+   <param name="A_04" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(TipoFuncMn==1)&(EjemploMn!=0)' expresión='[10,10]' texto='Las funciones pares son aquellas para las que, si les introduces un argumento y les introduces el negativo del argumento, obtendrás el mismo resultado.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='300'">
+   <param name="G_02" value="espacio='PCar' tipo='ecuación' color='00c280' dibujar-si='(TipoFuncMn!=0)&(EjemploMn!=0)' expresión='y=_Eval_(Func)' ancho='2'">
+   <param name="G_03" value="espacio='PCar' tipo='segmento' color='azul' dibujar-si='(TipoFuncMn==1)&(EjemploMn==1)' expresión='(-g9.x+s*g9.x,0)(-g9.x+s*g9.x,g9.x^2)' familia='s' s.intervalo='[0,2]' s.pasos='1' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_04" value="espacio='PCar' tipo='segmento' color='b35300' dibujar-si='(TipoFuncMn==1)&(EjemploMn==1)' expresión='(-g9.x,g9.x^2)(0,g9.x^2)' fijo='sí' tamaño='4' ancho='2'">
+   <param name="G_05" value="espacio='PCar' tipo='segmento' color='b35300' dibujar-si='(TipoFuncMn==1)&(EjemploMn==1)' expresión='(0,g9.x^2)(g9.x,g9.x^2)' fijo='sí' tamaño='4' ancho='2'">
+   <param name="G_06" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(TipoFuncMn==1)&(EjemploMn==1)' expresión='[10,120]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue255;\red0\green0\blue0;}\f1\fs34 En este ejemplo, tu funci\u243 n par es una\par par\u225 bola. Nota que:\par \f2\fs38\i{\*\mjaformula f({\expr g9.x\decimals 1\fixed0})={\expr g9.x\decimals 1\fixed0}{\supix 2}=}{\*\mjaformula\cf0{\expr g9.x^2\decimals 2\fixed0}\cf1}\f1\fs34\i0  y\par \f2\fs38\i{\*\mjaformula\f2\fs38\i f({\expr -g9.x\decimals 1\fixed0})={\expr -g9.x\decimals 1\fixed0}{\supix 2}=}{\*\mjaformula\cf0{\expr (-g9.x)^2\decimals 2\fixed0}\cf1}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_07" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(TipoFuncMn==1)&(EjemploMn!=0)' expresión='[10,220]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Arial;}\f1\fs34 Es decir, se cumple con que \f2\fs38\i{\*\mjaformula f(x)=f(-x)}\f1\fs34\i0 ,\par por lo que la funci\u243 n es \b par\b0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_08" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(TipoFuncMn==1)&(EjemploMn!=0)' expresión='[10,280]' texto='Nota que, para cada punto escogido en la gráfica, hay un segmento naranja a la derecha del eje de  las ordenadas y otro igual pero a la izquierda de dicho eje, como si estuviera reflejado.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='300'">
+   <param name="G_09" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(TipoFuncMn==1)&(EjemploMn!=0)' expresión='[10,410]' texto='Es por ello que se dice que estas funciones son simétricas respecto al eje de las ordenadas.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='300'">
+   <param name="G_10" value="espacio='E1' tipo='punto' fondo='sí' dibujar-si='0' expresión='(000,0)' fijo='sí'">
+   <param name="G_11" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(TipoFuncMn==1)&(EjemploMn==2)' expresión='[10,120]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue255;\red0\green0\blue0;}\f1\fs34 En este ejemplo, tu funci\u243 n par es un\par coseno. Nota que:\par \f2\fs38\i{\*\mjaformula f({\expr g9.x\decimals 1\fixed0})=cos({\expr g9.x\decimals 1\fixed0})=}{\*\mjaformula\cf0{\expr cos(g9.x)\decimals 2\fixed0}\cf1}\f1\fs34\i0  y\par \f2\fs38\i{\*\mjaformula\f2\fs38\i f({\expr -g9.x\decimals 1\fixed0})=cos({\expr -g9.x\decimals 1\fixed0})=}{\*\mjaformula\cf0{\expr cos(-g9.x)\decimals 2\fixed0}\cf1}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_12" value="espacio='PCar' tipo='punto' fondo='sí' dibujar-si='0' expresión='(000,0)' fijo='sí'">
+   <param name="G_13" value="espacio='PCar' tipo='segmento' color='azul' dibujar-si='(TipoFuncMn==1)&(EjemploMn==2)' expresión='(-g9.x+s*g9.x,0)(-g9.x+s*g9.x,cos(g9.x))' familia='s' s.intervalo='[0,2]' s.pasos='1' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_14" value="espacio='PCar' tipo='segmento' color='b35300' dibujar-si='(TipoFuncMn==1)&(EjemploMn==2)' expresión='(-g9.x,cos(g9.x))(g9.x,cos(g9.x))' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_15" value="espacio='E1' tipo='punto' fondo='sí' dibujar-si='0' expresión='(000,0)' fijo='sí'">
+   <param name="G_16" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(TipoFuncMn==2)&(EjemploMn!=0)' expresión='[10,10]' texto='Las funciones impares son aquellas que, al introducir un argumento y el negativo del mismo, arrojan un resultado y el negativo del resultado, respectivamente.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='300'">
+   <param name="G_17" value="espacio='PCar' tipo='punto' fondo='sí' dibujar-si='0' expresión='(000,0)' fijo='sí'">
+   <param name="G_18" value="espacio='PCar' tipo='segmento' color='azul' dibujar-si='(TipoFuncMn==2)&(EjemploMn==1)' expresión='(-g9.x+2*s*g9.x,((-1)^(s-1))*g9.x^3)(-g9.x+2*s*g9.x,0)' familia='s' s.intervalo='[0,1]' s.pasos='1' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_19" value="espacio='PCar' tipo='segmento' color='b35300' dibujar-si='(TipoFuncMn==2)&(EjemploMn==1)' expresión='(-g9.x,(-g9.x)^3)(g9.x,g9.x^3)' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_20" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(TipoFuncMn==2)&(EjemploMn==1)' expresión='[10,120]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue255;\red0\green0\blue0;}\f1\fs34 En este ejemplo, tu funci\u243 n impar es\par una c\u250 bica. Nota que:\par \f2\fs38\i{\*\mjaformula f({\expr g9.x\decimals 1\fixed0})={\expr g9.x\decimals 1\fixed0}{\supix 3}=}{\*\mjaformula\cf0{\expr (g9.x)^3\decimals 2\fixed0}\cf1}\f1\fs34\i0  y\par \f2\fs38\i{\*\mjaformula\f2\fs38\i f({\expr -g9.x\decimals 1\fixed0})={\expr -g9.x\decimals 1\fixed0}{\supix 3}=}{\*\mjaformula\cf0{\expr (-g9.x)^3\decimals 2\fixed0}\cf1}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_21" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(TipoFuncMn==2)&(EjemploMn!=0)' expresión='[10,220]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Arial;}\f1\fs34 Es decir, se cumple con que \f2\fs38\i{\*\mjaformula f(-x)=-f(x)}\f1\fs34\i0 ,\par por lo que la funci\u243 n es \b impar\b0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_22" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(TipoFuncMn==2)&(EjemploMn!=0)' expresión='[10,280]' texto='A diferencia de las funciones pares, aquí el segmento naranja no se refleja respecto al eje Y, sino respecto al origen.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='300'">
+   <param name="G_23" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(TipoFuncMn==2)&(EjemploMn!=0)' expresión='[10,390]' texto='Es por ello que se dice que estas funciones son simétricas respecto al origen.' fuente='SansSerif,PLAIN,17' fijo='sí' ancho='300'">
+   <param name="G_24" value="espacio='PCar' tipo='polígono' color='negro' coord_abs='sí' expresión='(1,1)(PCar._w-1,1)(PCar._w-1,PCar._h-1)(1,PCar._h-1)(1,1)' ancho='2'">
+   <param name="G_25" value="espacio='PCar' tipo='punto' fondo='sí' dibujar-si='0' expresión='(000,0)' fijo='sí'">
+   <param name="G_26" value="espacio='PCar' tipo='segmento' color='azul' dibujar-si='(TipoFuncMn==2)&(EjemploMn==2)' expresión='(-g9.x+2*s*g9.x,((-1)^(s-1))*sin(g9.x))(-g9.x+2*s*g9.x,0)' familia='s' s.intervalo='[0,1]' s.pasos='1' fijo='sí' tamaño='0' ancho='2'">
+   <param name="G_27" value="espacio='E1' tipo='punto' fondo='sí' dibujar-si='0' expresión='(000,0)' fijo='sí'">
+   <param name="G_28" value="espacio='E1' tipo='texto' color='232323' dibujar-si='(TipoFuncMn==2)&(EjemploMn==2)' expresión='[10,120]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue255;\red0\green0\blue0;}\f1\fs34 En este ejemplo, tu funci\u243 n impar es\par un seno. Nota que:\par \f2\fs38\i{\*\mjaformula f({\expr g9.x\decimals 1\fixed0})=sin({\expr g9.x\decimals 1\fixed0})=}{\*\mjaformula\cf0{\expr sin(g9.x)\decimals 2\fixed0}\cf1}\f1\fs34\i0  y\par \f2\fs38\i{\*\mjaformula\f2\fs38\i f({\expr -g9.x\decimals 1\fixed0})=sin({\expr -g9.x\decimals 1\fixed0})=}{\*\mjaformula\cf0{\expr sin(-g9.x)\decimals 2\fixed0}\cf1}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_29" value="espacio='PCar' tipo='segmento' color='b35300' dibujar-si='(TipoFuncMn==2)&(EjemploMn==2)' expresión='(-g9.x,sin(-g9.x))(g9.x,sin(g9.x))' fijo='sí' tamaño='0' ancho='2'">
+</ajs></p>
+
+</body>
+</html>

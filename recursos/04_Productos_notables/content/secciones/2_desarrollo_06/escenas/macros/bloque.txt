@@ -1,0 +1,19 @@
+tipo_de_macro=R2
+Idioma=espa&ntilde;ol
+id='tipo' constante='si' expresi&oacute;n='3' evaluar='una-sola-vez'
+id='alfa' constante='si' expresi&oacute;n='0.4' evaluar='una-sola-vez'
+id='alto' constante='si' expresi&oacute;n='2' evaluar='una-sola-vez'
+id='ancho' constante='si' expresi&oacute;n='2' evaluar='una-sola-vez'
+id='rojo' constante='si' expresi&oacute;n='1' evaluar='una-sola-vez'
+id='verde' constante='si' expresi&oacute;n='1' evaluar='una-sola-vez'
+id='azul' constante='si' expresi&oacute;n='0' evaluar='una-sola-vez'
+id='transp' constante='si' expresi&oacute;n='0' evaluar='una-sola-vez'
+id='texto' constante='si' expresi&oacute;n='|x&sup2;|' evaluar='una-sola-vez'
+id='dx' constante='si' expresi&oacute;n='-0.25' evaluar='una-sola-vez'
+id='dy' constante='si' expresi&oacute;n='-0.15' evaluar='una-sola-vez'
+tipo='pol&iacute;gono' color='negro' expresi&oacute;n='(0,0)(ancho,0)(ancho,alto)(0,alto)(0,0)' relleno='(rojo,verde,azul,alfa)' 
+tipo='punto' color='negro' dibujar-si='0' expresi&oacute;n='(dx,dy)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}\f1\fs40{\*\mjaformula{\expr texto}}\f2\fs24\par}' fuente='Arial,PLAIN,20' tama&ntilde;o='0' 
+tipo='imagen' dibujar-si='tipo=0' expresi&oacute;n='(ancho/2,alto/2)(1,1)' archivo='../images/uno.png' 
+tipo='imagen' dibujar-si='(tipo>0)&(tipo<3)' expresi&oacute;n='(ancho/2,alto/2)(1,1)' archivo='../images/equis.png' 
+tipo='imagen' dibujar-si='tipo=3' expresi&oacute;n='(ancho/2,alto/2)(1,1)' archivo='../images/equisCuadrada.png' 
+

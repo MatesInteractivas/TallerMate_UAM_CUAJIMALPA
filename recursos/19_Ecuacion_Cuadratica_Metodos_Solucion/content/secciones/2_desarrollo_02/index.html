@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>La fórmula general</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Solución de ecuaciones cuadráticas no fácilmente factorizables</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    Imagina que tienes una cuadrática difícil de factorizar, como por ejemplo, \(1.559x^2-5.1x+0.333=0\). En ese caso, no es evidente qué coeficientes dentro de los factores has de escoger para la \(x\) ni qué valores dentro de los paréntesis debes tener para los términos independientes (que no dependen de \(x\)).
+    </p>
+    
+    <p>
+    Es precisamente para estos casos que se cuenta con la <strong>fórmula general</strong>, la cual verás a continuación.
+    </p>
+    
+    <div class="instrucciones">Se te presentará una ecuación cuadrática que no es necesariamente fácil factorizar. Igual que siempre, se trata de encontrar el o los valores de \(x\) que satisfacen la ecuación. Avanza en la explicación de la estrategia para encontrar la solución con el botón 'Siguiente' o usa 'Anterior' para retroceder. Al final se te presentará una deducción general (para coeficientes \(a\), \(b\) y \(c\) en la ecuación cuadrática \(ax^2+bx+c=0\), sin proporcionarles valores numéricos como tal) hacia la fórmula general de las ecuaciones cuadráticas.
+    </div>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="510" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    
+    <h2>Detalles de importancia</h2>
+
+    <p>
+    En el espacio interactivo anterior vimos que la <strong>fórmula general para obtener las soluciones de una ecuación cuadrática</strong> es:
+    </p>
+
+\[x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\]
+    
+    <p>
+    Conviene reflexionar sobre los siguientes puntos:
+	<ul>
+		<li>¿Qué pasará si el argumento dentro de la raíz, conocido como <em>discriminante</em>, es negativo? Aunque más adelante, en la unidad sobre la interpretación de las raíces reales de la ecuación cuadrática, abordarás este punto con más profundidad, basta considerar aquí que una ecuación cuadrática cuyo discriminante es negativo no tiene solución. Es decir, no hay valores reales para \(x\) que satisfagan la ecuación.<br><br></li>
+		<li>¿Qué pasará si dicho discriminante es cero? Puedes darte cuenta analizando la fórmula general que, entonces, \(x_1=x_2\) y tu ecuación cuadrática realmente sólo tiene una solución. Esto también será abordado más a profundidad en unidades posteriores.<br><br></li>
+		<li>¿Y si el discriminante es mayor que cero? Como viste, ello implica que hayan 2 raíces. Así, una ecuación cuadrática puede tener cero, una o dos raíces.<br><br></li>
+	</ul>
+    </p>
+
+    <p>
+    También es importante notar que, al igual que en las ecuaciones lineales que abordaste en una de las unidades iniciales, en las cuadráticas puedes también sustituir tu o tus resultados para tu incógnita y, si se satisface la ecuación, sabrás que el valor o los valores que obtuviste son los correctos.
+    </p>
+
+    <p>
+    Finalmente, nota que entre las distintas formas de obtener las soluciones a una ecuación cuadrática, la fórmula general es la herramienta más directa y útil. Puedes regresar a la página anterior a los problemas de factorización y echar mano de la fórmula general, la cual también te permitirá encontrar las soluciones a las ecuaciones involucradas. Otra forma de verlo es que la factorización y el despeje directo no siempre serán métodos posibles o fáciles para resolver una ecuación cuadrática. Por el contrario, la fórmula general sí lo será.
+    </p>
+
+    <p>
+    Avanza ahora a la parte de los ejercicios.
+    </p>
+
+
+  
+    <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

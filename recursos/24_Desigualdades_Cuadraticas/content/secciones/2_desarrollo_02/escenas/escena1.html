@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>Movimiento Rectilineo 1</title>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0;padding:0;overflow:hidden;">
+<p align="center">
+
+<ajs name="Movimiento_Rectilineo_1" width=650 height=400 code="Descartes">
+   <param name="tamaño" value="650x400">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Movimiento_Rectilineo_1">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo.png' despl_imagen='expand.' fondo='d8d8e5' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='ant' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Anterior' expresión='(20,360,120,30)' valor='sig' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' fuente puntos='18' imagen='images/btn120x30.png' acción='calcular' parámetro='sig=sig-1' dibujar-si='sig>0'">
+   <param name="C_02" value="id='sig' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Siguiente' expresión='(520,360,120,30)' valor='sig' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' fuente puntos='18' imagen='images/btn120x30.png' acción='calcular' parámetro='sig=sig+1' dibujar-si='sig<5' pos_mensajes='centro'">
+   <param name="C_03" value="id='reinit' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Reiniciar' expresión='(520,360,120,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' fuente puntos='18' imagen='images/btn120x30.png' acción='calcular' parámetro='init()' dibujar-si='sig=5' pos_mensajes='centro'">
+   <param name="A_01" value="id='init()' algoritmo='sí' algoritmo='sí' hacer='sig=0;a=-5+ent(rnd*5);aa=1+ent(rnd*3);b=1+ent(rnd*5);bb=1+ent(rnd*3)'">
+   <param name="A_02" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='init();'">
+   <param name="A_03" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='texto' dibujar-si='sig=0' expresión='[20,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs36 Encontrar los valores de \f2\fs44\i x\f1\fs36\i0  de tal forma que estos satisfagan la desigualdad\f2\fs44\i\par                             ({\*\mjaformula x+{\expr abs(a)}})({\*\mjaformula x-{\expr b}})&gt;0\f1\fs36\i0}' fuente='SansSerif,PLAIN,18' decimales='0' fijo='sí'">
+   <param name="G_02" value="espacio='E1' tipo='texto' dibujar-si='sig>0' expresión='[190,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Arial;}\f1\fs60\i ({\*\mjaformula x+{\expr abs(a)}})({\*\mjaformula x-{\expr b}})&gt;0\f2\fs36\i0}' fuente='Serif,ITALIC,30' decimales='0' fijo='sí'">
+   <param name="G_03" value="espacio='E1' tipo='texto' dibujar-si='sig=1' expresión='[20,140]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs36 Primero encontramos los puntos cr\u237 ticos, es decir: los valores de \f2\fs40\i{\*\mjaformula x}\f1\fs36\i0  que\par cumplan que \f2\fs40\i{\*\mjaformula x+{\expr abs(a)\decimals 0\fixed1}=0}\f1\fs36\i0  y \f2\fs40\i{\*\mjaformula x-{\expr b\decimals 0\fixed1}=0}.\f1\fs36\i0  Estos valores son \f2\fs40\i{\*\mjaformula x={\expr a\decimals 0\fixed1}}\f1\fs36\i0\par y \f2\fs40\i{\*\mjaformula x={\expr b\decimals 0\fixed1}}\f1\fs36\i0 . A continuaci\u243 n los ubicamos en la recta num\u233 rica y recono-\par cemos los segmentos en que se divide nuestra recta.}' fuente='SansSerif,PLAIN,18' decimales='0' fijo='sí'">
+   <param name="G_04" value="espacio='E1' tipo='segmento' dibujar-si='sig>1' expresión='(-6,1)(6,1)' fijo='sí' tamaño='0'">
+   <param name="G_05" value="espacio='E1' tipo='punto' color='negro' dibujar-si='sig>1' expresión='(a,1)' fuente='Serif,PLAIN,15' fijo='sí' tamaño='4'">
+   <param name="G_06" value="espacio='E1' tipo='punto' color='negro' dibujar-si='sig>1' expresión='(a,.5)' texto='x=[a]' fuente='Serif,PLAIN,15' decimales='0' fijo='sí' tamaño='0'">
+   <param name="G_07" value="espacio='E1' tipo='punto' color='negro' dibujar-si='sig>1' expresión='(b,1)' fuente='Serif,PLAIN,15' fijo='sí' tamaño='4'">
+   <param name="G_08" value="espacio='E1' tipo='punto' color='negro' dibujar-si='sig>1' expresión='(b,.5)' texto='x=[b]' fuente='Serif,PLAIN,15' decimales='0' fijo='sí' tamaño='0'">
+   <param name="G_09" value="espacio='E1' tipo='punto' color='negro' dibujar-si='sig>1' expresión='(-6,.5)' texto='-∞' fuente='Serif,PLAIN,17' decimales='0' fijo='sí' tamaño='0'">
+   <param name="G_10" value="espacio='E1' tipo='punto' color='negro' dibujar-si='sig>1' expresión='(6,.5)' texto='∞' fuente='Serif,PLAIN,17' decimales='0' fijo='sí' tamaño='0'">
+   <param name="G_11" value="espacio='E1' tipo='texto' dibujar-si='sig=2' expresión='[20,195]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs36 Los tres segmentos en que se divide la recta son:\par                            \f2\fs40\i{\*\mjaformula (-\u8734 ,{\expr a\decimals 0\fixed1})}\f1\fs36\i0 , \f2\fs40\i{\*\mjaformula ({\expr a\decimals 0\fixed1},{\expr b\decimals 0\fixed1})}\f1\fs36\i0 , \f2\fs40\i{\*\mjaformula ({\expr b\decimals 0\fixed1},\u8734 )}\f1\fs36\i0\par Ahora escogemos un valor de prueba para cada segmento, digamos \f2\fs40\i{\*\mjaformula x={\expr a-aa\decimals 0\fixed1},}\par {\*\mjaformula x=0}\f1\fs36\i0  y \f2\fs40\i{\*\mjaformula x={\expr b+bb\decimals 0\fixed1}.}\f1\fs36\i0  Estos valores los evaluamos en cada factor y nos fijamos\par si ambos resultados en cada segmento son de signo igual o contrario. Como\par ya se coment\u243  anteriormente, si el producto es positivo, el conjunto de valores\par que componen los segmentos son parte de la soluci\u243 n.}' fuente='SansSerif,PLAIN,18' decimales='0' fijo='sí'">
+   <param name="G_12" value="espacio='E1' tipo='punto' color='azul' dibujar-si='sig>2' expresión='(a-s-1,2)' familia='s' s.intervalo='[0,a+5]' s.pasos='a+5' texto='-' fuente='SansSerif,PLAIN,38' fijo='sí' tamaño='0'">
+   <param name="G_13" value="espacio='E1' tipo='punto' color='rojo' dibujar-si='sig>2' expresión='(a-s-1,1.5)' familia='s' s.intervalo='[0,a+5]' s.pasos='a+5' texto='-' fuente='SansSerif,PLAIN,38' fijo='sí' tamaño='0'">
+   <param name="G_14" value="espacio='E1' tipo='punto' color='azul' dibujar-si='sig>2' expresión='(a+1+s,2)' familia='s' s.intervalo='[0,b-a-2]' s.pasos='b-a-2' texto='+' fuente='SansSerif,PLAIN,38' fijo='sí' tamaño='0'">
+   <param name="G_15" value="espacio='E1' tipo='punto' color='rojo' dibujar-si='sig>2' expresión='(a+1+s,1.5)' familia='s' s.intervalo='[0,b-a-2]' s.pasos='b-a-2' texto='-' fuente='SansSerif,PLAIN,38' fijo='sí' tamaño='0'">
+   <param name="G_16" value="espacio='E1' tipo='punto' color='azul' dibujar-si='sig>2' expresión='(b+s+1,2)' familia='s' s.intervalo='[0,5-b]' s.pasos='5-b' texto='+' fuente='SansSerif,PLAIN,38' fijo='sí' tamaño='0'">
+   <param name="G_17" value="espacio='E1' tipo='punto' color='rojo' dibujar-si='sig>2' expresión='(b+s+1,1.5)' familia='s' s.intervalo='[0,5-b]' s.pasos='5-b' texto='+' fuente='SansSerif,PLAIN,38' fijo='sí' tamaño='0'">
+   <param name="G_18" value="espacio='E1' tipo='texto' dibujar-si='sig=3' expresión='[20,195]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs36 Primer segmento: \f2\fs40\i{\*\mjaformula ({\expr a-aa\decimals 0\fixed1}+{\expr abs(a)\decimals 0\fixed1})={\expr a-aa+abs(a)\decimals 0\fixed1}}\f1\fs36\i0  y \f2\fs40\i{\*\mjaformula ({\expr a-aa\decimals 0\fixed1}-{\expr b\decimals 0\fixed1})={\expr a-aa-b\decimals 0\fixed1}}\f1\fs36\i0\par Segundo segmento: \f2\fs40\i{\*\mjaformula ({\expr 0\decimals 0\fixed1}+{\expr abs(a)\decimals 0\fixed1})={\expr abs(a)\decimals 0\fixed1}}\f1\fs36\i0  y \f2\fs40\i{\*\mjaformula ({\expr 0\decimals 0\fixed1}-{\expr b\decimals 0\fixed1})={\expr -b\decimals 0\fixed1}}\f1\fs36\i0\par Tercer segmento: \f2\fs40\i{\*\mjaformula ({\expr b+bb\decimals 0\fixed1}+{\expr abs(a)\decimals 0\fixed1})={\expr b+bb+abs(a)\decimals 0\fixed1}}\f1\fs36\i0  y \f2\fs40\i{\*\mjaformula ({\expr b+bb\decimals 0\fixed1}-{\expr b\decimals 0\fixed1})={\expr bb\decimals 0\fixed1}}\f1\fs36\i0\par El producto de los factores en el primer segmento es positivo, al igual que en\par el tercer segmento; en el segundo el producto es negativo. Si la desigualdad\par fuera \f2\fs40\i\u8805 \f1\fs36\i0 , los puntos cr\u237 ticos ser\u237 an parte de la soluci\u243 n, pues como ya vimos\par el producto de los factores en estos valores es cero.}' fuente='SansSerif,PLAIN,18' decimales='0' fijo='sí'">
+   <param name="G_19" value="espacio='E1' tipo='texto' dibujar-si='sig=4' expresión='[20,195]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;}\f1\fs36 El diagrama de signos que se presenta arriba muestra c\u243 mo son los\par signos en cada segmento. Los de color azul corresponden al primer factor\par y los de color rojo corresponden al segundo.\par \par Finalmente para saber el conjunto de valores que satisfacen la desigualdad,\par unimos el segmento 1 con el segmento 3.}' fuente='SansSerif,PLAIN,18' decimales='0' fijo='sí'">
+   <param name="G_20" value="espacio='E1' tipo='flecha' dibujar-si='sig=5' expresión='(a,1)(-6,1)' fijo='sí' ancho='3' ancho='3' punta='5' flecha='negro'">
+   <param name="G_21" value="espacio='E1' tipo='flecha' dibujar-si='sig=5' expresión='(b,1)(6,1)' fijo='sí' ancho='3' ancho='3' punta='5' flecha='negro'">
+   <param name="G_22" value="espacio='E1' tipo='punto' dibujar-si='sig=5' expresión='(a-.2,.8)' texto=')' fuente='SansSerif,PLAIN,40' fijo='sí' tamaño='0'">
+   <param name="G_23" value="espacio='E1' tipo='punto' dibujar-si='sig=5' expresión='(b-.15,.8)' texto='(' fuente='SansSerif,PLAIN,40' fijo='sí' tamaño='0'">
+   <param name="G_24" value="espacio='E1' tipo='texto' dibujar-si='sig=5' expresión='[20,195]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs36 El conjunto soluci\u243 n es:\par \par                                    \f2\fs40\i{\*\mjaformula (-\u8734 ,{\expr a\decimals 0\fixed1})\u8746 ({\expr b\decimals 0\fixed1},\u8734 )}\f1\fs36\i0\par \par que tambi\u233 n se puede escribir como:\par \par                                    \{ \f2\fs40\i{\*\mjaformula x \u8739  {\expr b\decimals 0\fixed1}&lt;x&lt;{\expr a\decimals 0\fixed1}}\f1\fs36\i0  \}\f2\fs40\i}' fuente='SansSerif,PLAIN,18' decimales='0' fijo='sí'">
+   <param name="G_25" value="espacio='E1' tipo='polígono' fondo='sí' color='grisObscuro' dibujar-si='0' coord_abs='sí' expresión='(0,0)(E1._w-1,0)(E1._w-1,E1._h-1)(0,E1._h-1)(0,0)' ancho='3'">
+   <param name="S_01" value="nombre='R3' tipo='macro' dibujar-si='repr=3' expresión='vaso'">
+</ajs>
+</p>
+
+
+
+
+</body>
+</html>

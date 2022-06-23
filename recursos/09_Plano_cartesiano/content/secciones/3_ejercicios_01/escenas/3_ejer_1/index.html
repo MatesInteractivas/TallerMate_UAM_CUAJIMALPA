@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+	<title>El plano cartesiano &nbsp;-&nbsp; Introducción.</title>
+   <style>
+   *{
+      border:0;
+      margin:0;
+      padding:0;
+   }
+   body{
+      /*background-color:#7db9f2;*/
+      background-color:#f8a56a;
+      margin-top: 5px;
+   }
+	</style>	
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+
+<body>
+
+<p align="center">
+<ajs name="Descartes" width=790 height=520 code="Descartes">
+   <param name="tamaño" value="790x520">
+   <param name="sonido" value="sí">
+   <param name="álgebra" value="sí">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.3.12, 2014-07-09">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no">
+   <param name="E_01" value="tipo='R2' id='E0' y='65' fijo='sí' imagen='images/fondoAplett.png' despl_imagen='arr-izq' fondo='blanco' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='E1' x='13' y='85' ancho='764' alto='365' fijo='sí' escala='30' O.x='-10' imagen='images/fondoPlano.png' despl_imagen='arr-izq' fondo='blanco' red='335196f3' red10='no' ejes='negro' texto='no'">
+   <param name="E_03" value="tipo='R2' id='E3' x='208' y='144' ancho='350' alto='252' dibujar-si='(correcto==0)&&(cerrar==1)' fijo='sí' imagen='images/postit.png' despl_imagen='centrada' fondo='ffff0000' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_04" value="tipo='R2' id='E4' x='208' y='144' ancho='350' alto='252' dibujar-si='(correcto=1)&(cerrar=1)' fijo='sí' imagen='images/postit.png' despl_imagen='centrada' fondo='ff9f0000' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_05" value="tipo='R2' id='pleca' x='0' y='0' ancho='790' alto='65' fijo='sí' imagen='images/instrucciones.png' despl_imagen='expand.' fondo='ffffffff' red='no' red10='no' ejes='no' texto='no'">
+   <param name="C_01" value="id='G.x' tipo='numérico' región='interior' espacio='E1' nombre='G.x' incr='1' min='-15' max='15' discreto='sí' fijo='sí' visible='sí' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='0'">
+   <param name="C_02" value="id='G.y' tipo='numérico' región='interior' espacio='E1' nombre='G.y' incr='1' min='-5' max='5' discreto='sí' fijo='sí' visible='sí' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='0' pos_mensajes='centro'">
+   <param name="C_03" value="id='G' tipo='gráfico' espacio='E1' color='negro' color-int='turquesa' tamaño='7' fijo='sí' imagen='images/buspk.png' activo-si='(cerrar==0)'">
+   <param name="C_04" value="id='otros' tipo='numérico' interfaz='botón' región='interior' espacio='E0' nombre='Otro ejercicio' expresión='(458,406,140,30)' fijo='sí' visible='sí' color='blanco' fuente puntos='17' imagen='images/btn140.png' acción='calcular' parámetro='a=(ent(rnd*24))-12\nb=(ent(rnd*10))-5\nverif=0\nG.x=0\nG.y=0\ncorrecto=0\ncerrar=0\n' dibujar-si='correcto=1' pos_mensajes='centro'">
+   <param name="C_05" value="id='verif' tipo='numérico' interfaz='botón' región='interior' espacio='E0' nombre='Verificar' expresión='(458,406,140,30)' fijo='sí' visible='sí' color='blanco' fuente puntos='17' imagen='images/btn140.png' acción='calcular' parámetro='verif=1\ncerrar=1' parámetro.fuente='Monospaced,PLAIN,12' dibujar-si='correcto=0' pos_mensajes='centro'">
+   <param name="C_06" value="id='cerrar' tipo='numérico' interfaz='botón' región='interior' espacio='E3' expresión='(316,8,20,20)' fijo='sí' visible='sí' imagen='images/cerrar.png' acción='calcular' parámetro='cerrar=0' parámetro.fuente='Monospaced,PLAIN,12' pos_mensajes='centro'">
+   <param name="A_01" value="id='Bien(x1,y1)' expresión='(abs(x1-y1)<0.15)?1:0' hacer=';;'">
+   <param name="A_02" value="id='a' constante='sí' expresión='(ent(rnd*24))-12' evaluar='una-sola-vez'">
+   <param name="A_03" value="id='b' constante='sí' expresión='(ent(rnd*10))-5' evaluar='una-sola-vez'">
+   <param name="A_04" value="id='FinBien' evento='sí' condición='(verif=1)&((Bien(a,G.x)=1)&(Bien(b,G.y)=1))' acción='calcular' parámetro='correcto=1' ejecución='alternar' pos_mensajes='centro'">
+   <param name="A_05" value="id='FinMal' evento='sí' condición='(verif=1)&((Bien(a,G.x)=0)|(Bien(b,G.y)=0))' acción='calcular' parámetro='correcto=0' ejecución='alternar' pos_mensajes='centro'">
+   <param name="A_06" value="id='default' evento='sí' condición='1' acción='calcular' parámetro='verif=0' ejecución='siempre' pos_mensajes='centro'">
+   <param name="A_07" value="id='Inicio' algoritmo='sí' evaluar='una-sola-vez' hacer='SOM.Top=600;SOM.Left=400;SOM.transp=0.80;SOM.rojo=0.20;SOM.verde=0.80;SOM.azul=0.99'">
+   <param name="G_01" value="espacio='pleca' tipo='texto' fondo='sí' color='blanco' expresión='[100,8]' texto='Arrastra el autobús y ubícalo según las coordenadas dadas.  \n   Verifica tu respuesta. Puedes apoyarte en la cuadrícula.' fuente='SansSerif,BOLD,20' fijo='sí'">
+   <param name="G_02" value="espacio='E1' tipo='punto' color='f69000' expresión='(12.5,-0.8)' texto='x' fuente='SansSerif,PLAIN,32' fijo='sí' tamaño='0'">
+   <param name="G_03" value="espacio='E1' tipo='punto' color='f69000' expresión='(-0.5,10.5-4.9)' texto='y' fuente='SansSerif,PLAIN,32' fijo='sí' tamaño='0'">
+   <param name="G_04" value="espacio='E1' tipo='punto' color='negro' expresión='(-12.2+s,-0.7)' familia='s' s.intervalo='[0,24]' s.pasos='24' texto='[-12+s]' fuente='SansSerif,BOLD,14' decimales='0' fijo='sí' tamaño='0'">
+   <param name="G_05" value="espacio='E1' tipo='punto' color='negro' dibujar-si='s!=5' expresión='(-1,4.8-s)' familia='s' s.intervalo='[0,10]' s.pasos='10' texto='[5-s]' fuente='SansSerif,BOLD,14' decimales='0' fijo='sí' tamaño='0'">
+   <param name="G_06" value="espacio='E3' tipo='texto' expresión='[35,-8]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Arial;}{\colortbl\red0\green0\blue0;\red0\green0\blue255;}\cf0\f1\fs40\b\par   \u161 INT\u201 NTALO DE NUEVO!\b0\par \par La primera coordenada indica\par la distancia del punto al eje \par vertical. \par La segunda indica la distancia \par del punto al eje horizontal. \par \par      Ap\u243 yate en la cuadr\u237 cula.\par \par \cf1\par \par \par \par \par \par }' fuente='SansSerif,BOLD,20' fijo='sí'">
+   <param name="G_07" value="espacio='E4' tipo='texto' expresión='[41,50]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Arial;}{\colortbl\red0\green0\blue0;\red0\green0\blue255;}\cf0\f1\fs40     \b     \u161 FELICIDADES!\b0\par \par Ubicaste bien el autob\u250 s en \par el plano de ejes coordenados.\par \par \par  \cf1\par \par }' fuente='SansSerif,PLAIN,20' fijo='sí'">
+   <param name="G_08" value="espacio='E0' tipo='imagen' fondo='sí' coord_abs='sí' expresión='(0,0)' archivo='images/marco.png'">
+   <param name="G_09" value="espacio='E0' tipo='texto' expresión='[50,410]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Courier New;}{\colortbl\red0\green0\blue0;\red0\green0\blue255;}\cf0\f1\fs40 abscisa:\cf1{\*\mjaformula{\expr a\decimals 0\fixed1}\f2\fs24} \cf0         ordenada:{\*\mjaformula\cf1{\expr b\decimals 0\fixed1}\cf0}\cf1\f2\fs24\par \par }' fuente='SansSerif,PLAIN,20' fijo='sí'">
+</ajs>
+</p>
+
+<script id="macros/sombras.txt" type="descartes/macro">
+tipo_de_macro=R2
+Idioma=español
+id='W' constante='sí' expresión='790' evaluar='una-sola-vez'
+id='H' constante='sí' expresión='455' evaluar='una-sola-vez'
+id='Top' constante='sí' expresión='500' evaluar='una-sola-vez'
+id='Left' constante='sí' expresión='300' evaluar='una-sola-vez'
+id='transp' constante='sí' expresión='0.8' evaluar='una-sola-vez'
+id='rojo' constante='sí' expresión='0.2' evaluar='una-sola-vez'
+id='verde' constante='sí' expresión='0.8' evaluar='una-sola-vez'
+id='azul' constante='sí' expresión='0.99' evaluar='una-sola-vez'
+tipo='curva' color='(rojo,verde,azul,transp)' coord_abs='sí' expresión='((t<=1)?Top*t^2:Top*(1-t),(t<=1)?Left*(1-sqrt(1-(1-t^2)^2)):0)' t.intervalo='[0,2]' t.pasos='64' relleno='(rojo,verde,azul,transp)' ancho='0' visible='no' 
+tipo='curva' color='(rojo,verde,azul,transp)' coord_abs='sí' expresión='((t<=1)?W-Top*t^2:W-Top*(1-t),(t<=1)?H-Left*(1-sqrt(1-(1-t^2)^2)):H)' t.intervalo='[0,2]' t.pasos='64' relleno='(rojo,verde,azul,transp)' ancho='0' visible='no' 
+</script>
+
+</body>
+
+</html>

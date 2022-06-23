@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+  
+</head>
+
+<body>
+  
+
+<article class="course_content_container">
+  
+  <div class="course_content">
+    
+    
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Múltiplos de ángulos notables</h1>
+    
+    
+    <!--- Párrafo --->
+    <p>A partir de que ya obtuvimos los valores de las funciones trigonométricas de los ángulos notables de 30°, 45° y 60°, podemos obtener también los valores para funciones que representan los múltiplos de dichos ángulos, siempre y cuando dichos múltiplos representen una reflexión del radio en cuestión respecto al eje X o el eje Y. Para encontrar estas razones trigonométricas, vamos a utilizar los valores que ya hemos encontrado en un <strong>triángulo rectángulo</strong>.</p>
+    
+    <p>Estas definiciones las plantearemos tomando como base la <strong>circunferencia unitaria</strong> (es decir: una circunferencia de radio \(1\)), por lo que es útil recordar algunas definiciones:</p>
+    
+    <ul>
+      <li>El <strong>seno</strong> se define como la razón entre el valor de la coordenada Y del segmento que forma el ángulo con el eje X y la longitud de dicho segmento. En la circunferencia unitaria, la hipotenusa es el radio y mide \(1\) unidad, por lo que el seno es igual al valor de la coordenada Y:<br><br><div align="center">\( sin(\theta ) = \frac{y}{1} = y \)</div><br><br></li>
+      
+      <li>La relación inversa del seno es <strong>\( sin^{-1} \)</strong> y se define como:<br><br><div align="center">\( sin^{-1}(\theta ) = \frac{1}{y} \)</div><br><br></li>
+      
+      
+      <li>El <strong>coseno</strong> es la razón entre el valor de la coordenada X del segmento que forma el ángulo con el eje X y la longitud del segmento. De igual forma que para el seno, como es una circunferencia unitaria, el coseno equivale a la coordenada X:<br><br><div align="center">\( cos(\theta ) = \frac{x}{1} = x \)</div><br><br></li>
+      
+      <li>La relación inversa del coseno es <strong>\( cos^{-1} \)</strong> y se define como:<br><br><div align="center">\( cos^{-1}(\theta ) = \frac{1}{x} \)</div><br><br></li>
+    </ul>
+</p>
+
+    <div class="instrucciones">Arrastra el punto rojo sobre la circunferencia y fíjate cómo cambian los valores de las funciones trigonométricas.</div>
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="560" height="370" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+    
+    <p>Podemos notar que cuando tenemos los ángulos múltiplos de los ángulos 30°, 45° y 60°, como lo son los ángulos de 150°, 225° y 300°, respectivamente, se establecen congruencias de los triángulos rectángulos formados por estos múltiplos. Para identificar estas congruencias, en el espacio de arriba crea un triángulo cuyo ángulo central sea de 30°; a continuación crea un triángulo cuyo ángulo externo (suplementario) sea de 150°. Estos dos triángulos son <strong>congruentes</strong>, pues tienen lados con medidas idénticas. Sin embargo,  se debe tomar en cuenta que, como están en un plano cartesiano, el segundo triángulo es negativo en su coordenada X. De igual forma puedes comparar el triángulo con un ángulo interno de \(45°\) con el triángulo de \(225°\) en su ángulo externo, y el de un ángulo interno de \(60°\) con el del que tiene el ángulo externo de \(300°\).</p>
+    
+    <p>Aplicando estas congruencias y sabiendo que la hipotenusa adquiere siempre el valor unitario, vemos que las coordenadas X y Y para los múltiplos son iguales a las coordenadas X y Y de estos ángulos notables, con la diferencia de que las coordenadas se hallan presentes en diferentes cuadrantes y pueden adquirir valores negativos. En resumen, las razones trigonométricas para los ángulos múltiplos de los ángulos de 30°, 45° y 60° grados poseen los mismos valores con la salvedad de que pueden adquirir valores negativos dependiendo del cuadrante en donde se encuentre el múltiplo de ellos.</p>
+    
+    <p>Para saber cuándo el signo puede cambiar en las razones trigonométricas de múltiplos de ángulos notables, podemos utilizar identidades como: \( cos(180-\alpha) = -cos(\alpha) \), por ejemplo \( cos(150) = -cos(30) \).</p>
+    
+    <h2>Tangente de 90°</h2>
+    
+    <p>Un caso muy importante es la tangente de 90°, y se tratará a continuación. La tangente está definida por los triángulos inscritos en una circunferencia unitaria, como la razón entre el valor de la coordenada Y del segmento que forma el ángulo con el eje X y el valor de la coordenada X del segmento que forma el ángulo con el eje Y. Cuando tratamos de dibujar el triángulo de 90° en la circunferencia unitaria, a partir del centro de la circunferencia, el valor de la coordenada X se acerca a cero, entonces la tangente queda definida como:</p>
+    
+    <p><div align="center">\( tan(90° ) = \frac{y}{x} = \frac{1}{0}\)</div></p>
+    
+    <p>Como esto es una división entre cero, se sabe que el valor tiende a infinito, por lo que se dice que la \( tan (90°) \) es una <em>indeterminación</em> o, en otras palabras: \( tan (90°)= \infty \).</p>
+
+    
+    <p class="instrucciones">Arrastra el punto rojo sobre la circunferencia e identifica los múltiplos de los ángulos notables.</p>
+  
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="560" height="370" frameborder="0" src="escenas/escena2.html"> </iframe>
+    </div>
+    
+    <p>En la siguiente tabla se muestran los valores de las funciones trigonométricas de los ángulos notables y sus múltiplos.</p>
+
+    <!-- ejemplo para incluir una imagen -->
+    <div class="course_extern_content"> 
+      <img src="imgs/intro.jpg"></img>
+    </div>
+
+
+  
+    <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Víctor Hugo García Jarillo</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

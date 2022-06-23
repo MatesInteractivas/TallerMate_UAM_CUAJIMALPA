@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+    
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+
+<article class="course_content_container">
+  
+  <div class="course_content">
+    
+    
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    
+    <!--- Título de la página --->
+    <h1>Leyes de los exponentes y radicales</h1>
+
+    
+    <!--- Párrafo --->
+    <p>
+    A menudo, en las ciencias es necesario manipular expresiones que contienen exponentes o raíces. Estas expresiones pueden verse muy complicadas, pero mediante una apropiada manipulación pueden llegar a simplificarse. Asimismo, dicha manipulación también es útil para evaluar las expresiones cuando ello es posible.
+    </p>
+
+	
+    <!--- Párrafo --->
+    <p>
+    ¿Qué crees que motivó el uso de exponentes y radicales? Resulta ser que, anteriormente, la multiplicación de un número por sí mismo se expresaba de forma explícita. Por ejemplo, <span class="formula">(5)(5)(5)(5)</span> no se representaba como <span class="formula">5<sup><span style="font-size:12px">4</span></sup></span>. ¡Imagina ahora cómo se habría expresado <span class="formula">5<sup><span style="font-size:12px">20</span></sup></span>! Así pues, fue necesario encontrar una forma de resumir la notación. Pero, al ganar una forma de resumirla, también fue necesario tener bien claras las reglas de manipulación matemática para no errar en los cálculos.
+    </p>
+
+
+    <!--- Párrafo --->
+    <p>
+    A continuación se hará un repaso de algunas nociones importantes sobre el manejo de los exponentes. Se pretende abordar:
+	<ul>
+	 <li>La relación entre la notación con exponentes enteros y la notación explícita.</li>
+	 <li>El significado de los exponentes negativos.</li>
+	 <li>La manipulación de los exponentes en el producto de expresiones con igual base.</li>
+	 <li>La manipulación de los exponentes cuando una base con exponente se eleva a un número.</li>
+	 <li>La manipulación del cociente de dos bases, cada una elevada a un exponente.</li>
+	 <li>El significado de los exponentes que son un cociente entre 2 números.</li>
+	 <li>La relación entre notación con exponentes fraccionarios y la raíz de una base.</li>
+	</ul>
+    </p>
+
+    <!------ TERMINA EL CONTENIDO DE LA PÁGINA --------->
+    
+    
+    <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Introducción elaborada para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+
+  </div>
+  
+</article>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+  
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Ley de los senos</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Información conocida para un triángulo que puede ser resuelto por la ley de los senos</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    Supón que tienes un triángulo del que conoces:
+	<ul>
+		<li>un lado y dos ángulos, o</li>
+		<li>dos ángulos y un lado</li>
+	</ul>
+    </p>
+
+    <p>
+    Los ángulos involucrados no necesariamente han de ser de 90 grados. Puede ser cualquier ángulo. ¿Cómo podríamos encontrar el resto de los ángulos y lados?
+    </p>
+
+    <p>
+    Observa a continuación la deducción de la ley de los senos. Nota que hace uso de un hecho muy sencillo: el área de un triángulo debe ser la misma independientemente de qué lado se usa como base del mismo. Para todo triángulo se puede obtener la altura de cada lado, y sabemos que el área de un triángulo es \(A=\frac{(Base)(Altura)}{2}=\frac{Bh}{2}\).   
+
+    <div class="instrucciones">En el siguiente espacio interactivo escoge una base para tu triángulo. Observa cómo se obtiene el área del triángulo para la base elegida. Haz lo mismo para las otras 2 bases. Una vez que hayas visitado y analizado las 3 posibles bases, pulsa el botón '?' para observar la deducción, a partir del cálculo del área del triángulo, de la ley de senos. Avanza en esta deducción con el botón 'Siguiente', o regresa sobre la misma con el botón 'Anterior'.</div>
+
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="510" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    <p>
+    Como observaste, el hecho de que el área sea la misma para un triángulo, independientemente de qué base elijas, implica la siguiente relación:
+    </p>
+
+\[\frac{sin(\alpha)}{a}=\frac{sin(\beta)}{b}=\frac{sin(\gamma)}{c}\]
+
+	<p>
+	En esta fórmula, es importante que notes que el seno del ángulo que colocas en cada fracción <strong>debe ser</strong> el opuesto al segmento que se encuentra en el denominador de la misma fracción. Es decir, el ángulo \(\alpha\) debe ser aquél opuesto al segmento \(a\), el ángulo \(\beta\) debe ser aquél opuesto al segmento \(b\), y el ángulo \(\gamma\) debe ser aquél opuesto al segmento \(c\).
+	</p>
+    
+    <h2>Usos de la ley de los senos</h2>
+    
+    <p>
+    La ley de los senos, cuya fórmula general es la mostrada arriba, se usa básicamente para calcular ángulos o tamaños de lado de triángulos para los que cuentas con alguno de los otros ángulos y el tamaño de su lado opuesto.
+    </p>
+    
+	<p>
+    Por ejemplo, si sabes que el lado \(c\) de un triángulo mide 5 unidades, y además sabes que el ángulo en el vértice \(C\) es \(30^o\), y que el lado \(b\) mide 6 unidades, puedes usar la ley de senos \(\frac{sin(\gamma)}{c}=\frac{sin(\beta)}{b}\) para buscar \(\beta\). De donde \(sin(\beta)=b\frac{sin(\gamma)}{c}\). A partir de esta expresión puedes conocer el ángulo \(\beta\) usando la función inversa del seno (el arco seno, comúnmente anotado como \(sin^{-1}\)). Así, \(\beta=sin^{-1}(b\frac{sin(\gamma)}{c})\).
+    </p>
+
+	<p>
+    De igual forma, mediante despejes de la ley de senos puedes conocer el lado de un triángulo si conoces su ángulo opuesto, otro lado, y el ángulo opuesto a este otro lado.
+    </p>
+
+	<p>
+    Avanza a la siguiente página para abordar ahora la ley de cosenos.
+    </p>
+
+  
+    <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+    
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>
+    
+    <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>
+       
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+
+	  </div>
+    </div>
+    </div> 
+  
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

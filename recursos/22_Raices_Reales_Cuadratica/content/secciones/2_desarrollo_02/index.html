@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/html5.css" rel="stylesheet" type="text/css" media="screen" />
+  <!-------- MathJax --- para fórmulas matemáticas ------>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
+  
+  <script>
+  
+    if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.addEventListener('touchend', function(e) {  
+	if(window.parent.document.getElementById("main")!=null){
+	  parent.manageZoom();
+	}
+      },false);
+    }
+  
+    function showCredits(){
+      
+      if(window.parent.document.getElementById("main")!=null){
+	showCreditsContainer();
+      } else {
+	document.getElementById('popup_creditos').className='visible';
+      }
+    }
+    
+    function showCreditsContainer(){
+      
+      window.parent.document.getElementsByClassName('popupWindow')[0].setAttribute('class','popupWindow visible');      
+      window.parent.document.getElementById('popup_header').innerHTML = 'Créditos de la página';
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("style","margin:0px; padding: 0px;")
+      newDiv.innerHTML = document.getElementsByClassName('popup_content')[0].innerHTML;
+      window.parent.document.getElementById('popup_content').appendChild(newDiv);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  
+<!-- contenido -->
+<article class="course_content_container">
+  
+  <div class="course_content">
+        
+    <!------ INICIA EL CONTENIDO DE LA PÁGINA --------->
+    
+    <!--- Título de la página --->
+    <h1>Más análisis de la función cuadrática</h1>
+    
+    <!--- Subtítulo (no necesario en introducción) --->
+    <h2>Análisis del discriminante</h2>
+    
+    
+    <!--- Párrafo --->
+    <p>
+    Hay 3 posibilidades para el valor del discriminante \(b^2-4ac\):
+	<ol>
+		<li>Menor que cero: En este caso, la fórmula general para resolver la cuadrática nos daría una raíz cuyo argumento es negativo. Hasta donde sabemos, ello no tiene sentido (no hay un número tal que, al multiplicarse por sí mismo nos dé un número negativo).<br><br></li>
+		<li>Igual a cero: En este caso, estaríamos extrayendo la raíz de cero, que a su vez vale también cero. Entonces, tendríamos que una de las raíces sería \(x_1=\frac{-b+0}{2a}=\frac{-b}{2a}\) y la otra raíz sería \(x_1=\frac{-b-0}{2a}=\frac{-b}{2a}\). Esto es, ambas raíces serían la misma.<br><br></li>
+		<li>Mayor que cero: En este caso, tendrás un valor distinto para cada una de tus raíces. Esto es lo que uno normalmente espera para una cuadrática, ya que tiene dos puntos que se encuentran en el eje \(X\) y, por tanto, dos raíces.<br><br></li>
+	</ol>
+    </p>
+
+	<p>
+	En el siguiente espacio podrás elucidar qué significado tienen las dos primeras posibilidades mencionadas anteriormente, que corresponden a <em>situaciones que no son intuitivas</em>.
+	</p>
+    
+    <!--- Párrafo --->
+    <p>
+    <div class="instrucciones">Modifica los valores de las constantes de la función cuadrática. Observa el comportamiento de la curva en el gráfico y de tus raíces (si las hay). Simultáneamente, observa qué pasa con la fórmula general usada para extraer las raíces y con las raíces en el gráfico en caso de haberlas. Haz caso de las sugerencias dentro del espacio interactivo.</div>
+    </p>
+
+
+    <!-- ejemplo para incluir un documento externo en un iframe, aqui van las escenas y videos -->
+    <div class="course_extern_content"> 
+      <iframe class="course_iframe" width="750" height="510" frameborder="0" src="escenas/escena1.html"> </iframe>
+    </div>
+
+    
+    <p>
+    Como habrás notado, en los casos en que el discriminante es negativo, la parábola abre hacia arriba y el vértice de la misma está por encima de las abscisas, o bien abre hacia abajo y el vértice de la misma está por debajo de las abscisas. En cualquiera de estos casos, la curva no cruzará el eje \(X\). Es debido a esto que no encuentras raíces para estos casos. Algebraicamente corresponde a que estás tratando de sacar una raíz de un número negativo.
+    </p>
+
+    <p>
+    Así pues, cuando las soluciones a una cuadrática resultan ser <em>reales</em>, corresponde a una parábola que cruza a las abscisas en uno o dos puntos. De lo contrario, cuando las raíces no son números reales, la parábola no toca el eje de las abscisas.
+    </p>
+
+    <p>
+    Por otra parte, conforme algún valor (por ejemplo, \(c\) de acuerdo con las sugerencias del interactivo) se mueve tal que hace que el discriminante pase de positivo a negativo o viceversa, en algún momento el discriminante debe ser igual a cero. Ahí es precisamente cuando la parábola <strong>sólo toca a las abscisas en un punto</strong>. En esa condición, el eje de las abscisas <em><strong>es tangente a la parábola en su vértice</strong></em>. En ese caso, el vértice de la parábola será la raíz encontrada. Por cierto, nota cómo las raíces se aproximan una a la otra conforme haces que el discriminante tienda de ser positivo hacia el valor de cero.
+    </p>
+    
+	<h2>Breviario cultural</h2>
+
+	<p>
+	Estrictamente, sí es posible sacar la raíz de un número negativo. Sin embargo, ello queda fuera del alcance de esta lección y no se abordará. Pero, a manera de breviario, los números complejos son una ideación matemática que es una extensión de los números reales que ya conoces junto con otros llamados <em>imaginarios</em>. Son estos imaginarios los que involucran raíces de números negativos. Más allá de ser sólo una curiosidad matemática, estos números tienen aplicaciones en diversas áreas de las ciencias.
+	</p>
+
+	<p>
+	No obstante, para todo fin práctico de esta unidad, si encuentras una parábola cuyo discriminante es negativo, se considerará que no hay soluciones o raíces para la misma.
+	</p>
+  
+    <p>
+    Pasa a la siguiente página donde podrás abordar algunos ejercicios para que pongas en práctica lo aprendido.
+    </p>
+
+
+
+
+  
+    <!------ INICIA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+
+    <div class="div_creditos">
+      <a class="liga_creditos" href="#" onclick="showCredits()">Créditos y condiciones de uso</a>
+    </div>  
+
+  <div id="popup_creditos" class="oculto">
+      
+      <div class='popup_inner'>
+      
+          <a id="bt_close_popup" class="standardButton" title="Haz clic aquí para cerrar esta ventana." href="#" onclick="document.getElementById('popup_creditos').className='oculto';">×</a>
+  
+	  <h1 class="popup_header">Créditos y condiciones de uso</h1>
+	  
+	  <div class="popup_content">
+  
+	  <!-- Créditos UAM  (siempre deben ir en primer lugar) -->
+	    <div class="creditos">
+		    <p class="proyecto">Recurso elaborado para la unidad de enseñanza-aprendizaje Taller de Matemáticas de la Universidad Autónoma Metropolitana, unidad Cuajimalpa, en colaboración con el Laboratorio LITE de Innovación en Tecnología Educativa S.C. </a></p>
+		    <ul class="autores">
+			    <li>Autor de la unidad: <span class="nombre">Alejandro Radillo Díaz</span></li>
+			    <li>Revisión: <span class="nombre">Tine Stalmans</span></li>
+		    </ul>
+		    <img class="logos" src="icns/logosUAM.png"></img>
+	    </div>    
+       
+	    <!-- Aviso licencias -->
+	    <div class="licencias">
+	    
+		    <p class="creativeCommons">Los contenidos de esta unidad didáctica interactiva están bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/es/" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual</a>.</p>
+		    <!--arquimedes (optativo)-->
+		    <!-- Descartes -->
+		    <p>La unidad didáctica contiene escenas elaboradas con Descartes, una herramienta de código abierto.</p>
+	    
+	    </div>
+	</div>
+      </div>
+    </div> 
+    
+  
+  <!------ TERMINA LA INFO SOBRE LAS LICENCIAS Y LOS CRÉDITOS. ---------->
+  
+  
+  
+  </div>
+  
+  
+</article>
+
+
+</body>
+
+</html>

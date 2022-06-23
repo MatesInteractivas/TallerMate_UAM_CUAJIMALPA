@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>TITULO</title>
+
+	 <style type="text/css" media="screen">
+
+	/*pulsador*/
+	#zoom { }
+	#zoom > canvas {
+	  display: none;
+	}
+    
+	#zoom .up {
+	  background: white url("images/zoomIn.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zoom > .up:hover {
+	  background-color: #efefef !important;
+	}
+	#zoom > .up:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+    
+	#zoom .down {
+	  background: white url("images/zoomOut.png") no-repeat center !important;
+	  background-size: cover !important;
+	}
+	#zoom .down:hover {
+	  background-color: #efefef !important;
+	}
+	#zoom .down:active {
+	  box-shadow: 1px 1px 5px #888888;
+	  background-color: #eeeeee !important;
+	}
+      </style>
+	<script type='text/javascript' src='lib/descartes-min.js'></script>
+</head>
+<body style="margin:0px;padding:0px;overflow:hidden;">
+
+<p align="center">
+<ajs name="Descartes" width=750 height=510 code="Descartes">
+   <param name="tamaño" value="750x510">
+   <param name="image_loader" value="">
+   <param name="expand" value="">
+   <param name="decimal_symbol" value=".">
+   <param name="antialias" value="sí">
+   <param name="deshacer" value="no">
+   <param name="nombre" value="Descartes">
+   <param name="Versión" value="5.336, 2015-02-13">
+   <param name="Idioma" value="español">
+   <param name="Botones" value="créditos=no config=no inicio=no limpiar=no ancho_este=150 ancho_oeste=150 alto=40">
+   <param name="E_01" value="tipo='R2' id='E1' fijo='sí' imagen='images/fondo_760x510.png' despl_imagen='arr-izq' fondo='f3f0ec' red='no' red10='no' ejes='no' texto='no'">
+   <param name="E_02" value="tipo='R2' id='PanelDer' x='51%' y='17%' ancho='48%' alto='82%' despl_imagen='arr-izq' red='b8c4c8' red10='889498' ejes='405860' texto='405860'">
+   <param name="C_01" value="id='Tipo' tipo='numérico' interfaz='menú' región='interior' espacio='E1' nombre='_nada_' expresión='(E1._w/2-80,5,160,34)' decimales='0' fijo='sí' visible='no' opciones=' ,Paralelas,Perpendiculares' acción='calcular' parámetro='ReInit()'">
+   <param name="C_02" value="id='OtroEjBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Otro ejemplo' expresión='(E1._w/4-60,E1._h-35,120,30)' fijo='sí' visible='sí' color='blanco' color-int='blanco' negrita='sí' fuente puntos='17' imagen='images/btn120x30.png' acción='calcular' parámetro='ReInit()' activo-si='Tipo!=0' pos_mensajes='centro'">
+   <param name="C_03" value="id='zoom' tipo='numérico' región='interior' espacio='PanelDer' nombre='_nada_' expresión='(PanelDer._w-34,PanelDer._h-64,30,60)' valor='20' incr='zmincr' min='0.01' max='700' decimales='0' fijo='sí' visible='no' acción='calcular' parámetro='PanelDer.escala=zoom' activo-si='Tipo!=0'">
+   <param name="C_04" value="id='AntBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Anterior' expresión='(E1._w/6-45,E1._h-70,90,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrl=scrl-1' dibujar-si='scrl>0' activo-si='Tipo!=0' pos_mensajes='centro'">
+   <param name="C_05" value="id='SigBt' tipo='numérico' interfaz='botón' región='interior' espacio='E1' nombre='Siguiente' expresión='(E1._w*2/6-45,E1._h-70,90,30)' fijo='sí' visible='sí' color='blanco' color-int='fff0f8ff' negrita='sí' fuente puntos='17' imagen='images/btn90x30.png' acción='calcular' parámetro='scrl=scrl+1' dibujar-si='scrl<scrlmax' activo-si='Tipo!=0' pos_mensajes='centro'">
+   <param name="A_01" value="id='ReInit()' algoritmo='sí' algoritmo='sí' hacer='PanelDer.escala=20;zoom=20;PanelDer.Ox=0;PanelDer.Oy=0;scrl=0;scrlmax=5;bla=(Tipo==1)?GeneraTipo1():bla;bla=(Tipo==2)?GeneraTipo2():bla'">
+   <param name="A_02" value="id='GeneraTipo1()' algoritmo='sí' algoritmo='sí' hacer='Tp1m1=0.25+ent(27.9999*rnd)/4;Tp1m1=(rnd<0.5)?0.25+ent(3.9999*rnd)/4:Tp1m1;Tp1m1=sgn(0.5-rnd)*Tp1m1;Tp1b1=-7+ent(56.9999*rnd)/4;Tp1m2=Tp1m1;Tp1mperp=-1/Tp1m2;Tp1x=-7+ent(56.9999*rnd)/4;Tp1y=-7+ent(56.9999*rnd)/4;Tp1b2=Tp1y-Tp1m2*Tp1x;Tp1bperp=Tp1y-Tp1mperp*Tp1x;Tp1IntersecX=(Tp1b1-Tp1bperp)/(-Tp1m1+Tp1mperp);Tp1IntersecY=(-Tp1m1*Tp1bperp+Tp1b1*Tp1mperp)/(-Tp1m1+Tp1mperp);CentroX=(Tp1IntersecX+Tp1x)/2;CentroY=(Tp1IntersecY+Tp1y)/2;;Tp1DistRef=abs(-Tp1m1*Tp1x-Tp1b1+Tp1y)/sqrt(Tp1m1^2+Tp1y^2);PanelDer.escala=PanelDer._w/(7*Tp1DistRef);PanelDer.Ox=-CentroX*PanelDer.escala;PanelDer.Oy=CentroY*PanelDer.escala;zoom=PanelDer.escala;zmincr=PanelDer*0.05'">
+   <param name="A_03" value="id='GeneraTipo2()' algoritmo='sí' algoritmo='sí' hacer='Tp2m1=0.25+ent(27.9999*rnd)/4;Tp2m1=(rnd<0.5)?0.25+ent(3.9999*rnd)/4:Tp2m1;Tp2m1=sgn(0.5-rnd)*Tp2m1;Tp2b1=-7+ent(56.9999*rnd)/4;Tp2m2=-1/Tp2m1;Tp2x=-7+ent(56.9999*rnd)/4;Tp2y=-7+ent(56.9999*rnd)/4;Tp2b2=Tp2y-Tp2m2*Tp2x;;Tp2IntersecX=(Tp2b1-Tp2b2)/(-Tp2m1+Tp2m2);Tp2IntersecY=(-Tp2m1*Tp2b2+Tp2b1*Tp2m2)/(-Tp2m1+Tp2m2);CentroX=(Tp2IntersecX+Tp2x)/2;CentroY=(Tp2IntersecY+Tp2y)/2;;Tp2DistRef=abs(-Tp2m1*Tp2x-Tp2b1+Tp2y)/sqrt(Tp2m1^2+Tp2y^2);PanelDer.escala=PanelDer._w/(7*Tp2DistRef);PanelDer.Ox=-CentroX*PanelDer.escala;PanelDer.Oy=CentroY*PanelDer.escala;zoom=PanelDer.escala;zmincr=PanelDer*0.05'">
+   <param name="A_04" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='PanDer.escala=20;ReInit()'">
+   <param name="A_05" value="id='CALCULOS' algoritmo='sí' evaluar='siempre'">
+   <param name="G_01" value="espacio='E1' tipo='texto' dibujar-si='Tipo==1' expresión='[10,50]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Obtener la ecuaci\u243 n de la recta paralela a \f2\fs38\i{\*\mjaformula y={\expr Tp1m1\decimals 2\fixed0}x{\expr (Tp1b1>=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(Tp1b1)\decimals 2\fixed0}}\f1\fs34\i0  que cruza por \f2\fs38\i{\*\mjaformula ({\expr Tp1x\decimals 2\fixed0},{\expr Tp1y\decimals 2\fixed0})}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_02" value="espacio='PanelDer' tipo='ecuación' color='azul' dibujar-si='(Tipo==1)' expresión='y=Tp1m1*x+Tp1b1' ancho='2'">
+   <param name="G_03" value="espacio='PanelDer' tipo='ecuación' color='rojo' dibujar-si='(Tipo==1)&(scrl==5)' expresión='y=Tp1m2*x+Tp1b2' ancho='2'">
+   <param name="G_04" value="espacio='PanelDer' tipo='punto' color='00bb00' dibujar-si='(Tipo==1)' expresión='(Tp1x,Tp1y)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs38\i{\*\mjaformula ({\expr Tp1x\decimals 2\fixed0},{\expr Tp1y\decimals 2\fixed0})}\f2\fs30\i0}' fuente='Serif,ITALIC,19' fijo='sí' tamaño='5'">
+   <param name="G_05" value="espacio='E1' tipo='texto' dibujar-si='((Tipo==1)&(scrl>0))' expresión='[10,95]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Sabemos que, para que sea paralela,\par su pendiente debe ser igual a la de la\par recta dada. Esto es, \f2\fs38\i{\*\mjaformula m{\subix 2}={\expr Tp1m2\decimals 2\fixed0}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_06" value="espacio='E1' tipo='texto' dibujar-si='(Tipo==1)&(scrl>1)' expresión='[10,175]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Hasta ahora, tenemos la siguiente\par ecuaci\u243 n para nuestra recta:\par \f2\fs38\i{\*\mjaformula y={\expr Tp1m2\decimals 2\fixed0}x+b}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_07" value="espacio='E1' tipo='texto' dibujar-si='(Tipo==1)&(scrl>2)' expresión='[10,250]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Sustituimos los valores del punto\par \f2\fs38\i{\*\mjaformula ({\expr Tp1x\decimals 2\fixed0},{\expr Tp1y\decimals 2\fixed0})}\f1\fs34\i0  en la ecuaci\u243 n:\par \f2\fs38\i{\*\mjaformula{\expr Tp1y\decimals 2\fixed0}=({\expr Tp1m2\decimals 2\fixed0})({\expr Tp1x\decimals 2\fixed0})+b}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_08" value="espacio='E1' tipo='texto' dibujar-si='(Tipo==1)&(scrl>3)' expresión='[10,325]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Arial;}\f1\fs34 Despejamos \f2\fs38\i b\f1\fs34\i0 : \f2\fs38\i{\*\mjaformula b={\expr Tp1y\decimals 2\fixed0}{\expr (-Tp1m2*Tp1x>=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(Tp1m2*Tp1x)\decimals 2\fixed0}}\f3\fs38\i0   \u8658 \fs34\par \f2\fs38\i{\*\mjaformula b={\expr Tp1b2\decimals 5\fixed0}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_09" value="espacio='E1' tipo='texto' dibujar-si='(Tipo==1)&(scrl>4)' expresión='[10,385]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red255\green0\blue0;\red32\green48\blue58;}\f1\fs34 Por lo que nuestra ecuaci\u243 n de la\par paralela es: \f2\fs38\i{\*\mjaformula\cf0 y={\expr Tp1m2\decimals 2\fixed0}x{\expr (-Tp1m2*Tp1x>=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(Tp1b2)\decimals 5\fixed0}\cf1}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_10" value="espacio='PanelDer' tipo='punto' fondo='sí' dibujar-si='0' expresión='(0,0)' fijo='sí'">
+   <param name="G_11" value="espacio='E1' tipo='punto' fondo='sí' dibujar-si='0' expresión='(0,0)' fijo='sí'">
+   <param name="G_12" value="espacio='E1' tipo='texto' dibujar-si='Tipo==2' expresión='[10,50]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Obtener la ecuaci\u243 n de la recta perpendicular a \f2\fs38\i{\*\mjaformula y={\expr Tp2m1\decimals 2\fixed0}x{\expr (Tp2b1>=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(Tp2b1)\decimals 2\fixed0}}\f1\fs34\i0  que cruza por \f2\fs38\i{\*\mjaformula ({\expr Tp2x\decimals 2\fixed0},{\expr Tp2y\decimals 2\fixed0})}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_13" value="espacio='E1' tipo='texto' dibujar-si='((Tipo==2)&(scrl>0))' expresión='[10,90]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 La pendiente de la perpendicular est\u225 \par dada por \f2\fs38\i{\*\mjaformula m{\subix 2}=-{\fraction{\num 1}{\den m{\subix 1}}}=-{\fraction{\num 1}{\den{\expr Tp2m1\decimals 2\fixed0}}}={\expr Tp2m2\decimals 5\fixed0}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_14" value="espacio='E1' tipo='texto' dibujar-si='((Tipo==2)&(scrl>1))' expresión='[10,165]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Sustituy\u233 ndola en la ecuaci\u243 n de nuestra\par recta obtenemos: \f2\fs38\i{\*\mjaformula y={\expr Tp2m2\decimals 5\fixed0}x+b}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_15" value="espacio='E1' tipo='texto' dibujar-si='((Tipo==2)&(scrl>2))' expresión='[10,225]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}\f1\fs34 Sustituimos los valores del punto\par \f2\fs38\i{\*\mjaformula ({\expr Tp2x\decimals 2\fixed0},{\expr Tp2y\decimals 2\fixed0})}\f1\fs34\i0  en la ecuaci\u243 n:\par \f2\fs38\i{\*\mjaformula{\expr Tp2y\decimals 2\fixed0}=({\expr Tp2m2\decimals 5\fixed0})({\expr Tp2x\decimals 2\fixed0})+b}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_16" value="espacio='E1' tipo='texto' dibujar-si='((Tipo==2)&(scrl>3))' expresión='[10,305]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;\f3\fcharset0 Arial;}\f1\fs34 Despejamos \f2\fs38\i b\f1\fs34\i0 : \f2\fs38\i{\*\mjaformula b={\expr Tp2y\decimals 2\fixed0}{\expr (-Tp2m2*Tp2x>=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(Tp2m2*Tp2x)\decimals 5\fixed0}}\f3\fs38\i0   \u8658 \fs34\par \f2\fs38\i{\*\mjaformula b={\expr Tp2b2\decimals 5\fixed0}}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_17" value="espacio='E1' tipo='texto' dibujar-si='((Tipo==2)&(scrl>4))' expresión='[10,370]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Arial;\f2\fcharset0 Times New Roman;}{\colortbl\red255\green0\blue0;\red32\green48\blue58;}\f1\fs34 Por lo que nuestra ecuaci\u243 n de la\par paralela es: \f2\fs38\i{\*\mjaformula\cf0 y={\expr Tp2m2\decimals 3\fixed0}x{\expr (-Tp2m2*Tp2x>=0)?&squot;+&squot;:&squot;-&squot;\decimals 0\fixed1}{\expr abs(Tp2b2)\decimals 5\fixed0}\cf1}\f1\fs34\i0 .}' fuente='SansSerif,PLAIN,17' fijo='sí'">
+   <param name="G_18" value="espacio='PanelDer' tipo='ecuación' color='azul' dibujar-si='(Tipo==2)' expresión='y=Tp2m1*x+Tp2b1' ancho='2'">
+   <param name="G_19" value="espacio='PanelDer' tipo='ecuación' color='rojo' dibujar-si='(Tipo==2)&(scrl==5)' expresión='y=Tp2m2*x+Tp2b2' ancho='2'">
+   <param name="G_20" value="espacio='PanelDer' tipo='punto' color='00bb00' dibujar-si='(Tipo==2)' expresión='(Tp2x,Tp2y)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;\f1\fcharset0 Times New Roman;\f2\fcharset0 Courier New;}\f1\fs38\i{\*\mjaformula ({\expr Tp2x\decimals 2\fixed0},{\expr Tp2y\decimals 2\fixed0})}\f2\fs30\i0}' fuente='Serif,ITALIC,19' fijo='sí' tamaño='5'">
+   <param name="G_21" value="espacio='PanelDer' tipo='polígono' coord_abs='sí' expresión='(1,1)(PanelDer._w-1,1)(PanelDer._w-1,PanelDer._h-1)(1,PanelDer._h-1)(1,1)' ancho='2'">
+</ajs></p>
+
+</body>
+</html>
